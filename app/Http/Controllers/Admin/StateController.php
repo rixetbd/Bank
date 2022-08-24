@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Admin;
 
-use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class FrontendController extends Controller
+class StateController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,12 +14,7 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        $all_countries = DB::table('countries')->get();
-        $all_cities = DB::table('cities')->orderBy('name', 'asc')->get();
-        return view('frontend.index',[
-            'all_countries'=>$all_countries,
-            'all_cities'=>$all_cities,
-        ]);
+        //
     }
 
     /**
@@ -88,10 +82,4 @@ class FrontendController extends Controller
     {
         //
     }
-
-    public function getCityName()
-    {
-
-    }
-
 }

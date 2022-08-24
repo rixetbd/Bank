@@ -69,7 +69,7 @@
                         <div class="default text">Select Country</div>
                         <div class="menu">
                             @foreach ($all_countries as $country)
-                                <div class="item" data-value="{{$country->name}}"><i class="{{Str::lower($country->sortname)}} flag"></i>{{$country->name}}</div>
+                                <div class="item" data-value="{{$country->name}}"><i class="{{Str::lower($country->iso2)}} flag"></i>{{$country->name}}</div>
                             @endforeach
                         </div>
                     </div>
@@ -82,9 +82,9 @@
 
                     <select name="states" class="ui fluid search selection dropdown" multiple="" id="state_Name_ID22">
                             <option value="">All Cities</option>
-                        @foreach ($all_cities as $city)
+                        {{-- @foreach ($all_cities as $city)
                             <option value="{{$city->name}}">{{$city->name}}</option>
-                        @endforeach
+                        @endforeach --}}
                     </select>
 
 
@@ -169,6 +169,7 @@
                         <th>Company Size</th>
                         <th>Revenue</th>
                         <th>City</th>
+                        <th>Zip Code</th>
                         <th>Website</th>
                     </thead>
                     <tbody>
@@ -181,6 +182,7 @@
                             <td>11 to 15</td>
                             <td>$6.7 M</td>
                             <td>Kingston</td>
+                            <td>BD 1245</td>
                             <td>https://inmydefence.com/</td>
                         </tr>
                         <tr>
@@ -192,6 +194,7 @@
                             <td>2 to 10</td>
                             <td>$5.1 M</td>
                             <td>Quebec</td>
+                            <td>BD 1245</td>
                             <td>https://lucemorrownotaire.com/</td>
                         </tr>
                         <tr>
@@ -203,6 +206,7 @@
                             <td>11 to 15</td>
                             <td>$5.2 M</td>
                             <td>Toronto</td>
+                            <td>BD 1245</td>
                             <td>https://margotpoepjes.com/</td>
                         </tr>
                         <tr>
@@ -214,6 +218,7 @@
                             <td>10 to 50</td>
                             <td>$5 M</td>
                             <td>Bowmanville</td>
+                            <td>BD 1245</td>
                             <td>https://mcmackinlaw.ca/contact/</td>
                         </tr>
                         <tr>
@@ -225,6 +230,7 @@
                             <td>2 to 10</td>
                             <td>$5.1 M</td>
                             <td>Port Moody</td>
+                            <td>BD 1245</td>
                             <td>https://novabc.ca/</td>
                         </tr>
                         <tr>
@@ -236,6 +242,7 @@
                             <td>10 to 15</td>
                             <td>$5 M</td>
                             <td>Toronto</td>
+                            <td>BD 1245</td>
                             <td>https://mcmackinlawyers.ca/</td>
                         </tr>
                         <tr>
@@ -247,6 +254,7 @@
                             <td>2 to 10</td>
                             <td>$5 M</td>
                             <td>Toronto</td>
+                            <td>BD 1245</td>
                             <td>https://municipallawyers.ca/</td>
                         </tr>
                         <tr>
@@ -258,6 +266,7 @@
                             <td>11 to 15</td>
                             <td>$6 M</td>
                             <td>Toronto</td>
+                            <td>BD 1245</td>
                             <td>https://nicholsonsmith.com/</td>
                         </tr>
                         <tr>
@@ -269,6 +278,7 @@
                             <td>11 to 50</td>
                             <td>$5 M</td>
                             <td>Orangeville</td>
+                            <td>BD 1245</td>
                             <td>http://www.bulwarklegal.ca/</td>
                         </tr>
                         <tr>
@@ -280,6 +290,7 @@
                             <td>11 to 50</td>
                             <td>$5.1 M</td>
                             <td>Abbotsford</td>
+                            <td>BD 1245</td>
                             <td>https://paulavenegas.com/</td>
                         </tr>
                         <tr>
@@ -291,6 +302,7 @@
                             <td>11 to 50</td>
                             <td>$5 M</td>
                             <td>Waterloo</td>
+                            <td>BD 1245</td>
                             <td>https://petkerlaw.com/</td>
                         </tr>
                         <tr>
@@ -302,6 +314,7 @@
                             <td>11 to 50</td>
                             <td>$5 M</td>
                             <td>Cambridge</td>
+                            <td>BD 1245</td>
                             <td>https://pettittschwarz.com/</td>
                         </tr>
                         <tr>
@@ -313,6 +326,7 @@
                             <td>11 to 50</td>
                             <td>$5.3 M</td>
                             <td>Moncton</td>
+                            <td>BD 1245</td>
                             <td>https://www.drdlaw.ca/</td>
                         </tr>
                         <tr>
@@ -324,6 +338,7 @@
                             <td>11 to 50</td>
                             <td>$5 M</td>
                             <td>Toronto</td>
+                            <td>BD 1245</td>
                             <td>https://nprobinson.com/</td>
                         </tr>
                     </tbody>

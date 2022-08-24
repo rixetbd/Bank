@@ -25,11 +25,11 @@ function show_hide_column() {
 }
 
 
-var lastColHeader = Array.prototype.slice.call(document.querySelectorAll('th:nth-child(10)', 'table'), 0); // get the header cell
-var lastColCells = Array.prototype.slice.call(document.querySelectorAll('td:nth-child(10)', 'table'), 0).concat(lastColHeader); // get the column cells, and add header
-lastColCells.forEach(function (cell) { // iterate and hide
-    cell.style.display = 'none';
-});
+// var lastColHeader = Array.prototype.slice.call(document.querySelectorAll('th:nth-child(10)', 'table'), 0); // get the header cell
+// var lastColCells = Array.prototype.slice.call(document.querySelectorAll('td:nth-child(10)', 'table'), 0).concat(lastColHeader); // get the column cells, and add header
+// lastColCells.forEach(function (cell) { // iterate and hide
+//     cell.style.display = 'none';
+// });
 
 // function signShowHide(sign){
 //     if(sign.className == 'fas fa-plus'){
@@ -56,7 +56,7 @@ table_Name.addEventListener('click', function () {
         lastColCells.forEach(function (cell) { // iterate and hide
             cell.style.removeProperty('display');
         });
-    }  
+    }
 });
 
 table_Title.addEventListener('click', function () {
@@ -79,7 +79,7 @@ table_Title.addEventListener('click', function () {
 });
 
 table_Email.addEventListener('click', function () {
-    
+
     if(document.getElementById("table_Email_IN").checked !== true){
         show_hide_column();
         var lastColHeader = Array.prototype.slice.call(document.querySelectorAll('th:nth-child(3)', 'table'), 0); // get the header cell
@@ -95,11 +95,11 @@ table_Email.addEventListener('click', function () {
             cell.style.removeProperty('display');
         });
     }
-    
+
 });
 
 table_Phone.addEventListener('click', function () {
-    
+
     if(document.getElementById("table_Phone_IN").checked !== true){
         show_hide_column();
         var lastColHeader = Array.prototype.slice.call(document.querySelectorAll('th:nth-child(4)', 'table'), 0); // get the header cell
@@ -133,10 +133,10 @@ table_Company.addEventListener('click', function () {
             cell.style.removeProperty('display');
         });
     }
-    
+
 });
 table_Company_Size.addEventListener('click', function () {
-    
+
     if(document.getElementById("table_Company_Size_IN").checked !== true){
         show_hide_column();
         var lastColHeader = Array.prototype.slice.call(document.querySelectorAll('th:nth-child(6)', 'table'), 0); // get the header cell
@@ -152,10 +152,10 @@ table_Company_Size.addEventListener('click', function () {
             cell.style.removeProperty('display');
         });
     }
-    
+
 });
 table_Revenue.addEventListener('click', function () {
-    
+
     if(document.getElementById("table_Revenue_IN").checked !== true){
         show_hide_column();
         var lastColHeader = Array.prototype.slice.call(document.querySelectorAll('th:nth-child(7)', 'table'), 0); // get the header cell
@@ -171,10 +171,10 @@ table_Revenue.addEventListener('click', function () {
             cell.style.removeProperty('display');
         });
     }
-    
+
 });
 table_City.addEventListener('click', function () {
-    
+
     if(document.getElementById("table_City_IN").checked !== true){
         show_hide_column();
         var lastColHeader = Array.prototype.slice.call(document.querySelectorAll('th:nth-child(8)', 'table'), 0); // get the header cell
@@ -194,10 +194,10 @@ table_City.addEventListener('click', function () {
             cell.textContent = "none";
         });
     }
-    
+
 });
 table_URL.addEventListener('click', function () {
-    
+
     if(document.getElementById("table_URL_IN").checked !== true){
         show_hide_column();
         var lastColHeader = Array.prototype.slice.call(document.querySelectorAll('th:nth-child(9)', 'table'), 0); // get the header cell
@@ -213,7 +213,7 @@ table_URL.addEventListener('click', function () {
             cell.style.removeProperty('display');
         });
     }
-    
+
 });
 
 

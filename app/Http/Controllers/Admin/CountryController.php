@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\Country;
 use Illuminate\Http\Request;
+
 
 class CountryController extends Controller
 {
@@ -15,9 +17,12 @@ class CountryController extends Controller
      */
     public function index()
     {
-        $all_countries = DB::table('tbl_countries')->get();
+
+        $all_countries = Country::all();
+        // $all_cities = DB::table('cities')->get();
         return view('backend.country',[
             'all_countries'=>$all_countries,
+            // 'all_cities'=>$all_cities,
         ]);
     }
 
@@ -26,9 +31,27 @@ class CountryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $request->validate([
+            "name"=> 'required',
+            "iso3"=>'required',
+            "iso2"=>'required',
+            "phonecode"=>'required',
+            "capital"=>'required',
+            "region"=>'required',
+        ]);
+
+        Country::insert([
+            "name"=> $request->name,
+            "iso3"=>$request->iso3,
+            "iso2"=>$request->iso2,
+            "phonecode"=>$request->phonecode,
+            "capital"=>$request->capital,
+            "region"=>$request->region,
+        ]);
+
+        return back();
     }
 
     /**
@@ -86,4 +109,5 @@ class CountryController extends Controller
     {
         //
     }
+
 }
