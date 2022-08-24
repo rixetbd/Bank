@@ -20,6 +20,7 @@ Route::middleware('auth')->group(function(){
     Route::controller(LeadController::class)->group(function(){
 
         Route::get('/admin/leads', 'index')->name('admin.leads.index');
+        Route::get('/admin/leads/importpage', 'importpage')->name('admin.leads.importpage');
 
     });
 
@@ -27,11 +28,9 @@ Route::middleware('auth')->group(function(){
 
         Route::get('/admin/countries', 'index')->name('admin.countrie.index');
         Route::post('/admin/countries/create', 'create')->name('admin.countrie.create');
+        Route::post('/admin/countries/update', 'update')->name('admin.country.update');
+        Route::get('/admin/countries/destroy/{id}', 'destroy')->name('admin.country.destroy');
 
-    });
-
-    Route::controller(CsvUploadController::class)->group(function(){
-        Route::post('/admin/countries/csv/upload', 'CountryCsv')->name('countries.csv.upload');
     });
 
 

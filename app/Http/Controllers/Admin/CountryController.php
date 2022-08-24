@@ -18,7 +18,7 @@ class CountryController extends Controller
     public function index()
     {
 
-        $all_countries = Country::all();
+        $all_countries = Country::orderby('name', 'asc')->get();
         // $all_cities = DB::table('cities')->get();
         return view('backend.country',[
             'all_countries'=>$all_countries,
@@ -94,9 +94,17 @@ class CountryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        Country::where('id', $request->id)->update([
+            "name"=> $request->name,
+            "iso3"=>$request->iso3,
+            "iso2"=>$request->iso2,
+            "phonecode"=>$request->phonecode,
+            "capital"=>$request->capital,
+            "region"=>$request->region,
+        ]);
+        return back();
     }
 
     /**
@@ -107,7 +115,8 @@ class CountryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Country::find($id)->delete();
+        return back();
     }
 
 }

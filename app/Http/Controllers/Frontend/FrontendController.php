@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use Illuminate\Support\Facades\DB;
+use App\Models\Lead;
+use App\Models\Country;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -15,11 +16,12 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        $all_countries = DB::table('countries')->get();
-        $all_cities = DB::table('cities')->orderBy('name', 'asc')->get();
+        $all_countries = Country::all();
+        $lead_data = Lead::paginate(200);
+        // $all_cities = 
         return view('frontend.index',[
             'all_countries'=>$all_countries,
-            'all_cities'=>$all_cities,
+            'lead_data'=>$lead_data,
         ]);
     }
 

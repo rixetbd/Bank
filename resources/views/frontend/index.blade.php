@@ -51,6 +51,19 @@
             right: 5px;
         }
 
+        #myTable_length{
+            display: none !important;
+        }
+
+        .dataTables_info,.dataTables_paginate{display: none;}
+
+        @media only screen and (max-width: 600px) {
+            #myTable_length,
+            #myTable_filter{
+                display: none !important;
+            }
+        }
+
     </style>
 </head>
 
@@ -58,7 +71,7 @@
 
     <section class="container">
         <div class="row my-3">
-            <div class="col-md-3">
+            <div class="col-xs-12 col-sm-12 col-md-3 mt-3">
                 <h4>Filters</h4>
                 <div class="col-12 search_div" id="country_Name_Box">
                     <label for="" class="w-100">Country Name <i class="fa-solid fa-angle-down CONCON1"></i></label>
@@ -69,11 +82,11 @@
                         <div class="default text">Select Country</div>
                         <div class="menu">
                             @foreach ($all_countries as $country)
-                                <div class="item" data-value="{{$country->name}}"><i class="{{Str::lower($country->iso2)}} flag"></i>{{$country->name}}</div>
+                            <div class="item" data-value="{{$country->name}}"><i
+                                    class="{{Str::lower($country->iso2)}} flag"></i>{{$country->name}}</div>
                             @endforeach
                         </div>
                     </div>
-
                 </div>
                 <div class="col-12 search_div" id="">
                     <label for="" class="w-100">City Name <i class="fa-solid fa-angle-down CONCON2"></i></label>
@@ -81,7 +94,7 @@
 
 
                     <select name="states" class="ui fluid search selection dropdown" multiple="" id="state_Name_ID22">
-                            <option value="">All Cities</option>
+                        <option value="">All Cities</option>
                         {{-- @foreach ($all_cities as $city)
                             <option value="{{$city->name}}">{{$city->name}}</option>
                         @endforeach --}}
@@ -114,7 +127,7 @@
 
             <div class="col-lg-1 col-md-1"></div>
 
-            <div class="col-lg-5 col-md-5 col-sm-12">
+            <div class="col-xs-12 col-sm-12 col-md-5 col-sm-12 mt-3">
                 <h6>You Have Selected</h6>
                 <div class="row">
                     <div class="col-6">Country</div>
@@ -125,40 +138,35 @@
                     <div class="col-6" id="showIndustryName">N/A</div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-12">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-sm-12 mt-3">
                 <h6>Selected Country</h6>
                 <img src="https://i0.wp.com/css-tricks.com/wp-content/uploads/2017/08/facebook-skeleton.png" alt=""
-                    class="img-fluid" id="showCountryFlag" width="250" style="border-radius: 5px;">
+                    class="img-fluid" id="showCountryFlag" width="280" style="border-radius: 5px;">
             </div>
+        </div>
 
-            <div class="col-md-12 d-flex">
+        <div class="row my-3">
+            <div class="col-xs-12 col-sm-12 col-md-12 d-flex">
                 <label class="btn btn_city" id="table_Name">Person Name <input type="checkbox" disabled checked
-                    id="table_Name_IN"></label>
+                        id="table_Name_IN"></label>
                 <label class="btn btn_city" id="table_Title">Job Title <input type="checkbox" disabled checked
                         id="table_Title_IN"></label>
                 <label class="btn btn_city" id="table_Company">Company Name <input type="checkbox" disabled checked
-                    id="table_Company_IN"></label>
+                        id="table_Company_IN"></label>
                 <label class="btn btn_city" id="table_City">City <input type="checkbox" disabled checked
-                    id="table_City_IN"></label>
+                        id="table_City_IN"></label>
             </div>
             <div class="col-md-12 d-flex">
-
-                <label class="btn btn_city" id="table_Email">Email <input type="checkbox" checked
-                        id="table_Email_IN"></label>
-                <label class="btn btn_city" id="table_Phone">Phone <input type="checkbox" checked
-                        id="table_Phone_IN"></label>
-                <label class="btn btn_city" id="table_Company_Size">Company Size <input type="checkbox" checked
-                        id="table_Company_Size_IN"></label>
-                <label class="btn btn_city" id="table_Revenue">Revenue <input type="checkbox" checked
-                        id="table_Revenue_IN"></label>
-                <label class="btn btn_city" id="table_Revenue">Zip Code <input type="checkbox" checked
-                        id=""></label>
-                <label class="btn btn_city" id="table_URL">Website <input type="checkbox" checked
-                        id="table_URL_IN"></label>
+                <label class="btn btn_city" id="table_Email">Email <input type="checkbox" checked id="table_Email_IN"></label>
+                <label class="btn btn_city" id="table_Phone">Phone <input type="checkbox" checked id="table_Phone_IN"></label>
+                <label class="btn btn_city" id="table_Company_Size">Company Size <input type="checkbox" checked id="table_Company_Size_IN"></label>
+                <label class="btn btn_city" id="table_Revenue">Revenue <input type="checkbox" checked id="table_Revenue_IN"></label>
+                <label class="btn btn_city" id="table_Zip_code">Zip Code <input type="checkbox" checked id="table_Zip_code_IN"></label>
+                <label class="btn btn_city" id="table_URL">Website <input type="checkbox" checked id="table_URL_IN"></label>
                 <label class="btn btn_city" id="table_refresh">Default <i class="fas fa-redo-alt"></i></label>
             </div>
 
-            <div class="col-lg-12 col-md-12 col-sm-12 mb-5 mt-4" style="overflow-x:auto;">
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-4" style="overflow-x:auto;">
                 <table class="table table-responsive" id="myTable">
                     <thead>
                         <th>Person Name</th>
@@ -173,178 +181,42 @@
                         <th>Website</th>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Mark Cardy</td>
-                            <td>Owner</td>
-                            <td>mark****@******.com</td>
-                            <td>+16135******</td>
-                            <td>Cardy Law Firm</td>
-                            <td>11 to 15</td>
-                            <td>$6.7 M</td>
-                            <td>Kingston</td>
-                            <td>BD 1245</td>
-                            <td>https://inmydefence.com/</td>
-                        </tr>
-                        <tr>
-                            <td>Luce Morrow</td>
-                            <td>Director</td>
-                            <td>l.morrow@*******.net</td>
-                            <td>+14503******</td>
-                            <td>Me Luce Morrow</td>
-                            <td>2 to 10</td>
-                            <td>$5.1 M</td>
-                            <td>Quebec</td>
-                            <td>BD 1245</td>
-                            <td>https://lucemorrownotaire.com/</td>
-                        </tr>
-                        <tr>
-                            <td>Margot Poepjes</td>
-                            <td>Lawyer</td>
-                            <td>mpoepaw@******.com</td>
-                            <td>+1647******</td>
-                            <td>Margot Poepjes Family</td>
-                            <td>11 to 15</td>
-                            <td>$5.2 M</td>
-                            <td>Toronto</td>
-                            <td>BD 1245</td>
-                            <td>https://margotpoepjes.com/</td>
-                        </tr>
-                        <tr>
-                            <td>Ryan McMackin</td>
-                            <td>Lawyer</td>
-                            <td>ryankin44@******.com</td>
-                            <td>+16474******</td>
-                            <td>McMackin Law</td>
-                            <td>10 to 50</td>
-                            <td>$5 M</td>
-                            <td>Bowmanville</td>
-                            <td>BD 1245</td>
-                            <td>https://mcmackinlaw.ca/contact/</td>
-                        </tr>
-                        <tr>
-                            <td>Edith Szilagyi</td>
-                            <td>Founder</td>
-                            <td>edith@*********.ca</td>
-                            <td>+16048******</td>
-                            <td>Nova Law Corporation</td>
-                            <td>2 to 10</td>
-                            <td>$5.1 M</td>
-                            <td>Port Moody</td>
-                            <td>BD 1245</td>
-                            <td>https://novabc.ca/</td>
-                        </tr>
-                        <tr>
-                            <td>Mark McMackin</td>
-                            <td>Partner</td>
-                            <td>mark@*********.ca</td>
-                            <td>+14165******</td>
-                            <td>McMackin Lawyers</td>
-                            <td>10 to 15</td>
-                            <td>$5 M</td>
-                            <td>Toronto</td>
-                            <td>BD 1245</td>
-                            <td>https://mcmackinlawyers.ca/</td>
-                        </tr>
-                        <tr>
-                            <td>Ken Strong</td>
-                            <td>Partner</td>
-                            <td>strong@*********.ca</td>
-                            <td>+15196******</td>
-                            <td>Strong Macdougal</td>
-                            <td>2 to 10</td>
-                            <td>$5 M</td>
-                            <td>Toronto</td>
-                            <td>BD 1245</td>
-                            <td>https://municipallawyers.ca/</td>
-                        </tr>
-                        <tr>
-                            <td>John Watson</td>
-                            <td>Partner</td>
-                            <td>jwatson@*********.com</td>
-                            <td>+15196******</td>
-                            <td>John Watson</td>
-                            <td>11 to 15</td>
-                            <td>$6 M</td>
-                            <td>Toronto</td>
-                            <td>BD 1245</td>
-                            <td>https://nicholsonsmith.com/</td>
-                        </tr>
-                        <tr>
-                            <td>Curtis Rutt</td>
-                            <td>Director</td>
-                            <td>curtis@*********.ca</td>
-                            <td>+17058******</td>
-                            <td>Bulwark Legal Services</td>
-                            <td>11 to 50</td>
-                            <td>$5 M</td>
-                            <td>Orangeville</td>
-                            <td>BD 1245</td>
-                            <td>http://www.bulwarklegal.ca/</td>
-                        </tr>
-                        <tr>
-                            <td>Paula Venegas</td>
-                            <td>Lawyer</td>
-                            <td>paula@*********.com</td>
-                            <td>+16047******</td>
-                            <td>Paula Venegas Law</td>
-                            <td>11 to 50</td>
-                            <td>$5.1 M</td>
-                            <td>Abbotsford</td>
-                            <td>BD 1245</td>
-                            <td>https://paulavenegas.com/</td>
-                        </tr>
-                        <tr>
-                            <td>Richard Campbell</td>
-                            <td>Lawyer</td>
-                            <td>richard@*********.com</td>
-                            <td>+151988******</td>
-                            <td>Campbell Litigation</td>
-                            <td>11 to 50</td>
-                            <td>$5 M</td>
-                            <td>Waterloo</td>
-                            <td>BD 1245</td>
-                            <td>https://petkerlaw.com/</td>
-                        </tr>
-                        <tr>
-                            <td>Carly Hills</td>
-                            <td>Partner</td>
-                            <td>carly@*********.ca</td>
-                            <td>+1519******</td>
-                            <td>PSH Lawyers</td>
-                            <td>11 to 50</td>
-                            <td>$5 M</td>
-                            <td>Cambridge</td>
-                            <td>BD 1245</td>
-                            <td>https://pettittschwarz.com/</td>
-                        </tr>
-                        <tr>
-                            <td>Nicole Druckman</td>
-                            <td>Lawyer</td>
-                            <td>druckman@*********.ca</td>
-                            <td>+1506******</td>
-                            <td>Delehanty Rinzler</td>
-                            <td>11 to 50</td>
-                            <td>$5.3 M</td>
-                            <td>Moncton</td>
-                            <td>BD 1245</td>
-                            <td>https://www.drdlaw.ca/</td>
-                        </tr>
-                        <tr>
-                            <td>Nicholas Robinson</td>
-                            <td>Lawyer</td>
-                            <td>nick@*********.com</td>
-                            <td>+13065******</td>
-                            <td>Robinson Barristers</td>
-                            <td>11 to 50</td>
-                            <td>$5 M</td>
-                            <td>Toronto</td>
-                            <td>BD 1245</td>
-                            <td>https://nprobinson.com/</td>
-                        </tr>
+                        @forelse ($lead_data as $key=> $lead)
+
+
+                        @php
+
+                            $email = explode('@', $lead->email);
+
+                            $email_str = substr($email[0], 0, 3);
+
+                            $domain = explode('.' , $email[1]);
+                            $website = explode('/' , $lead->website);
+
+                        @endphp
+
+                            <tr>
+                                <td>{{$lead->person_name}}</td>
+                                <td>{{$lead->title}}</td>
+                                <td>{{$email_str."****@*****.".$domain[1]}}</td>
+                                <td>{{$lead->phone}}</td>
+                                <td>{{ Str::limit($lead->company_name, 20)}}</td>
+                                <td>{{$lead->company_size}}</td>
+                                <td>{{$lead->revenue}}</td>
+                                <td>{{$lead->city}}</td>
+                                <td>{{$lead->zip_code}}</td>
+                                <td>{{ $website[0]."//"."***.".$domain[1] }}</td>
+                            @empty
+                            <tr>
+                                <td colspan="12" class="text-center">Not Found Any Data.</td>
+                            </tr>
+                        @endforelse
                     </tbody>
                 </table>
             </div>
-
+        </div>
+        <div class="row float-end custom_paginate">
+            <div>{{ $lead_data->links() }}</div>
         </div>
         </div>
 
@@ -384,7 +256,7 @@
                 $('#industry_Name_ID').select2();
             });
 
-            $('#country_Name_ID22').click(function(){
+            $('#country_Name_ID22').click(function () {
                 console.log($('#country_Name_ID2200').val());
 
                 // $.ajax({

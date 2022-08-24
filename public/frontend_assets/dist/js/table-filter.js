@@ -7,6 +7,7 @@ let table_Company_Size = document.getElementById('table_Company_Size');
 let table_Revenue = document.getElementById('table_Revenue');
 let table_City = document.getElementById('table_City');
 let table_URL = document.getElementById('table_URL');
+let table_Zip_code = document.getElementById('table_Zip_code');
 let table_refresh = document.getElementById('table_refresh');
 
 function show_hide_column() {
@@ -196,9 +197,9 @@ table_City.addEventListener('click', function () {
     }
 
 });
-table_URL.addEventListener('click', function () {
+table_Zip_code.addEventListener('click', function () {
 
-    if(document.getElementById("table_URL_IN").checked !== true){
+    if(document.getElementById("table_Zip_code_IN").checked !== true){
         show_hide_column();
         var lastColHeader = Array.prototype.slice.call(document.querySelectorAll('th:nth-child(9)', 'table'), 0); // get the header cell
         var lastColCells = Array.prototype.slice.call(document.querySelectorAll('td:nth-child(9)', 'table'), 0).concat(lastColHeader); // get the column cells, and add header
@@ -209,6 +210,26 @@ table_URL.addEventListener('click', function () {
         show_hide_column();
         var lastColHeader = Array.prototype.slice.call(document.querySelectorAll('th:nth-child(9)', 'table'), 0); // get the header cell
         var lastColCells = Array.prototype.slice.call(document.querySelectorAll('td:nth-child(9)', 'table'), 0).concat(lastColHeader); // get the column cells, and add header
+        lastColCells.forEach(function (cell) { // iterate and hide
+            cell.style.removeProperty('display');
+        });
+    }
+
+});
+
+table_URL.addEventListener('click', function () {
+
+    if(document.getElementById("table_URL_IN").checked !== true){
+        show_hide_column();
+        var lastColHeader = Array.prototype.slice.call(document.querySelectorAll('th:nth-child(10)', 'table'), 0); // get the header cell
+        var lastColCells = Array.prototype.slice.call(document.querySelectorAll('td:nth-child(10)', 'table'), 0).concat(lastColHeader); // get the column cells, and add header
+        lastColCells.forEach(function (cell) { // iterate and hide
+            cell.style.display = 'none';
+        });
+    }else{
+        show_hide_column();
+        var lastColHeader = Array.prototype.slice.call(document.querySelectorAll('th:nth-child(10)', 'table'), 0); // get the header cell
+        var lastColCells = Array.prototype.slice.call(document.querySelectorAll('td:nth-child(10)', 'table'), 0).concat(lastColHeader); // get the column cells, and add header
         lastColCells.forEach(function (cell) { // iterate and hide
             cell.style.removeProperty('display');
         });

@@ -221,15 +221,9 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/flot.html" class="nav-link">
+                                    <a href="{{route('admin.leads.importpage')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Import</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/charts/inline.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Export</p>
+                                        <p>Import & Export</p>
                                     </a>
                                 </li>
                             </ul>
@@ -559,7 +553,7 @@
                         let date = new Date();
                         document.write(date.getFullYear());
 
-                    </script> <a href="#">BDOSC</a>.</strong>
+                    </script> <a href="{{url('/')}}" target="_blank">BDOSC</a>.</strong>
                 All rights reserved.
                 <div class="float-right d-none d-sm-inline-block">
                     <b>Version</b> 1.0

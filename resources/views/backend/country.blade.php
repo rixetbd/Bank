@@ -128,12 +128,12 @@
                         </div>
                     </div>
                     <div class="card-body" style="display: none;">
-                        <form action="{{route('countries.csv.upload')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('CountryCsvUpload')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="my-3">
                                 <div class="input-group">
                                     <div class="custom-file">
-                                      <input type="file" class="custom-file-input" id="exampleInputFile" name="countryCSV">
+                                      <input type="file" class="custom-file-input" id="exampleInputFile" name="CountryCsvUpload">
                                       <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                                     </div>
                                     <div class="input-group-append">
@@ -159,11 +159,12 @@
                             <option value="{{$country->name}}">{{$country->name}}</option>
                         @endforeach
                         </select> --}}
-                        <table id="example100g" class="table table-striped">
+                        <table id="example100" class="table table-striped">
                             <thead>
                                 <tr>
                                     <th>No.</th>
                                     <th>Country</th>
+                                    <th>ISO3</th>
                                     <th>ISO2</th>
                                     <th>Phone Code</th>
                                     <th>Capital</th>
@@ -176,33 +177,66 @@
                                 <tr>
                                     <td>{{$key+1}}</td>
                                     <td>{{$country->name}}</td>
+                                    <td>{{$country->iso3}}</td>
                                     <td>{{$country->iso2}}</td>
                                     <td>{{$country->phonecode}}</td>
                                     <td>{{$country->capital}}</td>
                                     <td>{{$country->region}}</td>
                                     <td>
-                                        <a href="#" class="m-1"><i class="fas fa-edit text-info"></i></a>
-                                        <a href="#" class="m-1"><i class="fas fa-trash text-danger"></i></a>
+                                        <a href="#" class="m-1 edit_modal" data-toggle="modal" data-target="#exampleModalCenter{{$country->id}}">
+                                            <i class="fas fa-edit text-info"></i>
+                                        </a>
+                                        <a href="{{route('admin.country.destroy', $country->id)}}" class="m-1"><i class="fas fa-trash text-danger"></i></a>
+                                    </td>
+                                </tr>
 
-                                    </td>
-                                </tr>
+                                <!-- Modal -->
+                                <div class="modal fade" id="exampleModalCenter{{$country->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalCenterTitle">Edit Country</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form action="{{route('admin.country.update')}}" method="post">
+                                                @csrf
+                                                <div class="my-3">
+                                                    <input type="hidden" class="form-control" name="id" placeholder="Country ID" value="{{$country->id}}">
+                                                    <input type="text" class="form-control" name="name" placeholder="Country Name" value="{{$country->name}}" required>
+                                                </div>
+                                                <div class="my-3 row">
+                                                    <div class="col-6"><input type="text" class="form-control" name="iso2" placeholder="Shortname (ISO2)" required value="{{$country->iso2}}"></div>
+                                                    <div class="col-6"><input type="text" class="form-control" name="iso3" placeholder="Shortname (ISO3)" required value="{{$country->iso3}}"></div>
+                                                </div>
+                                                <div class="my-3">
+                                                    <input type="text" class="form-control" name="phonecode" placeholder="Phone Code" value="{{$country->phonecode}}">
+                                                </div>
+                                                <div class="my-3">
+                                                    <input type="text" class="form-control" name="capital" placeholder="Capital" value="{{$country->capital}}">
+                                                </div>
+                                                <div class="my-3">
+                                                    <input type="text" class="form-control" name="region" placeholder="Region" value="{{$country->region}}">
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    </div>
+                                </div>
+
                                 @endforeach
-                                {{-- @forelse ($all_cities as $key=>$city)
-                                <tr>
-                                    <td>{{ $key+1 }}</td>
-                                    <td>{{ $city->name }}</td>
-                                    {{-- <td>{{ $city->cityToState()->name }}</td> --}}
-                                    {{-- <td>{{DB::table('states')->find($city->state_id)->name}}</td>
-                                    <td>{{ '$city->country_id' }}</td>
-                                    <td>
-                                        <button class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                                @empty
-                                <tr>
-                                    <td colspan="">There are no data.</td>
-                                </tr>
-                                @endforelse --}}
+
+                                {{--  --}}
+
+
+
+                                {{--  --}}
                             </tbody>
                         </table>
 
@@ -228,5 +262,7 @@
         $(function () {
             bsCustomFileInput.init();
         });
+
+
     </script>
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Lead;
 use Illuminate\Http\Request;
 
 class LeadController extends Controller
@@ -14,7 +15,10 @@ class LeadController extends Controller
      */
     public function index()
     {
-        return view('backend.leads');
+        $lead_data = Lead::paginate(200);
+        return view('backend.leads',[
+            'lead_data'=>$lead_data,
+        ]);
     }
 
     /**
@@ -82,4 +86,10 @@ class LeadController extends Controller
     {
         //
     }
+
+    public function importpage()
+    {
+        return view('backend.leadimport');
+    }
+
 }
