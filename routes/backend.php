@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\LeadController;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CSV\CsvUploadController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -17,9 +18,17 @@ Route::middleware('auth')->group(function(){
 
     });
 
+    Route::controller(UserController::class)->group(function(){
+        Route::get('/admin/user/all', 'index')->name('admin.user.all');
+        Route::post('/admin/user/create', 'create')->name('admin.user.create');
+        Route::post('/admin/user/update', 'update')->name('admin.user.update');
+        Route::get('/admin/user/destroy/{id}', 'destroy')->name('admin.user.destroy');
+    });
+
     Route::controller(LeadController::class)->group(function(){
 
         Route::get('/admin/leads', 'index')->name('admin.leads.index');
+        Route::get('/admin/leads/delete/{id}', 'destroy')->name('admin.leads.single.delete');
         Route::get('/admin/leads/importpage', 'importpage')->name('admin.leads.importpage');
 
     });

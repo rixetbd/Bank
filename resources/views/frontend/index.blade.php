@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="{{asset('frontend_assets')}}/dist/css/mainstyle.css">
 
     <style>
+        .row{width: 100%;}
+        a{text-decoration: none;}
         #myTable tr td:nth-child(1),
         #myTable tr td:nth-child(3),
         #myTable tr td:nth-child(5) {
@@ -184,28 +186,18 @@
                         @forelse ($lead_data as $key=> $lead)
 
 
-                        @php
-
-                            $email = explode('@', $lead->email);
-
-                            $email_str = substr($email[0], 0, 3);
-
-                            $domain = explode('.' , $email[1]);
-                            $website = explode('/' , $lead->website);
-
-                        @endphp
 
                             <tr>
                                 <td>{{$lead->person_name}}</td>
                                 <td>{{$lead->title}}</td>
-                                <td>{{$email_str."****@*****.".$domain[1]}}</td>
+                                <td>{{Str::substr($lead->email, 0, 3)."****@*****".Str::substr($lead->email, -5)}}</td>
                                 <td>{{$lead->phone}}</td>
                                 <td>{{ Str::limit($lead->company_name, 20)}}</td>
                                 <td>{{$lead->company_size}}</td>
                                 <td>{{$lead->revenue}}</td>
                                 <td>{{$lead->city}}</td>
                                 <td>{{$lead->zip_code}}</td>
-                                <td>{{ $website[0]."//"."***.".$domain[1] }}</td>
+                                <td>{{Str::substr($lead->website, 0, 10)."***.".Str::substr($lead->website, -3) }}</td>
                             @empty
                             <tr>
                                 <td colspan="12" class="text-center">Not Found Any Data.</td>
@@ -215,11 +207,10 @@
                 </table>
             </div>
         </div>
-        <div class="row float-end custom_paginate">
-            <div>{{ $lead_data->links() }}</div>
-        </div>
-        </div>
+        <div class="float-end custom_paginate col-12">{{ $lead_data->links() }}</div></div>
+    </section>
 
+        @extends('frontend.footer')
 
 
 

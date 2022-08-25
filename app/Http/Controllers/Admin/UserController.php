@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
-use App\Models\Lead;
+use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use Illuminate\Support\Facades\Hash;
 
-class LeadController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +19,9 @@ class LeadController extends Controller
      */
     public function index()
     {
-        $lead_data = Lead::paginate(200);
-        return view('backend.leads',[
-            'lead_data'=>$lead_data,
+        $all_user = User::where('role', '!=' ,'SuperAdmin')->where('id', '!=' , Auth::id())->orderBy('created_at', 'desc')->get();
+        return view('backend.users.all',[
+            'all_user'=>$all_user,
         ]);
     }
 
@@ -27,9 +30,24 @@ class LeadController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $request->validate([
+            'name'=> 'required',
+            'email'=> 'required',
+            'role'=> 'required',
+            'password'=> 'required',
+        ]);
+
+        User::insert([
+            'name'=> $request->name,
+            'email'=> $request->email,
+            'role'=> $request->role,
+            'password'=> Hash::make($request->password),
+            'created_at'=> Carbon::now(),
+        ]);
+
+        return back();
     }
 
     /**
@@ -72,9 +90,23 @@ class LeadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $request->validate([
+            'name'=> 'required',
+            'email'=> 'required',
+            'role'=> 'required',
+            'password'=> 'required',
+        ]);
+
+        User::where('id', $request->id)->update([
+            'name'=> $request->name,
+            'email'=> $request->email,
+            'role'=> $request->role,
+            'password'=> Hash::make($request->password),
+        ]);
+
+        return back();
     }
 
     /**
@@ -85,14 +117,7 @@ class LeadController extends Controller
      */
     public function destroy($id)
     {
-        Lead::find(Crypt::decrypt($id))->delete();
+        User::find(Crypt::decrypt($id))->delete();
         return back();
     }
-
-    public function importpage()
-    {
-        return view('backend.leadimport');
-    }
-
-
 }

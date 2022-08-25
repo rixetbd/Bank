@@ -34,7 +34,7 @@ class LeadsImport implements ToModel
         $source_link2 = ($row[12] != ''? $row[12] : "N/A");
 
         $leads = new Lead([
-            'person_name' => $row[0],
+            'person_name' => $person_name,
             'title' => $title,
             'email' => $email,
             'phone' => $phone,

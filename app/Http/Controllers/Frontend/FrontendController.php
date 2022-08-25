@@ -17,8 +17,8 @@ class FrontendController extends Controller
     public function index()
     {
         $all_countries = Country::all();
-        $lead_data = Lead::paginate(200);
-        // $all_cities = 
+        $lead_data = Lead::simplePaginate(200);
+        // $all_cities =
         return view('frontend.index',[
             'all_countries'=>$all_countries,
             'lead_data'=>$lead_data,

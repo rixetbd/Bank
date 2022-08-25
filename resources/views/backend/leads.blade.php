@@ -65,20 +65,23 @@
                         <td>{{$key+1}}</td>
                         <td>{{$lead->person_name}}</td>
                         <td>{{$lead->title}}</td>
-                        <td>{{$lead->email}}</td>
+                        <td>{{Str::substr($lead->email, 0, 3)."****@*****".Str::substr($lead->email, -5)}}</td>
                         <td>{{$lead->phone}}</td>
                         <td>{{$lead->company_name}}</td>
                         <td>{{$lead->industry}}</td>
                         <td>{{$lead->revenue}}</td>
                         <td>{{$lead->city}}</td>
                         <td>
-                            <a href="{{$lead->website}}" class="btn btn-sm btn-success" target="_blank" title="Website"><i class="fas fa-globe text-dark"></i></a>
-                            <a href="{{$lead->source_link}}" class="btn btn-sm btn-primary" target="_blank" title="Links"><i class="fas fa-link"></i></a>
-                            <a href="{{$lead->source_link2}}" class="btn btn-sm btn-info" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                            {{-- <a href="{{$lead->website}}" class="btn btn-sm btn-success" target="_blank" title="Website"><i class="fas fa-globe text-dark"></i></a> --}}
+                            {{-- <a href="{{$lead->source_link}}" class="btn btn-sm btn-primary" target="_blank" title="Links"><i class="fas fa-link"></i></a> --}}
+                            {{-- <a href="{{$lead->source_link2}}" class="btn btn-sm btn-info" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a> --}}
+                            <a href="#" class="btn btn-sm btn-success" target="_blank" title="Website"><i class="fas fa-globe text-dark"></i></a>
+                            <a href="#" class="btn btn-sm btn-primary" target="_blank" title="Links"><i class="fas fa-link"></i></a>
+                            <a href="#" class="btn btn-sm btn-info" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
                         </td>
                         <td>
                             <a href="#" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
-                            <a href="#" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
+                            <a href="{{route('admin.leads.single.delete', Crypt::encrypt($lead->id))}}" class="btn btn-sm btn-danger"><i class="fas fa-trash"></i></a>
                         </td>
                     @empty
                       <tr>

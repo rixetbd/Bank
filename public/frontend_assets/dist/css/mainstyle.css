@@ -39,9 +39,9 @@ body {
     display: inline-block;
     justify-content: space-between;
     /* box-shadow: 0 0 10px 0 #ddd; */
-    border-radius: 2px;
-    border: 1px solid #dbdbdb;
-    padding: 5px 15px;
+    border-radius: 2px !important;
+    border: 1px solid #dbdbdb !important;
+    padding: 5px 15px !important;
     margin: 10px 10px 0 0;
 }
 
