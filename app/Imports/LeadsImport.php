@@ -29,9 +29,10 @@ class LeadsImport implements ToModel
         $revenue = ($row[7] != ''? $row[7] : "N/A");
         $zip_code = ($row[8] != ''? $row[8] : "N/A");
         $city = ($row[9] != ''? $row[9] : "N/A");
-        $website = ($row[10] != ''? $row[10] : "N/A");
-        $source_link = ($row[11] != ''? $row[11] : "N/A");
-        $source_link2 = ($row[12] != ''? $row[12] : "N/A");
+        $country = ($row[10] != ''? $row[10] : "N/A");
+        $website = ($row[11] != ''? $row[11] : "N/A");
+        $source_link = ($row[12] != ''? $row[12] : "N/A");
+        $source_link2 = ($row[13] != ''? $row[13] : "N/A");
 
         $leads = new Lead([
             'person_name' => $person_name,
@@ -44,6 +45,7 @@ class LeadsImport implements ToModel
             'revenue' => $revenue,
             'zip_code' => $zip_code,
             'city' => $city,
+            'country' => $country,
             'website' => $website,
             'source_link' => $source_link,
             'source_link2' => $source_link2,

@@ -59,7 +59,7 @@
         .select2-container--default .select2-selection--single .select2-selection__arrow {
             right: 5px;
         }
-
+        #myTable_filter,
         #myTable_length {
             display: none !important;
         }

@@ -25,6 +25,7 @@ class CreateLeadsTable extends Migration
             $table->string('revenue')->default('N/A');
             $table->string('zip_code')->nullable();
             $table->string('city')->default('N/A');
+            $table->string('country')->default('N/A');
             $table->longText('website')->default('N/A');
             $table->longText('source_link')->default('N/A');
             $table->longText('source_link2')->default('N/A');
