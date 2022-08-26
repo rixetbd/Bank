@@ -2,14 +2,11 @@
 
 namespace App\Http\Controllers\Frontend;
 
-use App\Models\Lead;
-use App\Models\Country;
 use App\Http\Controllers\Controller;
 use App\Models\City;
-use App\Models\Industry;
 use Illuminate\Http\Request;
 
-class FrontendController extends Controller
+class SearchController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,17 +15,7 @@ class FrontendController extends Controller
      */
     public function index()
     {
-        $all_countries = Country::all();
-        $all_city = City::orderby('name', 'asc')->get();
-        $all_industry = Industry::orderby('name', 'asc')->get();
-        $lead_data = Lead::simplePaginate(200);
-        // $all_cities =
-        return view('frontend.index',[
-            'all_countries'=>$all_countries,
-            'lead_data'=>$lead_data,
-            'all_city'=>$all_city,
-            'all_industry'=>$all_industry,
-        ]);
+        //
     }
 
     /**
@@ -97,9 +84,17 @@ class FrontendController extends Controller
         //
     }
 
-    public function getCityName()
+    public function search(Request $request)
     {
 
-    }
+        $cities="";
 
+        $all_cities = City::where( 'country_id' , $request->country)->get();
+        foreach ($all_cities as $city) {
+            $cities .= '<option value="'.$city->id.'">'.$city->name.'</option>';
+        }
+
+        echo $cities;
+
+    }
 }

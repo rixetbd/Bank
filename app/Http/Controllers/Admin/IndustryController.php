@@ -2,15 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
-use App\Models\User;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Crypt;
-use Illuminate\Support\Facades\Hash;
+use App\Models\Industry;
+use Illuminate\Support\Carbon;
 
-class UserController extends Controller
+class IndustryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,9 +16,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        $all_user = User::where('role', '!=' ,'SuperAdmin')->where('id', '!=' , Auth::id())->orderBy('created_at', 'desc')->get();
-        return view('backend.users.all',[
-            'all_user'=>$all_user,
+        $all_industry = Industry::orderBy('name', 'asc')->get();
+        return view('backend.industry',[
+            'all_industry'=>$all_industry,
         ]);
     }
 
@@ -32,19 +29,14 @@ class UserController extends Controller
      */
     public function create(Request $request)
     {
+
         $request->validate([
-            'name'=> 'required',
-            'email'=> 'required',
-            'role'=> 'required',
-            'password'=> 'required',
+            'name'=>'required'
         ]);
 
-        User::insert([
-            'name'=> $request->name,
-            'email'=> $request->email,
-            'role'=> $request->role,
-            'password'=> Hash::make($request->password),
-            'created_at'=> Carbon::now(),
+        Industry::insert([
+            'name'=>$request->name,
+            'created_at'=>Carbon::now(),
         ]);
 
         return back();
@@ -93,22 +85,12 @@ class UserController extends Controller
     public function update(Request $request)
     {
         $request->validate([
-            'name'=> 'required',
-            'email'=> 'required',
-            'role'=> 'required',
+            'name'=>'required'
         ]);
 
-        User::where('id', $request->id)->update([
-            'name'=> $request->name,
-            'email'=> $request->email,
-            'role'=> $request->role,
+        Industry::where('id', $request->id)->update([
+            'name'=>$request->name,
         ]);
-
-        if ($request->password != " ") {
-            User::where('id', $request->id)->update([
-                'password'=> Hash::make($request->password),
-            ]);
-        }
 
         return back();
     }
@@ -121,7 +103,7 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        User::find(Crypt::decrypt($id))->delete();
+        Industry::find($id)->delete();
         return back();
     }
 }

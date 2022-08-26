@@ -74,18 +74,21 @@
                         </div>
                     </div>
                     <div class="card-body" style="display: none;">
-                        <form action="" method="post">
+                        <form action="{{route('admin.state.create')}}" method="post">
                             @csrf
                             <div class="my-3">
-                                <select name="" id="" class="form-control">
+                                <label for="country_id">Select Country</label>
+                                <select name="country_id" class="form-control">
                                     <option value="">-- Select a country</option>
                                     @foreach ($all_countries as $country)
-                                        <option value="{{$country->name}}">{{$country->name}}</option>
+                                        <option value="{{$country->id}}">{{$country->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="my-3">
-                                <input type="text" class="form-control" name="" placeholder="State Name">
+                                <label for="name">State</label>
+                                <textarea class="form-control" name="name" placeholder="State Name"></textarea>
+                                <small class="mt-2">* Use commas to separate multiple state</small>
                             </div>
                             <button type="submit" class="btn btn-primary">Insert</button>
                         </form>
@@ -101,18 +104,27 @@
                         </div>
                     </div>
                     <div class="card-body" style="display: none;">
-                        <form action="" method="post">
+                        <form action="{{route('admin.city.create')}}" method="post">
                             @csrf
                             <div class="my-3">
-                                <select name="" id="" class="form-control">
+                                <select name="country_id" id="" class="form-control">
                                     <option value="">-- Select a country</option>
                                     @foreach ($all_countries as $country)
-                                        <option value="{{$country->name}}">{{$country->name}}</option>
+                                        <option value="{{$country->id}}">{{$country->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="my-3">
-                                <input type="text" class="form-control" name="" placeholder="City Name">
+                                <select name="state_id" class="form-control">
+                                    <option value="">-- Select a state</option>
+                                    @foreach ($all_state as $state)
+                                        <option value="{{$state->id}}">{{$state->name}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="my-3">
+                                <textarea class="form-control" name="name" placeholder="City Name"></textarea>
+                                <small class="mt-2">* Use commas to separate multiple cities</small>
                             </div>
                             <button type="submit" class="btn btn-primary">Insert</button>
                         </form>

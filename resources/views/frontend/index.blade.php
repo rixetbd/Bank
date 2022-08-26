@@ -1,3 +1,4 @@
+@extends('frontend.master')
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,8 +20,14 @@
     <link rel="stylesheet" href="{{asset('frontend_assets')}}/dist/css/mainstyle.css">
 
     <style>
-        .row{width: 100%;}
-        a{text-decoration: none;}
+        .row {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
         #myTable tr td:nth-child(1),
         #myTable tr td:nth-child(3),
         #myTable tr td:nth-child(5) {
@@ -53,15 +60,19 @@
             right: 5px;
         }
 
-        #myTable_length{
+        #myTable_length {
             display: none !important;
         }
 
-        .dataTables_info,.dataTables_paginate{display: none;}
+        .dataTables_info,
+        .dataTables_paginate {
+            display: none;
+        }
 
         @media only screen and (max-width: 600px) {
+
             #myTable_length,
-            #myTable_filter{
+            #myTable_filter {
                 display: none !important;
             }
         }
@@ -77,14 +88,13 @@
                 <h4>Filters</h4>
                 <div class="col-12 search_div" id="country_Name_Box">
                     <label for="" class="w-100">Country Name <i class="fa-solid fa-angle-down CONCON1"></i></label>
-                    {{-- <select class="form-control" id="country_Name_ID"></select> --}}
-                    <div class="ui fluid search selection dropdown" id="country_Name_ID22">
-                        <input type="hidden" name="country" id="country_Name_ID2200">
+                    <div class="ui fluid search selection dropdown" id="country_Name">
+                        <input type="hidden" name="country" id="country_Name_Input">
                         <i class="dropdown icon"></i>
                         <div class="default text">Select Country</div>
                         <div class="menu">
                             @foreach ($all_countries as $country)
-                            <div class="item" data-value="{{$country->name}}"><i
+                            <div class="item" data-value="{{$country->id}}"><i
                                     class="{{Str::lower($country->iso2)}} flag"></i>{{$country->name}}</div>
                             @endforeach
                         </div>
@@ -92,35 +102,22 @@
                 </div>
                 <div class="col-12 search_div" id="">
                     <label for="" class="w-100">City Name <i class="fa-solid fa-angle-down CONCON2"></i></label>
-                    {{-- <select class="form-control" id="state_Name_ID"></select> --}}
-
-
-                    <select name="states" class="ui fluid search selection dropdown" multiple="" id="state_Name_ID22">
+                    <select name="states" class="ui fluid search dropdown selection" multiple="" id="city_Name">
                         <option value="">All Cities</option>
-                        {{-- @foreach ($all_cities as $city)
-                            <option value="{{$city->name}}">{{$city->name}}</option>
-                        @endforeach --}}
+                        @foreach ($all_city as $city)
+                        <option value="{{$city->id}}">{{$city->name}}</option>
+                        @endforeach
                     </select>
-
-
                 </div>
 
                 <div class="col-12 search_div" id="">
                     <label for="" class="w-100">Industry Name <i class="fa-solid fa-angle-down CONCON3"></i></label>
-                    {{-- <select class="form-control" id="industry_Name_ID"></select> --}}
-
-                    <div class="ui fluid search selection dropdown" id="industry_Name_ID22">
-                        <input type="hidden" name="country">
-                        <i class="dropdown icon"></i>
-                        <div class="default text">Select Industry</div>
-                        <div class="menu">
-                            <div class="item" data-value="af"><i class="af flag"></i>Afghanistan</div>
-                            <div class="item" data-value="ax"><i class="ax flag"></i>Aland Islands</div>
-                            <div class="item" data-value="al"><i class="al flag"></i>Albania</div>
-                            <div class="item" data-value="dz"><i class="dz flag"></i>Algeria</div>
-                            <div class="item" data-value="as"><i class="as flag"></i>American Samoa</div>
-                        </div>
-                    </div>
+                    <select name="states" class="ui fluid search dropdown selection" multiple="" id="industry_Name">
+                        <option value="">All Cities</option>
+                        @foreach ($all_industry as $industry)
+                        <option value="{{$industry->id}}">{{$industry->name}}</option>
+                        @endforeach
+                    </select>
 
                 </div>
                 <button class="btn btn_city" id="filter">Filter</button>
@@ -159,12 +156,18 @@
                         id="table_City_IN"></label>
             </div>
             <div class="col-md-12 d-flex">
-                <label class="btn btn_city" id="table_Email">Email <input type="checkbox" checked id="table_Email_IN"></label>
-                <label class="btn btn_city" id="table_Phone">Phone <input type="checkbox" checked id="table_Phone_IN"></label>
-                <label class="btn btn_city" id="table_Company_Size">Company Size <input type="checkbox" checked id="table_Company_Size_IN"></label>
-                <label class="btn btn_city" id="table_Revenue">Revenue <input type="checkbox" checked id="table_Revenue_IN"></label>
-                <label class="btn btn_city" id="table_Zip_code">Zip Code <input type="checkbox" checked id="table_Zip_code_IN"></label>
-                <label class="btn btn_city" id="table_URL">Website <input type="checkbox" checked id="table_URL_IN"></label>
+                <label class="btn btn_city" id="table_Email">Email <input type="checkbox" checked
+                        id="table_Email_IN"></label>
+                <label class="btn btn_city" id="table_Phone">Phone <input type="checkbox" checked
+                        id="table_Phone_IN"></label>
+                <label class="btn btn_city" id="table_Company_Size">Company Size <input type="checkbox" checked
+                        id="table_Company_Size_IN"></label>
+                <label class="btn btn_city" id="table_Revenue">Revenue <input type="checkbox" checked
+                        id="table_Revenue_IN"></label>
+                <label class="btn btn_city" id="table_Zip_code">Zip Code <input type="checkbox" checked
+                        id="table_Zip_code_IN"></label>
+                <label class="btn btn_city" id="table_URL">Website <input type="checkbox" checked
+                        id="table_URL_IN"></label>
                 <label class="btn btn_city" id="table_refresh">Default <i class="fas fa-redo-alt"></i></label>
             </div>
 
@@ -187,82 +190,110 @@
 
 
 
-                            <tr>
-                                <td>{{$lead->person_name}}</td>
-                                <td>{{$lead->title}}</td>
-                                <td>{{Str::substr($lead->email, 0, 3)."****@*****".Str::substr($lead->email, -5)}}</td>
-                                <td>{{$lead->phone}}</td>
-                                <td>{{ Str::limit($lead->company_name, 20)}}</td>
-                                <td>{{$lead->company_size}}</td>
-                                <td>{{$lead->revenue}}</td>
-                                <td>{{$lead->city}}</td>
-                                <td>{{$lead->zip_code}}</td>
-                                <td>{{Str::substr($lead->website, 0, 10)."***.".Str::substr($lead->website, -3) }}</td>
+                        <tr>
+                            <td>{{$lead->person_name}}</td>
+                            <td>{{$lead->title}}</td>
+                            <td>{{Str::substr($lead->email, 0, 3)."****@*****".Str::substr($lead->email, -5)}}</td>
+                            <td>{{$lead->phone}}</td>
+                            <td>{{ Str::limit($lead->company_name, 20)}}</td>
+                            <td>{{$lead->company_size}}</td>
+                            <td>{{$lead->revenue}}</td>
+                            <td>{{$lead->city}}</td>
+                            <td>{{$lead->zip_code}}</td>
+                            <td>{{Str::substr($lead->website, 0, 10)."***.".Str::substr($lead->website, -3) }}</td>
                             @empty
-                            <tr>
-                                <td colspan="12" class="text-center">Not Found Any Data.</td>
-                            </tr>
+                        <tr>
+                            <td colspan="12" class="text-center">Not Found Any Data.</td>
+                        </tr>
                         @endforelse
                     </tbody>
                 </table>
             </div>
         </div>
-        <div class="float-end custom_paginate col-12">{{ $lead_data->links() }}</div></div>
+        <div class="float-end custom_paginate col-12">{{ $lead_data->links() }}</div>
+        </div>
     </section>
 
-        @extends('frontend.footer')
+    @extends('frontend.footer')
 
 
 
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-        {{-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script> --}}
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.js"></script> --}}
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
-        <script src="{{asset('frontend_assets')}}/dist/semantic/semantic.js"></script>
+    <script src="{{asset('frontend_assets')}}/dist/semantic/semantic.js"></script>
 
-        <script src="{{asset('frontend_assets')}}/dist/js/variable.js"></script>
-        <!-- <script src="js/all_city.js"></script> -->
-        <!-- <script src="js/city_loop.js"></script> -->
-        <script src="{{asset('frontend_assets')}}/dist/js/table-filter.js"></script>
-        <!-- <script src="js/search.js"></script> -->
+    <script src="{{asset('frontend_assets')}}/dist/js/variable.js"></script>
+    <!-- <script src="js/all_city.js"></script> -->
+    <!-- <script src="js/city_loop.js"></script> -->
+    <script src="{{asset('frontend_assets')}}/dist/js/table-filter.js"></script>
+    <!-- <script src="js/search.js"></script> -->
 
-        <script>
-            $('#country_Name_ID22').dropdown();
-            $('#state_Name_ID22').dropdown();
-            $('#industry_Name_ID22').dropdown();
+    <script>
+        $('#country_Name').dropdown();
+        $('#city_Name').dropdown();
+        $('#industry_Name').dropdown();
 
-            //  $('#country_Name_ID22').dropdown({
-            //     fullTextSearch: true
+        //  $('#country_Name_ID22').dropdown({
+        //     fullTextSearch: true
+        // });
+
+        $(document).ready(function () {
+            $('#myTable').DataTable();
+        });
+        $(document).ready(function () {
+            $('#country_Name_ID').select2();
+            $('#state_Name_ID').select2();
+            $('#industry_Name_ID').select2();
+        });
+
+        $('#country_Name').change(function () {
+            // console.log($('#country_Name_Input').val());
+
+            // $.ajax({
+            //     type:'POST',
+            //     url:'/getCityName',
+            //     data:'name' = $('#country_Name_ID2200').val(),
+            //     success:function(data) {
+            //         // $("#msg").html(data.msg);
+            //         console.log(data);
+            //     }
             // });
 
-            $(document).ready(function () {
-                $('#myTable').DataTable();
+        })
+
+    </script>
+
+
+    <script>
+        $('#country_Name').change(function () {
+            
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
             });
-            $(document).ready(function () {
-                $('#country_Name_ID').select2();
-                $('#state_Name_ID').select2();
-                $('#industry_Name_ID').select2();
+
+            $country = $('#country_Name_Input').val();
+            console.log($country);
+            $.ajax({
+                type: 'POST',
+                url: '/getcities',
+                data: {
+                    'country': $country
+                },
+                success: function (data) {
+                    console.log(data);
+                    // $('#city_Name').html(data);
+                }
             });
+        })
 
-            $('#country_Name_ID22').click(function () {
-                console.log($('#country_Name_ID2200').val());
-
-                // $.ajax({
-                //     type:'POST',
-                //     url:'/getCityName',
-                //     data:'name' = $('#country_Name_ID2200').val(),
-                //     success:function(data) {
-                //         // $("#msg").html(data.msg);
-                //         console.log(data);
-                //     }
-                // });
-
-            })
-
-        </script>
+    </script>
 
 </body>
 

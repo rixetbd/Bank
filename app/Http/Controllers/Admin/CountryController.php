@@ -4,8 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\City;
 use App\Models\Country;
+use App\Models\Industry;
+use App\Models\State;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 
 class CountryController extends Controller
@@ -19,10 +24,11 @@ class CountryController extends Controller
     {
 
         $all_countries = Country::orderby('name', 'asc')->get();
+        $all_state = State::orderby('name', 'asc')->get();
         // $all_cities = DB::table('cities')->get();
         return view('backend.country',[
             'all_countries'=>$all_countries,
-            // 'all_cities'=>$all_cities,
+            'all_state'=>$all_state,
         ]);
     }
 
@@ -116,6 +122,49 @@ class CountryController extends Controller
     public function destroy($id)
     {
         Country::find($id)->delete();
+        return back();
+    }
+
+
+
+    public function stateCreate(Request $request)
+    {
+        $request->validate([
+            'country_id'=>'required',
+            'name'=>'required'
+        ]);
+
+        $state = explode("," , $request->name);
+
+        for ($i=0; $i < count($state); $i++) {
+            State::insert([
+                'country_id'=>$request->country_id,
+                'name'=>$state[$i],
+                'created_at'=>Carbon::now(),
+            ]);
+        }
+
+        return back();
+    }
+
+    public function cityCreate(Request $request)
+    {
+        $request->validate([
+            'country_id'=>'required',
+            'state_id'=>'required',
+            'name'=>'required'
+        ]);
+
+        $name = explode("," , $request->name);
+
+        for ($i=0; $i < count($name); $i++) {
+            City::insert([
+                'country_id'=>$request->country_id,
+                'state_id'=>$request->state_id,
+                'name'=>$name[$i],
+                'created_at'=>Carbon::now(),
+            ]);
+        }
         return back();
     }
 

@@ -279,6 +279,16 @@
                             </ul>
                         </li>
 
+                        <li class="nav-item">
+                            <a href="{{route('admin.industry.index')}}" class="nav-link  {{($currentRouteName == "admin.industry.index"?"active":" ")}}">
+                                <i class="nav-icon fas fa-user"></i>
+                                <p>
+                                    Industry
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                        </li>
+
                     </ul>
                 </nav>
                 <!-- /.sidebar-menu -->

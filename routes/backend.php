@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CountryController;
+use App\Http\Controllers\Admin\IndustryController;
 use App\Http\Controllers\Admin\LeadController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CSV\CsvUploadController;
@@ -40,7 +41,15 @@ Route::middleware('auth')->group(function(){
         Route::post('/admin/countries/update', 'update')->name('admin.country.update');
         Route::get('/admin/countries/destroy/{id}', 'destroy')->name('admin.country.destroy');
 
+        Route::post('/admin/state/create', 'stateCreate')->name('admin.state.create');
+        Route::post('/admin/city/create', 'cityCreate')->name('admin.city.create');
     });
 
+    Route::controller(IndustryController::class)->group(function(){
+        Route::get('/admin/industry', 'index')->name('admin.industry.index');
+        Route::post('/admin/industry/create', 'create')->name('admin.industry.create');
+        Route::post('/admin/industry/update', 'update')->name('admin.industry.update');
+        Route::get('/admin/industry/destroy/{id}', 'destroy')->name('admin.industry.destroy');
+    });
 
 });
