@@ -85,7 +85,7 @@
     <section class="container">
         <div class="row my-3">
             <div class="col-xs-12 col-sm-12 col-md-3 mt-3">
-                <h4>Filters</h4>
+                <h4>Search Specific Leads</h4>
                 <div class="col-12 search_div" id="country_Name_Box">
                     <label for="" class="w-100">Country Name <i class="fa-solid fa-angle-down CONCON1"></i></label>
                     <div class="ui fluid search selection dropdown" id="country_Name">
@@ -251,27 +251,12 @@
             $('#industry_Name_ID').select2();
         });
 
-        $('#country_Name').change(function () {
-            // console.log($('#country_Name_Input').val());
-
-            // $.ajax({
-            //     type:'POST',
-            //     url:'/getCityName',
-            //     data:'name' = $('#country_Name_ID2200').val(),
-            //     success:function(data) {
-            //         // $("#msg").html(data.msg);
-            //         console.log(data);
-            //     }
-            // });
-
-        })
-
     </script>
 
 
     <script>
         $('#country_Name').change(function () {
-            
+
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -279,6 +264,32 @@
             });
 
             $country = $('#country_Name_Input').val();
+            // console.log($country);
+            $.ajax({
+                type: 'POST',
+                url: '/getcities',
+                data: {
+                    'country': $country
+                },
+                success: function (data) {
+                    // console.log(data.cities);
+                    $('#city_Name').html(data.cities);
+                }
+            });
+        })
+
+    </script>
+
+    <script>
+        $('#city_Name').change(function () {
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $country = $('#city_Name').val();
             console.log($country);
             $.ajax({
                 type: 'POST',
@@ -287,8 +298,34 @@
                     'country': $country
                 },
                 success: function (data) {
-                    console.log(data);
-                    // $('#city_Name').html(data);
+                    // console.log(data.cities);
+                    $('#city_Name').html(data.cities);
+                }
+            });
+        })
+
+    </script>
+
+    <script>
+        $('#industry_Name').change(function () {
+
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $country = $('#industry_Name').val();
+            console.log($country);
+            $.ajax({
+                type: 'POST',
+                url: '/getcities',
+                data: {
+                    'country': $country
+                },
+                success: function (data) {
+                    // console.log(data.cities);
+                    $('#city_Name').html(data.cities);
                 }
             });
         })

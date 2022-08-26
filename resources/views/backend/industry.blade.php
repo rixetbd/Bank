@@ -61,6 +61,8 @@
                                 <tr>
                                     <th>No.</th>
                                     <th>Name</th>
+                                    <th>Slug</th>
+                                    <th>Total Leads</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
@@ -69,6 +71,8 @@
                                 <tr>
                                     <td>{{$key+1}}</td>
                                     <td>{{$industry->name}}</td>
+                                    <td>{{$industry->name}}</td>
+                                    <td>1500+</td>
                                     <td>
                                         <a href="#" class="m-1 edit_modal" data-toggle="modal" data-target="#exampleModalCenter{{$industry->id}}">
                                             <i class="fas fa-edit text-info"></i>

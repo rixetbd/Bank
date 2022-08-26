@@ -65,7 +65,7 @@
                     </div>
                 </div>
 
-                <div class="card card-infos collapsed-card">
+                {{-- <div class="card card-infos collapsed-card">
                     <div class="card-header">
                         <h3 class="card-title">Add State</h3>
                         <div class="card-tools">
@@ -93,7 +93,7 @@
                             <button type="submit" class="btn btn-primary">Insert</button>
                         </form>
                     </div>
-                </div>
+                </div> --}}
 
                 <div class="card card-teals collapsed-card">
                     <div class="card-header">
@@ -114,14 +114,14 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="my-3">
+                            {{-- <div class="my-3">
                                 <select name="state_id" class="form-control">
                                     <option value="">-- Select a state</option>
                                     @foreach ($all_state as $state)
                                         <option value="{{$state->id}}">{{$state->name}}</option>
                                     @endforeach
                                 </select>
-                            </div>
+                            </div> --}}
                             <div class="my-3">
                                 <textarea class="form-control" name="name" placeholder="City Name"></textarea>
                                 <small class="mt-2">* Use commas to separate multiple cities</small>

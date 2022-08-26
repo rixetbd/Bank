@@ -94,7 +94,9 @@ class SearchController extends Controller
             $cities .= '<option value="'.$city->id.'">'.$city->name.'</option>';
         }
 
-        echo $cities;
+        return response()->json([
+            'cities'=>$cities,
+        ]);
 
     }
 }
