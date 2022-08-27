@@ -185,11 +185,8 @@
                         <th>Zip Code</th>
                         <th>Website</th>
                     </thead>
-                    <tbody>
+                    <tbody id="lead_data">
                         @forelse ($lead_data as $key=> $lead)
-
-
-
                         <tr>
                             <td>{{$lead->person_name}}</td>
                             <td>{{$lead->title}}</td>
@@ -227,7 +224,7 @@
 
     <script src="{{asset('frontend_assets')}}/dist/semantic/semantic.js"></script>
 
-    <script src="{{asset('frontend_assets')}}/dist/js/variable.js"></script>
+    {{-- <script src="{{asset('frontend_assets')}}/dist/js/variable.js"></script> --}}
     <!-- <script src="js/all_city.js"></script> -->
     <!-- <script src="js/city_loop.js"></script> -->
     <script src="{{asset('frontend_assets')}}/dist/js/table-filter.js"></script>
@@ -274,6 +271,8 @@
                 success: function (data) {
                     // console.log(data.cities);
                     $('#city_Name').html(data.cities);
+                    // $('#lead_data').html(data.lead_data);
+                    // console.log(data.cities);
                 }
             });
         })
@@ -281,54 +280,54 @@
     </script>
 
     <script>
-        $('#city_Name').change(function () {
+        // $('#city_Name').change(function () {
 
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
+        //     $.ajaxSetup({
+        //         headers: {
+        //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //         }
+        //     });
 
-            $country = $('#city_Name').val();
-            console.log($country);
-            $.ajax({
-                type: 'POST',
-                url: '/getcities',
-                data: {
-                    'country': $country
-                },
-                success: function (data) {
-                    // console.log(data.cities);
-                    $('#city_Name').html(data.cities);
-                }
-            });
-        })
+        //     $country = $('#city_Name').val();
+        //     console.log($country);
+        //     $.ajax({
+        //         type: 'POST',
+        //         url: '/getcities',
+        //         data: {
+        //             'country': $country
+        //         },
+        //         success: function (data) {
+        //             // console.log(data.cities);
+        //             $('#city_Name').html(data.cities);
+        //         }
+        //     });
+        // })
 
     </script>
 
     <script>
-        $('#industry_Name').change(function () {
+        // $('#industry_Name').change(function () {
 
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
+        //     $.ajaxSetup({
+        //         headers: {
+        //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //         }
+        //     });
 
-            $country = $('#industry_Name').val();
-            console.log($country);
-            $.ajax({
-                type: 'POST',
-                url: '/getcities',
-                data: {
-                    'country': $country
-                },
-                success: function (data) {
-                    // console.log(data.cities);
-                    $('#city_Name').html(data.cities);
-                }
-            });
-        })
+        //     $country = $('#industry_Name').val();
+        //     console.log($country);
+        //     $.ajax({
+        //         type: 'POST',
+        //         url: '/getcities',
+        //         data: {
+        //             'country': $country
+        //         },
+        //         success: function (data) {
+        //             // console.log(data.cities);
+        //             // $('#city_Name').html(data.cities);
+        //         }
+        //     });
+        // })
 
     </script>
 

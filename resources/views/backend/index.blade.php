@@ -30,7 +30,7 @@
                     <div class="info-box-content">
                         <span class="info-box-text">Total Leads</span>
                         <span class="info-box-number">
-                            10450
+                            {{$lead_count}}
                             <small>+</small>
                         </span>
                     </div>
@@ -45,7 +45,7 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text">Country</span>
-                        <span class="info-box-number">62</span>
+                        <span class="info-box-number">{{$country_count}}</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -62,7 +62,7 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text">Cities</span>
-                        <span class="info-box-number">760 <small>+</small></span>
+                        <span class="info-box-number">{{$city_count}} <small>+</small></span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>
@@ -75,7 +75,7 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text">Total Members</span>
-                        <span class="info-box-number">2,000</span>
+                        <span class="info-box-number">{{$user_count}}</span>
                     </div>
                     <!-- /.info-box-content -->
                 </div>

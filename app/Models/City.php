@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class City extends Model
 {
     use HasFactory;
+
+    protected $guarded = [];
+
+    function getCountry(){
+        return $this->belongsTo(Country::class);
+        // return $this->where('country_id', 'name')->get();
+    }
 }

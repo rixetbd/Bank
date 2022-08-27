@@ -5,8 +5,9 @@ namespace App\Imports;
 use Illuminate\Support\Carbon;
 use App\Models\Country;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithStartRow;
 
-class CountryImport implements ToModel
+class CountryImport implements ToModel, WithStartRow
 {
     /**
     * @param array $row
@@ -28,5 +29,10 @@ class CountryImport implements ToModel
         Country::where('name', 'name')->delete();
 
         return $country;
+    }
+
+    public function startRow(): int
+    {
+        return 2;
     }
 }

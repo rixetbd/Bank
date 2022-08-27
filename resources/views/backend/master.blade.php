@@ -245,7 +245,7 @@
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/charts/flot.html" class="nav-link">
+                                    <a href="{{route('admin.city.index')}}" class="nav-link {{($currentRouteName == "admin.city.index"?"active":" ")}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>City</p>
                                     </a>

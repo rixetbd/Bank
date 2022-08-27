@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Industry;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 
 class IndustryController extends Controller
 {
@@ -36,6 +37,7 @@ class IndustryController extends Controller
 
         Industry::insert([
             'name'=>$request->name,
+            'slug'=>  Str::lower(str_replace(' ', '-', $request->name)),
             'created_at'=>Carbon::now(),
         ]);
 
@@ -90,6 +92,7 @@ class IndustryController extends Controller
 
         Industry::where('id', $request->id)->update([
             'name'=>$request->name,
+            'slug'=>  Str::lower(str_replace(' ', '-', $request->name)),
         ]);
 
         return back();

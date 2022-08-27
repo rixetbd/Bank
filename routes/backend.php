@@ -42,7 +42,10 @@ Route::middleware('auth')->group(function(){
         Route::get('/admin/countries/destroy/{id}', 'destroy')->name('admin.country.destroy');
 
         Route::post('/admin/state/create', 'stateCreate')->name('admin.state.create');
+        Route::get('/admin/city/index', 'cityIndex')->name('admin.city.index');
         Route::post('/admin/city/create', 'cityCreate')->name('admin.city.create');
+        Route::get('/admin/city/destroy/{id}', 'cityDestroy')->name('admin.city.destroy');
+        Route::post('/admin/city/update', 'cityUpdate')->name('admin.city.update');
     });
 
     Route::controller(IndustryController::class)->group(function(){

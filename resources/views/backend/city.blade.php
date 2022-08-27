@@ -14,12 +14,13 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0">All Country</h1>
+                <h1 class="m-0">All City</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
                     <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
                     <li class="breadcrumb-item active">Countries</li>
+                    <li class="breadcrumb-item active">Cities</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -33,84 +34,51 @@
         <div class="row">
 
             <div class="col-md-4">
-                <div class="card card-success collapsed-card">
-                    <div class="card-header">
-                        <h3 class="card-title">Add Country Name</h3>
-                        <div class="card-tools">
-                            <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="card-body" style="display: none;">
-                        <form action="{{route('admin.countrie.create')}}" method="post">
-                            @csrf
-                            <div class="my-3">
-                                <input type="text" class="form-control" name="name" placeholder="Country Name" required>
-                            </div>
-                            <div class="my-3 row">
-                                <div class="col-6"><input type="text" class="form-control" name="iso2" placeholder="Shortname (ISO2)" required></div>
-                                <div class="col-6"><input type="text" class="form-control" name="iso3" placeholder="Shortname (ISO3)" required></div>
-                            </div>
-                            <div class="my-3">
-                                <input type="text" class="form-control" name="phonecode" placeholder="Phone Code" required>
-                            </div>
-                            <div class="my-3">
-                                <input type="text" class="form-control" name="capital" placeholder="Capital" required>
-                            </div>
-                            <div class="my-3">
-                                <input type="text" class="form-control" name="region" placeholder="Region" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Insert</button>
-                        </form>
-                    </div>
-                </div>
 
-                {{-- <div class="card card-infos collapsed-card">
+                <div class="card card-teals collapsed-card">
                     <div class="card-header">
-                        <h3 class="card-title">Add State</h3>
+                        <h3 class="card-title">Add City</h3>
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
                             </button>
                         </div>
                     </div>
                     <div class="card-body" style="display: none;">
-                        <form action="{{route('admin.state.create')}}" method="post">
+                        <form action="{{route('admin.city.create')}}" method="post">
                             @csrf
                             <div class="my-3">
-                                <label for="country_id">Select Country</label>
-                                <select name="country_id" class="form-control">
+                                <select name="country_id" id="" class="form-control">
                                     <option value="">-- Select a country</option>
                                     @foreach ($all_countries as $country)
                                         <option value="{{$country->id}}">{{$country->name}}</option>
                                     @endforeach
                                 </select>
                             </div>
+
                             <div class="my-3">
-                                <label for="name">State</label>
-                                <textarea class="form-control" name="name" placeholder="State Name"></textarea>
-                                <small class="mt-2">* Use commas to separate multiple state</small>
+                                <textarea class="form-control" name="name" placeholder="City Name"></textarea>
+                                <small class="mt-2">* Use commas to separate multiple cities</small>
                             </div>
                             <button type="submit" class="btn btn-primary">Insert</button>
                         </form>
                     </div>
-                </div> --}}
-
+                </div>
 
                 <div class="card card-teals collapsed-card">
                     <div class="card-header">
-                        <h3 class="card-title">CSV Upload</h3>
+                        <h3 class="card-title">City CSV Upload</h3>
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-plus"></i>
                             </button>
                         </div>
                     </div>
                     <div class="card-body" style="display: none;">
-                        <form action="{{route('CountryCsvUpload')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('CityCsvUpload')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="my-3">
                                 <div class="input-group">
                                     <div class="custom-file">
-                                      <input type="file" class="custom-file-input" id="exampleInputFile" name="CountryCsvUpload">
+                                      <input type="file" class="custom-file-input" id="exampleInputFile" name="CityCsvUpload">
                                       <label class="custom-file-label" for="exampleInputFile">Choose file</label>
                                     </div>
                                     <div class="input-group-append">
@@ -140,62 +108,49 @@
                             <thead>
                                 <tr>
                                     <th>No.</th>
+                                    <th>City Name</th>
+                                    <th>State</th>
                                     <th>Country</th>
-                                    <th>ISO3</th>
-                                    <th>ISO2</th>
-                                    <th>Phone Code</th>
-                                    <th>Capital</th>
-                                    <th>Region</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($all_countries as $key=>$country)
+                                @foreach ($all_cities as $key=>$city)
                                 <tr>
                                     <td>{{$key+1}}</td>
-                                    <td>{{$country->name}}</td>
-                                    <td>{{$country->iso3}}</td>
-                                    <td>{{$country->iso2}}</td>
-                                    <td>{{$country->phonecode}}</td>
-                                    <td>{{$country->capital}}</td>
-                                    <td>{{$country->region}}</td>
+                                    <td>{{$city->name}}</td>
+                                    <td>{{$city->state_name}}</td>
+                                    <td>{{$city->country_id}}</td>
                                     <td>
-                                        <a href="#" class="m-1 edit_modal" data-toggle="modal" data-target="#exampleModalCenter{{$country->id}}">
+                                        <a href="#" class="m-1 edit_modal" data-toggle="modal" data-target="#exampleModalCenter{{$city->id}}">
                                             <i class="fas fa-edit text-info"></i>
                                         </a>
-                                        <a href="{{route('admin.country.destroy', $country->id)}}" class="m-1"><i class="fas fa-trash text-danger"></i></a>
+                                        <a href="{{route('admin.city.destroy', $city->id)}}" class="m-1"><i class="fas fa-trash text-danger"></i></a>
                                     </td>
                                 </tr>
 
                                 <!-- Modal -->
-                                <div class="modal fade" id="exampleModalCenter{{$country->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                <div class="modal fade" id="exampleModalCenter{{$city->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                     <div class="modal-dialog modal-dialog-centered" role="document">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalCenterTitle">Edit Country</h5>
+                                        <h5 class="modal-title" id="exampleModalCenterTitle">Edit city</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form action="{{route('admin.country.update')}}" method="post">
+                                            <form action="{{route('admin.city.update')}}" method="post">
                                                 @csrf
                                                 <div class="my-3">
-                                                    <input type="hidden" class="form-control" name="id" placeholder="Country ID" value="{{$country->id}}">
-                                                    <input type="text" class="form-control" name="name" placeholder="Country Name" value="{{$country->name}}" required>
-                                                </div>
-                                                <div class="my-3 row">
-                                                    <div class="col-6"><input type="text" class="form-control" name="iso2" placeholder="Shortname (ISO2)" required value="{{$country->iso2}}"></div>
-                                                    <div class="col-6"><input type="text" class="form-control" name="iso3" placeholder="Shortname (ISO3)" required value="{{$country->iso3}}"></div>
+                                                    <input type="hidden" class="form-control" name="id" placeholder="city ID" value="{{$city->id}}">
+                                                    <input type="text" class="form-control" name="name" placeholder="city Name" value="{{$city->name}}" required>
                                                 </div>
                                                 <div class="my-3">
-                                                    <input type="text" class="form-control" name="phonecode" placeholder="Phone Code" value="{{$country->phonecode}}">
+                                                    <input type="text" class="form-control" name="state_name" placeholder="Phone Code" value="{{$city->state_name}}">
                                                 </div>
                                                 <div class="my-3">
-                                                    <input type="text" class="form-control" name="capital" placeholder="Capital" value="{{$country->capital}}">
-                                                </div>
-                                                <div class="my-3">
-                                                    <input type="text" class="form-control" name="region" placeholder="Region" value="{{$country->region}}">
+                                                    <input type="text" class="form-control" name="country_id" placeholder="Capital" value="{{$city->country_id}}">
                                                 </div>
                                             </div>
                                             <div class="modal-footer">

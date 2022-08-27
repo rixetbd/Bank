@@ -147,24 +147,56 @@ class CountryController extends Controller
         return back();
     }
 
+    public function cityIndex()
+    {
+        $all_countries = Country::orderby('name', 'asc')->get();
+        $all_cities = City::orderby('name', 'asc')->get();
+        return view('backend.city',[
+            'all_countries'=>$all_countries,
+            'all_cities'=>$all_cities
+        ]);
+    }
+
     public function cityCreate(Request $request)
     {
         $request->validate([
+            'name'=>'required',
             'country_id'=>'required',
-            'state_id'=>'required',
-            'name'=>'required'
         ]);
 
         $name = explode("," , $request->name);
 
         for ($i=0; $i < count($name); $i++) {
             City::insert([
-                'country_id'=>$request->country_id,
-                'state_id'=>$request->state_id,
                 'name'=>$name[$i],
+                'country_id'=>$request->country_id,
                 'created_at'=>Carbon::now(),
             ]);
         }
+        return back();
+    }
+
+    public function cityUpdate(Request $request)
+    {
+        $request->validate([
+            'name'=>'required',
+            'state_name'=>'required',
+            'country_id'=>'required',
+        ]);
+
+        City::where('id', $request->id)->update([
+            'country_id'=>$request->country_id,
+            'state_name'=>$request->state_name,
+            'name'=>$request->name,
+            'created_at'=>Carbon::now(),
+        ]);
+
+        return back();
+    }
+
+    public function cityDestroy($id)
+    {
+        City::find($id)->delete();
         return back();
     }
 

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\City;
+use App\Models\Country;
+use App\Models\Lead;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,11 +21,21 @@ class AdminController extends Controller
     {
 
         $user = Auth::user();
+
+        $country_count = Country::all()->count();
+        $city_count = City::all()->count();
+        $lead_count = Lead::all()->count();
+        $user_count = User::all()->count();
+
         // if($user->role != "Admin"){
         //     return redirect(route('frontend.index'));
         // }else{
             return view('backend.index',[
                 'user'=>$user,
+                'country_count'=>$country_count,
+                'city_count'=>$city_count,
+                'lead_count'=>$lead_count,
+                'user_count'=>$user_count,
             ]);
         // }
 

@@ -5,8 +5,9 @@ namespace App\Imports;
 use Illuminate\Support\Carbon;
 use App\Models\Lead;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithStartRow;
 
-class LeadsImport implements ToModel
+class LeadsImport implements ToModel, WithStartRow
 {
     /**
     * @param array $row
@@ -52,8 +53,10 @@ class LeadsImport implements ToModel
             'created_at'=>Carbon::now(),
         ]);
 
-        Lead::where('person_name', 'PERSON NAME')->delete();
-
         return $leads;
+    }
+    public function startRow(): int
+    {
+        return 2;
     }
 }
