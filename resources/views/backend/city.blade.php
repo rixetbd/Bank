@@ -120,7 +120,7 @@
                                     <td>{{$key+1}}</td>
                                     <td>{{$city->name}}</td>
                                     <td>{{$city->state_name}}</td>
-                                    <td>{{$city->country_id}}</td>
+                                    <td>{{$city->getCountry->name}}</td>
                                     <td>
                                         <a href="#" class="m-1 edit_modal" data-toggle="modal" data-target="#exampleModalCenter{{$city->id}}">
                                             <i class="fas fa-edit text-info"></i>

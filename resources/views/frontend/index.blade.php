@@ -207,7 +207,7 @@
                 </table>
             </div>
         </div>
-        <div class="float-end custom_paginate col-12">{{ $lead_data->links() }}</div>
+        {{-- <div class="float-end custom_paginate col-12">{{ $lead_data->links() }}</div> --}}
         </div>
     </section>
 
@@ -242,6 +242,7 @@
         $(document).ready(function () {
             $('#myTable').DataTable();
         });
+
         $(document).ready(function () {
             $('#country_Name_ID').select2();
             $('#state_Name_ID').select2();
@@ -271,8 +272,8 @@
                 success: function (data) {
                     // console.log(data.cities);
                     $('#city_Name').html(data.cities);
-                    // $('#lead_data').html(data.lead_data);
-                    // console.log(data.cities);
+                    $('#lead_data').html(data.lead_datasearch);
+                    console.log(data.lead_datasearch);
                 }
             });
         })

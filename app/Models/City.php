@@ -12,7 +12,7 @@ class City extends Model
     protected $guarded = [];
 
     function getCountry(){
-        return $this->belongsTo(Country::class);
+        return $this->belongsTo(Country::class, 'country_id');
         // return $this->where('country_id', 'name')->get();
     }
 }

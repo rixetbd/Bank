@@ -97,11 +97,11 @@ class SearchController extends Controller
             $cities .= '<option value="'.$city->id.'">'.$city->name.'</option>';
         }
 
-        $country = Country::find($request->country)->get();
+        $country = Country::find($request->country);
 
-        $lead_dataDB = Lead::where('country', $country->nama)->get();
+        $lead_dataDB = Lead::where('country', "=" , $country->name)->get();
 
-        $lead_datasearch = " ";
+        $lead_datasearch = "";
 
         foreach ($lead_dataDB as $lead) {
             $lead_datasearch .= '<tr><td>'.$lead->person_name.'</td><td>'.$lead->title.'</td><td>'.Str::substr($lead->email, 0, 3).'****@*****'.Str::substr($lead->email, -5).'</td><td>'.$lead->phone.'</td><td>'.Str::limit($lead->company_name, 20).'</td><td>'.$lead->company_size.'</td><td>'.$lead->revenue.'</td><td>'.$lead->city.'</td><td>'.$lead->zip_code.'</td><td>'.Str::substr($lead->website, 0, 10).'***.'.Str::substr($lead->website, -3).'</td></tr>';
@@ -111,12 +111,6 @@ class SearchController extends Controller
             'cities'=>$cities,
             'lead_datasearch'=>$lead_datasearch,
         ]);
-
-
-                        // <tr>
-                        //     <td colspan="12" class="text-center">Not Found Any Data.</td>
-                        // </tr>
-
 
     }
 }
