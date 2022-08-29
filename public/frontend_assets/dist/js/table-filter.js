@@ -11,7 +11,8 @@ let table_Zip_code = document.getElementById('table_Zip_code');
 let table_refresh = document.getElementById('table_refresh');
 
 function show_hide_column() {
-    var tbl = document.getElementById('myTable');
+    // var tbl = document.getElementById('myTable');
+    var tbl = document.getElementById('myTableSimple');
     var rows = tbl.getElementsByTagName('tr');
 
     for (var row = 0; row < rows.length; row++) {

@@ -37,6 +37,8 @@
         #myTable tr td:nth-child(2),
         #myTable tr td:nth-child(4),
         #myTable tr td:nth-child(6),
+        #myTable tr td:nth-child(8),
+        #myTable tr td:nth-child(9),
         #myTable tr td:nth-child(7) {
             min-width: 130px !important;
         }
@@ -64,10 +66,10 @@
             display: none !important;
         }
 
-        .dataTables_info,
+        /* .dataTables_info,
         .dataTables_paginate {
             display: none;
-        }
+        } */
 
         @media only screen and (max-width: 600px) {
 
@@ -102,12 +104,13 @@
                 </div>
                 <div class="col-12 search_div" id="">
                     <label for="" class="w-100">City Name <i class="fa-solid fa-angle-down CONCON2"></i></label>
-                    <select name="states" class="ui fluid search dropdown selection" multiple="" id="city_Name">
+                    <select name="states" class="ui fluid search dropdown selection city_Name" multiple="" id="city_Name">
                         <option value="">All Cities</option>
                         @foreach ($all_city as $city)
                         <option value="{{$city->id}}">{{$city->name}}</option>
                         @endforeach
                     </select>
+
                 </div>
 
                 <div class="col-12 search_div" id="">
@@ -120,8 +123,8 @@
                     </select>
 
                 </div>
-                <button class="btn btn_city" id="filter">Filter</button>
-                <button class="btn btn_city" id="reset">Reset</button>
+                {{-- <button class="btn btn_city" id="filter">Filter</button> --}}
+                <button class="btn btn_city w-100" id="reset">Reset</button>
             </div>
 
             <div class="col-lg-1 col-md-1"></div>
@@ -172,7 +175,7 @@
             </div>
 
             <div class="col-lg-12 col-md-12 col-sm-12 mt-4" style="overflow-x:auto;">
-                <table class="table table-responsive" id="myTable">
+                <table class="table table-responsive" id="myTableSimple">
                     <thead>
                         <th>Person Name</th>
                         <th>Job Title</th>
@@ -207,7 +210,7 @@
                 </table>
             </div>
         </div>
-        {{-- <div class="float-end custom_paginate col-12">{{ $lead_data->links() }}</div> --}}
+        <div class="float-end custom_paginate col-12">{{ $lead_data->links() }}</div>
         </div>
     </section>
 
@@ -243,17 +246,19 @@
             $('#myTable').DataTable();
         });
 
-        $(document).ready(function () {
-            $('#country_Name_ID').select2();
-            $('#state_Name_ID').select2();
-            $('#industry_Name_ID').select2();
-        });
+        // $(document).ready(function () {
+        //     $('#country_Name_ID').select2();
+        //     $('#state_Name_ID').select2();
+        //     $('#industry_Name_ID').select2();
+        // });
 
     </script>
 
 
     <script>
         $('#country_Name').change(function () {
+
+            $('.custom_paginate').html(" ");
 
             $.ajaxSetup({
                 headers: {
@@ -273,7 +278,6 @@
                     // console.log(data.cities);
                     $('#city_Name').html(data.cities);
                     $('#lead_data').html(data.lead_datasearch);
-                    console.log(data.lead_datasearch);
                 }
             });
         })
@@ -281,28 +285,32 @@
     </script>
 
     <script>
-        // $('#city_Name').change(function () {
+        $('#city_Name').change(function () {
 
-        //     $.ajaxSetup({
-        //         headers: {
-        //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //         }
-        //     });
+            $('#lead_data').html(" ");
 
-        //     $country = $('#city_Name').val();
-        //     console.log($country);
-        //     $.ajax({
-        //         type: 'POST',
-        //         url: '/getcities',
-        //         data: {
-        //             'country': $country
-        //         },
-        //         success: function (data) {
-        //             // console.log(data.cities);
-        //             $('#city_Name').html(data.cities);
-        //         }
-        //     });
-        // })
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+
+            $city_Name = $('#city_Name').val();
+            $country = $('#country_Name_Input').val();
+
+            $.ajax({
+                type: 'POST',
+                url: '/getcitiesdata',
+                data: {
+                    'city_Name': $city_Name,
+                    'country': $country,
+                },
+                success: function (data) {
+                    $('#lead_data').html(data.lead_datasearch);
+                    console.log(data.lead_datasearch)
+                }
+            });
+        })
 
     </script>
 

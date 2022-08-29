@@ -18,5 +18,6 @@ Route::controller(FrontendController::class)->group(function(){
 Route::controller(SearchController::class)->group(function(){
 
     Route::post('/getcities', 'search')->name('getcities.search');
+    Route::post('/getcitiesdata', 'searchCitiesData')->name('searchCitiesData.search');
 
 });
