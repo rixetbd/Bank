@@ -16,7 +16,7 @@ class LeadController extends Controller
      */
     public function index()
     {
-        $lead_data = Lead::paginate(200);
+        $lead_data = Lead::paginate(10);
         return view('backend.leads',[
             'lead_data'=>$lead_data,
         ]);

@@ -1,0 +1,13 @@
+#footer{background-color: #967258;font-family: 'Poppins', sans-serif;font-weight: 300;letter-spacing: 1px;}
+#footer a{text-decoration: none;}
+#footer .row div{padding: 10px;}
+#footer .row .img-fluid{text-align: center}
+#footer ul{list-style: none;padding: 0;margin: 0;}
+#footer p{color: #fff;font-size: 14px;line-height: 20px;font-family: 'Poppins', sans-serif;}
+#footer ul li a{color: #fff;font-size: 15px;line-height: 25px;}
+#footer ul li a:hover{color: #d1d1d1;margin-left: 10px;transition: .5s ease;}
+#footer h4{color: #fff;font-size: 18px;position: relative;margin-bottom: 15px;}
+#footer h4:after {content: "";position: absolute;bottom: -5px;left: 0;right: 0;border-top: 2px solid #ffffff;z-index: 0;width: 25%;}
+#footer .social_icon i{color: #fff;padding: 10px 10px 0 0;margin: 0;font-size: 18px}
+.copyright_area{background-color:#7A5840;padding:15px 0;}
+.copyright_area p{color: #fff;font-size: 16px}

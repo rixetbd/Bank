@@ -62,7 +62,8 @@
                 <tbody>
                     @forelse ($lead_data as $key=> $lead)
                     <tr>
-                        <td>{{$key+1}}</td>
+                        {{-- <td>{{$key+1}}</td> --}}
+                        <td>{{(($lead_data->perPage() * $lead_data->currentPage())+$key+1)-$lead_data->perPage()}}</td>
                         <td>{{$lead->person_name}}</td>
                         <td>{{$lead->title}}</td>
                         <td>{{Str::substr($lead->email, 0, 3)."****@*****".Str::substr($lead->email, -5)}}</td>
@@ -90,7 +91,7 @@
                     @endforelse
                 </tfoot>
             </table>
-            <div class="row justify-content-end custom_paginate">
+            <div class="row justify-content-end custom_paginateh">
                 {{ $lead_data->links() }}
             </div>
             </div>

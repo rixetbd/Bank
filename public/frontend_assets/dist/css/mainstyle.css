@@ -40,9 +40,13 @@ body {
     justify-content: space-between;
     /* box-shadow: 0 0 10px 0 #ddd; */
     border-radius: 2px !important;
-    border: 1px solid #dbdbdb !important;
-    padding: 5px 15px !important;
-    margin: 10px 10px 0 0;
+    /* border: 1px solid #dbdbdb !important; */
+    border: none;
+    padding: 5px 0px !important;
+    margin: 5px 2px 0 0;
+    width: 155px;
+    background: #9672589e;
+    transition: all 0.3s ease 0s;
 }
 
 .btn_industry{
@@ -55,9 +59,9 @@ body {
 /* -------------------- ------------------- */
 /* Style CSS on 15 August */
 
-.search_div {
+/* .search_div {
     margin: 10px 0;
-}
+} */
 .search_div label{
     cursor: pointer;
     margin: 10px 0;
