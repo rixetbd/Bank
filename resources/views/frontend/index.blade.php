@@ -8,30 +8,26 @@
 <link rel="stylesheet" href="{{asset('frontend_assets')}}/dist/css/mainstyle.css">
 
 <style>
-    body{
-        background: #96725859;
+    body {
+        /* background: #96725859; */
+        background: #cbdaec;
     }
-    .row {
-        width: 100%;
-    }
+
 
     a {
         text-decoration: none;
     }
 
-    #myTable tr td:nth-child(1),
-    #myTable tr td:nth-child(3),
-    #myTable tr td:nth-child(5) {
-        min-width: 200px !important;
-    }
-
-    #myTable tr td:nth-child(2),
-    #myTable tr td:nth-child(4),
-    #myTable tr td:nth-child(6),
-    #myTable tr td:nth-child(8),
-    #myTable tr td:nth-child(9),
-    #myTable tr td:nth-child(7) {
-        min-width: 130px !important;
+    tbody,
+    td,
+    tfoot,
+    th,
+    thead,
+    tr {
+        border-color: inherit;
+        border-style: solid;
+        border-width: 0;
+        font-size: 14;
     }
 
     .box_shadow_table {
@@ -40,30 +36,8 @@
         border-radius: 5px;
     }
 
-    .select2-container--default .select2-selection--single {
-        border: 1px solid #aaa;
-        border-radius: 25px;
-    }
-
-    .select2-container--default .select2-selection--single .select2-selection__rendered {
-        font-size: 14px;
-    }
-
-    .select2-container--default .select2-selection--single .select2-selection__arrow {
-        right: 5px;
-    }
-
     #myTable_filter,
     #myTable_length {
-        display: none !important;
-    }
-
-    /* .dataTables_info,
-        .dataTables_paginate {
-            display: none;
-        } */
-
-    .city_Name a.visible {
         display: none !important;
     }
 
@@ -83,166 +57,253 @@
     #industry_Name_display .new_item,
     #city_name_display .new_item {
         text-align: justify;
-        /* background: rgb(191, 153, 114);
-        background: linear-gradient(158deg, rgba(191, 153, 114, 1) 35%, rgba(111, 179, 138, 1) 100%); */
         color: #000;
         background-color: #fff !important;
-        padding: 8px 10px 8px 10px;
+        padding: 8px 0 0px 10px;
         margin: 2px 10px 2px 0;
         width: 170px;
         border: none;
         border-radius: 3px;
         line-height: 20px;
-        /* box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1); */
         box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.048);
-        /* transition: 1s ease-in; */
     }
 
-    #industry_Name_display .new_item {background-color: #fff !important;}
-    /* #city_name_display .new_item{background-color: #efe6e0 !important;} */
-    #city_name_display .new_item{background-color: #fff !important;}
 
     #city_name_display .new_item:hover,
     #industry_Name_display .new_item:hover {
-        /* background: rgb(191,153,114);
-        background: linear-gradient(254deg, rgba(191,153,114,1) 35%, rgba(111,179,138,1) 100%); */
-        /* background: rgb(218, 172, 144); */
-        background: #f7f0ebba !important;
-        /* background: #85400fba !important; */
-        /* background: radial-gradient(circle, rgba(218, 172, 144, 1) 0%, rgba(111, 179, 138, 1) 100%); */
+        background: #ff634783 !important;
     }
 
     #city_name_display .new_item_close,
     #industry_Name_display .new_item_close {
-        color: black;
+        color: #000;
         float: right;
         /* padding-right: 10px; */
+        background: #ffffff;
+        border-left: 1px solid #ababab61 !important;
+        margin-top: -8px;
+        width: 36px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0 3px 3px 0;
+        /* border-left: 1px solid #a1a1a1; */
     }
-    .ui.fluid.dropdown{
+
+    ,
+
+    #city_name_display .new_item_close:hover,
+    #industry_Name_display .new_item_close:hover {
+        background-color: tomato;
+        color: #fff
+    }
+
+
+    .ui.fluid.dropdown {
         /* background: #9672589e; */
         background: #fff;
         border: none;
     }
+
     .ui.fluid.dropdown .menu {
-        /* background: #967258; */
-        /* color: #fff; */
         color: #000;
-    }
-    /* .ui.fluid.dropdown .menu .item{color: #fff} */
-    .ui.fluid.dropdown .default.text,
-    .ui.fluid.dropdown .text{
-        /* color: #fff; */
-        color: #000;
-    }
-    #Filterreset{
-        font-size: 18px;
-        margin-right: 15px;
-        width: 180px;
-        background-color: #967258;
-        color: #fff !important;
-        border-radius: 12px !important;
     }
 
-    #myTableSimple th{
-        background-color: #dacdc4;
-        border-right: 1px solid #7a5840;
+    /* .ui.fluid.dropdown .menu .item{color: #fff} */
+    .ui.fluid.dropdown .default.text,
+    .ui.fluid.dropdown .text {
+        /* color: #fff; */
+        color: #000;
     }
-    #myTableSimple th:nth-last-child(){
+
+    #Filterreset {
+        background: #5928e5;
+        -webkit-box-shadow: inset 3px 3px 23.5px -17px #000000;
+        -moz-box-shadow: inset 3px 3px 23.5px -17px #000000;
+        box-shadow: inset 3px 3px 23.5px -17px #000000;
+        border: 5px solid #511fd8;
+        font-weight: 600 !important;
+        /* border-radius: 10% !important; */
+    }
+    #Filterreset {
+        font-size: 16px;
+        margin-right: 15px;
+        width: 180px;
+        /* background-color: #6eb406; */
+        color: #fff !important;
+        /* border-radius: 5px !important; */
+        line-height: 25px;
+        text-align: center;
+    }
+
+    #myTableSimple th:last-child() {
+        border-right: none
+    }
+
+    #myTableSimple th {
+        background-color: #af3dc74f !important;
+        /* background-color: #dacdc4; */
+        /* color: #5928e5; */
+        color: #000;
+        border-right: 5px solid #fff;
+        font-size: 14px;
+        font-weight: 400;
+    }
+
+    #myTableSimple thead {
+        border-bottom: #fff
+    }
+
+    #myTableSimple th:nth-last-child() {
         border: none;
+    }
+
+    .custom_paginate .pagination {
+        overflow: hidden;
+    }
+
+    .pagination .page-item.active .page-link {
+        background-color: #5928e5 !important;
+        border: none
     }
 
 </style>
 @endsection
 
+@extends('frontend.header')
+
+{{--
+
+Pre Color - #f7f0ebba
+New Color - #ffd9d9
+
+background-color: #ffd9d9
+
+--}}
 @section('container')
-<section class="container" style="background-color: #f7f0ebba;padding-bottom:50px;">
-    <div class="col-12 row justify-content-between align-items-end">
-        <div class="col-xs-12 col-sm-12 col-md-3 mt-3">
-            <h4>Search Specific Leads</h4>
-            <div class="col-12 search_div" id="country_Name_Box">
-                <label for="" class="w-100">Country Name </label>
-                {{-- <i class="fa-solid fa-angle-down CONCON1"></i> --}}
-                <div class="ui fluid search selection dropdown" id="country_Name">
-                    <input type="hidden" name="country" id="country_Name_Input">
-                    <i class="dropdown icon"></i>
-                    <div class="default text">Select Country</div>
-                    <div class="menu">
-                        @foreach ($all_countries as $country)
-                        <div class="item" data-value="{{$country->id}}"><i
-                                class="{{Str::lower($country->iso2)}} flag"></i>{{$country->name}}</div>
-                        @endforeach
+
+<div class="w-100 text-center" style="min-height: 400px;background: #5928e5;">
+    <h1 style="text-transform:uppercase;font-size:200px;color:#fff;line-height: 110px;padding-top: 100px;">
+        Lead<br><span style="font-size:70px;">Generation</span></h1>
+
+        <div class="row float-end">
+            <div class="" style="height:25px;width:25px;background:#bbe4e5;"></div>
+            <div class="" style="height:25px;width:25px;background:#aed8c7;"></div>
+            <div class="" style="height:25px;width:25px;background:#7acba5;"></div>
+            <div class="" style="height:25px;width:25px;background:#cbdaec;"></div>
+            <div class="" style="height:25px;width:25px;background:#66d2d5;"></div>
+            <div class="" style="height:25px;width:25px;background:#d6d0f0;"></div>
+            <div class="" style="height:25px;width:25px;background:#cecece;"></div>
+            <div class="" style="height:25px;width:25px;background:#e6e1b1;"></div>
+            <div class="" style="height:25px;width:25px;background:#feefa9;"></div>
+            <div class="" style="height:25px;width:25px;background:#fed297;"></div>
+            <div class="" style="height:25px;width:25px;background:#fd9a9b;"></div>
+            <div class="" style="height:25px;width:25px;background:#fd6769;"></div>
+            <div class="" style="height:25px;width:25px;background:#fffea2;"></div>
+            <div class="" style="height:25px;width:25px;background:#e7e8d2;"></div>
+        </div>
+</div>
+
+
+
+<section class="container" style="padding:100px 0 50px 0;">
+    <div style="padding-left:15px;" class="pb-3">
+        <div class="row justify-content-between align-items-end pt-4">
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <h4 style="font-size:25px;text-transform:uppercase;">Search Specific Leads</h4>
+                <div class="col-12 search_div" id="country_Name_Box">
+                    <label for="" class="w-100" style="text-transform:uppercase;">Country Name </label>
+                    {{-- <i class="fa-solid fa-angle-down CONCON1"></i> --}}
+                    <div class="ui fluid search selection dropdown" id="country_Name">
+                        <input type="hidden" name="country" id="country_Name_Input">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Select Country</div>
+                        <div class="menu">
+                            @foreach ($all_countries as $country)
+                            <div class="item" data-value="{{$country->id}}"><i
+                                    class="{{Str::lower($country->iso2)}} flag"></i>{{$country->name}}</div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-sm-12 col-md-9">
-            <button class="btn btn_city text-white float-end" id="Filterreset">RESET ALL</button>
-        </div>
-    </div>
-
-    <div class="col-12 row" style="padding-bottom:15px;border-bottom:1px solid #fff">
-        <div class="col-xs-12 col-sm-12 col-md-3" id="NullData">
-            <div class="col-12 search_div" id="">
-                <label for="" class="w-100">City Name</label>{{-- <i class="fa-solid fa-angle-down CONCON1"></i> --}}
-                <select name="states" class="ui fluid search dropdown city_Name" id="city_Name2">
-                    <option value="">All Cities</option>
-                    @foreach ($all_city as $city)
-                    <option value="{{$city->id}}">{{$city->name}}</option>
-                    @endforeach
-                </select>
+            <div class="col-sm-12 col-md-9">
+                <button class="btn btn_city text-white float-end" id="Filterreset">RESET ALL</button>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-9 mt-3" id="city_name_display">
-            <label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>
-        </div>
-    </div>
 
-    <div class="col-12 row" style="padding-bottom: 15px;border-bottom:1px solid #fff">
-        <div class="col-xs-12 col-sm-12 col-md-3" id="NullData">
-            <div class="col-12 search_div" id="">
-                <label for="" class="w-100">Industry Name</label>
-                <select name="states" class="ui fluid search dropdown city_Name" id="industry_Name">
-                    <option value="">All Industry</option>
-                    @foreach ($all_industry as $industry)
+        <div class="col-12 row" style="padding-bottom:15px;border-bottom:1px solid #fff">
+            <div class="col-xs-12 col-sm-12 col-md-3" id="NullData">
+                <div class="col-12 search_div" id="">
+                    <label for="" class="w-100" style="text-transform:uppercase;">City Name</label>
+                    <select name="states" class="ui fluid search dropdown city_Name" id="city_Name">
+                        <option value="">All Cities</option>
+                        @foreach ($all_city as $city)
+                        <option value="{{$city->id}}">{{$city->name}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9 mt-3" id="city_name_display">
+                <label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>
+            </div>
+        </div>
+
+        <div class="col-12 row" style="padding-bottom: 15px;border-bottom:1px solid #fff">
+            <div class="col-xs-12 col-sm-12 col-md-3" id="NullData">
+                <div class="col-12 search_div" id="">
+                    <label for="" class="w-100" style="text-transform:uppercase;">Industry Name</label>
+                    <select name="states" class="ui fluid search dropdown city_Name" id="industry_Name">
+                        <option value="">All Industry</option>
+                        @foreach ($all_industry as $industry)
                         <option value="{{$industry->id}}">{{$industry->name}}</option>
-                    @endforeach
-                </select>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-9 mt-3" id="industry_Name_display">
+                <label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>
             </div>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-9 mt-3" id="industry_Name_display">
-            <label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>
+
+
+        <div style="margin:25px 0;">
+            <p style="line-height: 0.5715em;">* Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
+                atque?</p>
+            <p style="line-height: 0.5715em;">* Lorem ipsum dolor sit amet consectetur adipisicingi, atque?</p>
         </div>
-    </div>
 
 
-
-    <div class="row my-3">
-        <div class="col-xs-12 col-sm-12 col-md-12">
+        <div class="row my-3">
+        <div class="col-xs-12 col-sm-12 col-md-12 filter_btn">
             <label class="btn btn_city" id="table_Name">Person Name <input type="checkbox" disabled checked
                     id="table_Name_IN"></label>
-            <label class="btn btn_city" id="table_Title">Job Title <input type="checkbox" disabled checked
+                    <label class="btn btn_city" id="table_Title">Job Title <input type="checkbox" disabled checked
                     id="table_Title_IN"></label>
-            <label class="btn btn_city" id="table_Company">Company Name <input type="checkbox" disabled checked
-                    id="table_Company_IN"></label>
+                    <label class="btn btn_city" id="table_Company">Company Name <input type="checkbox" disabled checked
+                        id="table_Company_IN"></label>
             <label class="btn btn_city" id="table_City">City <input type="checkbox" disabled checked
                     id="table_City_IN"></label>
-        </div>
-        <div class="col-md-12">
-            <label class="btn btn_city" id="table_Email">Email <input type="checkbox" checked
-                    id="table_Email_IN"></label>
+                </div>
+                <div class="col-md-12 filter_btn">
+                    <label class="btn btn_city" id="table_Email">Email <input type="checkbox" checked
+                        id="table_Email_IN"></label>
             <label class="btn btn_city" id="table_Phone">Phone <input type="checkbox" checked
                     id="table_Phone_IN"></label>
-            <label class="btn btn_city" id="table_Company_Size">Company Size <input type="checkbox" checked
+                    <label class="btn btn_city" id="table_Company_Size">Company Size <input type="checkbox" checked
                     id="table_Company_Size_IN"></label>
-            <label class="btn btn_city" id="table_Revenue">Revenue <input type="checkbox" checked
-                    id="table_Revenue_IN"></label>
+                    <label class="btn btn_city" id="table_Revenue">Revenue <input type="checkbox" checked
+                        id="table_Revenue_IN"></label>
             <label class="btn btn_city" id="table_Zip_code">Zip Code <input type="checkbox" checked
-                    id="table_Zip_code_IN"></label>
-            <label class="btn btn_city" id="table_URL">Website <input type="checkbox" checked id="table_URL_IN"></label>
-            <label class="btn btn_city" id="table_refresh">Default <i class="fas fa-redo-alt"></i></label>
+                id="table_Zip_code_IN"></label>
+                <label class="btn btn_city" id="table_URL">Website <input type="checkbox" checked id="table_URL_IN"></label>
+                <label class="btn btn_city" id="table_refresh">Default <i class="fas fa-redo-alt"></i></label>
+            </div>
         </div>
 
-        <div class="col-lg-12 col-md-12 col-sm-12 mt-4" style="overflow-x:auto;">
+    </div>
+        <div class="col-lg-12 col-md-12 col-sm-12" style="overflow-x:auto;">
             <table class="table table-responsive" id="myTableSimple">
                 <thead>
                     <th>Person Name</th>
@@ -277,7 +338,6 @@
                 </tbody>
             </table>
         </div>
-    </div>
     <div class="custom_paginate">
         <div class="row">
             <div class="col-sm-12 col-md-6">{{ $lead_data->links() }}</div>
@@ -295,7 +355,6 @@
 <script>
     $('#country_Name').dropdown();
     $('#city_Name').dropdown();
-    $('#city_Name2').dropdown();
     $('#industry_Name').dropdown();
 
     // $(document).ready(function () {
@@ -304,15 +363,20 @@
 
 </script>
 
-
 <script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
     $('#country_Name').change(function () {
         $('.custom_paginate').html(" ");
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+        // $.ajaxSetup({
+        //     headers: {
+        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //     }
+        // });
         $country = $('#country_Name_Input').val();
         // console.log($country);
         $.ajax({
@@ -331,24 +395,19 @@
 
 </script>
 
+
 <script>
     // localStorage.clear();
-
-    const cities = [];
-
-    $('#city_Name2').change(function () {
-
-        cities.push($('#city_Name2 option:selected').text());
+    var cities = [];
+    $('#city_Name').change(function () {
+        cities.push($('#city_Name option:selected').text());
         // localStorage.setItem("cities", cities);
-
-        $('#city_name_display').append($('<button class="new_item">').html($('#city_Name2 option:selected')
+        $('#city_name_display').append($('<button class="new_item">').html($('#city_Name option:selected')
             .text() + '<span class="new_item_close"><i class="fas fa-times"></i></span>'));
-
         setTimeout(
             function () {
-                $('#city_Name2').next($('.menu .active').addClass('d-none'));
-        }, 500);
-
+                $('#city_Name').next($('.menu .active').addClass('d-none'));
+            }, 500);
         $('#city_name_display .new_item').click(function () {
             // alert($(this).text());
             $(this).remove();
@@ -361,23 +420,28 @@
 
         $('#lead_data').html(" ");
 
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+        // $.ajaxSetup({
+        //     headers: {
+        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //     }
+        // });
 
-        $city_Name = cities;
+        // $city_Name = cities;
         $country = $('#country_Name_Input').val();
         $.ajax({
             type: 'POST',
             url: '/getcitiesdata',
             data: {
-                'city_Name': $city_Name,
-                'country': $country,
+                'city_Name': cities,
+                'country': $country
             },
             success: function (data) {
-                $('#lead_data').html(data.lead_datasearch);
+                // $('#lead_data').html(data.lead_datasearch);
+                console.log(data.country);
+                // console.log(data.lead_datasearch);
+            },
+            error: function (data) {
+                alert("fail");
             }
         });
     });
@@ -439,64 +503,66 @@
 
 
 <script>
-
-const industries = [];
+    const industries = [];
 
     $('#industry_Name').change(function () {
 
         industries.push($('#industry_Name option:selected').text());
-    // localStorage.setItem("cities", cities);
+        // localStorage.setItem("cities", cities);
 
-    $('#industry_Name_display').append($('<button class="new_item">').html($('#industry_Name option:selected')
-        .text() + '<span class="new_item_close"><i class="fas fa-times"></i></span>'));
+        $('#industry_Name_display').append($('<button class="new_item">').html($(
+                '#industry_Name option:selected')
+            .text() + '<span class="new_item_close"><i class="fas fa-times"></i></span>'));
 
-    $('#industry_Name_display .new_item').click(function () {
-        // alert($(this).text());
-        $(this).remove();
-        let text = $(this).text();
-        let citiesindex = industries.indexOf(text);
-        if (citiesindex > -1) {
-            industries.splice(citiesindex, 1); // 2nd parameter means remove one item only
-        }
+        $('#industry_Name_display .new_item').click(function () {
+            // alert($(this).text());
+            $(this).remove();
+            let text = $(this).text();
+            let citiesindex = industries.indexOf(text);
+            if (citiesindex > -1) {
+                industries.splice(citiesindex, 1); // 2nd parameter means remove one item only
+            }
+        });
+
+        setTimeout(
+            function () {
+                $('#industry_Name').next($('.menu .active').addClass('d-none'));
+            }, 500);
+
+
+        // $('#lead_data').html(" ");
+
+        // $.ajaxSetup({
+        //     headers: {
+        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        //     }
+        // });
+
+        // $city_Name = cities;
+        // $country = $('#country_Name_Input').val();
+        // $.ajax({
+        //     type: 'POST',
+        //     url: '/getcitiesdata',
+        //     data: {
+        //         'city_Name': $city_Name,
+        //         'country': $country,
+        //     },
+        //     success: function (data) {
+        //         $('#lead_data').html(data.lead_datasearch);
+        //     }
+        // });
     });
 
-setTimeout(
-    function () {
-        $('#industry_Name').next($('.menu .active').addClass('d-none'));
-    }, 500);
-
-
-// $('#lead_data').html(" ");
-
-// $.ajaxSetup({
-//     headers: {
-//         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-//     }
-// });
-
-// $city_Name = cities;
-// $country = $('#country_Name_Input').val();
-// $.ajax({
-//     type: 'POST',
-//     url: '/getcitiesdata',
-//     data: {
-//         'city_Name': $city_Name,
-//         'country': $country,
-//     },
-//     success: function (data) {
-//         $('#lead_data').html(data.lead_datasearch);
-//     }
-// });
-});
 </script>
 
 <script>
-    $('#Filterreset').click(function(){
+    $('#Filterreset').click(function () {
 
-    $('#country_Name').dropdown();
+        $('#country_Name').dropdown();
 
 
     });
+
 </script>
 
 

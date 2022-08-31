@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600&display=swap');
+@import url('http://fonts.cdnfonts.com/css/electrolize');
+
 
 *{
     margin:0;
@@ -7,6 +10,7 @@
 }
 
 body {
+    /* font-family: 'Electrolize'; */
     font-family: 'Poppins', sans-serif;
   }
 
@@ -38,15 +42,23 @@ body {
 .btn_city{
     display: inline-block;
     justify-content: space-between;
+    align-items: center;
     /* box-shadow: 0 0 10px 0 #ddd; */
     border-radius: 2px !important;
     /* border: 1px solid #dbdbdb !important; */
     border: none;
-    padding: 5px 0px !important;
+    padding: 5px 16px !important;
     margin: 5px 2px 0 0;
-    width: 155px;
+    width: 175px;
     background: #9672589e;
     transition: all 0.3s ease 0s;
+    text-align: left;
+}
+
+.filter_btn .btn_city{
+    background-color: #fff !important;
+    /* background-color: #af3dc729 !important; */
+    /* background-color: #af3dc74f !important; */
 }
 
 .btn_industry{
@@ -56,6 +68,11 @@ body {
     border-radius: 5px;
 }
 
+.btn_city input[type="checkbox"] {
+    margin-top: 4px;
+    float: right;
+    transform: scale(1.2);
+}
 /* -------------------- ------------------- */
 /* Style CSS on 15 August */
 

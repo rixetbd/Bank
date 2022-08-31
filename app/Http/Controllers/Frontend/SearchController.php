@@ -89,7 +89,6 @@ class SearchController extends Controller
 
     public function search(Request $request)
     {
-
         $cities="";
         $all_cities = City::where( 'country_id' , $request->country)->orderBy('name', 'asc')->get();
         foreach ($all_cities as $city) {
@@ -145,11 +144,11 @@ class SearchController extends Controller
         //     }
         // }else{
 
-        // $city_names = [];
-        // foreach ($request->city_Name as $single_city) {
-        //     $city = City::find($single_city);
-        //     array_push($city_names, $city->name);
-        // }
+        $city_names = [];
+        foreach ($request->city_Name as $single_city) {
+            $city = City::find($single_city);
+            array_push($city_names, $city->name);
+        }
 
         // foreach ($city_names as $city_name) {
         //     $lead_dataDB = Lead::where('city', "=" , $city_name)->take(20)->get();
@@ -167,28 +166,39 @@ class SearchController extends Controller
         //     }
         // }
 
-        $city_names = [];
-        foreach ($request->city_Name as $single_city) {
-            $city = City::find($single_city);
-            array_push($city_names, $city->name);
-        }
+        // $city_names ='';
 
-        // foreach ($request->city_Name as $cityName) {
-        //     $lead = Lead::where('city', '=', $cityName)->get();
-        //     $lead_datasearch = "";
-        //     foreach ($lead_dataDB as $lead) {
-        //             $lead_datasearch .= '<tr><td>'.$lead->person_name.'</td><td>'.$lead->title.'</td><td>'.Str::substr($lead->email, 0, 3).'****@*****'.Str::substr($lead->email, -5).'</td><td>'.$lead->phone.'</td><td>'.Str::limit($lead->company_name, 20).'</td><td>'.$lead->company_size.'</td><td>'.$lead->revenue.'</td><td>'.$lead->city.'</td><td>'.$lead->zip_code.'</td><td>'.Str::substr($lead->website, 0, 10).'***.'.Str::substr($lead->website, -3).'</td></tr>';
+        // foreach ($request->city_Name as $single_city) {
+        //     $city = City::find($single_city);
+        //     $city_names .= $city->name;
         // }
 
         $lead_datasearch = "";
 
-        foreach ($city_names as $city) {
-            $lead_datasearch .= $city;
-        }
+        // foreach ($city_names as $cityName) {
+        //     $lead_dataDB = Lead::where('city', '=', $cityName)->get();
+        //     foreach ($lead_dataDB as $lead) {
+        //             $lead_datasearch .= '<tr><td>'.$lead->person_name.'</td><td>'.$lead->title.'</td><td>'.Str::substr($lead->email, 0, 3).'****@*****'.Str::substr($lead->email, -5).'</td><td>'.$lead->phone.'</td><td>'.Str::limit($lead->company_name, 20).'</td><td>'.$lead->company_size.'</td><td>'.$lead->revenue.'</td><td>'.$lead->city.'</td><td>'.$lead->zip_code.'</td><td>'.Str::substr($lead->website, 0, 10).'***.'.Str::substr($lead->website, -3).'</td></tr>';
+        //     }
+        // }
+
+        // $lead_dataDB = Lead::where('city', $request->city_Name)->get();
+        // foreach ($lead_dataDB as $lead) {
+        //         $lead_datasearch .= '<tr><td>'.$lead->person_name.'</td><td>'.$lead->title.'</td><td>'.Str::substr($lead->email, 0, 3).'****@*****'.Str::substr($lead->email, -5).'</td><td>'.$lead->phone.'</td><td>'.Str::limit($lead->company_name, 20).'</td><td>'.$lead->company_size.'</td><td>'.$lead->revenue.'</td><td>'.$lead->city.'</td><td>'.$lead->zip_code.'</td><td>'.Str::substr($lead->website, 0, 10).'***.'.Str::substr($lead->website, -3).'</td></tr>';
+        // }
+
+        // $lead_datasearch = "";
+
+        // foreach ($city_names as $city) {
+        //     $lead_datasearch .= $city;
+        // }
 
 
         return response()->json([
-            'lead_datasearch'=>$lead_datasearch,
+            // 'lead_datasearch'=>$lead_datasearch,
+            // 'lead_datasearch'=>$lead_datasearch,
+            'country'=>$request->country,
+            // 'lead_datasearch'=>$request->city_Name,
         ]);
     // }
     }
