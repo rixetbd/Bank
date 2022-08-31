@@ -400,14 +400,19 @@ background-color: #ffd9d9
     // localStorage.clear();
     var cities = [];
     $('#city_Name').change(function () {
+
         cities.push($('#city_Name option:selected').text());
+        console.log(cities);
+
         // localStorage.setItem("cities", cities);
         $('#city_name_display').append($('<button class="new_item">').html($('#city_Name option:selected')
             .text() + '<span class="new_item_close"><i class="fas fa-times"></i></span>'));
+
         setTimeout(
             function () {
                 $('#city_Name').next($('.menu .active').addClass('d-none'));
             }, 500);
+
         $('#city_name_display .new_item').click(function () {
             // alert($(this).text());
             $(this).remove();
@@ -416,15 +421,33 @@ background-color: #ffd9d9
             if (citiesindex > -1) {
                 cities.splice(citiesindex, 1); // 2nd parameter means remove one item only
             }
+
+            $.ajax({
+            type: 'POST',
+            url: '/getcitiesdata',
+            data: {
+                'city_Name': JSON.stringify(cities),
+                // 'country': $country
+            },
+            success: function (data) {
+                $('#lead_data').html(data.lead_datasearch);
+                console.log(data.lead_datasearch);
+                // console.log(data.lead_datasearch);
+            },
+            error: function (data) {
+                alert("fail");
+            }
+        });
+
         });
 
         $('#lead_data').html(" ");
 
-        // $.ajaxSetup({
-        //     headers: {
-        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //     }
-        // });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
 
         // $city_Name = cities;
         $country = $('#country_Name_Input').val();
@@ -432,12 +455,12 @@ background-color: #ffd9d9
             type: 'POST',
             url: '/getcitiesdata',
             data: {
-                'city_Name': cities,
-                'country': $country
+                'city_Name': JSON.stringify(cities),
+                // 'country': $country
             },
             success: function (data) {
-                // $('#lead_data').html(data.lead_datasearch);
-                console.log(data.country);
+                $('#lead_data').html(data.lead_datasearch);
+                console.log(data.lead_datasearch);
                 // console.log(data.lead_datasearch);
             },
             error: function (data) {
