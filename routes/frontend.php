@@ -19,5 +19,6 @@ Route::controller(SearchController::class)->group(function(){
 
     Route::post('/getcities', 'search')->name('getcities.search');
     Route::post('/getcitiesdata', 'searchCitiesData')->name('searchCitiesData.search');
+    Route::post('/getdataindustries', 'getdataindustries')->name('getdataindustries.search');
 
 });

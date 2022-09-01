@@ -146,7 +146,7 @@
         /* background-color: #dacdc4; */
         /* color: #5928e5; */
         color: #000;
-        border-right: 5px solid #fff;
+        border-right: 2px solid #cbdaec;
         font-size: 14px;
         font-weight: 400;
     }
@@ -304,7 +304,7 @@ background-color: #ffd9d9
 
     </div>
         <div class="col-lg-12 col-md-12 col-sm-12" style="overflow-x:auto;">
-            <table class="table table-responsive" id="myTableSimple">
+            <table class="table table-responsive TableIDADD" id="">
                 <thead>
                     <th>Person Name</th>
                     <th>Job Title</th>
@@ -357,9 +357,9 @@ background-color: #ffd9d9
     $('#city_Name').dropdown();
     $('#industry_Name').dropdown();
 
-    // $(document).ready(function () {
-    //     $('#myTable').DataTable();
-    // });
+    $(document).ready(function () {
+        $('#myTableSimple').DataTable();
+    });
 
 </script>
 
@@ -397,8 +397,9 @@ background-color: #ffd9d9
 
 
 <script>
-    // localStorage.clear();
+
     var cities = [];
+
     $('#city_Name').change(function () {
 
         cities.push($('#city_Name option:selected').text());
@@ -431,8 +432,6 @@ background-color: #ffd9d9
             },
             success: function (data) {
                 $('#lead_data').html(data.lead_datasearch);
-                console.log(data.lead_datasearch);
-                // console.log(data.lead_datasearch);
             },
             error: function (data) {
                 alert("fail");
@@ -441,7 +440,6 @@ background-color: #ffd9d9
 
         });
 
-        $('#lead_data').html(" ");
 
         $.ajaxSetup({
             headers: {
@@ -449,17 +447,19 @@ background-color: #ffd9d9
             }
         });
 
-        // $city_Name = cities;
         $country = $('#country_Name_Input').val();
         $.ajax({
             type: 'POST',
             url: '/getcitiesdata',
             data: {
                 'city_Name': JSON.stringify(cities),
-                // 'country': $country
+                'country': $country
             },
             success: function (data) {
+                $('#lead_data').html(" ");
                 $('#lead_data').html(data.lead_datasearch);
+                $('.TableIDADD').attr('id', 'myTableSimple');
+                $('#myTableSimple').DataTable();
                 console.log(data.lead_datasearch);
                 // console.log(data.lead_datasearch);
             },
@@ -469,31 +469,11 @@ background-color: #ffd9d9
         });
     });
 
-    // $('#city_Name').change(function () {
-    //     $('#lead_data').html(" ");
-    //     $.ajaxSetup({
-    //         headers: {
-    //             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-    //         }
-    //     });
-    //     $city_Name = $('#city_Name').val();
-    //     $country = $('#country_Name_Input').val();
-    //     $.ajax({
-    //         type: 'POST',
-    //         url: '/getcitiesdata',
-    //         data: {
-    //             'city_Name': $city_Name,
-    //             'country': $country,
-    //         },
-    //         success: function (data) {
-    //             $('#lead_data').html(data.lead_datasearch);
-    //         }
-    //     });
-    // })
-
 </script>
 
-<script>
+{{-- <script>
+    var industries = [];
+
     $('#industry_Name').change(function () {
 
         $country = $('#country_Name_Input').val();
@@ -521,17 +501,16 @@ background-color: #ffd9d9
         });
     })
 
-</script>
+</script> --}}
 
 
 
 <script>
-    const industries = [];
+    var industries = [];
 
     $('#industry_Name').change(function () {
 
         industries.push($('#industry_Name option:selected').text());
-        // localStorage.setItem("cities", cities);
 
         $('#industry_Name_display').append($('<button class="new_item">').html($(
                 '#industry_Name option:selected')
@@ -553,39 +532,36 @@ background-color: #ffd9d9
             }, 500);
 
 
-        // $('#lead_data').html(" ");
+        $('#lead_data').html(" ");
 
-        // $.ajaxSetup({
-        //     headers: {
-        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //     }
-        // });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
 
-        // $city_Name = cities;
-        // $country = $('#country_Name_Input').val();
-        // $.ajax({
-        //     type: 'POST',
-        //     url: '/getcitiesdata',
-        //     data: {
-        //         'city_Name': $city_Name,
-        //         'country': $country,
-        //     },
-        //     success: function (data) {
-        //         $('#lead_data').html(data.lead_datasearch);
-        //     }
-        // });
+        $country = $('#country_Name_Input').val();
+        $.ajax({
+            type: 'POST',
+            url: '/getdataindustries',
+            data: {
+                'country': $country,
+                'city_Name': JSON.stringify(cities),
+                'industry_Name': JSON.stringify(industries),
+            },
+            success: function (data) {
+                $('#lead_data').html(data.lead_datasearch);
+                console.log(data.lead_datasearch);
+            }
+        });
     });
 
 </script>
 
 <script>
     $('#Filterreset').click(function () {
-
         $('#country_Name').dropdown();
-
-
     });
-
 </script>
 
 
