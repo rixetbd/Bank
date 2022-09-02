@@ -21,7 +21,8 @@ class FrontendController extends Controller
         $all_countries = Country::all();
         $all_city = City::orderby('name', 'asc')->get();
         $all_industry = Industry::orderby('name', 'asc')->get();
-        $lead_data = Lead::paginate(20);
+        $lead_data = Lead::paginate(100);
+        // $lead_data = Lead::paginate(20);
         // $all_cities =
         return view('frontend.index',[
             'all_countries'=>$all_countries,

@@ -34,7 +34,7 @@ class SearchController extends Controller
             $cities .= '<option value="'.$city->id.'">'.$city->name.'</option>';
         }
         $country = Country::find($request->country);
-        $lead_dataDB = Lead::where('country', "=" , $country->name)->take(20)->get();
+        $lead_dataDB = Lead::where('country', "=" , $country->name)->paginate(15);
         if($lead_dataDB->count() != 0 ){
             $lead_datasearch = "";
             foreach ($lead_dataDB as $lead) {

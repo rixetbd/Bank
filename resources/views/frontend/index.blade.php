@@ -4,7 +4,6 @@
 
 <link rel="stylesheet" href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css">
 <link rel="stylesheet" href="{{asset('frontend_assets')}}/dist/css/custom-scroll.css">
-<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <link rel="stylesheet" href="{{asset('frontend_assets')}}/dist/css/mainstyle.css">
 
 <style>
@@ -13,38 +12,21 @@
         background: #cbdaec;
     }
 
+    a {text-decoration: none;}
 
-    a {
-        text-decoration: none;
-    }
+    tbody,td,tfoot,th,thead,tr {border-color: inherit;border-style: solid;border-width: 0;font-size: 14;}
 
-    tbody,
-    td,
-    tfoot,
-    th,
-    thead,
-    tr {
-        border-color: inherit;
-        border-style: solid;
-        border-width: 0;
-        font-size: 14;
-    }
+    .box_shadow_table {padding: 15px;box-shadow: inset 3px 3px 13.5px 0 #eeeeee;border-radius: 5px;}
 
-    .box_shadow_table {
-        padding: 15px;
-        box-shadow: inset 3px 3px 13.5px 0 #eeeeee;
-        border-radius: 5px;
-    }
-
-    #myTable_filter,
-    #myTable_length {
+    #myTableSimple_filter,
+    #myTableSimple_length {
         display: none !important;
     }
 
     @media only screen and (max-width: 600px) {
 
-        #myTable_length,
-        #myTable_filter {
+        #myTableSimple_length,
+        #myTableSimple_filter {
             display: none !important;
         }
     }
@@ -168,6 +150,11 @@
         border: none
     }
 
+    table.dataTable thead th, table.dataTable thead td {
+        padding: 8px !important;
+    }
+    table.dataTable thead>tr>th.sorting:before, table.dataTable thead>tr>th.sorting_asc:before, table.dataTable thead>tr>th.sorting_desc:before, table.dataTable thead>tr>th.sorting_asc_disabled:before, table.dataTable thead>tr>th.sorting_desc_disabled:before, table.dataTable thead>tr>td.sorting:before, table.dataTable thead>tr>td.sorting_asc:before, table.dataTable thead>tr>td.sorting_desc:before, table.dataTable thead>tr>td.sorting_asc_disabled:before, table.dataTable thead>tr>td.sorting_desc_disabled:before {bottom: 50%;content: "" !important;}
+    table.dataTable thead>tr>th.sorting:after, table.dataTable thead>tr>th.sorting_asc:after, table.dataTable thead>tr>th.sorting_desc:after, table.dataTable thead>tr>th.sorting_asc_disabled:after, table.dataTable thead>tr>th.sorting_desc_disabled:after, table.dataTable thead>tr>td.sorting:after, table.dataTable thead>tr>td.sorting_asc:after, table.dataTable thead>tr>td.sorting_desc:after, table.dataTable thead>tr>td.sorting_asc_disabled:after, table.dataTable thead>tr>td.sorting_desc_disabled:after {top: 50%;content: "" !important;}
 </style>
 @endsection
 
@@ -304,27 +291,27 @@ background-color: #ffd9d9
 
     </div>
         <div class="col-lg-12 col-md-12 col-sm-12" style="overflow-x:auto;">
-            <table class="table table-responsive TableIDADD" id="">
+            <table class="table table-responsive cell-border TableIDADD" id="myTableSimple">
                 <thead>
                     <th>Person Name</th>
-                    <th>Job Title</th>
+                    <th style="">Job Title</th>
                     <th>Email</th>
                     <th>Phone</th>
-                    <th>Company Name</th>
-                    <th>Company Size</th>
+                    <th style="min-width: 170px;">Company Name</th>
+                    <th style="width: 105px;min-width: 105px;">Company Size</th>
                     <th>Revenue</th>
-                    <th>City</th>
-                    <th>Zip Code</th>
+                    <th style="min-width: 100px;">City</th>
+                    <th style="min-width: 72px;">Zip Code</th>
                     <th>Website</th>
                 </thead>
                 <tbody id="lead_data">
                     @forelse ($lead_data as $key=> $lead)
                     <tr>
                         <td>{{$lead->person_name}}</td>
-                        <td>{{$lead->title}}</td>
+                        <td>{{($lead->title = "Managing Partner"?"Partner": $lead->title)}}</td>
                         <td>{{Str::substr($lead->email, 0, 3)."****@*****".Str::substr($lead->email, -5)}}</td>
                         <td>{{Str::substr($lead->phone, -4)."****"}}</td>
-                        <td>{{ Str::limit($lead->company_name, 20)}}</td>
+                        <td>{{ Str::limit($lead->company_name, 15)}}</td>
                         <td>{{$lead->company_size}}</td>
                         <td>{{$lead->revenue}}</td>
                         <td>{{$lead->city}}</td>
@@ -339,7 +326,7 @@ background-color: #ffd9d9
             </table>
         </div>
     <div class="custom_paginate">
-        <div class="row">
+        <div class="row d-none">
             <div class="col-sm-12 col-md-6">{{ $lead_data->links() }}</div>
         </div>
     </div>
@@ -364,29 +351,23 @@ background-color: #ffd9d9
 </script>
 
 <script>
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-
     $('#country_Name').change(function () {
         $('.custom_paginate').html(" ");
-        // $.ajaxSetup({
-        //     headers: {
-        //         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        //     }
-        // });
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+        $('#lead_data').html();
         $country = $('#country_Name_Input').val();
         // console.log($country);
+        $('#myTableSimple').DataTable().clear().draw();
+
         $.ajax({
             type: 'POST',
             url: '/getcities',
-            data: {
-                'country': $country
-            },
+            data: {'country': $country},
             success: function (data) {
-                // console.log(data.cities);
                 $('#city_Name').html(data.cities);
                 $('#lead_data').html(data.lead_datasearch);
             }
