@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
+use App\Models\City;
 use App\Models\Country;
+use App\Models\Industry;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -12,14 +14,19 @@ class ContactController extends Controller
     public function index()
     {
         $all_countries = Country::all();
+        $all_city = City::all();
+        $all_industry = Industry::all();
         return view('frontend.contact',[
             'all_countries'=>$all_countries,
+            'all_city'=>$all_city,
+            'all_industry'=>$all_industry,
         ]);
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        //
+        echo "<pre>";
+        print_r($request->all());
     }
 
     public function store(Request $request)

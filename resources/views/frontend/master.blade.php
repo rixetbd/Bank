@@ -61,7 +61,7 @@
                 <div class="col-sm-12 col-md-4">
                     <h4>Contact Us</h4>
                     <ul>
-                        <li><a href="#"><i class="far fa-envelope-open"></i> info@example.com</a></li>
+                        <li><a href="#"><i class="far fa-envelope-open"></i> contact@bdosc.com</a></li>
                         <li><a href="#"><i class="fas fa-phone-alt"></i> +88 (017) 123 456 78</a></li>
                         <li><a href="#"><i class="fas fa-map-marker-alt"></i> Mirpur 01, Dhaka-1216, BD</a></li>
                     </ul>

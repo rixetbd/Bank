@@ -41,12 +41,14 @@ class SearchController extends Controller
                 $lead_datasearch .= '<tr><td>'.$lead->person_name.'</td><td>'.$lead->title.'</td><td>'.Str::substr($lead->email, 0, 3).'****@*****'.Str::substr($lead->email, -5).'</td><td>'.Str::substr($lead->phone, 0, 6)."*****".'</td><td>'.Str::limit($lead->company_name, 20).'</td><td>'.$lead->company_size.'</td><td>'.$lead->revenue.'</td><td>'.$lead->city.'</td><td>'.$lead->zip_code.'</td><td>'.Str::substr($lead->website, 0, 10).'***.'.Str::substr($lead->website, -3).'</td></tr>';
             }
             return response()->json([
+                'country_name'=>$country->name,
                 'cities'=>$cities,
                 'lead_datasearch'=>$lead_datasearch,
             ]);
         }else{
             $lead_datasearch = '<tr><td colspan="10" style="text-align:center;line-height:100px;">No More Collected leads</td></tr>';
             return response()->json([
+                'country_name'=>$country->name,
                 'cities'=>$cities,
                 'lead_datasearch'=>$lead_datasearch,
             ]);

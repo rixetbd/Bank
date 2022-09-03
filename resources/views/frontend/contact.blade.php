@@ -14,27 +14,77 @@
     <link rel="stylesheet" href="{{asset('frontend_assets/dist/flags/flag.css')}}">
 
     <title>Contact - BDOSC</title>
+
+    <style>
+        .ui.steps .step .title {
+            font-size: 1em;
+            font-weight: 600;
+        }
+
+    </style>
 </head>
 
 <body style="background:#e2dedb;height:100vh;">
 
+    <div style="float:right;margin-right:200px;padding:20px;"><a href="{{ url()->previous() }}"><i
+                class="fas fa-caret-left"></i> Back</a></div>
+
     <div class="container my-5">
         <div class="row w-100 justify-content-center">
             <div class="col-8 p-5" style="background:#dbd5d0;border-radius:5px;">
-
                 <h4>Contact Us Today</h4>
+
+                <div class="col-12 mb-3">
+                    <div class="ui steps w-100">
+                        <a class="active step">
+                            <div class="content">
+                                <div class="title">Step 01</div>
+                                <div class="description">Your Info</div>
+                            </div>
+                        </a> <a class="step">
+                            <div class="content">
+                                <div class="title">Step 02</div>
+                                <div class="description">Requirments</div>
+                            </div>
+                        </a> <a class="step">
+                            <div class="content">
+                                <div class="title">Step 03</div>
+                                <div class="description">Quantity</div>
+                            </div>
+                        </a> <a class="step">
+                            <div class="content">
+                                <div class="title">Step 04</div>
+                                <div class="description">Duration</div>
+                            </div>
+                        </a> <a class="step">
+                            <div class="content">
+                                <div class="title">Step 05</div>
+                                <div class="description">Your Plan</div>
+                            </div>
+                        </a> <a class="step">
+                            <div class="content">
+                                <div class="title">Step 06</div>
+                                <div class="description">Invoice</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
                 <h3>Your Information</h3>
-                <form action="" method="post" class="ui form">
+                <form action="{{route('frontend.contact.post')}}" method="post" class="ui form">
+                    @csrf
+
                     <div class="row my-3">
                         <div class="col-sm-12 col-md-6">
-                            <div class="ui left icon input w-100">
-                                <input type="text" placeholder="Your Name">
+                            <div class="ui small left icon input w-100">
+                                <input type="text" name="name" id="name" placeholder="Your Name" required>
                                 <i class="fas fa-user icon"></i>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
-                            <div class="ui left icon input w-100">
-                                <input type="email" placeholder="Email Address">
+                            <div class="ui small left icon input w-100">
+                                <input type="email" name="email" id="email" placeholder="Email Address" required>
                                 <i class="fas fa-envelope icon"></i>
                             </div>
                         </div>
@@ -43,8 +93,8 @@
                     <div class="row my-3">
                         <div class="col-sm-12 col-md-6">
                             {{-- <label for="name">Country</label> --}}
-                            <div class="ui fluid search selection dropdown" id="country_Name">
-                                <input type="hidden" name="country" id="country_Name_Input">
+                            <div class="ui small fluid search selection dropdown" id="country_Name">
+                                <input type="hidden" name="user_country" id="country_Name_Input">
                                 <i class="dropdown icon"></i>
                                 <div class="default text"><i class="fas fa-flag icon"></i> Your Country</div>
                                 <div class="menu">
@@ -56,67 +106,142 @@
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-6">
-                            <div class="ui left icon input w-100">
+                            <div class="ui small left icon input w-100">
                                 <input type="number" placeholder="Phone">
                                 <i class="fas fa-phone icon"></i>
                             </div>
                         </div>
                     </div>
 
+                    <h3>Lead Requirements</h3>
+
+
+                    <div class="row">
+                        <div class="col-6 mt-2">
+                            <label for="">Country Name</label>
+                            <div class="ui small fluid search selection dropdown" id="country_Name2">
+                                <input type="hidden" name="country" id="country_Name_Input2">
+                                <i class="dropdown icon"></i>
+                                <div class="default text"><i class="fas fa-flag icon"></i> Lead Country</div>
+                                <div class="menu">
+                                    @foreach ($all_countries as $country)
+                                    <div class="item" data-value="{{$country->id}}"><i
+                                            class="{{Str::lower($country->iso2)}} flag"></i>{{$country->name}}</div>
+                                    @endforeach
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mt-2">
+                            <label for="">City Name</label>
+                            <select name="states" class="ui small fluid search dropdown city_Name" id="city_Name">
+                                <option value="">All Cities</option>
+                                @foreach ($all_city as $city)
+                                <option value="{{$city->id}}">{{$city->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-6 mt-2">
+                            <label for="">Industry Name</label>
+                            <select name="industry" class="ui small fluid search dropdown city_Name" id="industry_Name"
+                                required>
+                                <option value="">All Industry</option>
+                                @foreach ($all_industry as $industry)
+                                <option value="{{$industry->id}}">{{$industry->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-6 mt-2">
+                            <label for="" class="">Total Leads</label>
+                            <div class="col-sm-12 col-md-12">
+                                <div class="ui small left icon input w-100">
+                                    <input type="text" name="total_leads" placeholder="Total Leads">
+                                    <i class="fas fa-dollar-sign icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mt-2">
+                            <div class="row">
+                                <label for="" class="my-1">Revenue</label>
+                                <div class="col-sm-4 col-md-6">
+                                    <div class="ui left icon input w-100">
+                                        <input type="text" name="revenue_minimum" placeholder="Minimum">
+                                        <i class="fas fa-dollar-sign icon"></i>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4 col-md-6">
+                                    <div class="ui left icon input w-100">
+                                        <input type="text" name="revenue_maximum" placeholder="Maximum">
+                                        <i class="fas fa-dollar-sign icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6 mt-2">
+                            <label for="" class="my-1">Project Duration</label>
+                            <div class="col-sm-12 col-md-12">
+                                <div class="ui left icon input w-100">
+                                    <input type="date" name="duration" placeholder="Duration">
+                                    <i class="fas fa-calendar-alt icon"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="row my-3">
                         <div class="col-12">
-                            <textarea name="" id="" placeholder="Type Your Message..."></textarea>
+                            <label for="" class="my-1">Message</label>
+                            <textarea name="message" id="message" placeholder="Type Your Message..."
+                                required></textarea>
                         </div>
                     </div>
 
-                    <h3>Your Information</h3>
-
-                    <div class="col-12">
-                        <div class="ui steps">
-                            <a class="step">
-                                <div class="content">
-                                    <div class="title">Step 01</div>
-                                    <div class="description">Your Info</div>
-                                </div>
-                            </a>
-                            <a class="active step">
-                                <div class="content">
-                                    <div class="title">Step 02</div>
-                                    <div class="description">About Plan</div>
-                                </div>
-                            </a>
-                            <a class="step">
-                                <div class="content">
-                                    <div class="title">Step 01</div>
-                                    <div class="description">Requirment</div>
-                                </div>
-                            </a>
-                            <a class="step">
-                                <div class="content">
-                                    <div class="title">Step 01</div>
-                                    <div class="description">Leads Quantity</div>
-                                </div>
-                            </a>
-                            <a class="step">
-                                <div class="content">
-                                    <div class="title">Step 01</div>
-                                    <div class="description">Project Duration</div>
-                                </div>
-                            </a>
-                            <a class="step">
-                                <div class="content">
-                                    <div class="title">Step 01</div>
-                                    <div class="description">Your Review</div>
-                                </div>
-                            </a>
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            <label for="" class="my-1">Selected Country</label>
+                            <input type="text" value="" id="country_box" style="background-color: transparent;"
+                                placeholder="Selected Country">
+                        </div>
+                        <div class="col-6">
+                            <label for="" class="my-1">Selected Cities</label>
+                            <input type="text" value="" id="city_box" style="background-color: transparent;"
+                                placeholder="Selected Cities">
                         </div>
                     </div>
-
-
+                    <button type="submit" class="ui basic button">
+                        <i class="fas fa-paper-plane icon"></i>
+                        Submit
+                    </button><span class="mx-1">OR</span>
+                    <button type="reset" class="ui basic button">
+                        <i class="fas fa-sign-in icon"></i>
+                        Submit & Register
+                    </button>
                 </form>
-
             </div>
         </div>
+
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="ui small bg-white" id="contact_modal">
+                    <i class="close icon"></i>
+                    <div class="header">
+                        Modal Title
+                    </div>
+                    <div class="image content">
+                        <div class="image">
+                            An image can appear on left or an icon
+                        </div>
+                        <div class="description">
+                            A description can appear on the right
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <div class="ui button">Cancel</div>
+                        <div class="ui button">OK</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
 
@@ -127,8 +252,53 @@
     <script src="{{asset('frontend_assets')}}/dist/semantic/semantic.js"></script>
     <script>
         $('#country_Name').dropdown();
+        $('#country_Name2').dropdown();
+        $('#city_Name').dropdown();
+        $('#industry_Name').dropdown();
+
+        // $('#contact_modal').modal();
+        $('#contact_modal').modal({
+            centered: false
+        }).modal('show');
 
     </script>
+
+    <script>
+        $country_name = localStorage.getItem("country_name");
+        var country_name = localStorage.getItem("country_name");
+        var cities_name = localStorage.getItem("cities_name");
+
+        cities_name = cities_name.split(',').join(', ');
+
+        (country_name != null) ? $('#country_box').val(country_name): $('#country_box').addClass('d-none');
+        (cities_name != null) ? $('#city_box').val(cities_name): $('#city_box').addClass('d-none');
+
+    </script>
+
+    <script>
+        $('#country_Name2').change(function () {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            $country = $('#country_Name_Input2').val();
+            $.ajax({
+                type: 'POST',
+                url: '/getcities',
+                data: {
+                    'country': $country
+                },
+                success: function (data) {
+                    $('#country_box').val(data.country_name);
+                    $('#city_Name').html(data.cities);
+                }
+            });
+        })
+
+    </script>
+
+
 </body>
 
 </html>

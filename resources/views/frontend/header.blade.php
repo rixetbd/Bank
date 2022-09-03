@@ -62,12 +62,12 @@
             </div>
             <div class="col-sm-9 col-md-10">
                 <div class="menu">
-                    <div class="menu_item"><a href="#">HOME</a></div>
+                    <div class="menu_item"><a href="{{ url('/') }}">HOME</a></div>
                     <div class="menu_item"><a href="#">SERVICES</a></div>
                     <div class="menu_item"><a href="#">PRICING</a></div>
                     <div class="menu_item"><a href="#">ABOUT US</a></div>
                     <div class="menu_item"><a href="#">BLOG</a></div>
-                    <div class="menu_item"><a href="#">CONTACT</a></div>
+                    <div class="menu_item"><a href="{{route('frontend.contact.index')}}">CONTACT</a></div>
                 </div>
             </div>
 
