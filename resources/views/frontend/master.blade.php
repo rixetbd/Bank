@@ -87,5 +87,6 @@
     <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 
     @yield('footer_script')
+
 </body>
 </html>

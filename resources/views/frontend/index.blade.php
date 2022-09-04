@@ -9,7 +9,8 @@
 <style>
     body {
         /* background: #96725859; */
-        background: #cbdaec;
+        /* background: #cbdaec; */
+        background: #bbcce1fa;
     }
 
     a {
@@ -115,36 +116,30 @@
         color: #000;
     }
 
-    #Filterreset {
+    /* #Filterreset {
         background: #5928e5;
         -webkit-box-shadow: inset 3px 3px 23.5px -17px #000000;
         -moz-box-shadow: inset 3px 3px 23.5px -17px #000000;
         box-shadow: inset 3px 3px 23.5px -17px #000000;
         border: 5px solid #511fd8;
         font-weight: 600 !important;
-        /* border-radius: 10% !important; */
-    }
-
-    #Filterreset {
         font-size: 16px;
         margin-right: 15px;
         width: 180px;
-        /* background-color: #6eb406; */
         color: #fff !important;
-        /* border-radius: 5px !important; */
         line-height: 25px;
         text-align: center;
-    }
+    } */
 
     #myTableSimple th:last-child() {
         border-right: none
     }
 
     #myTableSimple th {
-        background-color: #af3dc74f !important;
+        background-color: #5928e5 !important;
         /* background-color: #dacdc4; */
         /* color: #5928e5; */
-        color: #000;
+        color: #fff;
         border-right: 2px solid #cbdaec;
         font-size: 14px;
         font-weight: 400;
@@ -153,6 +148,25 @@
     #myTableSimple thead {
         border-bottom: #fff
     }
+
+    /* #table_refresh{
+        background-color: #5928e5 !important;
+        color: #fff;
+    } */
+    #Filterreset,
+    #table_refresh{
+        background-color: #fd6769 !important;
+        color: #fff;
+        /* border: 1px solid #ffffff; */
+        border-radius: 5px !important;
+        box-shadow: 0 3px 10px -1px #0000006b;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: .8px;
+    }
+
+    /* #Filterreset{font-weight: 600 !important;font-size: 16px;line-height: 30px;} */
+    #Filterreset{width: 200px;height: 35px;}
 
     #myTableSimple th:nth-last-child() {
         border: none;
@@ -200,6 +214,10 @@
         content: "" !important;
     }
 
+    input[type="checkbox"]:disabled {
+        background: #ff2a2a !important;
+    }
+
 </style>
 @endsection
 
@@ -239,8 +257,8 @@ background-color: #ffd9d9
 
 
 
-<section class="container" style="padding:100px 0 50px 0;">
-    <div style="padding-left:15px;" class="pb-3">
+<section class="container" style="padding:50px 0 50px 0;">
+    <div class="pb-3">
         <div class="row justify-content-between align-items-end pt-4">
             <div class="col-xs-12 col-sm-12 col-md-3">
                 <h4 style="font-size:25px;text-transform:uppercase;">Search Specific Leads</h4>
@@ -251,7 +269,7 @@ background-color: #ffd9d9
                     <div class="ui fluid search selection dropdown" id="country_Name">
                         <input type="hidden" name="country" id="country_Name_Input">
                         <i class="dropdown icon"></i>
-                        <div class="default text">Select Country</div>
+                        <div class="default text">Search Country</div>
                         <div class="menu">
                             @foreach ($all_countries as $country)
                             <div class="item" data-value="{{$country->id}}"><i
@@ -272,12 +290,14 @@ background-color: #ffd9d9
             <div class="col-xs-12 col-sm-12 col-md-3" id="NullData">
                 <div class="col-12 search_div" id="">
                     <label for="" class="w-100" style="text-transform:uppercase;">City Name</label>
+
                     <select name="states" class="ui fluid search dropdown city_Name" id="city_Name">
                         <option value="">All Cities</option>
                         @foreach ($all_city as $city)
                         <option value="{{$city->id}}">{{$city->name}}</option>
                         @endforeach
                     </select>
+                    <small class="pt-1">* You can choose multiple cities</small>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-9 mt-3" id="city_name_display">
@@ -295,53 +315,82 @@ background-color: #ffd9d9
                         <option value="{{$industry->id}}">{{$industry->name}}</option>
                         @endforeach
                     </select>
+                    <small class="pt-1">* You can choose multiple industry</small>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-9 mt-3" id="industry_Name_display">
                 <label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>
             </div>
         </div>
-
+        {{--
 
         <div style="margin:25px 0;">
             <p style="line-height: 0.5715em;">* Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
                 atque?</p>
             <p style="line-height: 0.5715em;">* Lorem ipsum dolor sit amet consectetur adipisicingi, atque?</p>
+        </div> --}}
+
+
+        {{-- Click Here to Select All (Default) --}}
+
+        <div class="row my-3 filter_btn">
+            {{-- <div class="col-2"><label class="btn btn_city w-100" id="table_refresh">All Tabs Selected <i
+                class="fas fa-redo-alt ms-3"></i></label></div> --}}
+        </div>
+        <div class="row my-3 filter_btn">
+            {{-- <div class="col-4"><label class="btn btn_city w-100" id="table_refresh">All Tabs Selected <i
+                class="fas fa-redo-alt ms-3"></i></label></div> --}}
+            <div class="col-2"> <label class="btn btn_city w-100" id="table_Name">Person Name <input type="checkbox"
+                        disabled checked id="table_Name_IN"></label></div>
+            <div class="col-2"><label class="btn btn_city w-100" id="table_Title">Job Title <input type="checkbox"
+                        disabled checked id="table_Title_IN"></label></div>
+            <div class="col-2"><label class="btn btn_city w-100" id="table_Company">Company Name <input type="checkbox"
+                        disabled checked id="table_Company_IN"></label></div>
+            <div class="col-2"><label class="btn btn_city w-100" id="table_City">City <input type="checkbox" disabled
+                        checked id="table_City_IN"></label></div>
+            <div class="col-2"><label class="btn btn_city w-100" id="">Industry <input type="checkbox" disabled
+                checked id="table_City_IN"></label></div>
+            <div class="col-2"><label class="btn btn_city w-100" id="table_refresh">All Tabs Selected</label></div>
+
+            {{-- <div class="col-2"><label class="btn btn_city w-100" id="">Text <i
+                        class="fas fa-redo-alt"></i></label></div> --}}
+            {{-- <div class="col-xs-12 col-sm-12 col-md-12 filter_btn"> --}}
         </div>
 
-
-        <div class="row my-3">
-            <div class="col-xs-12 col-sm-12 col-md-12 filter_btn">
-                <label class="btn btn_city" id="table_Name">Person Name <input type="checkbox" disabled checked
-                        id="table_Name_IN"></label>
-                <label class="btn btn_city" id="table_Title">Job Title <input type="checkbox" disabled checked
-                        id="table_Title_IN"></label>
-                <label class="btn btn_city" id="table_Company">Company Name <input type="checkbox" disabled checked
-                        id="table_Company_IN"></label>
-                <label class="btn btn_city" id="table_City">City <input type="checkbox" disabled checked
-                        id="table_City_IN"></label>
-            </div>
-            <div class="col-md-12 filter_btn">
-                <label class="btn btn_city" id="table_Email">Email <input type="checkbox" checked
+        <div class="row filter_btn">
+            <div class="col-2">
+                <label class="btn btn_city w-100" id="table_Email">Email <input type="checkbox" checked
                         id="table_Email_IN"></label>
-                <label class="btn btn_city" id="table_Phone">Phone <input type="checkbox" checked
-                        id="table_Phone_IN"></label>
-                <label class="btn btn_city" id="table_Company_Size">Company Size <input type="checkbox" checked
-                        id="table_Company_Size_IN"></label>
-                <label class="btn btn_city" id="table_Revenue">Revenue <input type="checkbox" checked
-                        id="table_Revenue_IN"></label>
-                <label class="btn btn_city" id="table_Zip_code">Zip Code <input type="checkbox" checked
-                        id="table_Zip_code_IN"></label>
-                <label class="btn btn_city" id="table_URL">Website <input type="checkbox" checked
-                        id="table_URL_IN"></label>
-                <label class="btn btn_city" id="table_refresh">Default <i class="fas fa-redo-alt"></i></label>
             </div>
+            <div class="col-2">
+                <label class="btn btn_city w-100" id="table_Phone">Phone <input type="checkbox" checked
+                        id="table_Phone_IN"></label>
+            </div>
+            <div class="col-2">
+                <label class="btn btn_city w-100" id="table_Company_Size">Company Size <input type="checkbox" checked
+                        id="table_Company_Size_IN"></label>
+            </div>
+            <div class="col-2">
+                <label class="btn btn_city w-100" id="table_Revenue">Revenue <input type="checkbox" checked
+                        id="table_Revenue_IN"></label>
+            </div>
+            <div class="col-2">
+                <label class="btn btn_city w-100" id="table_Zip_code">Zip Code <input type="checkbox" checked
+                        id="table_Zip_code_IN"></label>
+            </div>
+            <div class="col-2">
+                <label class="btn btn_city w-100" id="table_URL">Website <input type="checkbox" checked
+                        id="table_URL_IN"></label>
+            </div>
+
         </div>
+    </div>
 
     </div>
     <div class="col-lg-12 col-md-12 col-sm-12" style="overflow-x:auto;">
         <table class="table table-responsive cell-border TableIDADD" id="myTableSimple">
             <thead>
+                {{-- <th>Industry</th> --}}
                 <th>Person Name</th>
                 <th style="">Job Title</th>
                 <th>Email</th>
@@ -356,6 +405,7 @@ background-color: #ffd9d9
             <tbody id="lead_data">
                 @forelse ($lead_data as $key=> $lead)
                 <tr>
+                    {{-- <td>{{$lead->industry}}</td> --}}
                     <td>{{$lead->person_name}}</td>
                     <td>{{($lead->title = "Managing Partner"?"Partner": $lead->title)}}</td>
                     <td>{{Str::substr($lead->email, 0, 3)."****@*****".Str::substr($lead->email, -5)}}</td>
@@ -390,13 +440,13 @@ background-color: #ffd9d9
             <div class="ui buttons">
                 <a class="ui button teal" href="{{route('frontend.contact.index')}}">Contact For Order</a>
                 <div class="or"></div>
-                <a class="ui button positive" id="contact_By_filter">Contact
-                    Based Filter</a>
+                <a class="ui button positive" id="contact_By_filter">Contact Based Filter</a>
             </div>
         </div>
     </div>
 
 </section>
+
 
 @endsection
 
@@ -458,7 +508,7 @@ background-color: #ffd9d9
 
         setTimeout(
             function () {
-                $('#city_Name').next($('.menu .active').addClass('d-none'));
+                // $('#city_Name').next($('.menu .active').addClass('d-none'));
             }, 500);
 
         $('#city_name_display .new_item').click(function () {
@@ -480,9 +530,9 @@ background-color: #ffd9d9
                 success: function (data) {
                     $('#lead_data').html(data.lead_datasearch);
                 },
-                error: function (data) {
-                    alert("fail");
-                }
+                // error: function (data) {
+                //     alert("fail");
+                // }
             });
 
         });
@@ -510,10 +560,19 @@ background-color: #ffd9d9
                 console.log(data.lead_datasearch);
                 // console.log(data.lead_datasearch);
             },
-            error: function (data) {
-                alert("fail");
-            }
+            // error: function (data) {
+            //     alert("fail");
+            // }
         });
+
+        $('#city_Name').next($('.text').eq(1).html('Search cities'));
+    });
+
+    $('body').click(function () {
+
+        $('#city_Name').next($('.text').eq(1).html('Search cities'));
+        $('#industry_Name').next($('.text').eq(2).html('Search industry'));
+
     });
 
 </script>
@@ -623,6 +682,10 @@ background-color: #ffd9d9
         // localStorage.getItem("country_name");
         location.href = "/contact";
 
+    });
+
+    $('#city_Name22').popup({
+        inline: true
     });
 
 </script>

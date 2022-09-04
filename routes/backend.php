@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CountryController;
 use App\Http\Controllers\Admin\IndustryController;
 use App\Http\Controllers\Admin\LeadController;
+use App\Http\Controllers\Admin\MailboxController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CSV\CsvUploadController;
 use Illuminate\Support\Facades\Auth;
@@ -27,15 +28,12 @@ Route::middleware('auth')->group(function(){
     });
 
     Route::controller(LeadController::class)->group(function(){
-
         Route::get('/admin/leads', 'index')->name('admin.leads.index');
         Route::get('/admin/leads/delete/{id}', 'destroy')->name('admin.leads.single.delete');
         Route::get('/admin/leads/importpage', 'importpage')->name('admin.leads.importpage');
-
     });
 
     Route::controller(CountryController::class)->group(function(){
-
         Route::get('/admin/countries', 'index')->name('admin.countrie.index');
         Route::post('/admin/countries/create', 'create')->name('admin.countrie.create');
         Route::post('/admin/countries/update', 'update')->name('admin.country.update');
@@ -53,6 +51,15 @@ Route::middleware('auth')->group(function(){
         Route::post('/admin/industry/create', 'create')->name('admin.industry.create');
         Route::post('/admin/industry/update', 'update')->name('admin.industry.update');
         Route::get('/admin/industry/destroy/{id}', 'destroy')->name('admin.industry.destroy');
+    });
+
+
+    Route::controller(MailboxController::class)->group(function(){
+
+        Route::get('/admin/inbox', 'inbox')->name('admin.inbox');
+        Route::get('/admin/compose', 'compose')->name('admin.inbox.compose');
+        Route::get('/admin/read/id', 'read_message')->name('admin.inbox.read_message');
+
     });
 
 });

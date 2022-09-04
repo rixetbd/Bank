@@ -31,7 +31,7 @@
 
     <div class="container my-5">
         <div class="row w-100 justify-content-center">
-            <div class="col-8 p-5" style="background:#dbd5d0;border-radius:5px;">
+            <div class="col-8 p-5" style="background:#dbd5d0;border-radius:5px;margin-bottom:50px;">
                 <h4>Contact Us Today</h4>
 
                 <div class="col-12 mb-3">
@@ -196,12 +196,12 @@
                     </div>
 
                     <div class="row mb-2">
-                        <div class="col-6">
+                        <div class="col-6" id="country_box_grp">
                             <label for="" class="my-1">Selected Country</label>
                             <input type="text" value="" id="country_box" style="background-color: transparent;"
                                 placeholder="Selected Country">
                         </div>
-                        <div class="col-6">
+                        <div class="col-6" id="city_box_grp">
                             <label for="" class="my-1">Selected Cities</label>
                             <input type="text" value="" id="city_box" style="background-color: transparent;"
                                 placeholder="Selected Cities">
@@ -210,38 +210,15 @@
                     <button type="submit" class="ui basic button">
                         <i class="fas fa-paper-plane icon"></i>
                         Submit
-                    </button><span class="mx-1">OR</span>
+                    </button>
+                    {{-- <span class="mx-1">OR</span> --}}
                     <button type="reset" class="ui basic button">
                         <i class="fas fa-sign-in icon"></i>
-                        Submit & Register
+                        Resel
                     </button>
                 </form>
             </div>
         </div>
-
-        <div class="row justify-content-center">
-            <div class="col-4">
-                <div class="ui small bg-white" id="contact_modal">
-                    <i class="close icon"></i>
-                    <div class="header">
-                        Modal Title
-                    </div>
-                    <div class="image content">
-                        <div class="image">
-                            An image can appear on left or an icon
-                        </div>
-                        <div class="description">
-                            A description can appear on the right
-                        </div>
-                    </div>
-                    <div class="actions">
-                        <div class="ui button">Cancel</div>
-                        <div class="ui button">OK</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 
 
@@ -257,9 +234,6 @@
         $('#industry_Name').dropdown();
 
         // $('#contact_modal').modal();
-        $('#contact_modal').modal({
-            centered: false
-        }).modal('show');
 
     </script>
 
@@ -270,8 +244,8 @@
 
         cities_name = cities_name.split(',').join(', ');
 
-        (country_name != null) ? $('#country_box').val(country_name): $('#country_box').addClass('d-none');
-        (cities_name != null) ? $('#city_box').val(cities_name): $('#city_box').addClass('d-none');
+        if(country_name != null){$('#country_box').val(country_name)}else{$('#country_box_grp').addClass('d-none')};
+        if(cities_name != null){$('#city_box').val(cities_name)}else{$('#city_box_grp').addClass('d-none')};
 
     </script>
 
@@ -298,6 +272,13 @@
 
     </script>
 
+    <script>
+        // function localStorageClear() {
+        //     localStorage.clear();
+        // }
+
+        // localStorageClear();
+    </script>
 
 </body>
 

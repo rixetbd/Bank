@@ -1,5 +1,5 @@
 @php
-    $currentRouteName = Route::currentRouteName();
+$currentRouteName = Route::currentRouteName();
 @endphp
 
 <!DOCTYPE html>
@@ -145,7 +145,8 @@
                 </li> --}}
                 <li class="nav-item">
 
-                    <a class="nav-link text-danger" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <a class="nav-link text-danger" href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                         <i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}
                     </a>
 
@@ -197,7 +198,8 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                         data-accordion="false">
                         <li class="nav-item">
-                            <a href="{{route('admin.index')}}" class="nav-link {{($currentRouteName == "admin.index"?"active":" ")}}">
+                            <a href="{{route('admin.index')}}"
+                                class="nav-link {{($currentRouteName == "admin.index"?"active":" ")}}">
                                 <i class="nav-icon fas fa-tachometer-alt"></i>
                                 <p>
                                     Dashboard
@@ -215,7 +217,8 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('admin.leads.index')}}" class="nav-link {{($currentRouteName == "admin.leads.index"?"active":" ")}}">
+                                    <a href="{{route('admin.leads.index')}}"
+                                        class="nav-link {{($currentRouteName == "admin.leads.index"?"active":" ")}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>All Leads</p>
                                     </a>
@@ -239,13 +242,15 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('admin.countrie.index')}}" class="nav-link {{($currentRouteName == "admin.countrie.index"?"active":" ")}}">
+                                    <a href="{{route('admin.countrie.index')}}"
+                                        class="nav-link {{($currentRouteName == "admin.countrie.index"?"active":" ")}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>All Country</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('admin.city.index')}}" class="nav-link {{($currentRouteName == "admin.city.index"?"active":" ")}}">
+                                    <a href="{{route('admin.city.index')}}"
+                                        class="nav-link {{($currentRouteName == "admin.city.index"?"active":" ")}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>City</p>
                                     </a>
@@ -280,13 +285,44 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="{{route('admin.industry.index')}}" class="nav-link  {{($currentRouteName == "admin.industry.index"?"active":" ")}}">
+                            <a href="{{route('admin.industry.index')}}"
+                                class="nav-link  {{($currentRouteName == "admin.industry.index"?"active":" ")}}">
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>
                                     Industry
                                     <i class="right fas fa-angle-left"></i>
                                 </p>
                             </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon far fa-envelope"></i>
+                                <p>
+                                    Mailbox
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('admin.inbox')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Inbox</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('admin.inbox.compose')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Compose</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('admin.inbox.read_message')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Read</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
                     </ul>
