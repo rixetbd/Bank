@@ -154,19 +154,21 @@
         color: #fff;
     } */
     #Filterreset,
-    #table_refresh{
+    #table_refresh {
         background-color: #fd6769 !important;
         color: #fff;
         /* border: 1px solid #ffffff; */
         border-radius: 5px !important;
         box-shadow: 0 3px 10px -1px #0000006b;
         text-align: center;
-        text-transform: uppercase;
         letter-spacing: .8px;
+        text-transform: uppercase;
     }
-
     /* #Filterreset{font-weight: 600 !important;font-size: 16px;line-height: 30px;} */
-    #Filterreset{width: 200px;height: 35px;}
+    #Filterreset {
+        width: 200px;
+        height: 35px;
+    }
 
     #myTableSimple th:nth-last-child() {
         border: none;
@@ -218,6 +220,14 @@
         background: #ff2a2a !important;
     }
 
+    .ui.popup{
+        color: #fff;
+        background-color: #5928e5 !important;
+    }
+    .ui.popup::before{
+        background-color: #5928e5 !important;
+    }
+
 </style>
 @endsection
 
@@ -233,8 +243,8 @@ background-color: #ffd9d9
 --}}
 @section('container')
 
-<div class="w-100 text-center" style="min-height: 400px;background: #5928e5;">
-    <h1 style="text-transform:uppercase;font-size:200px;color:#fff;line-height: 110px;padding-top: 100px;">
+<div class="w-100 text-center" style="min-height: 350px;background: #5928e5;">
+    <h1 style="text-transform:uppercase;font-size:200px;color:#fff;line-height: 65px;padding-top: 100px;">
         Lead<br><span style="font-size:70px;">Generation</span></h1>
 
     <div class="row float-end">
@@ -277,12 +287,14 @@ background-color: #ffd9d9
                             @endforeach
                         </div>
                     </div>
-
-
                 </div>
             </div>
             <div class="col-sm-12 col-md-9">
-                <button class="btn btn_city text-white float-end" id="Filterreset">RESET ALL</button>
+                <button class="btn btn_city text-white float-end" id="Filterreset">
+                    <div class="ui toltip" data-content="You can reset filter" data-position="top center">
+                    RESET ALL
+                </div>
+                </button>
             </div>
         </div>
 
@@ -290,13 +302,14 @@ background-color: #ffd9d9
             <div class="col-xs-12 col-sm-12 col-md-3" id="NullData">
                 <div class="col-12 search_div" id="">
                     <label for="" class="w-100" style="text-transform:uppercase;">City Name</label>
-
-                    <select name="states" class="ui fluid search dropdown city_Name" id="city_Name">
-                        <option value="">All Cities</option>
-                        @foreach ($all_city as $city)
-                        <option value="{{$city->id}}">{{$city->name}}</option>
-                        @endforeach
-                    </select>
+                    <div class="ui toltip" data-content="You can choose multiple cities" data-position="left center">
+                        <select name="states" class="ui fluid search dropdown city_Name" id="city_Name">
+                            <option value="">All Cities</option>
+                            @foreach ($all_city as $city)
+                            <option value="{{$city->id}}">{{$city->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <small class="pt-1">* You can choose multiple cities</small>
                 </div>
             </div>
@@ -309,12 +322,14 @@ background-color: #ffd9d9
             <div class="col-xs-12 col-sm-12 col-md-3" id="NullData">
                 <div class="col-12 search_div" id="">
                     <label for="" class="w-100" style="text-transform:uppercase;">Industry Name</label>
-                    <select name="states" class="ui fluid search dropdown city_Name" id="industry_Name">
-                        <option value="">All Industry</option>
-                        @foreach ($all_industry as $industry)
-                        <option value="{{$industry->id}}">{{$industry->name}}</option>
-                        @endforeach
-                    </select>
+                    <div class="ui toltip" data-content="You can choose multiple industry" data-position="left center">
+                        <select name="states" class="ui fluid search dropdown city_Name" id="industry_Name">
+                            <option value="">All Industry</option>
+                            @foreach ($all_industry as $industry)
+                            <option value="{{$industry->id}}">{{$industry->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
                     <small class="pt-1">* You can choose multiple industry</small>
                 </div>
             </div>
@@ -348,9 +363,13 @@ background-color: #ffd9d9
                         disabled checked id="table_Company_IN"></label></div>
             <div class="col-2"><label class="btn btn_city w-100" id="table_City">City <input type="checkbox" disabled
                         checked id="table_City_IN"></label></div>
-            <div class="col-2"><label class="btn btn_city w-100" id="">Industry <input type="checkbox" disabled
-                checked id="table_City_IN"></label></div>
-            <div class="col-2"><label class="btn btn_city w-100" id="table_refresh">All Tabs Selected</label></div>
+            <div class="col-2"><label class="btn btn_city w-100" id="">Industry <input type="checkbox" disabled checked
+                        id="table_City_IN"></label></div>
+            <div class="col-2">
+                <div class="ui toltip" data-content="Selected Tabs Action" data-position="top center">
+                    <label class="btn btn_city w-100" id="table_refresh">All Tabs Selected</label>
+                </div>
+            </div>
 
             {{-- <div class="col-2"><label class="btn btn_city w-100" id="">Text <i
                         class="fas fa-redo-alt"></i></label></div> --}}
@@ -503,6 +522,7 @@ background-color: #ffd9d9
         console.log(cities);
 
         // localStorage.setItem("cities", cities);
+
         $('#city_name_display').append($('<button class="new_item">').html($('#city_Name option:selected')
             .text() + '<span class="new_item_close"><i class="fas fa-times"></i></span>'));
 
@@ -634,7 +654,7 @@ background-color: #ffd9d9
 
         setTimeout(
             function () {
-                $('#industry_Name').next($('.menu .active').addClass('d-none'));
+                // $('#industry_Name').next($('.menu .active').addClass('d-none'));
             }, 500);
 
 
@@ -666,7 +686,12 @@ background-color: #ffd9d9
 
 <script>
     $('#Filterreset').click(function () {
-        $('#country_Name').dropdown();
+        $('#country_Name').next($('.text').eq(0).html('Search Country'));
+        $('#country_Name').val('');
+        cities = [];
+        industries = [];
+        $('#city_name_display').html('');
+        $('#industry_Name_display').html('');
     });
 
 </script>
@@ -687,6 +712,9 @@ background-color: #ffd9d9
     $('#city_Name22').popup({
         inline: true
     });
+
+    // $('.toltip').popup();
+    $('.toltip').popup({inline: true});
 
 </script>
 

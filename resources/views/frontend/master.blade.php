@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('frontend_assets')}}/dist/semantic/semantic.min.css">
     <link rel="stylesheet" href="{{asset('frontend_assets/dist/flags/flag.css')}}">
     <link rel="stylesheet" href="{{asset('frontend_assets/dist/css/footer.css')}}">
+    <link rel="stylesheet" href="{{asset('frontend_assets/dist/css/header.css')}}">
 
     @yield('stylesheet')
 
@@ -20,6 +21,56 @@
 
 </head>
 <body>
+
+    <section class="header container-fluid" style="background-color: #5928e5;">
+        <div class="container" style="padding-bottom:10px;">
+            <div class="row first_row">
+                <div class="col-xs-12 col-sm-12 col-md-6 right_side">
+                    <ul>
+                        <li><a href="#"><i class="fas fa-envelope"></i> info@bdosc.com</a></li>
+                        <li><a href="#"><i class="fas fa-phone"></i> +88 01234567891</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-12 col-md-6 left_side">
+                    <div class="social_icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row second_row my-2">
+                <div class="col-sm-3 col-md-2">
+                    <img src="{{asset('uploads/img/logo.png')}}" alt="Logo" class="img-fluid logo">
+                </div>
+                <div class="col-sm-9 col-md-10">
+                    <div class="menu">
+                        <div class="menu_item"><a href="{{ url('/') }}">HOME</a></div>
+                        <div class="menu_item"><a href="#">SERVICES</a></div>
+                        <div class="menu_item"><a href="#">PRICING</a></div>
+                        <div class="menu_item"><a href="#">ABOUT US</a></div>
+                        <div class="menu_item"><a href="#">BLOG</a></div>
+                        <div class="menu_item"><a href="{{route('frontend.contact.index')}}">CONTACT</a></div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row third_row my-2">
+                <div class="col service_item"><a href="#">Data Entry</a></div>
+                <div class="col service_item"><a href="#">Lead Generation</a></div>
+                <div class="col service_item"><a href="#">Conversion</a></div>
+                <div class="col service_item"><a href="#">Web Research</a></div>
+                <div class="col service_item"><a href="#">Typing Services</a></div>
+                <div class="col service_item"><a href="#">Photo Editing</a></div>
+                <div class="col service_item"><a href="#">Web Devlopment</a></div>
+                <div class="col service_item"><a href="#">Digital Marketing</a></div>
+            </div>
+        </div>
+    </section>
+
+
 
     @yield('container')
 
