@@ -14,7 +14,17 @@ class SearchController extends Controller
 
     public function index(){}
 
-    public function create(){}
+    public function getalldata(){
+
+        $lead_dataDB = Lead::paginate(15);
+        $lead_datasearch = "";
+        foreach ($lead_dataDB as $lead) {
+            $lead_datasearch .= '<tr><td>'.$lead->person_name.'</td><td>'.$lead->title.'</td><td>'.Str::substr($lead->email, 0, 3).'****@*****'.Str::substr($lead->email, -5).'</td><td>'.Str::substr($lead->phone, 0, 6)."*****".'</td><td>'.Str::limit($lead->company_name, 20).'</td><td>'.$lead->company_size.'</td><td>'.$lead->revenue.'</td><td>'.$lead->city.'</td><td>'.$lead->zip_code.'</td><td>'.Str::substr($lead->website, 0, 10).'***.'.Str::substr($lead->website, -3).'</td></tr>';
+        }
+        return response()->json([
+            'lead_datasearch'=>$lead_datasearch,
+        ]);
+    }
 
     public function store(Request $request){}
 
@@ -34,7 +44,8 @@ class SearchController extends Controller
             $cities .= '<option value="'.$city->id.'">'.$city->name.'</option>';
         }
         $country = Country::find($request->country);
-        $lead_dataDB = Lead::where('country', "=" , $country->name)->paginate(15);
+        $lead_dataDB = Lead::where('country', "=" , $country->name)->limit(20)->get();
+        // $lead_dataDB = Lead::where('country', "=" , $country->name)->paginate(15);
         if($lead_dataDB->count() != 0 ){
             $lead_datasearch = "";
             foreach ($lead_dataDB as $lead) {

@@ -56,9 +56,9 @@ body {
 }
 
 .filter_btn .btn_city{
-    background-color: #fff !important;
-    /* background-color: #af3dc729 !important; */
-    /* background-color: #af3dc74f !important; */
+    background-color: #fff ;
+    /* background-color: #af3dc729 !important;
+    background-color: #af3dc74f !important; */
 }
 
 .btn_industry{

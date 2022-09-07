@@ -278,9 +278,203 @@ background-color: #ffd9d9
     </div>
 </div>
 
+<div class="container my-5">
+
+    <div class="row">
+        <div class="col col-6 d-flex justify-content-center align-items-center bg-danger" style="height:200px;transform: skewX(340deg);cursor: pointer;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <h4 style="font-size: 50px;color:#fff;">Click Here</h4>
+        </div>
+        <div class="col col-6 d-flex justify-content-center align-items-center bg-success" style="height:200px;transform: skewX(340deg);cursor: pointer;">
+            <h4 style="font-size: 50px;color:#fff;">Contact Us</h4>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content" style="background-color: #bbcce1fa;">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">SEARCH SPECIFIC LEADS</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="background-color: #bbcce1fa;">
+                <div class="container">
+                    <div class="row justify-content-between align-items-end pt-4">
+                        <div class="col-xs-12 col-sm-12 col-md-3">
+                            <h4 style="font-size:25px;text-transform:uppercase;">Search Specific Leads</h4>
+                            <div class="col-12 search_div" id="country_Name_Box">
+                                <input type="hidden" id="country_Name_catch">
+                                <label for="" class="w-100" style="text-transform:uppercase;">Country Name </label>
+                                {{-- <i class="fa-solid fa-angle-down CONCON1"></i> --}}
+                                <div class="ui fluid search selection dropdown" id="country_Name">
+                                    <input type="hidden" name="country" id="country_Name_Input">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Search Country</div>
+                                    <div class="menu">
+                                        @foreach ($all_countries as $country)
+                                        <div class="item" data-value="{{$country->id}}"><i
+                                                class="{{Str::lower($country->iso2)}} flag"></i>{{$country->name}}</div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-9">
+                            <button class="btn btn_city text-white float-end bg_theme_tomato" id="Filterreset">
+                                <div class="ui toltip" data-content="You can reset filter" data-position="top center">
+                                    RESET ALL
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-12 row" style="padding-bottom:15px;border-bottom:1px solid #fff">
+                        <div class="col-xs-12 col-sm-12 col-md-3" id="NullData">
+                            <div class="col-12 search_div" id="">
+                                <label for="" class="w-100" style="text-transform:uppercase;">City Name</label>
+                                <div class="ui toltip" data-content="You can choose multiple cities as per your needs"
+                                    data-position="left center">
+                                    <select name="states" class="ui fluid search dropdown city_Name" id="city_Name">
+                                        <option value="">All Cities</option>
+                                        @foreach ($all_city as $city)
+                                        <option value="{{$city->id}}">{{$city->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-9 mt-3" id="city_name_display">
+                            <label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 row" style="padding-bottom: 15px;border-bottom:1px solid #fff">
+                        <div class="col-xs-12 col-sm-12 col-md-3" id="NullData">
+                            <div class="col-12 search_div" id="">
+                                <label for="" class="w-100" style="text-transform:uppercase;">Industry Name</label>
+                                <div class="ui toltip" data-content="You can choose multiple industry" data-position="left center">
+                                    <select name="states" class="ui fluid search dropdown city_Name" id="industry_Name">
+                                        <option value="">All Industry</option>
+                                        @foreach ($all_industry as $industry)
+                                        <option value="{{$industry->id}}">{{$industry->name}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-9 mt-3" id="industry_Name_display">
+                            <label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>
+                        </div>
+                    </div>
+
+                    <div class="row my-3 filter_btn">
+                        {{-- <div class="col-4"><label class="btn btn_city w-100" id="table_refresh">All Tabs Selected <i
+                            class="fas fa-redo-alt ms-3"></i></label></div> --}}
+                        <div class="col-2"> <label class="btn btn_city w-100" id="table_Name">Person Name <input type="checkbox"
+                                    disabled checked id="table_Name_IN"></label></div>
+                        <div class="col-2"><label class="btn btn_city w-100" id="table_Title">Job Title <input type="checkbox"
+                                    disabled checked id="table_Title_IN"></label></div>
+                        <div class="col-2"><label class="btn btn_city w-100" id="table_Company">Company Name <input type="checkbox"
+                                    disabled checked id="table_Company_IN"></label></div>
+                        <div class="col-2"><label class="btn btn_city w-100" id="table_City">City <input type="checkbox" disabled
+                                    checked id="table_City_IN"></label></div>
+                        <div class="col-2"><label class="btn btn_city w-100" id="">Industry <input type="checkbox" disabled checked
+                                    id="table_City_IN"></label></div>
+                        <div class="col-2">
+                            <div class="ui toltip" data-content="Selected Tabs Action" data-position="top center">
+                                <label class="btn btn_city w-100 bg_theme" id="table_refresh">All Tabs Selected</label>
+                            </div>
+                        </div>
+
+                        {{-- <div class="col-2"><label class="btn btn_city w-100" id="">Text <i
+                                    class="fas fa-redo-alt"></i></label></div> --}}
+                        {{-- <div class="col-xs-12 col-sm-12 col-md-12 filter_btn"> --}}
+                    </div>
+
+                    <div class="row filter_btn">
+                        <div class="col-2">
+                            <label class="btn btn_city w-100" id="table_Email">Email <input type="checkbox" checked
+                                    id="table_Email_IN"></label>
+                        </div>
+                        <div class="col-2">
+                            <label class="btn btn_city w-100" id="table_Phone">Phone <input type="checkbox" checked
+                                    id="table_Phone_IN"></label>
+                        </div>
+                        <div class="col-2">
+                            <label class="btn btn_city w-100" id="table_Company_Size">Company Size <input type="checkbox" checked
+                                    id="table_Company_Size_IN"></label>
+                        </div>
+                        <div class="col-2">
+                            <label class="btn btn_city w-100" id="table_Revenue">Revenue <input type="checkbox" checked
+                                    id="table_Revenue_IN"></label>
+                        </div>
+                        <div class="col-2">
+                            <label class="btn btn_city w-100" id="table_Zip_code">Zip Code <input type="checkbox" checked
+                                    id="table_Zip_code_IN"></label>
+                        </div>
+                        <div class="col-2">
+                            <label class="btn btn_city w-100" id="table_URL">Website <input type="checkbox" checked
+                                    id="table_URL_IN"></label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 mt-3" style="overflow-x:auto;">
+                        <table class="table table-responsive cell-border TableIDADD" id="myTableSimple">
+                            <thead>
+                                {{-- <th>Industry</th> --}}
+                                <th>Person Name</th>
+                                <th style="">Job Title</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th style="min-width: 170px;">Company Name</th>
+                                <th style="width: 105px;min-width: 105px;">Company Size</th>
+                                <th>Revenue</th>
+                                <th style="min-width: 100px;">City</th>
+                                <th style="min-width: 72px;">Zip Code</th>
+                                <th>Website</th>
+                            </thead>
+                            <tbody id="lead_data">
+                                @forelse ($lead_data as $key=> $lead)
+                                <tr>
+                                    {{-- <td>{{$lead->industry}}</td> --}}
+                                    <td>{{$lead->person_name}}</td>
+                                    <td>{{($lead->title = "Managing Partner"?"Partner": $lead->title)}}</td>
+                                    <td>{{Str::substr($lead->email, 0, 3)."****@*****".Str::substr($lead->email, -5)}}</td>
+                                    <td>{{Str::substr($lead->phone, -4)."****"}}</td>
+                                    <td>{{ Str::limit($lead->company_name, 15)}}</td>
+                                    <td>{{$lead->company_size}}</td>
+                                    <td>{{$lead->revenue}}</td>
+                                    <td>{{$lead->city}}</td>
+                                    <td>{{$lead->zip_code}}</td>
+                                    <td>{{Str::substr($lead->website, 0, 10)."***.".Str::substr($lead->website, -3) }}</td>
+                                    @empty
+                                <tr>
+                                    <td colspan="12" class="text-center">Not Found Any Data.</td>
+                                </tr>
+                                @endforelse
+                            </tbody>
+                        </table>
+                    </div>
 
 
 
+
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a type="button" class="btn btn-primary" href="{{route('frontend.contact.index')}}">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
 <section class="container" style="padding:50px 0 50px 0;">
     <div class="pb-3">
         <div class="row justify-content-between align-items-end pt-4">
@@ -476,7 +670,7 @@ background-color: #ffd9d9
         </div>
     </div>
 </section>
-
+-->
 
 @endsection
 

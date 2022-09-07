@@ -82,6 +82,8 @@ table_Title.addEventListener('click', function () {
 
 table_Email.addEventListener('click', function () {
 
+    checkTabs();
+
     if(document.getElementById("table_Email_IN").checked !== true){
         show_hide_column();
         var lastColHeader = Array.prototype.slice.call(document.querySelectorAll('th:nth-child(3)', 'table'), 0); // get the header cell
@@ -89,7 +91,6 @@ table_Email.addEventListener('click', function () {
         lastColCells.forEach(function (cell) { // iterate and hide
             cell.style.display = 'none';
         });
-        $('#table_refresh').html('Click to Select All');
     }else{
         show_hide_column();
         var lastColHeader = Array.prototype.slice.call(document.querySelectorAll('th:nth-child(3)', 'table'), 0); // get the header cell
@@ -97,12 +98,13 @@ table_Email.addEventListener('click', function () {
         lastColCells.forEach(function (cell) { // iterate and hide
             cell.style.removeProperty('display');
         });
-        $('#table_refresh').html('All Tabs Selected');
     }
 
 });
 
 table_Phone.addEventListener('click', function () {
+
+    checkTabs();
 
     if(document.getElementById("table_Phone_IN").checked !== true){
         show_hide_column();
@@ -111,7 +113,6 @@ table_Phone.addEventListener('click', function () {
         lastColCells.forEach(function (cell) { // iterate and hide
             cell.style.display = 'none';
         });
-        $('#table_refresh').html('Click to Select All');
     }else{
         show_hide_column();
         var lastColHeader = Array.prototype.slice.call(document.querySelectorAll('th:nth-child(4)', 'table'), 0); // get the header cell
@@ -119,10 +120,11 @@ table_Phone.addEventListener('click', function () {
         lastColCells.forEach(function (cell) { // iterate and hide
             cell.style.removeProperty('display');
         });
-        $('#table_refresh').html('All Tabs Selected');
     }
 });
 table_Company.addEventListener('click', function () {
+
+    checkTabs();
 
     if(document.getElementById("table_Company_IN").checked !== true){
         show_hide_column();
@@ -143,6 +145,8 @@ table_Company.addEventListener('click', function () {
 });
 table_Company_Size.addEventListener('click', function () {
 
+    checkTabs();
+
     if(document.getElementById("table_Company_Size_IN").checked !== true){
         show_hide_column();
         var lastColHeader = Array.prototype.slice.call(document.querySelectorAll('th:nth-child(6)', 'table'), 0); // get the header cell
@@ -162,6 +166,8 @@ table_Company_Size.addEventListener('click', function () {
 });
 table_Revenue.addEventListener('click', function () {
 
+    checkTabs();
+
     if(document.getElementById("table_Revenue_IN").checked !== true){
         show_hide_column();
         var lastColHeader = Array.prototype.slice.call(document.querySelectorAll('th:nth-child(7)', 'table'), 0); // get the header cell
@@ -180,6 +186,8 @@ table_Revenue.addEventListener('click', function () {
 
 });
 table_City.addEventListener('click', function () {
+
+    checkTabs();
 
     if(document.getElementById("table_City_IN").checked !== true){
         show_hide_column();
@@ -204,6 +212,8 @@ table_City.addEventListener('click', function () {
 });
 table_Zip_code.addEventListener('click', function () {
 
+    checkTabs();
+
     if(document.getElementById("table_Zip_code_IN").checked !== true){
         show_hide_column();
         var lastColHeader = Array.prototype.slice.call(document.querySelectorAll('th:nth-child(9)', 'table'), 0); // get the header cell
@@ -223,6 +233,8 @@ table_Zip_code.addEventListener('click', function () {
 });
 
 table_URL.addEventListener('click', function () {
+
+    checkTabs();
 
     if(document.getElementById("table_URL_IN").checked !== true){
         show_hide_column();
@@ -255,6 +267,23 @@ table_refresh.addEventListener('click', ()=>{
     if(document.getElementById("table_Company_Size_IN").checked !== true){$('#table_Company_Size').click();}
     if(document.getElementById("table_Revenue_IN").checked !== true){$('#table_Revenue').click();}
     if(document.getElementById("table_City_IN").checked !== true){$('#table_City').click();}
+    if(document.getElementById("table_Zip_code_IN").checked !== true){$('#table_Zip_code').click();}
+
+    checkTabs();
 });
 
+
+function checkTabs(){
+
+    if(document.getElementById("table_Email_IN").checked !== true || document.getElementById("table_Phone_IN").checked !== true || document.getElementById("table_Company_Size_IN").checked !== true || document.getElementById("table_Revenue_IN").checked !== true || document.getElementById('table_Zip_code_IN').checked !== true || document.getElementById("table_URL_IN").checked !== true){
+        $('#table_refresh').removeClass('bg_theme');
+        $('#table_refresh').addClass('bg_theme_tomato');
+        $('#table_refresh').html('Click to Select All');
+    }else{
+        $('#table_refresh').removeClass('bg_theme_tomato');
+        $('#table_refresh').addClass('bg_theme');
+        $('#table_refresh').html('All Tabs Selected');
+    }
+
+}
 

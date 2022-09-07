@@ -32,6 +32,22 @@ class FrontendController extends Controller
         ]);
     }
 
+    public function index2()
+    {
+        $all_countries = Country::all();
+        $all_city = City::orderby('name', 'asc')->get();
+        $all_industry = Industry::orderby('name', 'asc')->get();
+        $lead_data = Lead::paginate(100);
+        // $lead_data = Lead::paginate(20);
+        // $all_cities =
+        return view('frontend.index2',[
+            'all_countries'=>$all_countries,
+            'lead_data'=>$lead_data,
+            'all_city'=>$all_city,
+            'all_industry'=>$all_industry,
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *
