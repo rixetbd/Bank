@@ -3,7 +3,8 @@
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\SearchController;
-use Illuminate\Support\Facades\DB;
+use App\Models\Lead;
+use Facade\FlareClient\Http\Response;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +20,15 @@ Route::controller(FrontendController::class)->group(function(){
     Route::get('/2', 'index2')->name('frontend.index2');
     Route::get('/getCityName', 'getCityName')->name('frontend.getCityName');
 
+
+    Route::get('/test/data', function(){
+        $data = Lead::all();
+        return response()->json($data);
+    });
+
+    Route::get('/test', function(){
+        return view('frontend.test');
+    });
 
 });
 

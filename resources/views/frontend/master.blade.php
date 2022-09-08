@@ -24,7 +24,7 @@
 
     <section class="header container-fluid" style="background-color: #5928e5;">
         <div class="container" style="padding-bottom:10px;">
-            <div class="row first_row">
+            {{-- <div class="row first_row">
                 <div class="col-xs-12 col-sm-12 col-md-6 right_side">
                     <ul>
                         <li><a href="#"><i class="fas fa-envelope"></i> info@bdosc.com</a></li>
@@ -40,10 +40,10 @@
                         <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-            </div>
-            <div class="row second_row my-2">
+            </div> --}}
+            <div class="row second_row py-4">
                 <div class="col-sm-3 col-md-2">
-                    <img src="{{asset('uploads/img/logo.png')}}" alt="Logo" class="img-fluid logo">
+                    <img src="{{asset('uploads/img/logo3.png')}}" alt="Logo" class="img-fluid logo">
                 </div>
                 <div class="col-sm-9 col-md-10">
                     <div class="menu">

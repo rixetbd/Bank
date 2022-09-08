@@ -241,6 +241,48 @@
         background-color: #5928e5 !important;
     }
 
+    .Sub_box_One {
+        height: 200px;
+        transform: skewX(340deg);
+        cursor: pointer;
+        background-size: cover;
+        background-image: url({{asset('frontend_assets/images/businessman-hand-holding-creative-light-bulb.jpg')}});
+    }
+
+    .Sub_box_two {
+        height: 200px;
+        transform: skewX(340deg);
+        cursor: pointer;
+        background-size: cover;
+        background-image: url({{asset('frontend_assets/images/contact_us.jpg')}});
+    }
+
+    .Sub_box_One h4,
+    .Sub_box_two h4 {
+        font-size: 50px;
+        color: #fff;
+    }
+
+    .Sub_box_One:hover h4,
+    .Sub_box_two:hover h4 {
+        font-size: 53px;
+        transition: .05s ease;
+    }
+
+    @media (max-width:400px) {
+
+        .Sub_box_One,
+        .Sub_box_two {
+            transform: none;
+        }
+    }
+
+    p {
+        font-size: 15px;
+        letter-spacing: .5px;
+        line-height: 25px;
+    }
+
 </style>
 @endsection
 
@@ -281,12 +323,14 @@ background-color: #ffd9d9
 <div class="container my-5">
 
     <div class="row">
-        <div class="col col-6 d-flex justify-content-center align-items-center bg-danger" style="height:200px;transform: skewX(340deg);cursor: pointer;" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            <h4 style="font-size: 50px;color:#fff;">Click Here</h4>
+        <div class="col-sm-12 col-md-6 d-flex justify-content-center align-items-center bg-danger Sub_box_One"
+            data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <h4>Click Here</h4>
         </div>
-        <div class="col col-6 d-flex justify-content-center align-items-center bg-success" style="height:200px;transform: skewX(340deg);cursor: pointer;">
-            <h4 style="font-size: 50px;color:#fff;">Contact Us</h4>
-        </div>
+        <a class="col-sm-12 col-md-6 d-flex justify-content-center align-items-center bg-success Sub_box_two"
+            href="{{route('frontend.contact.index')}}">
+            <h4>Contact Us</h4>
+        </a>
     </div>
 
 </div>
@@ -300,7 +344,7 @@ background-color: #ffd9d9
         <div class="modal-content" style="background-color: #bbcce1fa;">
             <div class="modal-header">
                 <h5 class="modal-title" id="staticBackdropLabel">SEARCH SPECIFIC LEADS</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <button type="button" class="btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" style="background-color: #bbcce1fa;">
                 <div class="container">
@@ -357,7 +401,8 @@ background-color: #ffd9d9
                         <div class="col-xs-12 col-sm-12 col-md-3" id="NullData">
                             <div class="col-12 search_div" id="">
                                 <label for="" class="w-100" style="text-transform:uppercase;">Industry Name</label>
-                                <div class="ui toltip" data-content="You can choose multiple industry" data-position="left center">
+                                <div class="ui toltip" data-content="You can choose multiple industry"
+                                    data-position="left center">
                                     <select name="states" class="ui fluid search dropdown city_Name" id="industry_Name">
                                         <option value="">All Industry</option>
                                         @foreach ($all_industry as $industry)
@@ -375,16 +420,16 @@ background-color: #ffd9d9
                     <div class="row my-3 filter_btn">
                         {{-- <div class="col-4"><label class="btn btn_city w-100" id="table_refresh">All Tabs Selected <i
                             class="fas fa-redo-alt ms-3"></i></label></div> --}}
-                        <div class="col-2"> <label class="btn btn_city w-100" id="table_Name">Person Name <input type="checkbox"
-                                    disabled checked id="table_Name_IN"></label></div>
-                        <div class="col-2"><label class="btn btn_city w-100" id="table_Title">Job Title <input type="checkbox"
-                                    disabled checked id="table_Title_IN"></label></div>
-                        <div class="col-2"><label class="btn btn_city w-100" id="table_Company">Company Name <input type="checkbox"
-                                    disabled checked id="table_Company_IN"></label></div>
-                        <div class="col-2"><label class="btn btn_city w-100" id="table_City">City <input type="checkbox" disabled
-                                    checked id="table_City_IN"></label></div>
-                        <div class="col-2"><label class="btn btn_city w-100" id="">Industry <input type="checkbox" disabled checked
-                                    id="table_City_IN"></label></div>
+                        <div class="col-2"> <label class="btn btn_city w-100" id="table_Name">Person Name <input
+                                    type="checkbox" disabled checked id="table_Name_IN"></label></div>
+                        <div class="col-2"><label class="btn btn_city w-100" id="table_Title">Job Title <input
+                                    type="checkbox" disabled checked id="table_Title_IN"></label></div>
+                        <div class="col-2"><label class="btn btn_city w-100" id="table_Company">Company Name <input
+                                    type="checkbox" disabled checked id="table_Company_IN"></label></div>
+                        <div class="col-2"><label class="btn btn_city w-100" id="table_City">City <input type="checkbox"
+                                    disabled checked id="table_City_IN"></label></div>
+                        <div class="col-2"><label class="btn btn_city w-100" id="">Industry <input type="checkbox"
+                                    disabled checked id="table_City_IN"></label></div>
                         <div class="col-2">
                             <div class="ui toltip" data-content="Selected Tabs Action" data-position="top center">
                                 <label class="btn btn_city w-100 bg_theme" id="table_refresh">All Tabs Selected</label>
@@ -406,16 +451,16 @@ background-color: #ffd9d9
                                     id="table_Phone_IN"></label>
                         </div>
                         <div class="col-2">
-                            <label class="btn btn_city w-100" id="table_Company_Size">Company Size <input type="checkbox" checked
-                                    id="table_Company_Size_IN"></label>
+                            <label class="btn btn_city w-100" id="table_Company_Size">Company Size <input
+                                    type="checkbox" checked id="table_Company_Size_IN"></label>
                         </div>
                         <div class="col-2">
                             <label class="btn btn_city w-100" id="table_Revenue">Revenue <input type="checkbox" checked
                                     id="table_Revenue_IN"></label>
                         </div>
                         <div class="col-2">
-                            <label class="btn btn_city w-100" id="table_Zip_code">Zip Code <input type="checkbox" checked
-                                    id="table_Zip_code_IN"></label>
+                            <label class="btn btn_city w-100" id="table_Zip_code">Zip Code <input type="checkbox"
+                                    checked id="table_Zip_code_IN"></label>
                         </div>
                         <div class="col-2">
                             <label class="btn btn_city w-100" id="table_URL">Website <input type="checkbox" checked
@@ -444,14 +489,16 @@ background-color: #ffd9d9
                                     {{-- <td>{{$lead->industry}}</td> --}}
                                     <td>{{$lead->person_name}}</td>
                                     <td>{{($lead->title = "Managing Partner"?"Partner": $lead->title)}}</td>
-                                    <td>{{Str::substr($lead->email, 0, 3)."****@*****".Str::substr($lead->email, -5)}}</td>
+                                    <td>{{Str::substr($lead->email, 0, 3)."****@*****".Str::substr($lead->email, -5)}}
+                                    </td>
                                     <td>{{Str::substr($lead->phone, -4)."****"}}</td>
                                     <td>{{ Str::limit($lead->company_name, 15)}}</td>
                                     <td>{{$lead->company_size}}</td>
                                     <td>{{$lead->revenue}}</td>
                                     <td>{{$lead->city}}</td>
                                     <td>{{$lead->zip_code}}</td>
-                                    <td>{{Str::substr($lead->website, 0, 10)."***.".Str::substr($lead->website, -3) }}</td>
+                                    <td>{{Str::substr($lead->website, 0, 10)."***.".Str::substr($lead->website, -3) }}
+                                    </td>
                                     @empty
                                 <tr>
                                     <td colspan="12" class="text-center">Not Found Any Data.</td>
@@ -671,6 +718,69 @@ background-color: #ffd9d9
     </div>
 </section>
 -->
+
+
+<div class="container my-5">
+    <section class="row">
+        <div class="col-sm-12 col-md-6">
+            <h3>What Are Lead Generation Services?</h3>
+            <p>Lead generation is the process of producing new sales leads through developing interest in a service or
+                product. Lead Generation services are a fundamental part of growing your business’s revenue. B2B
+                organizations frequently employ lead generation services to acquire and evaluate fresh leads in the
+                hopes of converting them into new clients. These services might be offered by a single consultant or a
+                large agency with numerous employees.
+            </p>
+        </div>
+
+        <div class="col-sm-12 col-md-6">
+        </div>
+    </section>
+
+    <section class="row my-5">
+        <div class="col-sm-12 col-md-12">
+            <h3>Lead Generation Services We Offer</h3>
+            <p>Our company offers several lead generation services all over the world at very low cost and on time. We
+                always manage the bulk and high-quality projects at a very low cost. We offer the services given below:
+            </p>
+        </div>
+        <div class="col-sm-12 col-md-3 lead_box">
+            <div>
+                <i class="fas fa-bolt"></i>
+                <h4>B2B Lead Generation</h4>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-3 lead_box">
+            <div>
+                <i class="fas fa-bolt"></i>
+                <h4>PPC Lead Generation</h4>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-3 lead_box">
+            <div>
+                <i class="fas fa-bolt"></i>
+                <h4>Product Base Lead</h4>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-3 lead_box">
+            <div>
+                <i class="fas fa-bolt"></i>
+                <h4>Service Base Lead</h4>
+            </div>
+        </div>
+    </section>
+
+    <section class="row my-5">
+        <h3>Why Choose Us For Lead Genaration?</h3>
+        <p>Repeat and Regular paying customers are every business’s sweetest dream. You aren’t in business until then you find and retain paying customers. However, achieving this dream isn’t a piece of cake in the park of other million businesses. Thousands of businesses also compete for your target customers. So, how do you get a competitive edge? Do you have any magic lamps to assist you in prospecting and turning prospects into paying customers?
+Thankfully, Bangladesh Outsourcing Company is here to generate millions $ in revenue through our magic tools, personalized email generator and dedicated Lead Generate team. We create solid plans for you to keep your leads organized, updated and informed about your products and services, while also working hard on capturing those who you see as potential new customers and clients.
+</p>
+            <h4>Data Generating Tools</h4>
+            <p>Tools we use are LinkedIn Sales Navigator, Zoominfo, RocketReach, FindThatLead, Snoov.io, Salesql, Adapt, ClearBit, Hunter, Contactout, MailTester, Boomerang, MailChimp, Hola, Google, Kendo etc.
+            </p>
+    </section>
+</div>
+
+
 
 @endsection
 

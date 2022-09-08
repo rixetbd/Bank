@@ -290,7 +290,7 @@ $currentRouteName = Route::currentRouteName();
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>
                                     Industry
-                                    <i class="right fas fa-angle-left"></i>
+                                    {{-- <i class="right fas fa-angle-left"></i> --}}
                                 </p>
                             </a>
                         </li>
@@ -320,6 +320,31 @@ $currentRouteName = Route::currentRouteName();
                                     <a href="{{route('admin.inbox.read_message')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Read</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-bars"></i>
+                                <p>
+                                    Menu
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="{{route('admin.menu.index')}}" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Primary</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Sub Menu</p>
                                     </a>
                                 </li>
                             </ul>

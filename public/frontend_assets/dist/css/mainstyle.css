@@ -101,3 +101,17 @@ body {
     position: absolute;
     top: -30px;
 } */
+
+
+/* Lead Second page CSS */
+.lead_box div{
+    text-align: center;
+    margin: 20px 0;
+    padding: 15px;
+    background: #bbcce1fa;
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.075);
+}
+.lead_box i{
+    font-size: 50px;
+}
