@@ -326,28 +326,53 @@ $currentRouteName = Route::currentRouteName();
                         </li>
 
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{route('admin.menu.index')}}"
+                                class="nav-link  {{($currentRouteName == "admin.menu.index"?"active":" ")}}">
                                 <i class="nav-icon fas fa-bars"></i>
                                 <p>
                                     Menu
+                                    {{-- <i class="right fas fa-angle-left"></i> --}}
+                                </p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-cog"></i>
+                                <p>
+                                    Settings
                                     <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
 
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('admin.menu.index')}}" class="nav-link">
+                                    <a href="{{route('admin.settings')}}" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Primary</p>
+                                        <p>General Information</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="#" class="nav-link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Sub Menu</p>
+                                        <p>Others</p>
                                     </a>
                                 </li>
                             </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="{{ route('logout') }}" class="nav-link text-danger" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                <i class="nav-icon fas fa-sign-out-alt"></i>
+                                <p>
+                                    {{ __('Logout') }}
+                                    {{-- <i class="right fas fa-angle-left"></i> --}}
+                                </p>
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
                         </li>
 
                     </ul>

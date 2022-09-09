@@ -7,6 +7,7 @@ use App\Models\Menu;
 use App\Models\SubMenu;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Crypt;
 
 class MenuController extends Controller
 {
@@ -77,6 +78,9 @@ class MenuController extends Controller
 
     public function destroy($id)
     {
-        //
+
+        Menu::find(Crypt::decrypt($id))->delete();
+        return back();
+
     }
 }

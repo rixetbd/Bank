@@ -299,7 +299,7 @@ background-color: #ffd9d9
 @section('container')
 
 <div class="w-100 text-center" style="min-height: 350px;background: #5928e5;">
-    <h1 style="text-transform:uppercase;font-size:200px;color:#fff;line-height: 65px;padding-top: 100px;">
+    <h1 style="text-transform:uppercase;font-size:200px;color:#fff;line-height: 65px;padding-top: 100px;filter: drop-shadow(8px 8px 4px #00000046);">
         Lead<br><span style="font-size:70px;">Generation</span></h1>
 
     <div class="row float-end">

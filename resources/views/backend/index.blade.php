@@ -83,7 +83,8 @@
             </div>
             <!-- /.col -->
         </div>
-        <!-- /.row -->
+
+        <!--
 
         <div class="row">
             <div class="col-md-12">
@@ -112,7 +113,6 @@
                             </button>
                         </div>
                     </div>
-                    <!-- /.card-header -->
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-8">
@@ -121,12 +121,9 @@
                                 </p>
 
                                 <div class="chart">
-                                    <!-- Sales Chart Canvas -->
                                     <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
                                 </div>
-                                <!-- /.chart-responsive -->
                             </div>
-                            <!-- /.col -->
                             <div class="col-md-4">
                                 <p class="text-center">
                                     <strong>Goal Completion</strong>
@@ -139,7 +136,6 @@
                                         <div class="progress-bar bg-primary" style="width: 80%"></div>
                                     </div>
                                 </div>
-                                <!-- /.progress-group -->
 
                                 <div class="progress-group">
                                     Complete Purchase
@@ -149,7 +145,6 @@
                                     </div>
                                 </div>
 
-                                <!-- /.progress-group -->
                                 <div class="progress-group">
                                     <span class="progress-text">Visit Premium Page</span>
                                     <span class="float-right"><b>480</b>/800</span>
@@ -158,7 +153,6 @@
                                     </div>
                                 </div>
 
-                                <!-- /.progress-group -->
                                 <div class="progress-group">
                                     Send Inquiries
                                     <span class="float-right"><b>250</b>/500</span>
@@ -166,13 +160,9 @@
                                         <div class="progress-bar bg-warning" style="width: 50%"></div>
                                     </div>
                                 </div>
-                                <!-- /.progress-group -->
                             </div>
-                            <!-- /.col -->
                         </div>
-                        <!-- /.row -->
                     </div>
-                    <!-- ./card-body -->
                     <div class="card-footer">
                         <div class="row">
                             <div class="col-sm-3 col-6">
@@ -182,9 +172,7 @@
                                     <h5 class="description-header">$35,210.43</h5>
                                     <span class="description-text">TOTAL REVENUE</span>
                                 </div>
-                                <!-- /.description-block -->
                             </div>
-                            <!-- /.col -->
                             <div class="col-sm-3 col-6">
                                 <div class="description-block border-right">
                                     <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i>
@@ -192,9 +180,7 @@
                                     <h5 class="description-header">$10,390.90</h5>
                                     <span class="description-text">TOTAL COST</span>
                                 </div>
-                                <!-- /.description-block -->
                             </div>
-                            <!-- /.col -->
                             <div class="col-sm-3 col-6">
                                 <div class="description-block border-right">
                                     <span class="description-percentage text-success"><i class="fas fa-caret-up"></i>
@@ -202,9 +188,7 @@
                                     <h5 class="description-header">$24,813.53</h5>
                                     <span class="description-text">TOTAL PROFIT</span>
                                 </div>
-                                <!-- /.description-block -->
                             </div>
-                            <!-- /.col -->
                             <div class="col-sm-3 col-6">
                                 <div class="description-block">
                                     <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i>
@@ -212,18 +196,14 @@
                                     <h5 class="description-header">1200</h5>
                                     <span class="description-text">GOAL COMPLETIONS</span>
                                 </div>
-                                <!-- /.description-block -->
                             </div>
                         </div>
-                        <!-- /.row -->
                     </div>
-                    <!-- /.card-footer -->
                 </div>
-                <!-- /.card -->
             </div>
-            <!-- /.col -->
         </div>
-        <!-- /.row -->
+
+        -->
 
         <!-- Main row -->
         <div class="row">

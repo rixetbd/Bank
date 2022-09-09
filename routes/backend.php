@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\CountryController;
+use App\Http\Controllers\Admin\GeneralController;
 use App\Http\Controllers\Admin\IndustryController;
 use App\Http\Controllers\Admin\LeadController;
 use App\Http\Controllers\Admin\MailboxController;
@@ -66,8 +67,14 @@ Route::middleware('auth')->group(function(){
 
         Route::get('/admin/menu', 'index')->name('admin.menu.index');
         Route::post('/admin/menu/create', 'create')->name('admin.menu.create');
+        Route::get('/admin/menu/destroy/{id}', 'destroy')->name('admin.menu.destroy');
         Route::post('/admin/submenu/create', 'submenu_create')->name('admin.submenu.create');
-        Route::get('/admin/menu/delete', 'destroy')->name('admin.menu.destroy');
+
+    });
+
+    Route::controller(GeneralController::class)->group(function(){
+
+        Route::get('/admin/settings', 'index')->name('admin.settings');
 
     });
 

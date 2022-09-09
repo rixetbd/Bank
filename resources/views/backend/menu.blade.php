@@ -3,6 +3,18 @@
     <link rel="stylesheet" href="{{asset('backend_assets')}}/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="{{asset('backend_assets')}}/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="{{asset('backend_assets')}}/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+    <style>
+        .menu_button{
+            background: #3f6791;
+            padding: 10px;
+            display: flex;
+            border-radius: 5px;
+        }
+        .menu_button .title{width: 70%;}
+        .menu_button .icon_edit, .menu_button .icon_trash{width: 15%;text-align: center;color: #fff;}
+        .menu_button .icon_trash:hover i{color: red;}
+    </style>
 @endsection
 
 @extends('backend.master')
@@ -70,9 +82,17 @@
                         <h3 class="card-title">Menu List</h3>
                     </div>
                     <div class="card-body">
-                        @foreach ($all_menu as $key=>$menu)
-
-                        @endforeach
+                        <div class="row">
+                            @foreach ($all_menu as $menu)
+                                <div class="col-sm-12 col-md-3 menu_box">
+                                    <div class="menu_button">
+                                        <span class="title">{{$menu->name}}</span>
+                                        <a class="icon_edit" href="#"><i class="fas fa-edit"></i></a>
+                                        <a class="icon_trash" href="{{route('admin.menu.destroy', Crypt::encrypt($menu->id))}}"><i class="fas fa-trash"></i></a>
+                                    </div>
+                                </div>
+                            @endforeach
+                            </div>
                     </div>
                 </div>
 

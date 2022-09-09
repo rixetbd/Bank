@@ -3,8 +3,10 @@
 use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\SearchController;
+use App\Http\Controllers\IPController;
 use App\Models\Lead;
 use Facade\FlareClient\Http\Response;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -46,4 +48,9 @@ Route::controller(ContactController::class)->group(function(){
     Route::get('/contact', 'index')->name('frontend.contact.index');
     Route::post('/contact/create', 'create')->name('frontend.contact.post');
 
+});
+
+Route::controller(IPController::class)->group(function(){
+
+    Route::get('/ip', 'create');
 });

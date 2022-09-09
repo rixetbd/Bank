@@ -13,6 +13,8 @@
 <body>
 
 
+    <div id="app"></div>
+
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script>
@@ -28,7 +30,9 @@
         url: "/test/data",
         success:function(data){
             // $("#msg").html(data.msg);
-            console.log(data)
+            for (let i = 0; i < data.length; i++) {
+                $('#app').append(data[i]['email']);
+            }
         }
     });
 
