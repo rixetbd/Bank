@@ -50,12 +50,15 @@
                                       <span class="input-group-text">Upload</span>
                                     </div>
                                 </div>
+                                <small class="">* Upload a CSV File</small>
                             </div>
-                            <button type="submit" class="btn btn-primary">Insert</button>
+                            <button type="submit" class="btn btn-primary">Import</button>
                         </form>
                     </div>
                 </div>
             </div>
+
+            @if (Auth::user()->role == "Admin" || Auth::user()->role == "SuperAdmin")
 
             <div class="col-md-4">
                 <div class="card card-teals">
@@ -63,24 +66,25 @@
                         <h3 class="card-title">Export CSV</h3>
                     </div>
                     <div class="card-body">
-                        <form action="{{route('LeadsCsvUpload')}}" method="post" enctype="multipart/form-data">
+                        <form action="{{route('LeadExport')}}" method="post" enctype="multipart/form-data">
                             @csrf
                             <div class="my-3">
-                                <div class="input-group">
-                                    <div class="custom-file">
-                                      <input type="file" class="custom-file-input" id="exampleInputFile" name="LeadsCsvUpload">
-                                      <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                                    </div>
-                                    <div class="input-group-append">
-                                      <span class="input-group-text">Upload</span>
-                                    </div>
-                                </div>
+                                <select name="name" class="form-control">
+                                    <option value="all">-- Export All Country</option>
+                                    @foreach ($all_country as $country)
+                                        <option value="{{$country->name}}">{{$country->name}}</option>
+                                    @endforeach
+                                </select>
+                                <small class="">* Select specific country for export</small>
                             </div>
-                            <button type="submit" class="btn btn-primary">Insert</button>
+                            <button type="submit" class="btn btn-primary">Export</button>
                         </form>
                     </div>
                 </div>
             </div>
+
+            @endif
+
         </div>
 
     </div>

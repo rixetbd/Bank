@@ -37,6 +37,19 @@
             <div class="col-md-4">
                 <div class="card card-success">
                     <div class="card-header">
+                        <h3 class="card-title">Information</h3>
+                    </div>
+                    <div class="card-body">
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card card-success">
+                    <div class="card-header">
                         <h3 class="card-title">General Information</h3>
                     </div>
                     <div class="card-body">
@@ -61,34 +74,6 @@
                             </div>
                             <button type="submit" class="btn btn-primary">update</button>
                         </form>
-                    </div>
-                </div>
-
-                <div class="card card-success">
-                    <div class="card-header">
-                        <h3 class="card-title">Add Sub Menu</h3>
-                    </div>
-                    <div class="card-body">
-                        <form action="{{route('admin.submenu.create')}}" method="post">
-                            @csrf
-                            <div class="my-3">
-                                <input type="text" class="form-control" name="name" placeholder="Sub Menu Name"
-                                    required>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Add</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-8">
-                <div class="card card-primary">
-                    <div class="card-header">
-                        <h3 class="card-title">Menu List</h3>
-                    </div>
-                    <div class="card-body">
-
-
                     </div>
                 </div>
             </div>
