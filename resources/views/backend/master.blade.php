@@ -11,8 +11,8 @@ $currentRouteName = Route::currentRouteName();
     <title>Admin Panel - BDOSC</title>
 
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{asset('backend_assets')}}/plugins/fontawesome-free/css/all.min.css">
     <!-- overlayScrollbars -->
@@ -49,82 +49,25 @@ $currentRouteName = Route::currentRouteName();
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
 
-                <!-- Messages Dropdown Menu -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link" data-toggle="dropdown" href="#">
-                        <i class="far fa-comments"></i>
-                        <span class="badge badge-danger navbar-badge">3</span>
-                    </a>
-                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="{{asset('backend_assets')}}/dist/img/user1-128x128.jpg" alt="User Avatar"
-                                    class="img-size-50 mr-3 img-circle">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        Brad Diesel
-                                        <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">Call me whenever you can...</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="{{asset('backend_assets')}}/dist/img/user8-128x128.jpg" alt="User Avatar"
-                                    class="img-size-50 img-circle mr-3">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        John Pierce
-                                        <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">I got your message bro</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <!-- Message Start -->
-                            <div class="media">
-                                <img src="{{asset('backend_assets')}}/dist/img/user3-128x128.jpg" alt="User Avatar"
-                                    class="img-size-50 img-circle mr-3">
-                                <div class="media-body">
-                                    <h3 class="dropdown-item-title">
-                                        Nora Silvester
-                                        <span class="float-right text-sm text-warning"><i
-                                                class="fas fa-star"></i></span>
-                                    </h3>
-                                    <p class="text-sm">The subject goes here</p>
-                                    <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
-                                </div>
-                            </div>
-                            <!-- Message End -->
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-                    </div>
-                </li>
+                @php
+                    $contact = \App\Models\Contact::where('status', '=', '1')->get();
+                @endphp
+
                 <!-- Notifications Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
                         <i class="far fa-bell"></i>
-                        <span class="badge badge-warning navbar-badge">15</span>
+                        <span class="badge badge-warning navbar-badge">{{$contact->count()}}</span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                        <span class="dropdown-item dropdown-header">15 Notifications</span>
-                        <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item">
-                            <i class="fas fa-envelope mr-2"></i> 4 new messages
-                            <span class="float-right text-muted text-sm">3 mins</span>
+                        {{-- <span class="dropdown-item dropdown-header">15 Notifications</span> --}}
+                        {{-- <div class="dropdown-divider"></div> --}}
+
+                        <a href="{{route('admin.inbox')}}" class="dropdown-item">
+                            <i class="fas fa-envelope mr-2"></i> {{$contact->count()}} new messages
+                            {{-- <span class="float-right text-muted text-sm">3 mins</span> --}}
                         </a>
-                        <div class="dropdown-divider"></div>
+                        {{-- <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item">
                             <i class="fas fa-users mr-2"></i> 8 friend requests
                             <span class="float-right text-muted text-sm">12 hours</span>
@@ -135,7 +78,7 @@ $currentRouteName = Route::currentRouteName();
                             <span class="float-right text-muted text-sm">2 days</span>
                         </a>
                         <div class="dropdown-divider"></div>
-                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+                        <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a> --}}
                     </div>
                 </li>
                 {{-- <li class="nav-item">
@@ -171,13 +114,14 @@ $currentRouteName = Route::currentRouteName();
             <!-- Sidebar -->
             <div class="sidebar">
                 <!-- Sidebar user panel (optional) -->
-                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex align-items-center">
                     <div class="image">
-                        <img src="{{asset('backend_assets')}}/dist/img/user2-160x160.jpg" class="img-circle elevation-2"
-                            alt="User Image">
+                        {{-- <img src="{{asset('backend_assets')}}/dist/img/user2-160x160.jpg" class="img-circle elevation-2"
+                            alt="User Image"> --}}
+                            <i class='bx bx-user bx-border-circle' ></i>
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">{{Auth::user()->name}}</a>
+                        <a href="{{route('admin.profile.index')}}" class="d-block">{{Auth::user()->name}}</a>
                     </div>
                 </div>
 
@@ -207,7 +151,7 @@ $currentRouteName = Route::currentRouteName();
                             </a>
                         </li>
 
-                        <li class="nav-item {{($currentRouteName == "admin.leads.index"?"menu-open":" ")}}">
+                        <li class="nav-item {{($currentRouteName == "admin.leads.index"?"menu-open":" ")}} {{($currentRouteName == "admin.leads.importpage"?"menu-open":" ")}}">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-chart-pie"></i>
                                 <p>
@@ -224,7 +168,7 @@ $currentRouteName = Route::currentRouteName();
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('admin.leads.importpage')}}" class="nav-link">
+                                    <a href="{{route('admin.leads.importpage')}}" class="nav-link {{($currentRouteName == "admin.leads.importpage"?"active":" ")}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Import & Export</p>
                                     </a>
@@ -232,7 +176,7 @@ $currentRouteName = Route::currentRouteName();
                             </ul>
                         </li>
 
-                        <li class="nav-item {{($currentRouteName == "admin.countrie.index"?"menu-open":" ")}}">
+                        <li class="nav-item {{($currentRouteName == "admin.countrie.index"?"menu-open":" ")}}{{($currentRouteName == "admin.city.index"?"menu-open":" ")}}">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-map-marker-alt"></i>
                                 <p>
@@ -258,7 +202,7 @@ $currentRouteName = Route::currentRouteName();
                             </ul>
                         </li>
 
-                        <li class="nav-item {{($currentRouteName == "admin.user.all"?"menu-open":" ")}}">
+                        <li class="nav-item {{($currentRouteName == "admin.user.all"?"menu-open":" ")}}{{($currentRouteName == "admin.profile.index"?"menu-open":" ")}}">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>
@@ -269,14 +213,14 @@ $currentRouteName = Route::currentRouteName();
                             <ul class="nav nav-treeview">
                                 {{-- @if (Auth::user()->role !== "basic_user") --}}
                                 <li class="nav-item">
-                                    <a href="{{route('admin.user.all')}}" class="nav-link">
+                                    <a href="{{route('admin.user.all')}}" class="nav-link {{($currentRouteName == "admin.user.all"?"active":" ")}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>All Users</p>
                                     </a>
                                 </li>
                                 {{-- @endif --}}
                                 <li class="nav-item">
-                                    <a href="#" class="nav-link">
+                                    <a href="{{route('admin.profile.index')}}" class="nav-link {{($currentRouteName == "admin.profile.index"?"active":" ")}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Profile</p>
                                     </a>
@@ -286,7 +230,7 @@ $currentRouteName = Route::currentRouteName();
 
                         <li class="nav-item">
                             <a href="{{route('admin.industry.index')}}"
-                                class="nav-link  {{($currentRouteName == "admin.industry.index"?"active":" ")}}">
+                                class="nav-link {{($currentRouteName == "admin.industry.index"?"active":" ")}}">
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>
                                     Industry
@@ -295,7 +239,7 @@ $currentRouteName = Route::currentRouteName();
                             </a>
                         </li>
 
-                        <li class="nav-item">
+                        <li class="nav-item {{($currentRouteName == "admin.inbox"?"menu-open":" ")}}{{($currentRouteName == "admin.inbox.compose"?"menu-open":" ")}}">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon far fa-envelope"></i>
                                 <p>
@@ -305,21 +249,15 @@ $currentRouteName = Route::currentRouteName();
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="{{route('admin.inbox')}}" class="nav-link">
+                                    <a href="{{route('admin.inbox')}}" class="nav-link {{($currentRouteName == "admin.inbox"?"active":" ")}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Inbox</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{route('admin.inbox.compose')}}" class="nav-link">
+                                    <a href="{{route('admin.inbox.compose')}}" class="nav-link {{($currentRouteName == "admin.inbox.compose"?"active":" ")}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>Compose</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{{route('admin.inbox.read_message')}}" class="nav-link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Read</p>
                                     </a>
                                 </li>
                             </ul>

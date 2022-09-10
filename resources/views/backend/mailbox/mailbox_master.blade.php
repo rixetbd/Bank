@@ -2,6 +2,9 @@
 
 @section('header_style')
 <link rel="stylesheet" href="{{asset('backend_assets')}}/plugins/summernote/summernote-bs4.min.css">
+<style>
+    .inbox_css .nav-link i{min-width: 30px;text-align: center}
+</style>
 @endsection
 
 
@@ -43,7 +46,7 @@
                     </div>
                 </div>
                 <div class="card-body p-0">
-                    <ul class="nav nav-pills flex-column">
+                    <ul class="nav nav-pills flex-column inbox_css">
                         <li class="nav-item active">
                             <a href="{{route('admin.inbox')}}" class="nav-link">
                                 <i class="fas fa-inbox"></i> Inbox

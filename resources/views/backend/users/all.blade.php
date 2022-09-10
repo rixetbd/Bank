@@ -50,10 +50,12 @@
                             <div class="my-3">
                                 <select name="role" id="" class="form-control" required>
                                     <option value="">-- Select Role</option>
-                                    <option value="Admin">Admin</option>
+                                    @if (Auth::user()->role == 'Admin' || Auth::user()->role == 'SuperAdmin')
+                                        <option value="Admin">Admin</option>
+                                        <option value="SuperAdmin" class="d-none">SuperAdmin</option>
+                                    @endif
                                     <option value="basic_user">Basic User</option>
                                     <option value="Client">Client</option>
-                                    <option value="SuperAdmin" class="d-none">SuperAdmin</option>
                                 </select>
                             </div>
                             <div class="my-3">

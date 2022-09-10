@@ -113,6 +113,26 @@
                         </div>
                     </div>
 
+                    @if (empty(Auth::id()))
+                    
+                    <div class="row my-3">
+                        <h6 class="text-center">You can apply for Free Membership ( Leave blank if not interested )</h6>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="ui small left icon input w-100">
+                                <input type="password" name="password" id="password" placeholder="Your password">
+                                <i class="fas fa-key icon"></i>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="ui small left icon input w-100">
+                                <input type="password" name="con_password" id="con_password" placeholder="Confirm Password">
+                                <i class="fas fa-key icon"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    @endif
+
                     <h3>Lead Requirements</h3>
 
 
@@ -133,7 +153,7 @@
                         </div>
                         <div class="col-6 mt-2">
                             <label for="">City Name</label>
-                            <select name="states" class="ui small fluid search dropdown city_Name" id="city_Name">
+                            <select name="cities" class="ui small fluid search dropdown city_Name" id="city_Name">
                                 <option value="">All Cities</option>
                                 @foreach ($all_city as $city)
                                 <option value="{{$city->id}}">{{$city->name}}</option>
@@ -142,8 +162,7 @@
                         </div>
                         <div class="col-6 mt-2">
                             <label for="">Industry Name</label>
-                            <select name="industry" class="ui small fluid search dropdown city_Name" id="industry_Name"
-                                required>
+                            <select name="industry" class="ui small fluid search dropdown city_Name" id="industry_Name">
                                 <option value="">All Industry</option>
                                 @foreach ($all_industry as $industry)
                                 <option value="{{$industry->id}}">{{$industry->name}}</option>
@@ -190,20 +209,19 @@
                     <div class="row my-3">
                         <div class="col-12">
                             <label for="" class="my-1">Message</label>
-                            <textarea name="message" id="message" placeholder="Type Your Message..."
-                                required></textarea>
+                            <textarea name="message" id="message" placeholder="Type Your Message..." required></textarea>
                         </div>
                     </div>
 
                     <div class="row mb-2">
                         <div class="col-6" id="country_box_grp">
                             <label for="" class="my-1">Selected Country</label>
-                            <input type="text" value="" id="country_box" style="background-color: transparent;"
+                            <input type="text" name="country_box" value="" id="country_box" style="background-color: transparent;"
                                 placeholder="Selected Country">
                         </div>
                         <div class="col-6" id="city_box_grp">
                             <label for="" class="my-1">Selected Cities</label>
-                            <input type="text" value="" id="city_box" style="background-color: transparent;"
+                            <input type="text" value="" name="city_box" id="city_box" style="background-color: transparent;"
                                 placeholder="Selected Cities">
                         </div>
                     </div>
@@ -278,6 +296,18 @@
         // }
 
         // localStorageClear();
+
+        $('#con_password').keyup(function(){
+            var password = $('#password').val();
+            var con_password = $('#con_password').val();
+            if(password != con_password){
+                $('#con_password').addClass('border border-danger');
+            }else{
+                $('#con_password').removeClass('border border-danger');
+            }
+        });
+
+
     </script>
 
 </body>

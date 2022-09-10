@@ -298,10 +298,15 @@ background-color: #ffd9d9
 --}}
 @section('container')
 
-<div class="w-100 text-center" style="min-height: 350px;background: #5928e5;">
-    <h1 style="text-transform:uppercase;font-size:200px;color:#fff;line-height: 65px;padding-top: 100px;filter: drop-shadow(8px 8px 4px #00000046);">
-        Lead<br><span style="font-size:70px;">Generation</span></h1>
+<div class="w-100 d-flex align-items-center" style="min-height: 60vh;background: #5928e5;">
+    <div class="col-12 text-center">
+        <h1
+            style="text-transform:uppercase;font-size:200px;color:#fff;line-height: 65px;padding-top: 100px;filter: drop-shadow(8px 8px 4px #00000046);">
+            Lead<br><span style="font-size:70px;">Generation</span></h1>
+    </div>
+</div>
 
+<div class="w-100" style="background: #ffede3;">
     <div class="row float-end">
         <div class="" style="height:25px;width:25px;background:#bbe4e5;"></div>
         <div class="" style="height:25px;width:25px;background:#aed8c7;"></div>
@@ -320,9 +325,9 @@ background-color: #ffd9d9
     </div>
 </div>
 
-<div class="container my-5">
+    <div class="container my-5">
 
-    <div class="row">
+        <div class="row">
         <div class="col-sm-12 col-md-6 d-flex justify-content-center align-items-center bg-danger Sub_box_One"
             data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <h4>Click Here</h4>
@@ -745,25 +750,25 @@ background-color: #ffd9d9
         </div>
         <div class="col-sm-12 col-md-3 lead_box">
             <div>
-                <i class="fas fa-bolt"></i>
+                <i class='bx bx-buildings'></i>
                 <h4>B2B Lead Generation</h4>
             </div>
         </div>
         <div class="col-sm-12 col-md-3 lead_box">
             <div>
-                <i class="fas fa-bolt"></i>
+                <i class='bx bx-collapse'></i>
                 <h4>PPC Lead Generation</h4>
             </div>
         </div>
         <div class="col-sm-12 col-md-3 lead_box">
             <div>
-                <i class="fas fa-bolt"></i>
+                <i class='bx bx-command'></i>
                 <h4>Product Base Lead</h4>
             </div>
         </div>
         <div class="col-sm-12 col-md-3 lead_box">
             <div>
-                <i class="fas fa-bolt"></i>
+                <i class='bx bx-donate-heart'></i>
                 <h4>Service Base Lead</h4>
             </div>
         </div>
@@ -771,12 +776,61 @@ background-color: #ffd9d9
 
     <section class="row my-5">
         <h3>Why Choose Us For Lead Genaration?</h3>
-        <p>Repeat and Regular paying customers are every business’s sweetest dream. You aren’t in business until then you find and retain paying customers. However, achieving this dream isn’t a piece of cake in the park of other million businesses. Thousands of businesses also compete for your target customers. So, how do you get a competitive edge? Do you have any magic lamps to assist you in prospecting and turning prospects into paying customers?
-Thankfully, Bangladesh Outsourcing Company is here to generate millions $ in revenue through our magic tools, personalized email generator and dedicated Lead Generate team. We create solid plans for you to keep your leads organized, updated and informed about your products and services, while also working hard on capturing those who you see as potential new customers and clients.
-</p>
-            <h4>Data Generating Tools</h4>
-            <p>Tools we use are LinkedIn Sales Navigator, Zoominfo, RocketReach, FindThatLead, Snoov.io, Salesql, Adapt, ClearBit, Hunter, Contactout, MailTester, Boomerang, MailChimp, Hola, Google, Kendo etc.
+        <p>Repeat and Regular paying customers are every business’s sweetest dream. You aren’t in business until then
+            you find and retain paying customers. However, achieving this dream isn’t a piece of cake in the park of
+            other million businesses. Thousands of businesses also compete for your target customers. So, how do you get
+            a competitive edge? Do you have any magic lamps to assist you in prospecting and turning prospects into
+            paying customers?
+            Thankfully, Bangladesh Outsourcing Company is here to generate millions $ in revenue through our magic
+            tools, personalized email generator and dedicated Lead Generate team. We create solid plans for you to keep
+            your leads organized, updated and informed about your products and services, while also working hard on
+            capturing those who you see as potential new customers and clients.
+        </p>
+        <h4>Data Generating Tools</h4>
+        <p>Tools we use are LinkedIn Sales Navigator, Zoominfo, RocketReach, FindThatLead, Snoov.io, Salesql, Adapt,
+            ClearBit, Hunter, Contactout, MailTester, Boomerang, MailChimp, Hola, Google, Kendo etc.
+        </p>
+    </section>
+
+    <section class="row my-5">
+        <div class="col-sm-12 col-md-12">
+            <h3>Lead Generation Specialty</h3>
+            <p>Our company offers several lead generation services all over the world at very low cost and on time. We
+                always manage the bulk and high-quality projects at a very low cost. We offer the services given below:
             </p>
+        </div>
+        <div class="col-sm-12 col-md-3 lead_box d-flex align-items-stretch">
+            <div>
+                <i class='bx bx-trip'></i>
+                <h4>We Collect The Data</h4>
+                <p>If you like our sample work, we then collect the main project details with all specifications and
+                    requirements.</p>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-3 lead_box d-flex align-items-stretch">
+            <div>
+                <i class='bx bx-street-view'></i>
+                <h4>Analyze Your Data</h4>
+                <p>Before we start lead generation of your documents with high precision, our experts analyze your
+                    project to find the most appropriate method for the same.</p>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-3 lead_box d-flex align-items-stretch">
+            <div>
+                <i class='bx bx-edit'></i>
+                <h4>Our Editors service</h4>
+                <p>After collecting your lead our expert editors will revise all the files properly and if there needs
+                    any correction, the editor will make it unique.</p>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-3 lead_box d-flex align-items-stretch">
+            <div>
+                <i class='bx bx-leaf'></i>
+                <h4>We assure quality</h4>
+                <p>We try to maintain overall quality and try to submit an error-free lead and in this case, we maintain
+                    a strict quality check for lead generation services offered.</p>
+            </div>
+        </div>
     </section>
 </div>
 

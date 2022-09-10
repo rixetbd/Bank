@@ -59,7 +59,7 @@
                                 <textarea class="form-control" name="name" placeholder="City Name"></textarea>
                                 <small class="mt-2">* Use commas to separate multiple cities</small>
                             </div>
-                            <button type="submit" class="btn btn-primary">Insert</button>
+                            <button type="submit" class="btn btn-primary">Add City</button>
                         </form>
                     </div>
                 </div>
@@ -86,7 +86,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Insert</button>
+                            <button type="submit" class="btn btn-primary">Upload</button>
                         </form>
                     </div>
                 </div>

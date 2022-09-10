@@ -37,26 +37,18 @@
             <div class="col-md-4">
                 <div class="card card-success">
                     <div class="card-header">
-                        <h3 class="card-title">Information</h3>
-                    </div>
-                    <div class="card-body">
-
-
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card card-success">
-                    <div class="card-header">
                         <h3 class="card-title">General Information</h3>
                     </div>
                     <div class="card-body">
+                        <div class="text-center">
+                            <img src="{{asset('backend_assets/dist/img/logo.png')}}" alt="{{Auth::user()->name}}"
+                                width="100" id="site_logo">
+                        </div>
                         <form action="{{route('admin.menu.create')}}" method="post">
                             @csrf
                             <div class="my-3">
-                                <input type="text" class="form-control" name="name" placeholder="Website Name" value="Bangladesh Outsourcing Company" required>
+                                <input type="text" class="form-control" name="name" placeholder="Website Name"
+                                    value="Bangladesh Outsourcing Company" required>
                             </div>
                             <div class="my-3">
                                 <input type="text" class="form-control" name="tagline" placeholder="Tagline">
@@ -64,7 +56,8 @@
                             <div class="my-3">
                                 <div class="input-group">
                                     <div class="custom-file">
-                                        <input type="file" class="custom-file-input" id="exampleInputFile">
+                                        <input type="file" class="custom-file-input" id="exampleInputFile"
+                                            onchange="document.getElementById('site_logo').src = window.URL.createObjectURL(this.files[0])">
                                         <label class="custom-file-label" for="exampleInputFile">Upload Logo</label>
                                     </div>
                                     <div class="input-group-append">

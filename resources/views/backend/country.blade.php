@@ -60,7 +60,7 @@
                             <div class="my-3">
                                 <input type="text" class="form-control" name="region" placeholder="Region" required>
                             </div>
-                            <button type="submit" class="btn btn-primary">Insert</button>
+                            <button type="submit" class="btn btn-primary">Add Country</button>
                         </form>
                     </div>
                 </div>
@@ -118,7 +118,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-primary">Insert</button>
+                            <button type="submit" class="btn btn-primary">Upload</button>
                         </form>
                     </div>
                 </div>

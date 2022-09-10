@@ -24,6 +24,7 @@ Route::middleware('auth')->group(function(){
 
     Route::controller(UserController::class)->group(function(){
         Route::get('/admin/user/all', 'index')->name('admin.user.all');
+        Route::get('/admin/profile', 'profile_index')->name('admin.profile.index');
         Route::post('/admin/user/create', 'create')->name('admin.user.create');
         Route::post('/admin/user/update', 'update')->name('admin.user.update');
         Route::get('/admin/user/destroy/{id}', 'destroy')->name('admin.user.destroy');
