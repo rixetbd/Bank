@@ -6,11 +6,18 @@
 <link rel="stylesheet" href="{{asset('frontend_assets')}}/dist/css/custom-scroll.css">
 <link rel="stylesheet" href="{{asset('frontend_assets')}}/dist/css/mainstyle.css">
 
+@php
+
+$body_color = '#bbcce1fa';
+// $body_color = '#F3EFEB';
+
+@endphp
+
 <style>
     body {
         /* background: #96725859; */
         /* background: #cbdaec; */
-        background: #bbcce1fa;
+        background: {{$body_color}};
     }
 
     a {
@@ -241,6 +248,7 @@
         background-color: #5928e5 !important;
     }
 
+
 </style>
 @endsection
 
@@ -256,7 +264,7 @@ background-color: #ffd9d9
 --}}
 @section('container')
 
-<div class="w-100 d-flex align-items-center" style="min-height: 60vh;background: #5928e5;">
+<div class="w-100 d-flex align-items-center" style="min-height: 70vh;background: #5928e5;">
     <div class="col-12 text-center">
         <h1
             style="text-transform:uppercase;font-size:200px;color:#fff;line-height: 65px;padding-top: 100px;filter: drop-shadow(8px 8px 4px #00000046);">

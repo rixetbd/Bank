@@ -32,6 +32,12 @@ Route::controller(FrontendController::class)->group(function(){
         return view('frontend.test');
     });
 
+    Route::get('/betheme', function(){
+        return view('frontend.betheme.index');
+    });
+
+
+
 });
 
 Route::controller(SearchController::class)->group(function(){

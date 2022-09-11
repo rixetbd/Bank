@@ -97,30 +97,39 @@
                             />
                           </div> -->
                                 <div class="row">
-                                    <header>Design Services</header>
+                                    <header>Lead Generation</header>
                                     <ul class="mega-links">
-                                        <li><a href="#">Graphics</a></li>
-                                        <li><a href="#">Vectors</a></li>
-                                        <li><a href="#">Business cards</a></li>
-                                        <li><a href="#">Custom logo</a></li>
+                                        <li><a href="#">B2B lead Generation</a></li>
+                                        <li><a href="#">PPC Lead Generation</a></li>
+                                        <li><a href="#">B2B lead Generation</a></li>
+                                        <li><a href="#">PPC Lead Generation</a></li>
+                                    </ul>
+                                </div>
+                                <div class="row">
+                                    <header>Web Development</header>
+                                    <ul class="mega-links">
+                                        <li><a href="#">WordPress Development</a></li>
+                                        <li><a href="#">MERN Development</a></li>
+                                        <li><a href="#">Web Application</a></li>
+                                        <li><a href="#">Custom Website</a></li>
                                     </ul>
                                 </div>
                                 <div class="row">
                                     <header>Email Services</header>
                                     <ul class="mega-links">
-                                        <li><a href="#">Personal Email</a></li>
-                                        <li><a href="#">Business Email</a></li>
-                                        <li><a href="#">Mobile Email</a></li>
-                                        <li><a href="#">Web Marketing</a></li>
+                                        <li><a href="#">Email Template</a></li>
+                                        <li><a href="#">Email Marketing</a></li>
+                                        <li><a href="#">Mailchimp</a></li>
+                                        <li><a href="#">Campain</a></li>
                                     </ul>
                                 </div>
                                 <div class="row">
-                                    <header>Security services</header>
+                                    <header>Graphics Services</header>
                                     <ul class="mega-links">
-                                        <li><a href="#">Site Seal</a></li>
-                                        <li><a href="#">VPS Hosting</a></li>
-                                        <li><a href="#">Privacy Seal</a></li>
-                                        <li><a href="#">Website design</a></li>
+                                        <li><a href="#">Photo Retoucing</a></li>
+                                        <li><a href="#">Background Removal</a></li>
+                                        <li><a href="#">Photo Manipulation</a></li>
+                                        <li><a href="#">Banner Design</a></li>
                                     </ul>
                                 </div>
                             </div>
