@@ -20,6 +20,7 @@ Route::controller(FrontendController::class)->group(function(){
 
     Route::get('/', 'index')->name('frontend.index');
     Route::get('/2', 'index2')->name('frontend.index2');
+    Route::get('/3', 'index3')->name('frontend.index3');
     Route::get('/getCityName', 'getCityName')->name('frontend.getCityName');
 
 
@@ -34,6 +35,10 @@ Route::controller(FrontendController::class)->group(function(){
 
     Route::get('/betheme', function(){
         return view('frontend.betheme.index');
+    });
+
+    Route::get('/home2', function(){
+        return view('frontend.betheme.home2');
     });
 
 
