@@ -256,7 +256,7 @@
                             style="width:120px;height:auto;"> --}}
                     </div>
                     <div class="col-8">
-                        {{-- <h6>Full Stack Developer</h6>
+                        {{-- <h6>Full Stack Developer </h6>
                         <h5 class="m-0">Muhammad Rabiul</h5> --}}
                     </div>
                 </div>
