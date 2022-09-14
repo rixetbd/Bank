@@ -4,6 +4,7 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\FrontendController;
 use App\Http\Controllers\Frontend\SearchController;
 use App\Http\Controllers\IPController;
+use App\Models\Country;
 use App\Models\Lead;
 use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
@@ -37,9 +38,8 @@ Route::controller(FrontendController::class)->group(function(){
         return view('frontend.betheme.index');
     });
 
-    Route::get('/home2', function(){
-        return view('frontend.betheme.home2');
-    });
+    Route::get('/home2', 'index_home2');
+
 
 
 

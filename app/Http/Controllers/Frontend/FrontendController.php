@@ -63,8 +63,6 @@ class FrontendController extends Controller
             'all_city'=>$all_city,
             'all_industry'=>$all_industry,
         ]);
-
-
     }
 
     /**
@@ -136,6 +134,20 @@ class FrontendController extends Controller
     public function getCityName()
     {
 
+    }
+
+    public function index_home2()
+    {
+        $all_countries = Country::all();
+        $all_city = City::orderby('name', 'asc')->get();
+        $all_industry = Industry::orderby('name', 'asc')->get();
+        $lead_data = Lead::paginate(100);
+        return view('frontend.betheme.home2',[
+            'all_countries'=>$all_countries,
+            'lead_data'=>$lead_data,
+            'all_city'=>$all_city,
+            'all_industry'=>$all_industry,
+        ]);
     }
 
 }
