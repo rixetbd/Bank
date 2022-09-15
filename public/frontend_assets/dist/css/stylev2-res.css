@@ -1,0 +1,122 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
+
+
+
+/* @media only screen and (max-width: 600px) {}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 1200px) {} */
+
+
+@media only screen and (max-width: 600px) {
+    .hero_left h1 {
+        font-size: 20px;
+        font-weight: 900;
+    }
+    .hero_left h1 strong{
+        font-size: 50px;
+        line-height: 50px;
+    }
+    .hero_left p.description{
+        width: 100%;
+        font-size: 16px;
+    }
+    .select_box {
+        width:100%;
+        border: 3px solid #c3b092;
+    }
+    .select_box h3 {
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+    .select_box .input_field{
+        margin-top: 10px;
+    }
+    .select_box .input_field #country_Name50 {
+        text-align: center;
+    }
+    .select_box h3.input_h3{
+        text-align: center;
+    }
+    .select_box .fa-caret-right{
+        display: none;
+    }
+    .fix_bg {
+        height: auto;
+    }
+    .fix_bg .container {
+        border-radius: 0;
+        padding: 60px 20px;
+    }
+    .fix_bg h2{
+        font-family: 'Playfair Display', serif;
+        font-size: 25px;
+        line-height: 40px;
+        letter-spacing: 0px;
+    }
+
+}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 1200px) {
+    .hero_left h1 {
+        font-size: 40px;
+        font-weight: 900;
+    }
+    .hero_left h1 strong{
+        font-size: 110px;
+        line-height: 90px;
+    }
+    .hero_left p.description{
+        width: 115%;
+        font-size: 16px;
+    }
+    .select_box {
+        margin-right: -45px;
+        border: 3px solid #c3b092;
+        width:120%;
+        background:#f3d0b0;
+    }
+    .select_box h3 {
+        font-family: 'Poppins', sans-serif;
+        /* font-family: 'Playfair Display', serif; */
+        font-size: 19px;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+    .select_box .input_field{
+        background:#c3b092;
+        width: 300px;
+    }
+    .fix_bg{
+        height: 60vh;
+    }
+    .fix_bg .container {
+        padding: 50px;
+    }
+    .fix_bg h2,
+    .fix_bg p{text-align: center;}
+
+    .fix_bg h2{
+        font-family: 'Playfair Display', serif;
+        font-size: 35px;
+        line-height: 74px;
+        letter-spacing: 0px;
+    }
+}
