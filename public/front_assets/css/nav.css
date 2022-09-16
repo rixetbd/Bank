@@ -22,6 +22,11 @@ nav .container {
     justify-content: space-between;
 }
 
+.bg_coffe {
+    background-color: #F3EFEB;
+    transition: .5s ease;
+}
+
 .container .logo a img {
     width: 100%;
     height: 3rem;
@@ -101,10 +106,9 @@ nav .container {
     background: #D6CCC0;
     padding: 25px 20px;
     display: flex;
-    width: 120%;
+    width: 100%;
     justify-content: space-between;
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-    margin-left: -10%;
 }
 
 .mega-box .content .row {
@@ -204,6 +208,8 @@ nav .btn {
     ::-webkit-scrollbar-thumb {
         background: #3a3b3c;
     }
+
+    .menu-btn{color: #000 !important;}
 
     #menu-btn:checked~.nav-links {
         left: 0%;

@@ -1,0 +1,25 @@
+.service_card .card-body {
+    color: #fff;
+    background-color: #8a6d46;
+}
+
+.service_card .ui.cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+}
+
+.content_color{
+    background:#8a6d46 !important;
+}
+
+.card_bg{
+    background: green !important;
+}
+
+.service_preview{
+    border: 2px solid #8a6d46;
+    padding: 30px;
+}
+

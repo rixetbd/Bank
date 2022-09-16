@@ -187,9 +187,6 @@ $body_color = '#bbcce1fa';
         height: 35px;
     }
 
-    #myTableSimple th:nth-last-child() {
-        border: none;
-    }
 
     .custom_paginate .pagination {
         overflow: hidden;

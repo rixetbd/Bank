@@ -1,0 +1,104 @@
+header {
+    padding-top: 145px;
+    background:url('http://127.0.0.1:8000/uploads/img/vector/bg04.png');
+    background:cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    /* background-position:top right; */
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+}
+
+#country_Name50 {
+    background: #c3b092;
+    color: #000;
+    border: 0px !important;
+    /* border-bottom: 1px solid #898989 !important; */
+    border-radius: 0;
+    font-size: 20px;
+    border: 3px solid #c3b092;
+}
+
+#country_Name50 .text {
+    color: #000;
+}
+
+
+/* @media only screen and (max-width: 600px) {}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 1200px) {} */
+
+
+@media only screen and (max-width: 600px) {
+    .hero_left h1 {
+        font-size: 20px;
+        font-weight: 900;
+    }
+    .hero_left h1 strong{
+        font-size: 50px;
+        line-height: 50px;
+    }
+    .hero_left p.description{
+        width: 100%;
+        font-size: 16px;
+    }
+    .select_box {
+        width:100%;
+        /* border: 3px solid #c3b092; */
+    }
+    .select_box h3 {
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+    .select_box .input_field{
+        margin-top: 10px;
+    }
+    .select_box .input_field #country_Name50 {
+        text-align: center;
+    }
+    .select_box h3.input_h3{
+        text-align: center;
+    }
+    .select_box .fa-caret-right{
+        display: none;
+    }
+}
+@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 992px) {}
+@media only screen and (min-width: 1200px) {
+    .hero_left h1 {
+        font-size: 40px;
+        font-weight: 900;
+    }
+    .hero_left h1 strong{
+        font-size: 110px;
+        line-height: 90px;
+    }
+    .hero_left p.description{
+        width: 115%;
+        font-size: 16px;
+    }
+    .select_box {
+        /* margin-right: -45px; */
+        /* border: 3px solid #c3b092; */
+        width:120%;
+        /* background:#f3d0b0; */
+    }
+    .select_box h3 {
+        font-family: 'Poppins', sans-serif;
+        /* font-family: 'Playfair Display', serif; */
+        font-size: 19px;
+        font-weight: 400;
+        letter-spacing: 1px;
+    }
+    .select_box .input_field{
+        background:#c3b092;
+        width: 430px;
+    }
+}
