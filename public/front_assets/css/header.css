@@ -25,6 +25,14 @@ header h1 {
     color: #000;
 }
 
+#country_Name50 .menu{
+    background: #c3b092;
+    border: none;
+}
+
+#country_Name50 .menu>.item {
+    border-top: none;
+}
 
 /* @media only screen and (max-width: 600px) {}
 @media only screen and (min-width: 600px) {}
@@ -102,3 +110,51 @@ header h1 {
         width: 430px;
     }
 }
+
+
+/* Data Value Name Button || Start */
+
+#industry_Name_display .new_item,
+#city_name_display .new_item {
+    text-align: justify;
+    color: #000;
+    background-color: #e0dbd5 !important;
+    padding: 8px 0 0px 10px;
+    margin: 2px 10px 2px 0;
+    width: 170px;
+    border: none;
+    border-radius: 3px;
+    line-height: 20px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.048);
+}
+
+
+#city_name_display .new_item:hover,
+#industry_Name_display .new_item:hover {
+    background: #ff634783 !important;
+}
+
+#city_name_display .new_item_close,
+#industry_Name_display .new_item_close {
+    color: #000;
+    float: right;
+    /* padding-right: 10px; */
+    background: #e0dbd5;
+    border-left: 1px solid #ababab61 !important;
+    margin-top: -8px;
+    width: 36px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0 3px 3px 0;
+    /* border-left: 1px solid #a1a1a1; */
+}
+
+#city_name_display .new_item_close:hover,
+#industry_Name_display .new_item_close:hover {
+    background-color: tomato;
+    color: #fff
+}
+
+/* Data Value Name Button || End */

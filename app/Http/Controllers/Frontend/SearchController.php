@@ -19,7 +19,7 @@ class SearchController extends Controller
         $lead_dataDB = Lead::paginate(15);
         $lead_datasearch = "";
         foreach ($lead_dataDB as $lead) {
-            $lead_datasearch .= '<tr><td>'.$lead->person_name.'</td><td>'.$lead->title.'</td><td>'.Str::substr($lead->email, 0, 3).'****@*****'.Str::substr($lead->email, -5).'</td><td>'.Str::substr($lead->phone, 0, 6)."*****".'</td><td>'.Str::limit($lead->company_name, 20).'</td><td>'.$lead->company_size.'</td><td>'.$lead->revenue.'</td><td>'.$lead->city.'</td><td>'.$lead->zip_code.'</td><td>'.Str::substr($lead->website, 0, 10).'***.'.Str::substr($lead->website, -3).'</td></tr>';
+            $lead_datasearch .= '<tr><td>'.$lead->person_name.'</td><td>'.$lead->title.'</td><td>'.Str::substr($lead->email, 0, 3).'****@*****'.Str::substr($lead->email, -5).'</td><td>'.Str::substr($lead->phone, 0, 6)."*****".'</td><td>'.Str::substr($lead->company_name, 0, 15)."...".'</td><td>'.$lead->company_size.'</td><td>'.$lead->revenue.'</td><td>'.$lead->city.'</td><td>'.$lead->zip_code.'</td><td>'.Str::substr($lead->website, 0, 10).'***.'.Str::substr($lead->website, -3).'</td></tr>';
         }
         return response()->json([
             'lead_datasearch'=>$lead_datasearch,
@@ -49,7 +49,7 @@ class SearchController extends Controller
         if($lead_dataDB->count() != 0 ){
             $lead_datasearch = "";
             foreach ($lead_dataDB as $lead) {
-                $lead_datasearch .= '<tr><td>'.$lead->person_name.'</td><td>'.$lead->title.'</td><td>'.Str::substr($lead->email, 0, 3).'****@*****'.Str::substr($lead->email, -5).'</td><td>'.Str::substr($lead->phone, 0, 6)."*****".'</td><td>'.Str::limit($lead->company_name, 20).'</td><td>'.$lead->company_size.'</td><td>'.$lead->revenue.'</td><td>'.$lead->city.'</td><td>'.$lead->zip_code.'</td><td>'.Str::substr($lead->website, 0, 10).'***.'.Str::substr($lead->website, -3).'</td></tr>';
+                $lead_datasearch .= '<tr><td>'.$lead->person_name.'</td><td>'.$lead->title.'</td><td>'.Str::substr($lead->email, 0, 3).'****@*****'.Str::substr($lead->email, -5).'</td><td>'.Str::substr($lead->phone, 0, 6)."*****".'</td><td>'.Str::substr($lead->company_name, 0, 15)."...".'</td><td>'.$lead->company_size.'</td><td>'.$lead->revenue.'</td><td>'.$lead->city.'</td><td>'.$lead->zip_code.'</td><td>'.Str::substr($lead->website, 0, 10).'***.'.Str::substr($lead->website, -3).'</td></tr>';
             }
             return response()->json([
                 'country_name'=>$country->name,
@@ -70,20 +70,39 @@ class SearchController extends Controller
     public function searchCitiesData(Request $request)
     {
 
-        $country = Country::find($request->country);
-        $lead_datasearch = "";
-        $cities_name = json_decode(stripslashes($request->city_Name));
-        foreach($cities_name as $city){
-            $lead_dataDB = Lead::whereIn('city', $cities_name)
-                            ->where('country', $country->name)->get();
-        }
-        foreach ($lead_dataDB as $lead) {
-            $lead_datasearch .= '<tr><td>'.$lead->person_name.'</td><td>'.$lead->title.'</td><td>'.Str::substr($lead->email, 0, 3).'****@*****'.Str::substr($lead->email, -5).'</td><td>'.$lead->phone.'</td><td>'.Str::limit($lead->company_name, 20).'</td><td>'.$lead->company_size.'</td><td>'.$lead->revenue.'</td><td>'.$lead->city.'</td><td>'.$lead->zip_code.'</td><td>'.Str::substr($lead->website, 0, 10).'***.'.Str::substr($lead->website, -3).'</td></tr>';
+        if($request->country != ""){
+            $country = Country::find($request->country);
+            $cities_name = json_decode(stripslashes($request->city_Name));
+            foreach($cities_name as $city){
+                $lead_dataDB = Lead::whereIn('city', $cities_name)
+                ->where('country', $country->name)->limit(20)->get();
+            }
+
+            $lead_datasearch = "";
+            foreach ($lead_dataDB as $lead) {
+                $lead_datasearch .= '<tr><td>'.$lead->person_name.'</td><td>'.$lead->title.'</td><td>'.Str::substr($lead->email, 0, 3).'****@*****'.Str::substr($lead->email, -5).'</td><td>'.Str::substr($lead->phone, 0, 6)."*****".'</td><td>'.Str::substr($lead->company_name, 0, 15)."...".'</td><td>'.$lead->company_size.'</td><td>'.$lead->revenue.'</td><td>'.$lead->city.'</td><td>'.$lead->zip_code.'</td><td>'.Str::substr($lead->website, 0, 10).'***.'.Str::substr($lead->website, -3).'</td></tr>';
+            }
+
+            return response()->json([
+                'lead_datasearch'=> $lead_datasearch,
+            ]);
+
+        }else{
+            $cities_name = json_decode(stripslashes($request->city_Name));
+            foreach($cities_name as $city){
+                $lead_dataDB = Lead::whereIn('city', $cities_name)->limit(20)->get();
+            }
+
+            $lead_datasearch = "";
+            foreach ($lead_dataDB as $lead) {
+                $lead_datasearch .= '<tr><td>'.$lead->person_name.'</td><td>'.$lead->title.'</td><td>'.Str::substr($lead->email, 0, 3).'****@*****'.Str::substr($lead->email, -5).'</td><td>'.Str::substr($lead->phone, 0, 6)."*****".'</td><td>'.Str::substr($lead->company_name, 0, 15)."...".'</td><td>'.$lead->company_size.'</td><td>'.$lead->revenue.'</td><td>'.$lead->city.'</td><td>'.$lead->zip_code.'</td><td>'.Str::substr($lead->website, 0, 10).'***.'.Str::substr($lead->website, -3).'</td></tr>';
+            }
+
+            return response()->json([
+                'lead_datasearch'=> $lead_datasearch,
+            ]);
         }
 
-        return response()->json([
-            'lead_datasearch'=> $lead_datasearch,
-        ]);
     }
 
     public function getdataindustries(Request $request)
@@ -98,10 +117,10 @@ class SearchController extends Controller
         foreach($cities_name as $city){
             $lead_dataDB = Lead::whereIn('city', $cities_name)
                             ->where('country', $country->name)
-                            ->whereIn('industry', $industry_Name)->get();
+                            ->whereIn('industry', $industry_Name)->limit(20)->get();
         }
         foreach ($lead_dataDB as $lead) {
-            $lead_datasearch .= '<tr><td>'.$lead->person_name.'</td><td>'.$lead->title.'</td><td>'.Str::substr($lead->email, 0, 3).'****@*****'.Str::substr($lead->email, -5).'</td><td>'.$lead->phone.'</td><td>'.Str::limit($lead->company_name, 20).'</td><td>'.$lead->company_size.'</td><td>'.$lead->revenue.'</td><td>'.$lead->city.'</td><td>'.$lead->zip_code.'</td><td>'.Str::substr($lead->website, 0, 10).'***.'.Str::substr($lead->website, -3).'</td></tr>';
+            $lead_datasearch .= '<tr><td>'.$lead->person_name.'</td><td>'.$lead->title.'</td><td>'.Str::substr($lead->email, 0, 3).'****@*****'.Str::substr($lead->email, -5).'</td><td>'.Str::substr($lead->phone, 0, 6)."*****".'</td><td>'.Str::substr($lead->company_name, 0, 15)."...".'</td><td>'.$lead->company_size.'</td><td>'.$lead->revenue.'</td><td>'.$lead->city.'</td><td>'.$lead->zip_code.'</td><td>'.Str::substr($lead->website, 0, 10).'***.'.Str::substr($lead->website, -3).'</td></tr>';
         }
 
         return response()->json([

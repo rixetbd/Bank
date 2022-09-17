@@ -3,6 +3,8 @@
     display: none !important;
 }
 
+#myTableSimple_info, #myTableSimple_paginate{display: none;}
+
 @media only screen and (max-width: 600px) {
 
     #myTableSimple_length,
@@ -194,3 +196,11 @@ table.dataTable thead>tr>td.sorting_desc_disabled:after {
     background-color: #5928e5 !important;
 }
 /* Table Popup || End */
+
+.bg_theme {
+    background-color: #e0dbd5 !important;
+}
+
+.bg_theme_tomato {
+    background-color: #c3b092 !important;
+}

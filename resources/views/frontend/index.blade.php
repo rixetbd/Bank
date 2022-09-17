@@ -97,8 +97,6 @@ $body_color = '#bbcce1fa';
         /* border-left: 1px solid #a1a1a1; */
     }
 
-    ,
-
     #city_name_display .new_item_close:hover,
     #industry_Name_display .new_item_close:hover {
         background-color: tomato;

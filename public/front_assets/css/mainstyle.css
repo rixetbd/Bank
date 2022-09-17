@@ -3,9 +3,15 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background:url('http://127.0.0.1:8000/uploads/img/mainbg4.jpg');
+    background:url('http://127.0.0.1:8000/uploads/img/mainbg5.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+p{
+    font-size: 15px;
+    letter-spacing: .8px;
+    line-height: 25px;
 }
 
 /* Extra small devices (phones, 600px and down) */

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
+.service_card .cards{cursor: pointer;}
 .service_card .card-body {
     color: #fff;
     background-color: #8a6d46;
@@ -23,3 +26,15 @@
     padding: 30px;
 }
 
+.service_card .cards .header{
+    font-size: 25px !important;
+    font-weight: 500 !important;
+    letter-spacing: 1px !important;
+    font-family: 'Kalam', cursive !important;
+}
+
+.service_card .cards .meta span
+{
+    font-size: 15px;
+    letter-spacing: .5px;
+}

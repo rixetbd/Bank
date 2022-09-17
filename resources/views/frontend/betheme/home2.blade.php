@@ -1,10 +1,20 @@
+@php
+
+    $keyword = "Lead generation,B2b lead generation services,Free b2b lead generation app,How to generate leads in google local services ads,Lead generation meaning,Lead generation website,Real estate lead generator,B2b lead generation companies,Best lead generation for realtors,Generation lead,Lead generation service,Leads generation,B2b lead generation agency,Facebook lead generation,Lead generating companies,Lead generation ideas,Lead generation process,Real estate lead generation companies,B2b lead generation strategies,B2b lead generation tools,Demand generation vs lead generation,Generate real estate leads,Generating leads in real estate,Generating real estate leads,How to generate leads in real estate,How to generate real estate leads,Insurance lead generation,Lead generated,Lead generating service,Lead generation campaign,Lead generation specialist,Lead generation system,Mortgage lead generation,Outbound lead generation,Best lead generation companies,Best lead generation software,Best lead generation tools,Business lead generation,Generate leads for law firms,Generate personal injury leads,Generate sales lead,Generating leads real estate,How to generate leads in sales,Inbound lead generation,Investment lead generation companies,Lead generation b2b,Lead generation definition,Lead generation funnel,Lead generation strategy,Lead generations,Leads generation companies,Leads generator,Legalmatch lead generation,Local lead generation,Marketing lead generation,Med spa lead generation,Real estate lead generation case studies,Real estate leads generator,B2b lead generation software,Best lead generation companies for contractors,Facebook lead generation ads,Generate lead,Generate leads for mortgage brokers,How to start a lead generation business,Hvac lead generation,Lead generating services,Lead generation examples,Lead generation landing page,Lead generation sites,Lead generation techniques,Lead generator companies,Omnichannel lead generation,Organic lead generation,Real estate lead generation software,Seo lead generation,Top lead generation companies,What is lead generation in digital marketing,Automated lead generation,B2b lead generation and appointment setting,B2b leads generation,B2b saas lead generation,B2b sales lead generation,B2c lead generation,Best lead generation,Best lead generation websites for contractors,Best real estate lead generation,Best real estate lead generation websites,Big lead generation,Business leads generation,Email lead generation,Email marketing lead generation,Generate leads for real estate,Generate sales leads,How to generate sales leads,Lead generating websites,Lead generation call center,Lead generation facebook form,Lead generation for graphic design,Lead generation for real estate agents,Lead generation tactics,Lead generation tips for realtors";
+
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="{{$keyword}}">
+    <meta name="author" content="bdosc.com">
+    <meta name="description" content="Lead generation is the process of producing new sales leads through developing interest in a service or product.">
     <title>Lead Generation</title>
 
     <!-- Style Links || Start -->
@@ -184,7 +194,7 @@
 
                 <div class="col-sm-12 col-md-5 input_field">
                     <div class="ui fluid search selection dropdown" id="country_Name50">
-                        <input type="hidden" name="country" id="country_Name_Input">
+                        <input type="hidden" name="country" id="country_Name_Input50">
                         <i class="dropdown icon"></i>
                         <div class="default text">Search Country</div>
                         <div class="menu">
@@ -197,87 +207,90 @@
                 </div>
 
                 <div class="col-sm-12 col-md-6 pt-5">
-                    <p>For more than four years, our firm has provided high-quality data entry and other non-voice services to
-                        many sectors, with several successful projects. Our team's knowledge and skills may be put to good use
-                        in your organization. Take advantage of the following benefits provided by our skilled staff.</p>
+                    <p>For more than four years, our firm has provided high-quality data entry and other non-voice
+                        services to
+                        many sectors, with several successful projects. Our team's knowledge and skills may be put to
+                        good use
+                        in your organization. Take advantage of the following benefits provided by our skilled staff.
+                    </p>
                 </div>
             </div>
 
         </section>
     </header>
 
-{{-- Table Area || Start --}}
+    {{-- Table Area || Start --}}
 
-<section class="container" style="padding:50px 0 0 0;">
-    <div class="pb-3">
-        <div class="row justify-content-between align-items-end pt-4">
-            <div class="col-xs-12 col-sm-12 col-md-3">
-                <h4 style="font-size:25px;text-transform:uppercase;">Search Specific Leads</h4>
-                <div class="col-12 search_div" id="country_Name_Box">
-                    <input type="hidden" id="country_Name_catch">
-                    <label for="" class="w-100" style="text-transform:uppercase;">Country Name </label>
-                    {{-- <i class="fa-solid fa-angle-down CONCON1"></i> --}}
-                    <div class="ui fluid search selection dropdown" id="country_Name">
-                        <input type="hidden" name="country" id="country_Name_Input">
-                        <i class="dropdown icon"></i>
-                        <div class="default text">Search Country</div>
-                        <div class="menu">
-                            @foreach ($all_countries as $country)
-                            <div class="item" data-value="{{$country->id}}"><i
-                                    class="{{Str::lower($country->iso2)}} flag"></i>{{$country->name}}</div>
-                            @endforeach
+    <section class="container d-none" id="table_Area" style="padding-top: 100px;">
+        <div class="pb-3">
+            <div class="row justify-content-between align-items-end pt-4" style="padding-bottom:15px;">
+                <div class="col-xs-12 col-sm-12 col-md-3">
+                    <h4 style="font-size:25px;text-transform:uppercase;">Search Specific Leads</h4>
+                    <div class="col-12 search_div" id="country_Name_Box">
+                        <input type="hidden" id="country_Name_catch">
+                        <label for="" class="w-100" style="text-transform:uppercase;">Country Name </label>
+                        <div class="ui fluid search selection dropdown" id="country_Name">
+                            <input type="hidden" name="country" id="country_Name_Input">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">Search Country</div>
+                            <div class="menu">
+                                @foreach ($all_countries as $country)
+                                <div class="item" data-value="{{$country->id}}"><i
+                                        class="{{Str::lower($country->iso2)}} flag"></i>{{$country->name}}</div>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-sm-12 col-md-9">
-                <button class="btn btn_city text-white float-end bg_theme_tomato" id="Filterreset">
-                    <div class="ui toltip" data-content="You can reset filter" data-position="top center">
-                        RESET ALL
-                    </div>
-                </button>
-            </div>
-        </div>
-
-        <div class="col-12 row" style="padding-bottom:15px;border-bottom:1px solid #fff">
-            <div class="col-xs-12 col-sm-12 col-md-3" id="NullData">
-                <div class="col-12 search_div" id="">
-                    <label for="" class="w-100" style="text-transform:uppercase;">City Name</label>
-                    <div class="ui toltip" data-content="You can choose multiple cities as per your needs"
-                        data-position="left center">
-                        <select name="states" class="ui fluid search dropdown city_Name" id="city_Name">
-                            <option value="">All Cities</option>
-                            @foreach ($all_city as $city)
-                            <option value="{{$city->id}}">{{$city->name}}</option>
-                            @endforeach
-                        </select>
-                    </div>
+                <div class="col-sm-12 col-md-9">
+                    <button class="btn btn_city text-white float-end bg_theme_tomato" id="Filterreset">
+                        <div class="ui toltip" data-content="You can reset filter" data-position="top center">
+                            RESET ALL
+                        </div>
+                    </button>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-9 mt-3" id="city_name_display">
-                <label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>
-            </div>
-        </div>
 
-        <div class="col-12 row" style="padding-bottom: 15px;border-bottom:1px solid #fff">
-            <div class="col-xs-12 col-sm-12 col-md-3" id="NullData">
-                <div class="col-12 search_div" id="">
-                    <label for="" class="w-100" style="text-transform:uppercase;">Industry Name</label>
-                    <div class="ui toltip" data-content="You can choose multiple industry" data-position="left center">
-                        <select name="states" class="ui fluid search dropdown city_Name" id="industry_Name">
-                            <option value="">All Industry</option>
-                            @foreach ($all_industry as $industry)
-                            <option value="{{$industry->id}}">{{$industry->name}}</option>
-                            @endforeach
-                        </select>
+            <div class="col-12 row" style="padding-bottom:15px;">
+                <div class="col-xs-12 col-sm-12 col-md-3" id="NullData">
+                    <div class="col-12 search_div" id="">
+                        <label for="" class="w-100" style="text-transform:uppercase;">City Name</label>
+                        <div class="ui toltip" data-content="You can choose multiple cities as per your needs"
+                            data-position="left center">
+                            <select name="states" class="ui fluid search dropdown city_Name" id="city_Name">
+                                <option value="">All Cities</option>
+                                @foreach ($all_city as $city)
+                                <option value="{{$city->id}}">{{$city->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
                     </div>
                 </div>
+                <div class="col-xs-12 col-sm-12 col-md-9 mt-3" id="city_name_display">
+                    <label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>
+                </div>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-9 mt-3" id="industry_Name_display">
-                <label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>
+
+            <div class="col-12 row" style="padding-bottom: 15px;border-bottom:1px solid #fff">
+                <div class="col-xs-12 col-sm-12 col-md-3" id="NullData">
+                    <div class="col-12 search_div" id="">
+                        <label for="" class="w-100" style="text-transform:uppercase;">Industry Name</label>
+                        <div class="ui toltip" data-content="You can choose multiple industry"
+                            data-position="left center">
+                            <select name="states" class="ui fluid search dropdown city_Name" id="industry_Name">
+                                <option value="">All Industry</option>
+                                @foreach ($all_industry as $industry)
+                                <option value="{{$industry->id}}">{{$industry->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-9 mt-3" id="industry_Name_display">
+                    <label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>
+                </div>
             </div>
-        </div>
-        {{--
+            {{--
 
         <div style="margin:25px 0;">
             <p style="line-height: 0.5715em;">* Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
@@ -286,112 +299,112 @@
         </div> --}}
 
 
-        {{-- Click Here to Select All (Default) --}}
+            {{-- Click Here to Select All (Default) --}}
 
-        <div class="row my-3 filter_btn">
-            {{-- <div class="col-2"><label class="btn btn_city w-100" id="table_refresh">All Tabs Selected <i
+            <div class="row my-3 filter_btn">
+                {{-- <div class="col-2"><label class="btn btn_city w-100" id="table_refresh">All Tabs Selected <i
                 class="fas fa-redo-alt ms-3"></i></label></div> --}}
-        </div>
-        <div class="row my-3 filter_btn">
-            {{-- <div class="col-4"><label class="btn btn_city w-100" id="table_refresh">All Tabs Selected <i
+            </div>
+            <div class="row my-3 filter_btn">
+                {{-- <div class="col-4"><label class="btn btn_city w-100" id="table_refresh">All Tabs Selected <i
                 class="fas fa-redo-alt ms-3"></i></label></div> --}}
-            <div class="col-2"> <label class="btn btn_city w-100" id="table_Name">Person Name <input type="checkbox"
-                        disabled checked id="table_Name_IN"></label></div>
-            <div class="col-2"><label class="btn btn_city w-100" id="table_Title">Job Title <input type="checkbox"
-                        disabled checked id="table_Title_IN"></label></div>
-            <div class="col-2"><label class="btn btn_city w-100" id="table_Company">Company Name <input type="checkbox"
-                        disabled checked id="table_Company_IN"></label></div>
-            <div class="col-2"><label class="btn btn_city w-100" id="table_City">City <input type="checkbox" disabled
-                        checked id="table_City_IN"></label></div>
-            <div class="col-2"><label class="btn btn_city w-100" id="">Industry <input type="checkbox" disabled checked
-                        id="table_City_IN"></label></div>
-            <div class="col-2">
-                <div class="ui toltip" data-content="Selected Tabs Action" data-position="top center">
-                    <label class="btn btn_city w-100 bg_theme" id="table_refresh">All Tabs Selected</label>
+                <div class="col-2"> <label class="btn btn_city w-100" id="table_Name">Person Name <input type="checkbox"
+                            disabled checked id="table_Name_IN"></label></div>
+                <div class="col-2"><label class="btn btn_city w-100" id="table_Title">Job Title <input type="checkbox"
+                            disabled checked id="table_Title_IN"></label></div>
+                <div class="col-2"><label class="btn btn_city w-100" id="table_Company">Company Name <input
+                            type="checkbox" disabled checked id="table_Company_IN"></label></div>
+                <div class="col-2"><label class="btn btn_city w-100" id="table_City">City <input type="checkbox"
+                            disabled checked id="table_City_IN"></label></div>
+                <div class="col-2"><label class="btn btn_city w-100" id="">Industry <input type="checkbox" disabled
+                            checked id="table_City_IN"></label></div>
+                <div class="col-2">
+                    <div class="ui toltip" data-content="Selected Tabs Action" data-position="top center">
+                        <label class="btn btn_city w-100 bg_theme" id="table_refresh">All Tabs Selected</label>
+                    </div>
                 </div>
-            </div>
 
-            {{-- <div class="col-2"><label class="btn btn_city w-100" id="">Text <i
+                {{-- <div class="col-2"><label class="btn btn_city w-100" id="">Text <i
                         class="fas fa-redo-alt"></i></label></div> --}}
-            {{-- <div class="col-xs-12 col-sm-12 col-md-12 filter_btn"> --}}
+                {{-- <div class="col-xs-12 col-sm-12 col-md-12 filter_btn"> --}}
+            </div>
+
+            <div class="row filter_btn">
+                <div class="col-2">
+                    <label class="btn btn_city w-100" id="table_Email">Email <input type="checkbox" checked
+                            id="table_Email_IN"></label>
+                </div>
+                <div class="col-2">
+                    <label class="btn btn_city w-100" id="table_Phone">Phone <input type="checkbox" checked
+                            id="table_Phone_IN"></label>
+                </div>
+                <div class="col-2">
+                    <label class="btn btn_city w-100" id="table_Company_Size">Company Size <input type="checkbox"
+                            checked id="table_Company_Size_IN"></label>
+                </div>
+                <div class="col-2">
+                    <label class="btn btn_city w-100" id="table_Revenue">Revenue <input type="checkbox" checked
+                            id="table_Revenue_IN"></label>
+                </div>
+                <div class="col-2">
+                    <label class="btn btn_city w-100" id="table_Zip_code">Zip Code <input type="checkbox" checked
+                            id="table_Zip_code_IN"></label>
+                </div>
+                <div class="col-2">
+                    <label class="btn btn_city w-100" id="table_URL">Website <input type="checkbox" checked
+                            id="table_URL_IN"></label>
+                </div>
+
+            </div>
         </div>
 
-        <div class="row filter_btn">
-            <div class="col-2">
-                <label class="btn btn_city w-100" id="table_Email">Email <input type="checkbox" checked
-                        id="table_Email_IN"></label>
-            </div>
-            <div class="col-2">
-                <label class="btn btn_city w-100" id="table_Phone">Phone <input type="checkbox" checked
-                        id="table_Phone_IN"></label>
-            </div>
-            <div class="col-2">
-                <label class="btn btn_city w-100" id="table_Company_Size">Company Size <input type="checkbox" checked
-                        id="table_Company_Size_IN"></label>
-            </div>
-            <div class="col-2">
-                <label class="btn btn_city w-100" id="table_Revenue">Revenue <input type="checkbox" checked
-                        id="table_Revenue_IN"></label>
-            </div>
-            <div class="col-2">
-                <label class="btn btn_city w-100" id="table_Zip_code">Zip Code <input type="checkbox" checked
-                        id="table_Zip_code_IN"></label>
-            </div>
-            <div class="col-2">
-                <label class="btn btn_city w-100" id="table_URL">Website <input type="checkbox" checked
-                        id="table_URL_IN"></label>
-            </div>
-
         </div>
-    </div>
-
-    </div>
-    <div class="col-lg-12 col-md-12 col-sm-12" style="overflow-x:auto;">
-        <table class="table table-responsive cell-border TableIDADD" id="myTableSimple">
-            <thead>
-                {{-- <th>Industry</th> --}}
-                <th>Person Name</th>
-                <th style="width: 59.7344px;">Job Title</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th style="min-width: 170px;">Company Name</th>
-                <th style="width: 105px;min-width: 105px;">Company Size</th>
-                <th>Revenue</th>
-                <th style="min-width: 140px">City</th>
-                <th style="min-width: 72px;">Zip Code</th>
-                <th>Website</th>
-            </thead>
-            <tbody id="lead_data">
-                @forelse ($lead_data as $key=> $lead)
-                <tr>
-                    {{-- <td>{{$lead->industry}}</td> --}}
-                    <td>{{$lead->person_name}}</td>
-                    <td>{{($lead->title = "Managing Partner"?"Partner": $lead->title)}}</td>
-                    <td>{{Str::substr($lead->email, 0, 3)."****@*****".Str::substr($lead->email, -5)}}</td>
-                    <td>{{Str::substr($lead->phone, -4)."****"}}</td>
-                    <td>{{ Str::limit($lead->company_name, 15)}}</td>
-                    <td>{{$lead->company_size}}</td>
-                    <td>{{$lead->revenue}}</td>
-                    <td>{{$lead->city}}</td>
-                    <td>{{$lead->zip_code}}</td>
-                    <td>{{Str::substr($lead->website, 0, 10)."***.".Str::substr($lead->website, -3) }}</td>
-                    @empty
-                <tr>
-                    <td colspan="12" class="text-center">Not Found Any Data.</td>
-                </tr>
-                @endforelse
-            </tbody>
-        </table>
-    </div>
-    <div class="custom_paginate">
-        <div class="row d-none">
-            <div class="col-sm-12 col-md-6">{{ $lead_data->links() }}</div>
+        <div class="col-lg-12 col-md-12 col-sm-12" style="overflow-x:auto;">
+            <table class="table table-responsive cell-border TableIDADD" id="myTableSimple">
+                <thead>
+                    {{-- <th>Industry</th> --}}
+                    <th style="min-width: 150px;">Person Name</th>
+                    <th style="width: 59.7344px;">Job Title</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th style="min-width: 150px;">Company Name</th>
+                    <th style="width: 105px;min-width: 105px;">Company Size</th>
+                    <th>Revenue</th>
+                    <th style="min-width: 140px">City</th>
+                    <th style="min-width: 72px;">Zip Code</th>
+                    <th>Website</th>
+                </thead>
+                <tbody id="lead_data">
+                    @forelse ($lead_data as $key=> $lead)
+                    <tr>
+                        {{-- <td>{{$lead->industry}}</td> --}}
+                        <td>{{$lead->person_name}}</td>
+                        <td>{{($lead->title = "Managing Partner"?"Partner": $lead->title)}}</td>
+                        <td>{{Str::substr($lead->email, 0, 3)."****@*****".Str::substr($lead->email, -5)}}</td>
+                        <td>{{Str::substr($lead->phone, -4)."****"}}</td>
+                        <td>{{Str::substr($lead->company_name, 0, 15)."..."}}</td>
+                        <td>{{$lead->company_size}}</td>
+                        <td>{{$lead->revenue}}</td>
+                        <td>{{$lead->city}}</td>
+                        <td>{{$lead->zip_code}}</td>
+                        <td>{{Str::substr($lead->website, 0, 10)."***.".Str::substr($lead->website, -3) }}</td>
+                        @empty
+                    <tr>
+                        <td colspan="12" class="text-center">Not Found Any Data.</td>
+                    </tr>
+                    @endforelse
+                </tbody>
+            </table>
         </div>
-    </div>
-    </div>
-</section>
+        <div class="custom_paginate">
+            <div class="row d-none">
+                <div class="col-sm-12 col-md-6">{{ $lead_data->links() }}</div>
+            </div>
+        </div>
+        </div>
+    </section>
 
-{{-- Table Area || End --}}
+    {{-- Table Area || End --}}
 
 
 
@@ -433,14 +446,16 @@
                             <img src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}">
                         </div>
                         <div class="content content_color">
-                            <a class="header" style="color: #fff;">B2B lead generation</a>
+                            <a class="header" style="color: #fff;" title="Business to Business">B2B lead generation</a>
                             <div class="meta">
-                                <span class="date" style="color: #fff;">B2B lead generation is the process of locating
-                                    the perfect e. <a href="#" style="color: #fff;text-decoration: underline;">Read more...</a></span>
+                                <span class="date" style="color: #fff;">
+                                    {{Str::limit('In Business, B2B lead generation is the act of identifying and initiating an interest of prospective customers. Identifying prospective customers means finding businesses or clients who may have an interest in your offering business product or services (Shortly your target audience).Initiating interest is about capturing information from these potential customers and feeding them into your sales funnel. Capturing information of potential Consumers Is called lead and these leads can be converted into your Main customer.', 110)}}
+                                    <a href="#" style="color: #fff;text-decoration: underline;">Read more</a></span>
                             </div>
                         </div>
                     </div>
-                    <div class="text-center w-100 d-none arrow_down animate__animated animate__fadeInDown"><i class="fas fa-caret-down" style="font-size: 50px;margin: -20px;color: #008000;"></i></div>
+                    <div class="text-center w-100 d-none arrow_down animate__animated animate__fadeInDown"><i
+                            class="fas fa-caret-down" style="font-size: 50px;margin: -20px;color: #008000;"></i></div>
                 </div>
                 <div class="col ui special cards my-3" id="card_02">
                     <div class="card w-100 m-0">
@@ -455,14 +470,15 @@
                             <img src="{{asset('uploads/img/Make-a-customer-not-a-sale2.gif')}}">
                         </div>
                         <div class="content content_color">
-                            <a class="header" style="color: #fff;">B2B lead generation</a>
+                            <a class="header" style="color: #fff;" title="Pay Per Click">PPC Lead Generation</a>
                             <div class="meta">
-                                <span class="date" style="color: #fff;">B2B lead generation is the process of locating
-                                    the perfect e. <a href="#" style="color: #fff;text-decoration: underline;">Read more...</a></span>
+                                <span class="date" style="color: #fff;">Pay Per Click, For each level of the funnel, manage the messaging. Look into what individuals are looking for and tailor your message to meet those demands. <a href="#" style="color: #fff;text-decoration: underline;">Read
+                                        more</a></span>
                             </div>
                         </div>
                     </div>
-                    <div class="text-center w-100 d-none arrow_down animate__animated animate__fadeInDown"><i class="fas fa-caret-down" style="font-size: 50px;margin: -20px;color: #008000;"></i></div>
+                    <div class="text-center w-100 d-none arrow_down animate__animated animate__fadeInDown"><i
+                            class="fas fa-caret-down" style="font-size: 50px;margin: -20px;color: #008000;"></i></div>
                 </div>
                 <div class="col ui special cards my-3" id="card_03">
                     <div class="card w-100 m-0">
@@ -477,64 +493,66 @@
                             <img src="{{asset('uploads/img/Make-a-customer-not-a-sale3.gif')}}">
                         </div>
                         <div class="content content_color">
-                            <a class="header" style="color: #fff;">B2B lead generation</a>
+                            <a class="header" style="color: #fff;" title="Product Base Lead">Product Base Lead</a>
                             <div class="meta">
-                                <span class="date" style="color: #fff;">B2B lead generation is the process of locating
-                                    the perfect e. <a href="#" style="color: #fff;text-decoration: underline;">Read more...</a></span>
+                                <span class="date" style="color: #fff;">One advantage of product-led growth is that when customers buy your product, they are already familiar with how it functions. <a href="#" style="color: #fff;text-decoration: underline;">Read
+                                        more</a></span>
                             </div>
                         </div>
                     </div>
-                    <div class="text-center w-100 d-none arrow_down animate__animated animate__fadeInDown"><i class="fas fa-caret-down" style="font-size: 50px;margin: -20px;color: #008000;"></i></div>
+                    <div class="text-center w-100 d-none arrow_down animate__animated animate__fadeInDown"><i
+                            class="fas fa-caret-down" style="font-size: 50px;margin: -20px;color: #008000;"></i></div>
                 </div>
             </div>
 
             <div class="service_preview d-none">
                 <div class="float-end">
-                    <button style="border: 1px solid #919191;border-radius: 10%;width: 35px;height: 35px;" id="service_preview_close">
+                    <button style="border: 1px solid #919191;border-radius: 10%;width: 35px;height: 35px;"
+                        id="service_preview_close">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
                 <div class="my-4" id="card_01_view">
                     <div class="row">
-                        <div class="col-sm-12 col-md-6">
-                            <h3>Part One</h3>
-                            <p>Lead generation is the process of producing new sales leads through developing interest in a service or
-                                product. Lead Generation services are a fundamental part of growing your business’s revenue. B2B
-                                organizations frequently employ lead generation services to acquire and evaluate fresh leads in the
-                                hopes of converting them into new clients. These services might be offered by a single consultant or a
-                                large agency with numerous employees.
-                            </p>
-                        </div>
+                        <div class="col-sm-12 col-md-12">
+                            <div class="animate__animated animate__fadeInUp mb-5">
+                                <h3>What is B2B lead generation ?</h3>
+                                <p>In Business, B2B lead generation is the act of identifying and initiating an interest of
+                                    prospective customers. Identifying prospective customers means finding businesses or clients who may have an interest in your offering business product or services (Shortly your target audience).Initiating interest is about capturing information from these potential customers and feeding them into your sales funnel. Capturing information of potential Consumers Is called lead and these leads can be converted into your Main  customer.
+                                </p>
+                            </div>
 
-                        <div class="col-sm-12 col-md-6">
-                            <h3>What Are Lead Generation Services?</h3>
-                            <p>Lead generation is the process of producing new sales leads through developing interest in a service or
-                                product. Lead Generation services are a fundamental part of growing your business’s revenue. B2B
-                                organizations frequently employ lead generation services to acquire and evaluate fresh leads in the
-                                hopes of converting them into new clients. These services might be offered by a single consultant or a
-                                large agency with numerous employees.
+                            <div class="animate__animated animate__fadeInUp mt-5">
+                            <h3>Why Is B2B Lead Generation Important To My Business?</h3>
+                            <p>
+                                Implementing a B2B lead generation strategy is Important today because many prospects want to control their buying journey. Ads and traditional marketing Will not work anymore. Today’s Customers are conducting their own research to find solutions to their problems. Lead generation strategy will help you to find this target Consumers.
+                                Here’s a look at some of the benefits of B2B lead generation.
                             </p>
+                            <ul>
+                                <li>Build Awareness for Your Brand</li>
+                                <li>Increase Your Sales Opportunities</li>
+                                <li>Provides Benefits to the Buyer and Seller</li>
+                                <li>Drive More High-Quality Leads</li>
+                                <li>Costs Less than Other Forms of Advertising</li>
+                                <li>Appeal to Your Target Audience</li>
+                                <li>Grow Your Revenue</li>
+                            </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="d-none my-4" id="card_02_view">
                     <div class="row">
-                        <div class="col-sm-12 col-md-6">
+                        <div class="col-sm-12 col-md-12">
                             <h3>Part Two</h3>
-                            <p>Lead generation is the process of producing new sales leads through developing interest in a service or
-                                product. Lead Generation services are a fundamental part of growing your business’s revenue. B2B
-                                organizations frequently employ lead generation services to acquire and evaluate fresh leads in the
-                                hopes of converting them into new clients. These services might be offered by a single consultant or a
-                                large agency with numerous employees.
-                            </p>
-                        </div>
-
-                        <div class="col-sm-12 col-md-6">
-                            <h3>What Are Lead Generation Services?</h3>
-                            <p>Lead generation is the process of producing new sales leads through developing interest in a service or
-                                product. Lead Generation services are a fundamental part of growing your business’s revenue. B2B
-                                organizations frequently employ lead generation services to acquire and evaluate fresh leads in the
-                                hopes of converting them into new clients. These services might be offered by a single consultant or a
+                            <p>Lead generation is the process of producing new sales leads through developing interest
+                                in a service or
+                                product. Lead Generation services are a fundamental part of growing your business’s
+                                revenue. B2B
+                                organizations frequently employ lead generation services to acquire and evaluate fresh
+                                leads in the
+                                hopes of converting them into new clients. These services might be offered by a single
+                                consultant or a
                                 large agency with numerous employees.
                             </p>
                         </div>
@@ -542,22 +560,16 @@
                 </div>
                 <div class="d-none my-4" id="card_03_view">
                     <div class="row">
-                        <div class="col-sm-12 col-md-6">
+                        <div class="col-sm-12 col-md-12">
                             <h3>Part Three</h3>
-                            <p>Lead generation is the process of producing new sales leads through developing interest in a service or
-                                product. Lead Generation services are a fundamental part of growing your business’s revenue. B2B
-                                organizations frequently employ lead generation services to acquire and evaluate fresh leads in the
-                                hopes of converting them into new clients. These services might be offered by a single consultant or a
-                                large agency with numerous employees.
-                            </p>
-                        </div>
-
-                        <div class="col-sm-12 col-md-6">
-                            <h3>What Are Lead Generation Services?</h3>
-                            <p>Lead generation is the process of producing new sales leads through developing interest in a service or
-                                product. Lead Generation services are a fundamental part of growing your business’s revenue. B2B
-                                organizations frequently employ lead generation services to acquire and evaluate fresh leads in the
-                                hopes of converting them into new clients. These services might be offered by a single consultant or a
+                            <p>Lead generation is the process of producing new sales leads through developing interest
+                                in a service or
+                                product. Lead Generation services are a fundamental part of growing your business’s
+                                revenue. B2B
+                                organizations frequently employ lead generation services to acquire and evaluate fresh
+                                leads in the
+                                hopes of converting them into new clients. These services might be offered by a single
+                                consultant or a
                                 large agency with numerous employees.
                             </p>
                         </div>
@@ -570,19 +582,26 @@
                 <h3>Why Choose Us For Lead Genaration?</h3>
                 <p>Repeat and Regular paying customers are every business’s sweetest dream. You aren’t in business until
                     then
-                    you find and retain paying customers. However, achieving this dream isn’t a piece of cake in the park of
-                    other million businesses. Thousands of businesses also compete for your target customers. So, how do you
+                    you find and retain paying customers. However, achieving this dream isn’t a piece of cake in the
+                    park of
+                    other million businesses. Thousands of businesses also compete for your target customers. So, how do
+                    you
                     get
-                    a competitive edge? Do you have any magic lamps to assist you in prospecting and turning prospects into
+                    a competitive edge? Do you have any magic lamps to assist you in prospecting and turning prospects
+                    into
                     paying customers?
-                    Thankfully, Bangladesh Outsourcing Company is here to generate millions $ in revenue through our magic
-                    tools, personalized email generator and dedicated Lead Generate team. We create solid plans for you to
+                    Thankfully, Bangladesh Outsourcing Company is here to generate millions $ in revenue through our
+                    magic
+                    tools, personalized email generator and dedicated Lead Generate team. We create solid plans for you
+                    to
                     keep
-                    your leads organized, updated and informed about your products and services, while also working hard on
+                    your leads organized, updated and informed about your products and services, while also working hard
+                    on
                     capturing those who you see as potential new customers and clients.
                 </p>
                 <h4>Data Generating Tools</h4>
-                <p>Tools we use are LinkedIn Sales Navigator, Zoominfo, RocketReach, FindThatLead, Snoov.io, Salesql, Adapt,
+                <p>Tools we use are LinkedIn Sales Navigator, Zoominfo, RocketReach, FindThatLead, Snoov.io, Salesql,
+                    Adapt,
                     ClearBit, Hunter, Contactout, MailTester, Boomerang, MailChimp, Hola, Google, Kendo etc.
                 </p>
             </section>
@@ -590,7 +609,8 @@
             <section class="row my-5">
                 <div class="col-sm-12 col-md-12 mb-4">
                     <h3>Lead Generation Specialty</h3>
-                    <p>Our company offers several lead generation services all over the world at very low cost and on time.
+                    <p>Our company offers several lead generation services all over the world at very low cost and on
+                        time.
                         We
                         always manage the bulk and high-quality projects at a very low cost. We offer the services given
                         below:
@@ -600,7 +620,8 @@
                     <div>
                         {{-- <i class='bx bx-trip'></i> --}}
                         <h4>We Collect The Data</h4>
-                        <p>If you like our sample work, we then collect the main project details with all specifications and
+                        <p>If you like our sample work, we then collect the main project details with all specifications
+                            and
                             requirements.</p>
                     </div>
                 </div>
@@ -608,7 +629,8 @@
                     <div>
                         {{-- <i class='bx bx-street-view'></i> --}}
                         <h4>Analyze Your Data</h4>
-                        <p>Before we start lead generation of your documents with high precision, our experts analyze your
+                        <p>Before we start lead generation of your documents with high precision, our experts analyze
+                            your
                             project to find the most appropriate method for the same.</p>
                     </div>
                 </div>
