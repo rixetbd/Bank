@@ -48,9 +48,17 @@ Route::controller(FrontendController::class)->group(function(){
 Route::controller(SearchController::class)->group(function(){
 
     Route::post('/getcities', 'search')->name('getcities.search');
-    Route::post('/getalldata', 'getalldata')->name('getcities.getalldata');
-    Route::post('/getcitiesdata', 'searchCitiesData')->name('searchCitiesData.search');
-    Route::post('/getdataindustries', 'getdataindustries')->name('getdataindustries.search');
+    // Route::post('/getalldata', 'getalldata')->name('getcities.getalldata');
+    // Route::post('/getcitiesdata', 'searchCitiesData')->name('searchCitiesData.search');
+    // Route::post('/getdataindustries', 'getdataindustries')->name('getdataindustries.search');
+
+    Route::post('/searchall', 'searchall')->name('search.searchall');
+    Route::post('/searchcountryonly', 'searchcountryonly')->name('search.searchcountryonly');
+    Route::post('/searchcityonly', 'searchcityonly')->name('search.searchcityonly');
+    Route::post('/searchindustryonly', 'searchindustryonly')->name('search.searchindustryonly');
+    Route::post('/searchcountryandcity', 'searchcountryandcity')->name('search.searchcountryandcity');
+    Route::post('/searchcountryandindustry', 'searchcountryandindustry')->name('search.searchcountryandindustry');
+    Route::post('/searchcityandindustry', 'searchcityandindustry')->name('search.searchcityandindustry');
 
 });
 

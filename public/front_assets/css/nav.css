@@ -112,9 +112,26 @@ nav .container {
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
+.mega-box .content .mega-links li::after{
+    content: "";
+    width: 20px;
+    height: 2px;
+    background-color: transparent;
+    position: absolute;
+    margin-left: 20px;
+    transition: 1s ease;
+}
+
+
+.mega-box .content .mega-links li:hover::after{
+    background-color: #68583f;
+    transition: 1s ease;
+    width: 120px;
+}
+
 .mega-box .content .row {
     width: 25%;
-    line-height: 45px;
+    line-height: 35px;
 }
 
 .content .row img {
@@ -143,7 +160,7 @@ nav .container {
     padding: 0px;
     padding: 0 20px;
     color: #000;
-    font-size: 17px;
+    font-size: 14px;
     display: block;
 }
 

@@ -1,6 +1,6 @@
 @php
 
-    $keyword = "Lead generation,B2b lead generation services,Free b2b lead generation app,How to generate leads in google local services ads,Lead generation meaning,Lead generation website,Real estate lead generator,B2b lead generation companies,Best lead generation for realtors,Generation lead,Lead generation service,Leads generation,B2b lead generation agency,Facebook lead generation,Lead generating companies,Lead generation ideas,Lead generation process,Real estate lead generation companies,B2b lead generation strategies,B2b lead generation tools,Demand generation vs lead generation,Generate real estate leads,Generating leads in real estate,Generating real estate leads,How to generate leads in real estate,How to generate real estate leads,Insurance lead generation,Lead generated,Lead generating service,Lead generation campaign,Lead generation specialist,Lead generation system,Mortgage lead generation,Outbound lead generation,Best lead generation companies,Best lead generation software,Best lead generation tools,Business lead generation,Generate leads for law firms,Generate personal injury leads,Generate sales lead,Generating leads real estate,How to generate leads in sales,Inbound lead generation,Investment lead generation companies,Lead generation b2b,Lead generation definition,Lead generation funnel,Lead generation strategy,Lead generations,Leads generation companies,Leads generator,Legalmatch lead generation,Local lead generation,Marketing lead generation,Med spa lead generation,Real estate lead generation case studies,Real estate leads generator,B2b lead generation software,Best lead generation companies for contractors,Facebook lead generation ads,Generate lead,Generate leads for mortgage brokers,How to start a lead generation business,Hvac lead generation,Lead generating services,Lead generation examples,Lead generation landing page,Lead generation sites,Lead generation techniques,Lead generator companies,Omnichannel lead generation,Organic lead generation,Real estate lead generation software,Seo lead generation,Top lead generation companies,What is lead generation in digital marketing,Automated lead generation,B2b lead generation and appointment setting,B2b leads generation,B2b saas lead generation,B2b sales lead generation,B2c lead generation,Best lead generation,Best lead generation websites for contractors,Best real estate lead generation,Best real estate lead generation websites,Big lead generation,Business leads generation,Email lead generation,Email marketing lead generation,Generate leads for real estate,Generate sales leads,How to generate sales leads,Lead generating websites,Lead generation call center,Lead generation facebook form,Lead generation for graphic design,Lead generation for real estate agents,Lead generation tactics,Lead generation tips for realtors";
+    $keyword = "Lead generation,B2b lead generation services,Free b2b lead generation app,How to generate leads in google local services ads,Lead generation meaning,Lead generation website,Real estate lead generator,B2b lead generation companies,Best lead generation for realtors,Generation lead,Lead generation service,Leads generation,B2b lead generation agency,Facebook lead generation,Lead generating companies,Lead generation ideas,Lead generation process,Real estate lead generation companies,B2b lead generation strategies,B2b lead generation tools,Demand generation vs lead generation,Generate real estate leads,Generating leads in real estate,Generating real estate leads,How to generate leads in real estate,How to generate real estate leads,Insurance lead generation,Lead generated,Lead generating service,Lead generation campaign,Lead generation specialist,Lead generation system,Mortgage lead generation,Outbound lead generation,Best lead generation companies,Best lead generation software,Best lead generation tools,Business lead generation";
 
 @endphp
 
@@ -116,47 +116,8 @@
         </div>
     </nav>
 
-
-    <div class="container">
-        <div class="row">
-            <div class="col-1 bg-danger">1</div>
-            <div class="col-1 bg-success">2</div>
-            <div class="col-1 bg-danger">3</div>
-            <div class="col-1 bg-success">4</div>
-            <div class="col-1 bg-danger">5</div>
-            <div class="col-1 bg-success">6</div>
-            <div class="col-1 bg-danger">7</div>
-            <div class="col-1 bg-success">8</div>
-            <div class="col-1 bg-danger">9</div>
-            <div class="col-1 bg-success">10</div>
-            <div class="col-1 bg-danger">11</div>
-            <div class="col-1 bg-success">12</div>
-        </div>
-    </div>
-
-
     <header>
         <section class="container">
-
-
-            {{-- <nav class="navbar navbar-expand-lg" style="min-height:15.5vh;">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="{{asset('uploads/img/logo3.png')}}" alt="" width="60" /></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ms-auto">
-                    <a class="nav-link aactive" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Services</a>
-                    <a class="nav-link" href="#">About us</a>
-                    <a class="nav-link" href="#">Blog</a>
-                    <a class="nav-link" href="#"><strong>Hire us</strong></a>
-                </div>
-            </div>
-            </div>
-            </nav> --}}
 
             <div class="row align-items-center position-relative hero_area">
                 <div class="col-sm-12 col-md-7 hero_left">
@@ -290,14 +251,6 @@
                     <label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>
                 </div>
             </div>
-            {{--
-
-        <div style="margin:25px 0;">
-            <p style="line-height: 0.5715em;">* Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci,
-                atque?</p>
-            <p style="line-height: 0.5715em;">* Lorem ipsum dolor sit amet consectetur adipisicingi, atque?</p>
-        </div> --}}
-
 
             {{-- Click Here to Select All (Default) --}}
 
@@ -354,7 +307,6 @@
                     <label class="btn btn_city w-100" id="table_URL">Website <input type="checkbox" checked
                             id="table_URL_IN"></label>
                 </div>
-
             </div>
         </div>
 
@@ -362,7 +314,6 @@
         <div class="col-lg-12 col-md-12 col-sm-12" style="overflow-x:auto;">
             <table class="table table-responsive cell-border TableIDADD" id="myTableSimple">
                 <thead>
-                    {{-- <th>Industry</th> --}}
                     <th style="min-width: 150px;">Person Name</th>
                     <th style="width: 59.7344px;">Job Title</th>
                     <th>Email</th>
@@ -379,7 +330,7 @@
                     <tr>
                         {{-- <td>{{$lead->industry}}</td> --}}
                         <td>{{$lead->person_name}}</td>
-                        <td>{{($lead->title = "Managing Partner"?"Partner": $lead->title)}}</td>
+                        <td>{{($lead->title = "Managing Partner"?"Partner": Str::substr($lead->title, 0, 15)."...")}}</td>
                         <td>{{Str::substr($lead->email, 0, 3)."****@*****".Str::substr($lead->email, -5)}}</td>
                         <td>{{Str::substr($lead->phone, -4)."****"}}</td>
                         <td>{{Str::substr($lead->company_name, 0, 15)."..."}}</td>
@@ -405,29 +356,6 @@
     </section>
 
     {{-- Table Area || End --}}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <section class="pb-5">
         <div class="container">
@@ -470,9 +398,9 @@
                             <img src="{{asset('uploads/img/Make-a-customer-not-a-sale2.gif')}}">
                         </div>
                         <div class="content content_color">
-                            <a class="header" style="color: #fff;" title="Pay Per Click">PPC Lead Generation</a>
+                            <a class="header" style="color: #fff;" title="Small Business Lead Generation">Small Business Lead Generation</a>
                             <div class="meta">
-                                <span class="date" style="color: #fff;">Pay Per Click, For each level of the funnel, manage the messaging. Look into what individuals are looking for and tailor your message to meet those demands. <a href="#" style="color: #fff;text-decoration: underline;">Read
+                                <span class="date" style="color: #fff;">{{Str::limit("Lead generation is the process of producing new sales leads through developing interest in a service or product. Generating leads is essential for  any type of business’s sales process, but it can be especially challenging for smaller companies .Suppose you don't have enough money or manpower to do traditional lead generation strategies like Branding and SEO (search engine optimization) for small businesses. In that case, there are so many ways to generate leads for your small business.", 110)}}<a href="#" style="color: #fff;text-decoration: underline;">Read
                                         more</a></span>
                             </div>
                         </div>
@@ -493,9 +421,9 @@
                             <img src="{{asset('uploads/img/Make-a-customer-not-a-sale3.gif')}}">
                         </div>
                         <div class="content content_color">
-                            <a class="header" style="color: #fff;" title="Product Base Lead">Product Base Lead</a>
+                            <a class="header" style="color: #fff;" title="B2C Lead Generation">B2C Lead Generation</a>
                             <div class="meta">
-                                <span class="date" style="color: #fff;">One advantage of product-led growth is that when customers buy your product, they are already familiar with how it functions. <a href="#" style="color: #fff;text-decoration: underline;">Read
+                                <span class="date" style="color: #fff;">{{Str::limit("Social media groups, pages and communities are a great way to connect with your target audience. Most of the small businesses utilize social media in their marketing strategy. You can also use Facebook and Instagram search bars to find these groups and type in keywords that relate to your niche or join an online community like LinkedIn. Search online communities that are relevant to your business and join them to promote your business. You can do this through social media, groups & forums.", 110)}}<a href="#" style="color: #fff;text-decoration: underline;">Read
                                         more</a></span>
                             </div>
                         </div>
@@ -523,20 +451,95 @@
                             </div>
 
                             <div class="animate__animated animate__fadeInUp mt-5">
-                            <h3>Why Is B2B Lead Generation Important To My Business?</h3>
-                            <p>
-                                Implementing a B2B lead generation strategy is Important today because many prospects want to control their buying journey. Ads and traditional marketing Will not work anymore. Today’s Customers are conducting their own research to find solutions to their problems. Lead generation strategy will help you to find this target Consumers.
-                                Here’s a look at some of the benefits of B2B lead generation.
-                            </p>
-                            <ul>
-                                <li>Build Awareness for Your Brand</li>
-                                <li>Increase Your Sales Opportunities</li>
-                                <li>Provides Benefits to the Buyer and Seller</li>
-                                <li>Drive More High-Quality Leads</li>
-                                <li>Costs Less than Other Forms of Advertising</li>
-                                <li>Appeal to Your Target Audience</li>
-                                <li>Grow Your Revenue</li>
-                            </ul>
+                                <h3>How does B2B lead generation work?</h3>
+                                <p>
+                                    Generating leads can be difficult and time-consuming but the idea itself is pretty simple. The first step of B2B lead generation is finding the potential leads (contact information). This information is either sourced in house or by a third party lead generation company. Lead generation companies collect potential buyers' or consumers' Leads & their information.
+                                </p>
+
+                                <p>
+                                    Now you have a database of potential high quality leads to contact with them. This can either be an email or a social media post. The main point here is to put your business or product in front of the eyes of the people who will be more likely to enjoy your product or service
+                                </p>
+                                <p>
+                                    “Searching and Qualifying Leads” This stage is about research,is your customer aware about your brand? Do they trust your brand and strategy? Are they already considering making a purchase? These are the main factors many B2B customers will be asking themselves before they make a purchase. "Close The Lead" is the last part of your lead generation successful journey. After closing the leads you should nurture your leads
+                                </p>
+                            </div>
+
+                            <div class="animate__animated animate__fadeInUp mt-5">
+                                <h3>Why Is B2B Lead Generation Important To My Business?</h3>
+                                <p>
+                                    Implementing a B2B lead generation strategy is Important today because many prospects want to control their buying journey. Ads and traditional marketing Will not work anymore. Today’s Customers are conducting their own research to find solutions to their problems. Lead generation strategy will help you to find this target Consumers.
+                                    Here’s a look at some of the benefits of B2B lead generation.
+                                </p>
+                                <ul>
+                                    <li>Build Awareness for Your Brand</li>
+                                    <li>Increase Your Sales Opportunities</li>
+                                    <li>Provides Benefits to the Buyer and Seller</li>
+                                    <li>Drive More High-Quality Leads</li>
+                                    <li>Costs Less than Other Forms of Advertising</li>
+                                    <li>Appeal to Your Target Audience</li>
+                                    <li>Grow Your Revenue</li>
+                                </ul>
+                            </div>
+                            <div class="animate__animated animate__fadeInUp mt-5">
+                                <h3>Types of leads</h3>
+                                <p>There are three types of B2B leads. Every type of lead is important for converting a potential new paying customer.</p>
+                            </div>
+                            <div class="animate__animated animate__fadeInUp mt-5">
+                                <h3>Cold Leads</h3>
+                                <p>Cold lead is essentially for a company that has been deemed like a good fit for your brand.Generally speaking these have a lower conversion rate than the other methods of B2B leads because the prospective lead has no prior knowledge of the brand. The general aim with cold leads is to advertise your brand.</p>
+
+                                <p>Every company will have its own answer to this one but the steps a lead needs to take on the way to making a sale are generally the same. Traditionally, the Consumer's journey was viewed only from a sales perspective but modern sales funnel management is changing and focus is now on the buyer’s perspective.This is the point at which they can understand that there is a problem or opportunity.</p>
+                            </div>
+
+                            <div class="animate__animated animate__fadeInUp mt-5">
+                                <h3>Warm Leads</h3>
+                                <p>Who have interacted with your brand before, by either filling in an email form, visiting a website multiple times or by watching or downloading some form of free content you have available online are the warm leads. They	are also your target audience.You can Convert them into your Paying customers.</p>
+                            </div>
+                            <div class="animate__animated animate__fadeInUp mt-5">
+                                <h3>Hot Leads</h3>
+                                <p>Hot lead is a qualified lead For any type of business. Who have shown a strong interest in purchasing your product or service are the Hot leads shortly PPC leads.Lead generation agency can help you to collect hot leads by using different types strategy.</p>
+                            </div>
+                            <div class="animate__animated animate__fadeInUp mt-5">
+                                <h3>Lead nurturing</h3>
+                                <p>Every company will have its own answer to this one but the steps a lead needs to take on the way to making a sale are generally the same.</p>
+
+                                <p>Traditionally, the Consumer's journey was viewed only from a sales perspective but modern sales funnel management is changing and focus is now on the buyer’s perspective.This is the point at which they can understand that there is a problem or opportunity.</p>
+
+                                <p>At this stage they are likely to Check online for some top-level information, but they are making no conscious effort to research or purchase a solution. The next stage is consideration – the buyer is now starting to look for solutions.They will be spending much more time Checking different content and researching the best course of action, but still aren't ready to make a purchase.</p>
+
+                                <p>Once the buyer has done their research and knows everything they need to know, the decision step will begin.If any company has stood out up to this point as being always helpful, giving them all the information and details they need exactly when they need it, then they’ll be in great position and at a huge advantage</p>
+
+                                <p>In the post-purchase stage Just because the buyer has handed over their cash, doesn’t mean this should be the end of your involvement and B2B lead generation efforts. You should always be helpful to your regular customers because they are your advertising machine.</p>
+
+                                <p>Each step of this journey will require a specific Strategy that is highly tailored and designed to lead them further down the path towards a sale.</p>
+
+                            </div>
+                            <div class="animate__animated animate__fadeInUp mt-5">
+                                <h2>Lead gen tools:</h2>
+                                <p>B2B lead generation is a complex, time-consuming activity. So, what can we do to save time and streamline the process? Fortunately, there are several tools on the market which can help you to generate different types of leads. Tools are like aladdin’s lamp in the lead generation sector because it helps to find customers' secret details.</p>
+                            </div>
+
+                            <div class="animate__animated animate__fadeInUp mt-5">
+                                <h3>Are lead generation companies worth it?</h3>
+                                <p>If you decide to go with a B2B lead generation agency or company, there are a lot of factors to take into your mind when choosing a provider. What are you expecting from them? What KPIs will they measure, and how do these fit with your own expectation? Do they have expertise within your business products & services? How responsive are they? What may it be like to work with them, are they going to be a good fit for your business?</p>
+                            </div>
+
+                            <div class="animate__animated animate__fadeInUp mt-5">
+                                <h3>Planning & analyzing</h3>
+                                <p>How much budget do I need for B2B lead generation?</p>
+                                <p>Actually there is no easy answer – regardless of whether your budget is £1,00 or £1,000,000. Here are some issues to consider:</p>
+                                <ol>
+                                    <li>How quickly are you looking to reach your target audience ?</li>
+                                    <li>What are you hoping to achieve from B2b Lead Generation ?</li>
+                                </ol>
+                                <p>Are you looking to generate B2B leads, make sales or simply to push brand Advertising?</p>
+                                <p>If you’re a new business, a majority of your money and effort will probably be focused on Advertising– getting your name in front of potential customers and building a presence, both online and offline. If you’re already a well established business, you’re likely to be spending less on branding and more on lead generation and sales.</p>
+                                <p>With a B2B Targeted audience One of the most cost-effective channels is content marketing. You can use effective content for marketing to your targeted audience. Effective content will improve your branding to the consumers.</p>
+                            </div>
+
+                            <div class="animate__animated animate__fadeInUp mt-5">
+                                <h3></h3>
+                                <p></p>
                             </div>
                         </div>
                     </div>
@@ -544,34 +547,31 @@
                 <div class="d-none my-4" id="card_02_view">
                     <div class="row">
                         <div class="col-sm-12 col-md-12">
-                            <h3>Part Two</h3>
-                            <p>Lead generation is the process of producing new sales leads through developing interest
-                                in a service or
-                                product. Lead Generation services are a fundamental part of growing your business’s
-                                revenue. B2B
-                                organizations frequently employ lead generation services to acquire and evaluate fresh
-                                leads in the
-                                hopes of converting them into new clients. These services might be offered by a single
-                                consultant or a
-                                large agency with numerous employees.
-                            </p>
+                            <div class="animate__animated animate__fadeInUp mb-5">
+                                <h3>Small Business Lead Generation</h3>
+                                <p>With the rise of digital marketing, lead generation has become a crucial aspect of any business.Franchises & other major businesses have always been able to generate leads through their websites, but small businesses can’t afford to spend thousands on digital marketing campaigns. Lead generation helps them to gain access to new customers that they may not have otherwise reached</p>
+                            </div>
+
+                            <div class="animate__animated animate__fadeInUp my-5">
+                                <h3>Small Business Lead Generation procedure</h3>
+                                <p>Lead generation is the process of producing new sales leads through developing interest in a service or product. Generating leads is essential for  any type of business’s sales process, but it can be especially challenging for smaller companies .Suppose you don't have enough money or manpower to do traditional lead generation strategies like Branding and SEO (search engine optimization) for small businesses. In that case, there are so many ways to generate leads for your small business.
+                                </p>
+                            </div>
+
+                            <div class="animate__animated animate__fadeInUp my-5">
+                                <h3>Build Your Community</h3>
+                                <p>Social media groups, pages and communities are a great way to connect with your target audience. Most of the small businesses utilize social media in their marketing strategy. You can also use Facebook and Instagram search bars to find these groups and type in keywords that relate to your niche or join an online community like LinkedIn.
+                                    Search online communities that are relevant to your business and join them to promote your business. You can do this through social media, groups & forums.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="d-none my-4" id="card_03_view">
                     <div class="row">
                         <div class="col-sm-12 col-md-12">
-                            <h3>Part Three</h3>
-                            <p>Lead generation is the process of producing new sales leads through developing interest
-                                in a service or
-                                product. Lead Generation services are a fundamental part of growing your business’s
-                                revenue. B2B
-                                organizations frequently employ lead generation services to acquire and evaluate fresh
-                                leads in the
-                                hopes of converting them into new clients. These services might be offered by a single
-                                consultant or a
-                                large agency with numerous employees.
-                            </p>
+                            <h3>Build Your Community</h3>
+                            <p>Social media groups, pages and communities are a great way to connect with your target audience. Most of the small businesses utilize social media in their marketing strategy. You can also use Facebook and Instagram search bars to find these groups and type in keywords that relate to your niche or join an online community like LinkedIn.
+                                Search online communities that are relevant to your business and join them to promote your business. You can do this through social media, groups & forums.</p>
                         </div>
                     </div>
                 </div>
@@ -721,7 +721,7 @@
                     <div class="col-lg-3 col-md-6 footer-contact">
                         <h4>Contact Us</h4>
                         <p> Block-E, Zoo Road <br> Mirpur 01, Dhaka-1216<br> Bangladesh <br><br><strong>Phone:</strong>
-                            +1 5589 55488 55<br> <strong>Email:</strong> contact@bdosc.com<br> </p>
+                            +1 5589 55488 55<br> <strong>Email:</strong> <a href="mailto:contact@bdosc.com" class="text-dark">contact@bdosc.com</a><br> </p>
                     </div>
                 </div>
             </div>
@@ -748,6 +748,7 @@
     <!-- Custom Script -->
     <script src="{{asset('front_assets/js/nav.js')}}"></script>
     <script src="{{asset('front_assets/js/header.js')}}"></script>
+    <script src="{{asset('front_assets/js/fun-search.js')}}"></script>
     <script src="{{asset('front_assets/js/table.js')}}"></script>
     <script src="{{asset('front_assets/js/service.js')}}"></script>
     <!-- Custom Script -->
