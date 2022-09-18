@@ -57,8 +57,8 @@ $('#country_Name').change(function () {
 
     cities = [];
     industries = [];
-    $('#city_name_display').html('<label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>');
-    $('#industry_Name_display').html('<label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>');
+    // $('#city_name_display').html('<label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>');
+    // $('#industry_Name_display').html('<label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>');
 
     SearchSystem();
 
@@ -87,13 +87,17 @@ $('#city_Name').change(function () {
 
         SearchSystem();
 
-        $('#city_Name').next($('.text').eq(2).html('Search cities'));
+        if (cities != "") {
+            $('#city_Name').next($('.text').eq(2).html('Search more cities'));
+        }else{
+            $('#city_Name').next($('.text').eq(2).html('Search cities'));
+        }
 
     });
 
     SearchSystem();
 
-    $('#city_Name').next($('.text').eq(2).html('Search cities'));
+    $('#city_Name').next($('.text').eq(2).html('Search more cities'));
 });
 // City Name Change Event || End
 
@@ -159,15 +163,15 @@ $('#industry_Name').change(function () {
 // Filter Reset Change Event || Start
 
 $('#Filterreset').click(function () {
-    $('#country_Name').next($('.text').eq(1).html('Search Country'));
-    $('#city_Name').next($('.text').eq(2).html('Search Cities'));
-    $('#industry_Name').next($('.text').eq(3).html('Search Industry'));
+    $('#country_Name').next($('.text').eq(1).html('SELECT COUNTRY'));
+    $('#city_Name').next($('.text').eq(2).html('SELECT City'));
+    $('#industry_Name').next($('.text').eq(3).html('SELECT Industry'));
 
     $('#country_Name').val('');
     cities = [];
     industries = [];
-    $('#city_name_display').html('<label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>');
-    $('#industry_Name_display').html('<label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>');
+    // $('#city_name_display').html('<label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>');
+    // $('#industry_Name_display').html('<label for="" class="w-100" style="min-height: 24px;">&nbsp;</label>');
 
     $.ajax({
         type: 'POST',

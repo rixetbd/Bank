@@ -204,3 +204,10 @@ table.dataTable thead>tr>td.sorting_desc_disabled:after {
 .bg_theme_tomato {
     background-color: #c3b092 !important;
 }
+
+.text_black{
+    color: #000 !important;
+}
+.default.text{
+    color: #000 !important;
+}

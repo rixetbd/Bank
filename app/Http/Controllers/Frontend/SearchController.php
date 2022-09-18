@@ -26,7 +26,7 @@ class SearchController extends Controller
 
     public function search(Request $request)
     {
-        $cities="";
+        $cities='<option value="">-- All City</option>';
         $all_cities = City::where( 'country_id' , $request->country)->orderBy('name', 'asc')->get();
         foreach ($all_cities as $city) {
             $cities .= '<option value="'.$city->id.'">'.$city->name.'</option>';
@@ -221,7 +221,7 @@ class SearchController extends Controller
     }
     // Search Industry Leads Only|| End
 
-    
+
     public function searchcountryandcity(Request $request)
     {
         $lead_datasearch = "";
