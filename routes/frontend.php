@@ -38,7 +38,8 @@ Route::controller(FrontendController::class)->group(function(){
         return view('frontend.betheme.index');
     });
 
-    Route::get('/home2', 'index_home2');
+    Route::get('/home2', 'index_home2')->name('frontend.leadgeneration');
+    Route::get('/mainpage', 'index_mainpage')->name('frontend.home');
 
 
 

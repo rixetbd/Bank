@@ -150,4 +150,9 @@ class FrontendController extends Controller
         ]);
     }
 
+    public function index_mainpage()
+    {
+        return view('frontend.betheme.mainpage');
+    }
+
 }
