@@ -38,3 +38,21 @@
     font-size: 15px;
     letter-spacing: .5px;
 }
+
+/* ------------------------------------------------------------------------ */
+.child_box{
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 18px;
+    text-align: center;
+    margin: 15px 0;
+    cursor: pointer;
+}
+.child_box h4{
+    font-size: 16px;
+    margin: 0;
+}
+.child_box_sub{
+    text-transform: capitalize;
+}
+/* ------------------------------------------------------------------------ */

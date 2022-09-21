@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="{{asset('front_assets/libs/glightbox/css/glightbox.css')}}">
     <link rel="stylesheet" href="{{asset('front_assets/libs/swiper/swiper-bundle.min.css')}}">
     <link rel="stylesheet" href="{{asset('front_assets/libs/main.css')}}">
+
 @endsection
 
 @section('content')
@@ -54,8 +55,9 @@
     <section class="pb-5">
         <div class="container">
 
-            <div class="row row-cols-1 row-cols-md-4 g-4 service_card mt-5">
-                <div class="col ui special cards my-3" id="card_01">
+            {{-- row-cols-1 row-cols-md-4 g-4 --}}
+            <div class="row service_card mt-5">
+                <div class="col-sm-12 col-md-3 ui special cards my-3" id="card_01">
                     <div class="card w-100 m-0">
                         <div class="blurring dimmable image">
                             <div class="ui dimmer">
@@ -65,13 +67,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <img src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}">
+                            {{-- <img src="{{asset('uploads/img/services/DIGITAL_MARKETING.gif')}}"> --}}
+                            <img src="{{asset('uploads/img/services/WEB_DEVELOPMENT.gif')}}">
+
                         </div>
                         <div class="content content_color">
-                            <a class="header" style="color: #fff;" title="Business to Business">B2B lead generation</a>
+                            <a class="header px-0 py-1" style="color: #fff;" title="Digital Marketing">Digital Marketing</a>
                             <div class="meta">
                                 <span class="date" style="color: #fff;">
-                                    {{Str::limit('In Business, B2B lead generation is the act of identifying and initiating an interest of prospective customers. Identifying prospective customers means finding businesses or clients who may have an interest in your offering business product or services (Shortly your target audience).Initiating interest is about capturing information from these potential customers and feeding them into your sales funnel. Capturing information of potential Consumers Is called lead and these leads can be converted into your Main customer.', 110)}}
+                                    {{Str::limit("Strong web advertising systems are run by our Element Advanced experts and are tailored to your company's goals. We increase client engagement by using efficient strategies and centralized site advancement techniques.", 110)}}
                                     <a href="#" style="color: #fff;text-decoration: underline;">Read more</a></span>
                             </div>
                         </div>
@@ -79,7 +83,7 @@
                     <div class="text-center w-100 d-none arrow_down animate__animated animate__fadeInDown"><i
                             class="fas fa-caret-down" style="font-size: 50px;margin: -20px;color: #008000;"></i></div>
                 </div>
-                <div class="col ui special cards my-3" id="card_02">
+                <div class="col-sm-12 col-md-3 ui special cards my-3" id="card_02">
                     <div class="card w-100 m-0">
                         <div class="blurring dimmable image">
                             <div class="ui dimmer">
@@ -89,14 +93,15 @@
                                     </div>
                                 </div>
                             </div>
-                            <img src="{{asset('uploads/img/Make-a-customer-not-a-sale2.gif')}}">
+                            {{-- <img src="{{asset('uploads/img/services/WEB_DEVELOPMENT.gif')}}"> --}}
+                            <img src="{{asset('uploads/img/services/DIGITAL_MARKETING.gif')}}">
+
                         </div>
                         <div class="content content_color">
-                            <a class="header" style="color: #fff;" title="Small Business Lead Generation">Small Business
-                                Lead Generation</a>
+                            <a class="header px-0 py-1" style="color: #fff;" title="Web Development">Web Development</a>
                             <div class="meta">
                                 <span class="date"
-                                    style="color: #fff;">{{Str::limit("Lead generation is the process of producing new sales leads through developing interest in a service or product. Generating leads is essential for  any type of business’s sales process, but it can be especially challenging for smaller companies .Suppose you don't have enough money or manpower to do traditional lead generation strategies like Branding and SEO (search engine optimization) for small businesses. In that case, there are so many ways to generate leads for your small business.", 110)}}<a
+                                    style="color: #fff;">{{Str::limit("We build a beautiful consumer-oriented website that enhances business metrics for start-up companies. Custom web development, UX design and strategy services that transform your business. We are always ready to create any website as per your requirement.", 110)}}<a
                                         href="#" style="color: #fff;text-decoration: underline;">Read
                                         more</a></span>
                             </div>
@@ -105,7 +110,7 @@
                     <div class="text-center w-100 d-none arrow_down animate__animated animate__fadeInDown"><i
                             class="fas fa-caret-down" style="font-size: 50px;margin: -20px;color: #008000;"></i></div>
                 </div>
-                <div class="col ui special cards my-3" id="card_03">
+                <div class="col-sm-12 col-md-3 ui special cards my-3" id="card_03">
                     <div class="card w-100 m-0">
                         <div class="blurring dimmable image">
                             <div class="ui dimmer">
@@ -115,13 +120,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <img src="{{asset('uploads/img/Make-a-customer-not-a-sale3.gif')}}">
+                            <img src="{{asset('uploads/img/services/3.jpg')}}">
                         </div>
                         <div class="content content_color">
-                            <a class="header" style="color: #fff;" title="B2C Lead Generation">B2C Lead Generation</a>
+                            <a class="header px-0 py-1" style="color: #fff;" title="Graphics Design">Graphics Design</a>
                             <div class="meta">
                                 <span class="date"
-                                    style="color: #fff;">{{Str::limit("B2C stands for business-to-consumer, It's also known as Direct selling relationship between Business and an individual. B2C lead generation is the process of turning Consumers into  effective leads. The best B2c lead generation strategy builds up enough trust, and connection that the person feels comfortable enough to buy the product or service you are offering. Essentially, if you have a Company and you are selling products or services, you need to be strategic and on top of your business to consumer marketing.", 110)}}<a
+                                    style="color: #fff;">{{Str::limit("BDOSC is one of the leading Graphics Design company in Bangladesh. Our team of creative and attractive graphic designers works in partnership with you. As a result, to develop images and graphics that really impact your brand.", 110)}}<a
                                         href="#" style="color: #fff;text-decoration: underline;">Read
                                         more</a></span>
                             </div>
@@ -130,7 +135,7 @@
                     <div class="text-center w-100 d-none arrow_down animate__animated animate__fadeInDown"><i
                             class="fas fa-caret-down" style="font-size: 50px;margin: -20px;color: #008000;"></i></div>
                 </div>
-                <div class="col ui special cards my-3" id="card_04">
+                <div class="col-sm-12 col-md-3 ui special cards my-3" id="card_04">
                     <div class="card w-100 m-0">
                         <div class="blurring dimmable image">
                             <div class="ui dimmer">
@@ -140,13 +145,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <img src="{{asset('uploads/img/Make-a-customer-not-a-sale3.gif')}}">
+                            <img src="{{asset('uploads/img/services/4.jpg')}}">
                         </div>
                         <div class="content content_color">
-                            <a class="header" style="color: #fff;" title="B2C Lead Generation">B2C Lead Generation</a>
+                            <a class="header px-0 py-1" style="color: #fff;" title="B2C Lead Generation">Data Entry</a>
                             <div class="meta">
                                 <span class="date"
-                                    style="color: #fff;">{{Str::limit("B2C stands for business-to-consumer, It's also known as Direct selling relationship between Business and an individual. B2C lead generation is the process of turning Consumers into  effective leads. The best B2c lead generation strategy builds up enough trust, and connection that the person feels comfortable enough to buy the product or service you are offering. Essentially, if you have a Company and you are selling products or services, you need to be strategic and on top of your business to consumer marketing.", 110)}}<a
+                                    style="color: #fff;">{{Str::limit("Bangladesh Outsourcing Company offers fully managed & scalable data entry services (products listing,forms,invoices processing,Order processing,Civil records etc) with both dedicated team model or per project model.", 110)}}<a
                                         href="#" style="color: #fff;text-decoration: underline;">Read
                                         more</a></span>
                             </div>
@@ -167,6 +172,30 @@
                 <div class="my-4" id="card_01_view">
                     <div class="row">
                         <div class="col-sm-12 col-md-12">
+                            <div class="animate__animated animate__fadeInUp mb-5">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-3">
+                                        <div class="child_box">
+                                            <h4>Social Media Marketing</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-3">
+                                        <div class="child_box">
+                                            <h4>Email Marketing</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-3">
+                                        <div class="child_box">
+                                            <h4>Search Engine Optimize</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-3">
+                                        <div class="child_box">
+                                            <h4>Google Adwords</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="animate__animated animate__fadeInUp mb-5">
                                 <h3>What is B2B lead generation ?</h3>
                                 <p>In Business, <abbr title="Business to Business">B2B</abbr> lead generation is the act

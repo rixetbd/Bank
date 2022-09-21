@@ -7,6 +7,7 @@ $('#card_01').click(function(){
 
     $('#card_02_view').addClass('d-none');
     $('#card_03_view').addClass('d-none');
+    $('#card_04_view').addClass('d-none');
     $('#card_01_view').removeClass('d-none');
     $('#card_01_view').addClass('animate__animated animate__fadeIn');
 });
@@ -16,6 +17,7 @@ $('#card_02').click(function(){
 
     $('#card_01_view').addClass('d-none');
     $('#card_03_view').addClass('d-none');
+    $('#card_04_view').addClass('d-none');
     $('#card_02_view').removeClass('d-none');
     $('#card_02_view').addClass('animate__animated animate__fadeIn');
 
@@ -27,8 +29,20 @@ $('#card_03').click(function(){
 
     $('#card_01_view').addClass('d-none');
     $('#card_02_view').addClass('d-none');
+    $('#card_04_view').addClass('d-none');
     $('#card_03_view').removeClass('d-none');
     $('#card_03_view').addClass('animate__animated animate__fadeIn');
+
+});
+
+$('#card_04').click(function(){
+    regular_service_effect('#card_04');
+
+    $('#card_01_view').addClass('d-none');
+    $('#card_02_view').addClass('d-none');
+    $('#card_03_view').addClass('d-none');
+    $('#card_04_view').removeClass('d-none');
+    $('#card_04_view').addClass('animate__animated animate__fadeIn');
 
 });
 
@@ -46,3 +60,25 @@ $('#service_preview_close').click(function(){
     $('.content_color').removeClass('card_bg');
     // alert('hi');
 })
+
+let child_box = document.querySelectorAll('.child_box');
+let child_box_sub = document.querySelectorAll('.child_box_sub');
+
+
+// child_box_sub[1].classList.add("d-none");
+
+
+for (let i = 0; i < child_box.length; i++) {
+    child_box[i].addEventListener('click', function(){
+        for (let n = 0; n < child_box_sub.length; n++) {
+            child_box_sub[n].classList.add('d-none');
+            child_box[n].classList.remove('bg-dark');
+            child_box[n].classList.remove('text-light');
+            // child_box[n].parentElement.classList.remove('d-none');
+        }
+        // this.parentElement.classList.add('d-none');
+        child_box_sub[i].classList.remove('d-none');
+        child_box[i].classList.add('bg-dark');
+        child_box[i].classList.add('text-light');
+    });
+}

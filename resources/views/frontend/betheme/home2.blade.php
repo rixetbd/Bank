@@ -580,7 +580,7 @@ or product.',
     <section class="pb-5">
         <div class="container">
 
-            <div class="row row-cols-1 row-cols-md-3 g-4 service_card mt-5">
+            <div class="row row-cols-1 row-cols-md-4 g-4 service_card mt-5">
                 <div class="col ui special cards my-3" id="card_01">
                     <div class="card w-100 m-0">
                         <div class="blurring dimmable image">
@@ -618,8 +618,7 @@ or product.',
                             <img src="{{asset('uploads/img/Make-a-customer-not-a-sale2.gif')}}">
                         </div>
                         <div class="content content_color">
-                            <a class="header" style="color: #fff;" title="Small Business Lead Generation">Small Business
-                                Lead Generation</a>
+                            <a class="header" style="color: #fff;" title="Small Business Leads">Small Business Leads</a>
                             <div class="meta">
                                 <span class="date"
                                     style="color: #fff;">{{Str::limit("Lead generation is the process of producing new sales leads through developing interest in a service or product. Generating leads is essential for  any type of business’s sales process, but it can be especially challenging for smaller companies .Suppose you don't have enough money or manpower to do traditional lead generation strategies like Branding and SEO (search engine optimization) for small businesses. In that case, there are so many ways to generate leads for your small business.", 110)}}<a
@@ -648,6 +647,31 @@ or product.',
                             <div class="meta">
                                 <span class="date"
                                     style="color: #fff;">{{Str::limit("B2C stands for business-to-consumer, It's also known as Direct selling relationship between Business and an individual. B2C lead generation is the process of turning Consumers into  effective leads. The best B2c lead generation strategy builds up enough trust, and connection that the person feels comfortable enough to buy the product or service you are offering. Essentially, if you have a Company and you are selling products or services, you need to be strategic and on top of your business to consumer marketing.", 110)}}<a
+                                        href="#" style="color: #fff;text-decoration: underline;">Read
+                                        more</a></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center w-100 d-none arrow_down animate__animated animate__fadeInDown"><i
+                            class="fas fa-caret-down" style="font-size: 50px;margin: -20px;color: #008000;"></i></div>
+                </div>
+                <div class="col ui special cards my-3" id="card_04">
+                    <div class="card w-100 m-0">
+                        <div class="blurring dimmable image">
+                            <div class="ui dimmer">
+                                <div class="content">
+                                    <div class="center">
+                                        <div class="ui inverted button">Read More</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <img src="{{asset('uploads/img/services/3.gif')}}">
+                        </div>
+                        <div class="content content_color">
+                            <a class="header" style="color: #fff;" title="Social Media Leads">Social Media Leads</a>
+                            <div class="meta">
+                                <span class="date"
+                                    style="color: #fff;">{{Str::limit("Social media lead generation utilizes the benefits of Online platforms to bring in new expectations for your business. The power of social media can influence and change many areas of your marketing efforts, including lead generation.", 110)}}<a
                                         href="#" style="color: #fff;text-decoration: underline;">Read
                                         more</a></span>
                             </div>
@@ -979,6 +1003,81 @@ or product.',
                                     industry related keywords in google. This profile will help you to increase your b2c
                                     leads . It will also increase your brand value and help you to build trust with
                                     customers.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-none my-4" id="card_04_view">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12">
+                            <div class="animate__animated animate__fadeInUp my-5">
+                                <h3>Social Media Lead Generation</h3>
+                                <p>Lead generation is an important part of marketing that needs a strong strategy. Social media lead generation utilizes the benefits of Online platforms to bring in new expectations for your business.</p>
+
+                                <p>The power of social media can influence and change many areas of your marketing efforts, including lead generation. Using social media to help you in your lead generation strategy is an excellent method to connect to those who are already looking for your brand product & service, follow similar keywords and hashtags, or are invested in important industry news.</p>
+                            </div>
+                            <div class="animate__animated animate__fadeInUp mb-5">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-3">
+                                        <div class="child_box d-flex align-items-center">
+                                            <i class="fab fa-linkedin fa-2x me-3"></i>
+                                            <h4>Linkedin Lead Generation</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-3">
+                                        <div class="child_box d-flex align-items-center">
+                                            <i class="fab fa-facebook fa-2x me-3"></i>
+                                            <h4>Facebook Lead Generation</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-3">
+                                        <div class="child_box d-flex align-items-center">
+                                            <i class="fab fa-twitter fa-2x me-3"></i>
+                                            <h4>Twitter Lead Generation</h4>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-3">
+                                        <div class="child_box d-flex align-items-center">
+                                            <i class="fab fa-instagram fa-2x me-3"></i>
+                                            <h4>Instagram Lead Generation</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="animate__animated animate__fadeInUp mb-5">
+                                <div class="child_box_sub d-none animate__animated animate__fadeInUp">
+                                    <h3>Linkedin Lead Generation</h3>
+                                    <p>Linkedin is a popular & effective way for lead generation.LinkedIn lead generation can improve your business as it generates leads 220% more effectively than Facebook and Twitter.LinkedIn is a gold mine for marketers, and it is an avenue for decision-makers, top-level influencers, and industry thought leaders for networking, discussion, debate, and research. This platform gives you a direct opportunity to connect with your target audience. This platform gives you a direct opportunity to connect with your target audience. You can send direct connections and messages to those who have an interest in your offering product & services.</p>
+                                    <h2>Most Effective Strategies</h2>
+                                    <h3>1. Your Profile</h3>
+
+
+                                    <p>Since LinkedIn is a professional platform, your profile needs to be professional for engagement. Your profile is the first thing people will see when you send them a message and connection request. Make sure to have a clear and perfect Picture along with an appropriate title that summarizes your company role and area of expertise. Also, include a high-resolution background image of your company.
+
+                                    <p>Make sure that your 2000-word “About” summary highlights your expertise, skills, and accomplishments, and is keyword-rich so that your profile can be easily discovered by the right target audience
+                                    Use LinkedIn’s “Featured” section to showcase major projects, publications, posts, etc., and reel new prospects in</p>
+
+                                    <h4>Finally, demonstrate ‘social proof’ by asking, friends, colleagues, Family members, etc. to write authentic recommendations</h4>
+
+                                    <h3>Increase The Visibility Of Your Profile</h3>
+                                    <p>It's a critical matter to understand how the LinkedIn algorithm works if you want to ensure that your profile is as visible to many people as possible. The short version is that being an active person on Linkedin is the greatest method to ascend the algorithm. Regularly posting information, leaving comments, uploading photos, Videos, and responding to posts can increase your profile visibility.</p>
+
+                                    <h3>2. Find The targeted person</h3>
+                                    <p>While LinkedIn's search function might be a little tricky at times, finding the Targeted people and decision-makers contacts is very simple. By typing the name of a specific role in the search box or simply searching the terms independently for outreach candidates on the fly you can get their profile instantly.</p>
+
+                                </div>
+                                <div class="child_box_sub d-none animate__animated animate__fadeInUp">
+                                    <h3>Facebook Lead Generation</h3>
+                                    <p>Facebook is a gold mine for marketers, and it is an avenue for decision-makers, top-level influencers, and industry thought leaders for networking, discussion, debate, and research. This platform gives you a direct opportunity to connect with your target audience. This platform gives you a direct opportunity to connect with your target audience. You can send direct connections and messages to those who have an interest in your offering product & services.</p>
+                                </div>
+                                <div class="child_box_sub d-none animate__animated animate__fadeInUp">
+                                    <h3>Twitter Lead Generation</h3>
+                                    <p>A great place to find leads is Twitter. But if you want to use the power of this platform to expand your online business, you must be strategic about it.</p>
+                                </div>
+                                <div class="child_box_sub d-none animate__animated animate__fadeInUp">
+                                    <h3>Instagram Lead generation</h3>
+                                    <p>Instagram lead generation requires more than sporadic posting and a handful of hashtags. Instagram marketing requires planning, just like all other marketing-related activities. When incorporated into your overall marketing plan, generating leads through Instagram and other social media platforms runs much more smoothly. To get the most out of your Instagram marketing efforts, make sure to plan out your campaigns, content, stories, and even hashtags in advance. Let's now discuss the specific actions you can take to generate a ton of sales leads on Instagram.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
