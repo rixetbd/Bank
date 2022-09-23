@@ -1,0 +1,13 @@
+
+.card,
+.lead_box div
+ {
+    /* background-color: #ffffff; */
+    box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
+    border-radius: 5px;
+}
+
+
+/* a:hover{
+    box-shadow: inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #ffffff !important;
+} */

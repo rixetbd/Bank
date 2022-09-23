@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
+.service_card .cards{cursor: pointer;}
+.service_card .card-body {
+    color: #fff;
+    /* color: #000; */
+    background-color: #8a6d46;
+}
+
+.service_card .ui.cards {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0;
+}
+
+.service_card .ui.cards .card {box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;border-radius: 5px;background: transparent;}
+.service_card .ui.cards .content_color {background: transparent;}
+
+/* .content_color{
+    background:#8a6d46 !important;
+} */
+
+.card_bg{
+    background: green !important;
+}
+
+.service_preview{
+    border: 2px solid #8a6d46;
+    padding: 30px;
+}
+
+.service_card .cards .header{
+    font-size: 25px !important;
+    font-weight: 500 !important;
+    letter-spacing: 1px !important;
+    font-family: 'Kalam', cursive !important;
+}
+.service_card .cards .content {
+    color: #000;
+    background: transparent;
+}
+
+.service_card .cards .meta span
+{
+    font-size: 15px;
+    letter-spacing: .5px;
+}
+
+/* ------------------------------------------------------------------------ */
+.child_box{
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 18px;
+    text-align: center;
+    margin: 15px 0;
+    cursor: pointer;
+}
+.child_box h4{
+    font-size: 16px;
+    margin: 0;
+}
+.child_box_sub{
+    text-transform: capitalize;
+}
+/* ------------------------------------------------------------------------ */
+
+.service_One .heading_area h3{
+    padding: 20px 0;
+    font-size: 20px;
+    line-height: 45px;
+}
+
+.service_card .cards .card:hover{
+    transition: .5s ease-in;
+    z-index: 99999;
+    transform: scale(1.08);
+    padding: 15px;
+    outline: 1px solid;
+    background: #fff !important;
+}
+.service_card .cards .card:hover .content{padding: 0;}
+
+.service_card .cards .read_area{display: none;}
+.service_card .cards:hover .read_area{
+	display: block;
+    position: absolute;
+    bottom: 0;
+    left: 25%;
+}

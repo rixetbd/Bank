@@ -25,19 +25,27 @@
     {{-- CDN --}}
     {{-- Custom --}}
 
-    <link rel="stylesheet" href="{{asset('front_assets/css/nav.css')}}">
-    <link rel="stylesheet" href="{{asset('front_assets/css/header.css')}}">
-    <link rel="stylesheet" href="{{asset('front_assets/css/table.css')}}">
-    <link rel="stylesheet" href="{{asset('front_assets/css/services.css')}}">
-    <link rel="stylesheet" href="{{asset('front_assets/css/footer.css')}}">
-    <link rel="stylesheet" href="{{asset('front_assets/css/mainstyle.css')}}">
-    <link rel="stylesheet" href="{{asset('front_assets/libs/neumorphism/neumorphism.css')}}">
+    <link rel="stylesheet" href="{{asset('final_front_assets/css/nav.css')}}">
+    <link rel="stylesheet" href="{{asset('final_front_assets/css/header.css')}}">
+    <link rel="stylesheet" href="{{asset('final_front_assets/css/table.css')}}">
+    <link rel="stylesheet" href="{{asset('final_front_assets/css/services.css')}}">
+    <link rel="stylesheet" href="{{asset('final_front_assets/css/footer.css')}}">
+    <link rel="stylesheet" href="{{asset('final_front_assets/css/mainstyle.css')}}">
+    <link rel="stylesheet" href="{{asset('final_front_assets/libs/neumorphism/neumorphism.css')}}">
     @yield('custom_css')
     {{-- Custom --}}
     <style>
-        body.dark_mode {
-            color: #fff;
-            background-color: #292c35;
+        body.dark_mode, body.dark_mode .services-cards{color: #fff;background-color: #202020;}
+        body.dark_mode .services-cards .card-item,
+        body.dark_mode .team .team-member,
+        body.dark_mode .testimonial-item,
+        body.dark_mode #footer .footer-newsletter{background-color: #3e3e3e;}
+        body.dark_mode #footer .footer-top{background: #2c2c2c;border: none}
+        body.dark_mode .hero .btn-get-started{color: #3e3e3e;}
+
+        body.dark_mode h1, body.dark_mode h2, body.dark_mode h3, body.dark_mode h4, body.dark_mode h5, body.dark_mode h6, body.dark_mode p, body.dark_mode a
+        {
+            color: #fff !important;
         }
         .BG_color_checkbox {
             opacity: 0;
@@ -47,7 +55,8 @@
         }
         body.light_mode{
             color: #292c35;
-            background-color: #fff;
+            background-color: #D8DBE1;
+            /* background-color: #f9f9f9; */
         }
         .label {
             cursor: pointer;
@@ -62,6 +71,10 @@
             position: relative;
             transform: scale(1.5);
         }
+
+        body.dark_mode .color_mode_icon .label{background: #fff}
+        body.dark_mode .color_mode_icon .ball{background-color: #000}
+
 
         .ball {
             width: 15px;
@@ -105,9 +118,9 @@
             <input type="radio" name="slider" id="close-btn" />
             <ul class="nav-links" style="margin-bottom: 0">
                 <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-                <li class="nav_item"><a href="{{route('frontend.home')}}">Home</a></li>
+                <li class="nav_item shadow_one"><a href="{{route('frontend.home')}}">Home</a></li>
 
-                <li class="nav_item">
+                <li class="nav_item shadow_one">
                     <a href="#" class="desktop-item">Services</a>
                     <input type="checkbox" id="showMega" />
                     <label for="showMega" class="mobile-item">Services</label>
@@ -159,10 +172,10 @@
                     </div>
                 </li>
                 {{-- <li></li> --}}
-                <li class="nav_item"><a href="#">Blog</a></li>
-                <li class="nav_item"><a href="#">About</a></li>
-                <li class="nav_item"><a href="{{route('frontend.contact.index')}}">Contact</a></li>
-                <div class="d-flex align-items-center" style="margin-left: 20px;">
+                <li class="nav_item shadow_one"><a href="#">Blog</a></li>
+                <li class="nav_item shadow_one"><a href="#">About</a></li>
+                <li class="nav_item shadow_one shadow_one"><a href="{{route('frontend.contact.index')}}">Contact</a></li>
+                <div class="d-flex align-items-center color_mode_icon" style="margin-left: 20px;">
                     <input type="checkbox" class="BG_color_checkbox" id="BG_color_checkbox">
                   <label for="BG_color_checkbox" class="label">
                     <i class="fas fa-moon"></i>
@@ -321,11 +334,11 @@
     <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 
     <!-- Custom Script -->
-    <script src="{{asset('front_assets/js/nav.js')}}"></script>
-    <script src="{{asset('front_assets/js/header.js')}}"></script>
-    <script src="{{asset('front_assets/js/fun-search.js')}}"></script>
-    <script src="{{asset('front_assets/js/table.js')}}"></script>
-    <script src="{{asset('front_assets/js/service.js')}}"></script>
+    <script src="{{asset('final_front_assets/js/nav.js')}}"></script>
+    <script src="{{asset('final_front_assets/js/header.js')}}"></script>
+    <script src="{{asset('final_front_assets/js/fun-search.js')}}"></script>
+    <script src="{{asset('final_front_assets/js/table.js')}}"></script>
+    <script src="{{asset('final_front_assets/js/service.js')}}"></script>
     <!-- Custom Script -->
 
     @yield('custom_js')
@@ -346,7 +359,7 @@
                 document.body.classList.toggle('light_mode');
             }
         }
-        
+
 
         checkbox.addEventListener('change', ()=>{
             localStorage.clear();

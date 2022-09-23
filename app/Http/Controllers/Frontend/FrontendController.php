@@ -155,4 +155,19 @@ class FrontendController extends Controller
         return view('frontend.betheme.mainpage');
     }
 
+    // The Final Round
+
+    public function index_0()
+    {
+        $all_countries = Country::all();
+        $all_city = City::orderby('name', 'asc')->get();
+        $all_industry = Industry::orderby('name', 'asc')->get();
+        $lead_data = Lead::paginate(100);
+        return view('frontend.final.mainpage',[
+            'all_countries'=>$all_countries,
+            'lead_data'=>$lead_data,
+            'all_city'=>$all_city,
+            'all_industry'=>$all_industry,
+        ]);
+    }
 }
