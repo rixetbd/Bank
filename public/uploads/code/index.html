@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Ptoject</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="fp.js"></script>
+    <link rel="stylesheet" href="">
+</head>
+<body>
+
+    <div id="preloader">
+        <div id="ctn-preloader" class="ctn-preloader">
+            <div class="animation-preloader">
+                <div class="spinner"></div>
+                <div class="txt-loading">
+                    <span data-text-preloader="B" class="letters-loading">
+                        B
+                    </span>
+                    <span data-text-preloader="D" class="letters-loading">
+                        D
+                    </span>
+                    <span data-text-preloader="O" class="letters-loading">
+                        O
+                    </span>
+                    <span data-text-preloader="S" class="letters-loading">
+                        S
+                    </span>
+                    <span data-text-preloader="C" class="letters-loading">
+                        C
+                    </span>
+                </div>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="wrapper">
+        <header>Send a massages</header>
+    <form action="#">
+        <div class="dbl_field">
+            <div class="field">
+                <input type="text" placeholder="Enter Your name">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="field">
+                <input type="text" placeholder="Enter Your email">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <div class="field">
+                <input type="text" placeholder="Enter Your phone">
+                <i class="fas fa-alt"></i>
+            </div>
+            <div class="field">
+                <input type="text" placeholder="Enter Your website">
+                <i class="fas fa-globe"></i>
+            </div>
+        </div>
+        <div class="message">
+            <textarea placeholder="Write your message"></textarea>
+            <!-- <i class="material-icon">message</i> -->
+        </div>
+        <div class="button-area">
+            <button type="submit">Send messsage</button>
+            <snap>sending a message........</snap>
+        </div>
+    </form>
+    </div>
+    </div>
+
+
+    <script src="//code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        (function ($) {
+	        'use strict';
+
+	// preloader js
+	function loader() {
+		$(window).on('load', function () {
+			$('#ctn-preloader').addClass('loaded');
+			$("#loading").fadeOut(500);
+			// Una vez haya terminado el preloader aparezca el scroll
+
+			if ($('#ctn-preloader').hasClass('loaded')) {
+				// Es para que una vez que se haya ido el preloader se elimine toda la seccion preloader
+				$('#preloader').delay(500).queue(function () {
+					$(this).remove();
+				});
+			}
+		});
+	}
+	loader();
+    })(jQuery);
+    </script>
+
+</body>
+</html>

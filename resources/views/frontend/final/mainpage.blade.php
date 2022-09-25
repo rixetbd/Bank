@@ -2,47 +2,200 @@
 
 @section('meta_tag')
 @include('meta::manager',[
-        'title'         =>  'Lead Generation',
-        'author'        =>  'Bangladesh Outsourcing Company',
-        'description'   =>  'Lead generation is the process of producing new sales leads through developing interest in a service or product.',
-        'keywords'      =>  'Lead generation, service',
-        'image'         =>  asset('uploads/banners/lead_generation.png'),
+'title' => 'Lead Generation',
+'author' => 'Bangladesh Outsourcing Company',
+'description' => 'Lead generation is the process of producing new sales leads through developing interest in a service
+or product.',
+'keywords' => 'Lead generation, service',
+'image' => asset('uploads/banners/lead_generation.png'),
 ])
 @endsection
 
 @section('custom_css')
 <link rel="stylesheet" href="{{asset('final_front_assets/libs/bootstrap-icons/bootstrap-icons.css')}}">
-    <link rel="stylesheet" href="{{asset('final_front_assets/libs/aos/aos.css')}}">
-    <link rel="stylesheet" href="{{asset('final_front_assets/libs/glightbox/css/glightbox.css')}}">
-    <link rel="stylesheet" href="{{asset('final_front_assets/libs/swiper/swiper-bundle.min.css')}}">
-    <link rel="stylesheet" href="{{asset('final_front_assets/libs/main.css')}}">
+<link rel="stylesheet" href="{{asset('final_front_assets/libs/aos/aos.css')}}">
+<link rel="stylesheet" href="{{asset('final_front_assets/libs/glightbox/css/glightbox.css')}}">
+<link rel="stylesheet" href="{{asset('final_front_assets/libs/swiper/swiper-bundle.min.css')}}">
+<link rel="stylesheet" href="{{asset('final_front_assets/libs/main.css')}}">
+
+<style>
+    /* .img__fadeInUp{
+        animation: fadeOut 5s;
+        -webkit-animation: fadeOut 8s;
+        -moz-animation: fadeOut 8s;
+        -o-animation: fadeOut 8s;
+        -ms-animation: fadeOut 8s;
+        } */
+
+    /* @keyframes fadeOut {
+    0% {
+    opacity: 0;
+    }
+    100% {
+    opacity: 1;
+} */
+
+</style>
 
 @endsection
 
 @section('content')
 
+{{-- Preloader || Start
+<div id="preloader">
+    <div id="ctn-preloader" class="ctn-preloader">
+        <div class="animation-preloader">
+            <div class="spinner"></div>
+            <div class="txt-loading">
+                <span data-text-preloader="B" class="letters-loading">
+                    B
+                </span>
+                <span data-text-preloader="D" class="letters-loading">
+                    D
+                </span>
+                <span data-text-preloader="O" class="letters-loading">
+                    O
+                </span>
+                <span data-text-preloader="S" class="letters-loading">
+                    S
+                </span>
+                <span data-text-preloader="C" class="letters-loading">
+                    C
+                </span>
+            </div>
+        </div>
+        <div class="loader">
+            <div class="row">
+                <div class="col-3 loader-section section-left">
+                    <div class="bg"></div>
+                </div>
+                <div class="col-3 loader-section section-left">
+                    <div class="bg"></div>
+                </div>
+                <div class="col-3 loader-section section-right">
+                    <div class="bg"></div>
+                </div>
+                <div class="col-3 loader-section section-right">
+                    <div class="bg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- Preloader || End --}}
+
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="hero">
     <div class="container">
         <div class="row">
-            <div class="col-xl-9 mt-5">
-                <img src="{{asset('uploads/img/123.png')}}" alt="" class="img-fluid">
-                <h6 data-aos="fade-up">We are ready for</h6>
-                <h2 class="text-uppercase" data-aos="fade-up">Business Process Outsourcing Services.</h2>
-                <blockquote data-aos="fade-up" data-aos-delay="100">
-                    <p><span class="shadow_one py-2" style="padding: 0.75rem;">Bangladesh Outsourcing Company</span> is a global business process outsourcing company. All of our
+            <div class="col-sm-12 col-md-7 col-xl-7 mt-5">
+                {{-- <img src="{{asset('uploads/img/123.png')}}" alt="" class="img-fluid"> --}}
+                <div class="hero_heading">
+                    <h6>We provide best</h6>
+                    <span class="h_text_1">Business</span>
+                    <span class="h_text_2"> Process</span>
+                    <span class="h_text_3">Outsourcing</span>
+                    <span class="h_text_4">Services</span>
+                </div>
+
+
+                {{-- <h2 class="text-uppercase">Business Process Outsourcing Services.</h2> --}}
+                <blockquote>
+                    <p><span class="shadow_one py-2" style="padding: 0.75rem;">Bangladesh Outsourcing Company</span> is
+                        a global business process outsourcing company. All of our
                         services satisfy stringent international standards. We have projections all around the US and
-                        Western Europe. Bangladesh Outsourcing Company is a privately held data input outsourcing firm situated in Bangladesh. </p>
+                        Western Europe. Bangladesh Outsourcing Company is a privately held data input outsourcing firm
+                        situated in Bangladesh. </p>
                 </blockquote>
-                <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+                {{-- <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
                     <a href="#about" class="btn-get-started">Get Started</a>
                     <a href="https://www.youtube.com/watch?v=YrrSV5eJW4c"
                         class="glightbox btn-watch-video d-flex align-items-center"><i
                             class="bi bi-play-circle"></i><span>Watch
                             Video</span></a>
-                </div>
-
+                </div> --}}
             </div>
+            <div class="col-sm-12 col-md-5 col-xl-5 mt-5 pt-5 header_right_side">
+                <div class="row align-items-center justify-content-end" style="height: 310px;">
+                    <div class="col-6 d-flex align-items-end">
+                        <div class="user_card p-3 shadow_one_alt" id="user_speech" style="">
+                            <p class="d-none">I’m a Full Stack Developer who is passionate about making error-free
+                                websites with Laravel and React.js Framework.</p>
+                        </div>
+                    </div>
+                    <div class="col-4" style="z-index: 9999;">
+                        <img class="img-fluid rounded-circle shadow_one_alt" id="user_photo" src="" alt="">
+                    </div>
+                    <div class="col-6" style="margin-top: -140px;">
+                        <div class="user_card p-3" id="user_information">
+                        </div>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+                <div class="col-12" style="height: 140px;">
+                </div>
+                <div class="col-10 d-flex pb-4 float-end">
+                    <div class="col p-1 text-center">
+                        <div class="wrapper img_box shadow_one">
+                            <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                            <div class="tooltip">
+                                <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="info_box shadow_one">
+                            <h4>Lead Generation</h4>
+                        </div>
+                    </div>
+                    <div class="col p-1">
+                        <div class="wrapper img_box shadow_one">
+                            <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                            <div class="tooltip">
+                                <img class="" src="{{asset('uploads/img/services/DIGITAL_MARKETING.jpg')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="info_box shadow_one">
+                            <h4>Digital Marketing</h4>
+                        </div>
+                    </div>
+                    <div class="col p-1">
+                        <div class="wrapper img_box shadow_one">
+                            <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                            <div class="tooltip">
+                                <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="info_box shadow_one">
+                            <h4>Graphics Design</h4>
+                        </div>
+                    </div>
+                    <div class="col p-1">
+                        <div class="wrapper img_box shadow_one">
+                            <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                            <div class="tooltip">
+                                <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="info_box shadow_one">
+                            <h4>Web Development</h4>
+                        </div>
+                    </div>
+                    <div class="col p-1">
+                        <div class="wrapper img_box shadow_one">
+                            <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                            <div class="tooltip">
+                                <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="info_box shadow_one">
+                            <h4>BPO<br>Services</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-10 shadow_one_alt py-3 float-end" style="border-radius: 45px;">
+                    <h3 class="text-uppercase text-center">Our Best Services</h3>
+                </div>
+            </div>
+
         </div>
     </div>
 </section><!-- End Hero Section -->
@@ -110,7 +263,8 @@
             <div class="row service_card">
                 <div class="col-sm-12 col-md-3 ui special cards my-3" id="card_01">
                     <div class="card w-100 m-0">
-                        <div class="blurring dimmable image" style="min-height: 200px;display:flex;justify-content:center;align-items:center;">
+                        <div class="blurring dimmable image"
+                            style="min-height: 200px;display:flex;justify-content:center;align-items:center;">
                             <div class="ui dimmer">
                                 <div class="content">
                                     <div class="center">
@@ -127,7 +281,7 @@
                             <div class="meta">
                                 <span class="date">
                                     {{Str::limit("Strong web advertising systems are run by our Element Advanced experts and are tailored to your company's goals. We increase client engagement by using efficient strategies and centralized site advancement techniques.", 110)}}
-                                    </span>
+                                </span>
                             </div>
                         </div>
                         <div class="read_area text-center"><a href="#">Read More</a></div>
@@ -137,7 +291,8 @@
                 </div>
                 <div class="col-sm-12 col-md-3 ui special cards my-3" id="card_02">
                     <div class="card w-100 m-0 shadow_one">
-                        <div class="blurring dimmable image" style="min-height: 200px;display:flex;justify-content:center;align-items:center;">
+                        <div class="blurring dimmable image"
+                            style="min-height: 200px;display:flex;justify-content:center;align-items:center;">
                             <div class="ui dimmer">
                                 <div class="content">
                                     <div class="center">
@@ -153,7 +308,8 @@
                         <div class="content content_color">
                             <a class="header px-0 py-1" title="Web Development">Web Development</a>
                             <div class="meta">
-                                <span class="date">{{Str::limit("We build a beautiful consumer-oriented website that enhances business metrics for start-up companies. Custom web development, UX design and strategy services that transform your business. We are always ready to create any website as per your requirement.", 110)}}<a
+                                <span
+                                    class="date">{{Str::limit("We build a beautiful consumer-oriented website that enhances business metrics for start-up companies. Custom web development, UX design and strategy services that transform your business. We are always ready to create any website as per your requirement.", 110)}}<a
                                         href="#" style="color: #000;text-decoration: underline;">Read
                                         more</a></span>
                             </div>
@@ -164,7 +320,8 @@
                 </div>
                 <div class="col-sm-12 col-md-3 ui special cards my-3" id="card_03">
                     <div class="card w-100 m-0">
-                        <div class="blurring dimmable image" style="min-height: 200px;display:flex;justify-content:center;align-items:center;">
+                        <div class="blurring dimmable image"
+                            style="min-height: 200px;display:flex;justify-content:center;align-items:center;">
                             <div class="ui dimmer">
                                 <div class="content">
                                     <div class="center">
@@ -190,7 +347,8 @@
                 </div>
                 <div class="col-sm-12 col-md-3 ui special cards my-3" id="card_04">
                     <div class="card w-100 m-0">
-                        <div class="blurring dimmable image" style="min-height: 200px;display:flex;justify-content:center;align-items:center;">
+                        <div class="blurring dimmable image"
+                            style="min-height: 200px;display:flex;justify-content:center;align-items:center;">
                             <div class="ui dimmer">
                                 <div class="content">
                                     <div class="center">
@@ -204,7 +362,8 @@
                         <div class="content content_color">
                             <a class="header px-0 py-1" title="B2C Lead Generation">Data Entry</a>
                             <div class="meta">
-                                <span class="date">{{Str::limit("Bangladesh Outsourcing Company offers fully managed & scalable data entry services (products listing,forms,invoices processing,Order processing,Civil records etc) with both dedicated team model or per project model.", 110)}}<a
+                                <span
+                                    class="date">{{Str::limit("Bangladesh Outsourcing Company offers fully managed & scalable data entry services (products listing,forms,invoices processing,Order processing,Civil records etc) with both dedicated team model or per project model.", 110)}}<a
                                         href="#" style="color: #fff;text-decoration: underline;">Read
                                         more</a></span>
                             </div>
@@ -583,7 +742,8 @@
                     <div class="icon flex-shrink-0"><i class="bi bi-briefcase" style="color: #f57813;"></i></div>
                     <div>
                         <h4 class="title"><a href="#" class="stretched-link">Data Entry</a></h4>
-                        <p class="description">Get high-quality data entry services from experienced professionals at affordable pricing.</p>
+                        <p class="description">Get high-quality data entry services from experienced professionals at
+                            affordable pricing.</p>
                     </div>
                 </div>
                 <!-- End Service Item -->
@@ -592,7 +752,8 @@
                     <div class="icon flex-shrink-0"><i class="bi bi-card-checklist" style="color: #15a04a;"></i></div>
                     <div>
                         <h4 class="title"><a href="#" class="stretched-link">Processing & Conversion</a></h4>
-                        <p class="description">Outsource your data processing needs to a one-stop shop and save up time for your primary company.</p>
+                        <p class="description">Outsource your data processing needs to a one-stop shop and save up time
+                            for your primary company.</p>
                     </div>
                 </div><!-- End Service Item -->
 
@@ -600,7 +761,8 @@
                     <div class="icon flex-shrink-0"><i class="bi bi-bar-chart" style="color: #d90769;"></i></div>
                     <div>
                         <h4 class="title"><a href="#" class="stretched-link">Lead Generation</a></h4>
-                        <p class="description">Lead generation is the process of creating interest in a service or product with the goal of generating new sales leads.</p>
+                        <p class="description">Lead generation is the process of creating interest in a service or
+                            product with the goal of generating new sales leads.</p>
                     </div>
                 </div><!-- End Service Item -->
 
@@ -608,7 +770,8 @@
                     <div class="icon flex-shrink-0"><i class="bi bi-binoculars" style="color: #15bfbc;"></i></div>
                     <div>
                         <h4 class="title"><a href="#" class="stretched-link">Web Research</a></h4>
-                        <p class="description">Why hire professionals in-house when you can outsource your online research services to us and receive better results at a reduced cost.</p>
+                        <p class="description">Why hire professionals in-house when you can outsource your online
+                            research services to us and receive better results at a reduced cost.</p>
                     </div>
                 </div><!-- End Service Item -->
 
@@ -616,7 +779,8 @@
                     <div class="icon flex-shrink-0"><i class="bi bi-brightness-high" style="color: #f5cf13;"></i></div>
                     <div>
                         <h4 class="title"><a href="#" class="stretched-link">Web Development</a></h4>
-                        <p class="description">In order to provide our clients with only the best websites, we use the latest technology and advanced web technology.</p>
+                        <p class="description">In order to provide our clients with only the best websites, we use the
+                            latest technology and advanced web technology.</p>
                     </div>
                 </div><!-- End Service Item -->
 
@@ -624,7 +788,8 @@
                     <div class="icon flex-shrink-0"><i class="bi bi-calendar4-week" style="color: #1335f5;"></i></div>
                     <div>
                         <h4 class="title"><a href="#" class="stretched-link">Editing Photos</a></h4>
-                        <p class="description">To provide our clients with only the best photographs, we employ cutting-edge technology and advanced photo enhancing technologies.</p>
+                        <p class="description">To provide our clients with only the best photographs, we employ
+                            cutting-edge technology and advanced photo enhancing technologies.</p>
                     </div>
                 </div><!-- End Service Item -->
 
@@ -645,11 +810,17 @@
 
             <div class="row g-0 align-items-center" data-aos="fade-up" data-aos-delay="200">
 
-                <div class="col-xl-5 img-bg" style="background-image: url({{asset('final_front_assets/img/why-us-bg.jpg')}})">
+                <div class="col-xl-5 img-bg"
+                    style="background-image: url({{asset('final_front_assets/img/why-us-bg.jpg')}})">
                 </div>
                 <div class="col-xl-7 p-5">
-                    <p>Bangladesh Outsourcing Company is a privately held data input outsourcing firm situated in Bangladesh. , United Arab Emirates, and other countries with cost-effective data entry and BPO services.</p>
-                    <p>We have created and nurtured a highly competent, experienced, and devoted staff of data entry professionals throughout the course of our 4+ years in the data entry industry. We are a dependable and dedicated data entry company that offers our customers quick, simple, and economical data input services throughout the world.</p>
+                    <p>Bangladesh Outsourcing Company is a privately held data input outsourcing firm situated in
+                        Bangladesh. , United Arab Emirates, and other countries with cost-effective data entry and BPO
+                        services.</p>
+                    <p>We have created and nurtured a highly competent, experienced, and devoted staff of data entry
+                        professionals throughout the course of our 4+ years in the data entry industry. We are a
+                        dependable and dedicated data entry company that offers our customers quick, simple, and
+                        economical data input services throughout the world.</p>
                     <ul>
                         <li>Data Entry</li>
                         <li>Processing & Conversion</li>
@@ -725,7 +896,8 @@
                     </div><!-- End Portfolio Item -->
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-branding">
-                        <img src="{{asset('final_front_assets/img/portfolio/branding-1.jpg')}}" class="img-fluid" alt="">
+                        <img src="{{asset('final_front_assets/img/portfolio/branding-1.jpg')}}" class="img-fluid"
+                            alt="">
                         <div class="portfolio-info">
                             <h4>Branding 1</h4>
                             <p>Lorem ipsum, dolor sit amet consectetur</p>
@@ -777,7 +949,8 @@
                     </div><!-- End Portfolio Item -->
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-branding">
-                        <img src="{{asset('final_front_assets/img/portfolio/branding-2.jpg')}}" class="img-fluid" alt="">
+                        <img src="{{asset('final_front_assets/img/portfolio/branding-2.jpg')}}" class="img-fluid"
+                            alt="">
                         <div class="portfolio-info">
                             <h4>Branding 2</h4>
                             <p>Lorem ipsum, dolor sit amet consectetur</p>
@@ -829,7 +1002,8 @@
                     </div><!-- End Portfolio Item -->
 
                     <div class="col-lg-4 col-md-6 portfolio-item filter-branding">
-                        <img src="{{asset('final_front_assets/img/portfolio/branding-3.jpg')}}" class="img-fluid" alt="">
+                        <img src="{{asset('final_front_assets/img/portfolio/branding-3.jpg')}}" class="img-fluid"
+                            alt="">
                         <div class="portfolio-info">
                             <h4>Branding 3</h4>
                             <p>Lorem ipsum, dolor sit amet consectetur</p>
@@ -1185,4 +1359,112 @@
 
 <!-- Template Main JS File -->
 <script src="{{asset('final_front_assets/libs/main.js')}}"></script>
+
+<script>
+    const users_data = [{
+            name: "MD RABIUL ISLAM",
+            title: "Web Developer",
+            info: "I’m a Full Stack Developer who is passionate about making error-free websites with Laravel and React.js Framework.",
+            img_id: "rabiul.png"
+            // img_id: "1.png"
+        },
+        {
+            name: "JOYANTA DEBNATH",
+            title: "Marketing Specialist",
+            info: "I am a Digital marketer & growth specialist who has diverse experience in planning, executing, and Managing.",
+            img_id: "2.png"
+        },
+        {
+            name: "SAGOR MOJUMDER",
+            title: "Graphic Designer",
+            info: "I'm a graphic designer & digital artist. My expertness in Photoshop, Illustrator & Premiere pro.",
+            img_id: "3.png"
+        }
+    ];
+
+
+    function user_circle() {
+
+        for (let un = 0; un < users_data.length; un++) {
+            setTimeout(() => {
+                let user_photo = users_data[un].name;
+                $('#user_photo').attr("src", `./uploads/people/${users_data[un].img_id}`);
+                $('#user_information').html(
+                    `<span><strong>${users_data[un].name}</strong></span><br><span>${users_data[un].title}</span>`
+                    );
+                var i = 0;
+                var txt = users_data[un].info;
+                var speed = 30;
+
+                $('#user_speech').html(txt);
+
+                // function typeWriter() {
+                //     if (i < txt.length) {
+                //         document.getElementById("user_speech").innerHTML += txt.charAt(i);
+                //         i++;
+                //         setTimeout(typeWriter, speed);
+
+                //     }
+                // }
+                // $('#user_speech').html('');
+                // typeWriter();
+            }, un * 6000);
+        }
+
+        setTimeout(() => {
+            let un = 0;
+            user_circle();
+        }, users_data.length * 6000);
+    }
+
+    user_circle();
+
+
+    document.addEventListener('visibilitychange', function() {
+        if(document.hidden){
+            // console.log('Page is hidden from user view');
+
+        }else{
+            console.log('Page is in user view');
+            // return user_circle();
+        }
+    });
+
+    // document.addEventListener('visibilitychange', function() {
+    //     if(document.hidden){
+    //         // console.log('Page is hidden from user view');
+    //         Object.freeze(typeWriter());
+    //     }else{
+    //         // console.log('Page is in user view');
+    //         $('#user_speech').html('');
+    //     }
+    // });
+
+
+</script>
+
+<script>
+    (function ($) {
+        'use strict';
+
+        // preloader js
+        function loader() {
+            $(window).on('load', function () {
+                $('#ctn-preloader').addClass('loaded');
+                $("#loading").fadeOut(500);
+                // Una vez haya terminado el preloader aparezca el scroll
+
+                if ($('#ctn-preloader').hasClass('loaded')) {
+                    // Es para que una vez que se haya ido el preloader se elimine toda la seccion preloader
+                    $('#preloader').delay(500).queue(function () {
+                        $(this).remove();
+                    });
+                }
+            });
+        }
+        loader();
+    })(jQuery);
+
+</script>
+
 @endsection

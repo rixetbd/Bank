@@ -1,7 +1,7 @@
 header {
     padding-top: 145px;
-    background:url('http://127.0.0.1:8000/uploads/img/vector/bg04.png');
-    background:cover;
+    background: url('http://127.0.0.1:8000/uploads/img/vector/bg04.png');
+    background: cover;
     background-repeat: no-repeat;
     height: 100vh;
     /* background-position:top right; */
@@ -25,7 +25,7 @@ header h1 {
     color: #000;
 }
 
-#country_Name50 .menu{
+#country_Name50 .menu {
     background: #c3b092;
     border: none;
 }
@@ -46,58 +46,74 @@ header h1 {
         font-size: 20px;
         font-weight: 900;
     }
-    .hero_left h1 strong{
+
+    .hero_left h1 strong {
         font-size: 50px;
         line-height: 50px;
     }
-    .hero_left p.description{
+
+    .hero_left p.description {
         width: 100%;
         font-size: 16px;
     }
+
     .select_box {
-        width:100%;
+        width: 100%;
         /* border: 3px solid #c3b092; */
     }
+
     .select_box h3 {
         font-size: 18px;
         font-weight: 400;
         letter-spacing: 1px;
     }
-    .select_box .input_field{
+
+    .select_box .input_field {
         margin-top: 10px;
     }
+
     .select_box .input_field #country_Name50 {
         text-align: center;
     }
-    .select_box h3.input_h3{
+
+    .select_box h3.input_h3 {
         text-align: center;
     }
-    .select_box .fa-caret-right{
+
+    .select_box .fa-caret-right {
         display: none;
     }
 }
+
 @media only screen and (min-width: 600px) {}
+
 @media only screen and (min-width: 768px) {}
+
 @media only screen and (min-width: 992px) {}
+
 @media only screen and (min-width: 1200px) {
     .hero_left h1 {
         font-size: 40px;
         font-weight: 900;
     }
-    .hero_left h1 strong{
+
+    .hero_left h1 strong {
         font-size: 110px;
         line-height: 90px;
     }
-    .hero_left p.description{
+
+    .hero_left p.description {
         width: 115%;
         font-size: 16px;
     }
+
     .select_box {
         /* margin-right: -45px; */
         /* border: 3px solid #c3b092; */
-        width:120%;
+        width: 120%;
         /* background:#f3d0b0; */
     }
+
     .select_box h3 {
         font-family: 'Poppins', sans-serif;
         /* font-family: 'Playfair Display', serif; */
@@ -105,8 +121,9 @@ header h1 {
         font-weight: 400;
         letter-spacing: 1px;
     }
-    .select_box .input_field{
-        background:#c3b092;
+
+    .select_box .input_field {
+        background: #c3b092;
         width: 430px;
     }
 }
@@ -158,3 +175,190 @@ header h1 {
 }
 
 /* Data Value Name Button || End */
+
+.header_right_side .img_box {
+    width: 60px;
+    border-radius: 50% !important;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.header_right_side .info_box {
+    padding: 5px 5px;
+    text-align: center;
+    margin-top: 10px;
+    width: 80px;
+}
+
+.header_right_side .info_box h4 {
+    font-size: 10px;
+    line-height: 18px;
+}
+
+
+.hero_heading {
+    padding: 30px 30px 30px 0;
+    text-align: justify;
+    margin: 50px 0 100px 0;
+}
+
+.hero_heading .h_text_1,
+.hero_heading .h_text_2,
+.hero_heading .h_text_3,
+.hero_heading .h_text_4 {
+    text-transform: uppercase;
+}
+
+.hero_heading .h_text_1 {
+    font-size: 100px;
+}
+
+.hero_heading .h_text_3 {
+    font-size: 105px;
+}
+
+.hero_heading .h_text_1,
+.hero_heading .h_text_3 {
+    margin: 0;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: -3px 3px 2px rgb(113 113 113);
+}
+
+.hero_heading h6 {
+    letter-spacing: 2px;
+}
+
+.hero_heading h6,
+.hero_heading .h_text_2 {
+    text-transform: uppercase;
+    margin: 0 0 0 10px;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: -3px 3px 2px rgb(113 113 113);
+}
+
+.hero_heading .h_text_4 {
+    float: right;
+    margin: 0;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    text-shadow: -3px 3px 2px rgb(113 113 113);
+}
+
+#user_information {
+    text-align: right;
+}
+
+
+/* ------------------------------------------------------------------------- */
+.wrapper.img_box img:first-child{
+    width: 45px;
+}
+.wrapper.img_box .tooltip img{
+    width: 200px;
+}
+
+.wrapper {
+    text-transform: uppercase;
+    /* background: #ececec; */
+    color: #555;
+    cursor: help;
+    font-family: "Gill Sans", Impact, sans-serif;
+    font-size: 20px;
+    /* margin: 100px 75px 10px 75px; */
+    padding: 15px 20px;
+    position: relative;
+    text-align: center;
+    /* width: 200px; */
+    -webkit-transform: translateZ(0);
+    /* webkit flicker fix */
+    -webkit-font-smoothing: antialiased;
+    /* webkit text rendering fix */
+}
+
+.wrapper.img_box .tooltip {left: auto;width: auto;padding: 5px;}
+.wrapper .tooltip {
+    background: #d8dbe1;
+    text-align: center;
+    bottom: 100%;
+    color: #fff;
+    display: block;
+    left: -150px;
+    margin-bottom: 15px;
+    opacity: 0;
+    padding: 20px;
+    pointer-events: none;
+    position: absolute;
+    width: 400px;
+    -webkit-transform: translateY(10px);
+    -moz-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    -o-transform: translateY(10px);
+    transform: translateY(10px);
+    -webkit-transition: all .25s ease-out;
+    -moz-transition: all .25s ease-out;
+    -ms-transition: all .25s ease-out;
+    -o-transition: all .25s ease-out;
+    transition: all .25s ease-out;
+    -webkit-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+    -moz-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+    -ms-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+    -o-box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+}
+
+/* This bridges the gap so you can mouse into the tooltip without it disappearing */
+.wrapper .tooltip:before {
+    bottom: -20px;
+    content: " ";
+    display: block;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+/* CSS Triangles - see Trevor's post */
+.wrapper .tooltip:after {
+    border-left: solid transparent 10px;
+    border-right: solid transparent 10px;
+    border-top: solid #999999 10px;
+    bottom: -10px;
+    content: " ";
+    height: 0;
+    left: 50%;
+    margin-left: -13px;
+    position: absolute;
+    width: 0;
+}
+
+.wrapper:hover .tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -o-transform: translateY(0px);
+    transform: translateY(0px);
+}
+
+/* IE can just show/hide with no transition */
+.lte8 .wrapper .tooltip {
+    display: none;
+}
+
+.lte8 .wrapper:hover .tooltip {
+    display: block;
+}

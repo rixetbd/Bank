@@ -53,6 +53,7 @@
             /* display: block !important;
             margin: 0 36px; */
         }
+        body,
         body.light_mode{
             color: #292c35;
             background-color: #D8DBE1;
@@ -118,10 +119,10 @@
             <input type="radio" name="slider" id="close-btn" />
             <ul class="nav-links" style="margin-bottom: 0">
                 <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-                <li class="nav_item shadow_one"><a href="{{route('frontend.home')}}">Home</a></li>
+                <li class="nav_item"><a class="shadow_one" href="{{route('frontend.home')}}">Home</a></li>
 
-                <li class="nav_item shadow_one">
-                    <a href="#" class="desktop-item">Services</a>
+                <li class="nav_item">
+                    <a href="#" class="desktop-item shadow_one">Services</a>
                     <input type="checkbox" id="showMega" />
                     <label for="showMega" class="mobile-item">Services</label>
                     <div class="mega-box">
@@ -172,9 +173,9 @@
                     </div>
                 </li>
                 {{-- <li></li> --}}
-                <li class="nav_item shadow_one"><a href="#">Blog</a></li>
-                <li class="nav_item shadow_one"><a href="#">About</a></li>
-                <li class="nav_item shadow_one shadow_one"><a href="{{route('frontend.contact.index')}}">Contact</a></li>
+                <li class="nav_item"><a class="shadow_one" href="#">Blog</a></li>
+                <li class="nav_item"><a class="shadow_one" href="#">About</a></li>
+                <li class="nav_item"><a class="shadow_one" href="{{route('frontend.contact.index')}}">Contact</a></li>
                 <div class="d-flex align-items-center color_mode_icon" style="margin-left: 20px;">
                     <input type="checkbox" class="BG_color_checkbox" id="BG_color_checkbox">
                   <label for="BG_color_checkbox" class="label">
@@ -346,6 +347,7 @@
     <script>
         const checkbox = document.getElementById('BG_color_checkbox');
         if (localStorage.getItem('color_mode') !== null) {
+            // document.body.classList.toggle('light_mode');
             let color_mode = localStorage.getItem("color_mode");
             if(color_mode == "dark_mode"){
                 // alert('dark_mode');
