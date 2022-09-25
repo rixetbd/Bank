@@ -53,6 +53,7 @@
             /* display: block !important;
             margin: 0 36px; */
         }
+        
         body,
         body.light_mode{
             color: #292c35;
