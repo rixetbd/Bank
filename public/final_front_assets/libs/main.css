@@ -470,7 +470,6 @@ section {
   background-size: cover;
   position: relative;
   padding: 120px 0;
-  z-index: 3;
 }
 
 /* @media (min-width: 1034px) {
@@ -497,9 +496,6 @@ section {
   }
 }
 
-.hero .container {
-  z-index: 1;
-}
 
 @media (min-width: 1365px) {
   .hero {

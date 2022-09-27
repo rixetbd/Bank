@@ -41,6 +41,321 @@ or product.',
 
 @section('content')
 
+
+<!-- ======= Hero Section ======= -->
+
+<!-- End Hero Section -->
+
+<section class="section_part hero">
+    <section id="text1" class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-7 col-xl-7 mt-5">
+                {{-- <img src="{{asset('uploads/img/123.png')}}" alt="" class="img-fluid"> --}}
+                <div class="hero_heading">
+                    <h6>We provide best</h6>
+                    <span class="h_text_1">Business</span>
+                    <span class="h_text_2"> Process</span>
+                    <span class="h_text_3">Outsourcing</span>
+                    <span class="h_text_4">Services</span>
+                </div>
+                {{-- <h2 class="text-uppercase">Business Process Outsourcing Services.</h2> --}}
+                <blockquote>
+                    <p><span class="shadow_one py-2" style="padding: 0.75rem;">Bangladesh Outsourcing Company</span> is
+                        a global business process outsourcing company. All of our
+                        services satisfy stringent international standards. We have projections all around the US and
+                        Western Europe. Bangladesh Outsourcing Company is a privately held data input outsourcing firm
+                        situated in Bangladesh. </p>
+                </blockquote>
+                {{-- <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
+                        <a href="#about" class="btn-get-started">Get Started</a>
+                        <a href="https://www.youtube.com/watch?v=YrrSV5eJW4c"
+                            class="glightbox btn-watch-video d-flex align-items-center"><i
+                                class="bi bi-play-circle"></i><span>Watch
+                                Video</span></a>
+                    </div> --}}
+            </div>
+            <div class="col-sm-12 col-md-5 col-xl-5 mt-5 pt-5 header_right_side">
+                <div class="row align-items-center justify-content-end" style="height: 310px;">
+                    <div class="col-6 d-flex align-items-end">
+                        <div class="user_card p-3 shadow_one_alt" id="user_speech" style="">
+                            <p class="d-none">I’m a Full Stack Developer who is passionate about making error-free
+                                websites with Laravel and React.js Framework.</p>
+                        </div>
+                    </div>
+                    <div class="col-4" style="z-index: 9999;">
+                        <img class="img-fluid rounded-circle shadow_one_alt" id="user_photo" src="" alt="">
+                    </div>
+                    <div class="col-6" style="margin-top: -140px;">
+                        <div class="user_card p-3" id="user_information">
+                        </div>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+                <div class="col-12" style="height: 140px;">
+                </div>
+                <div class="col-10 d-flex pb-4 float-end">
+                    <div class="col p-1 text-center">
+                        <div class="wrapper img_box shadow_one">
+                            <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                            <div class="tooltip">
+                                <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="info_box shadow_one">
+                            <h4>Lead Generation</h4>
+                        </div>
+                    </div>
+                    <div class="col p-1">
+                        <div class="wrapper img_box shadow_one">
+                            <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                            <div class="tooltip">
+                                <img class="" src="{{asset('uploads/img/services/DIGITAL_MARKETING.jpg')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="info_box shadow_one">
+                            <h4>Digital Marketing</h4>
+                        </div>
+                    </div>
+                    <div class="col p-1">
+                        <div class="wrapper img_box shadow_one">
+                            <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                            <div class="tooltip">
+                                <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="info_box shadow_one">
+                            <h4>Graphics Design</h4>
+                        </div>
+                    </div>
+                    <div class="col p-1">
+                        <div class="wrapper img_box shadow_one">
+                            <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                            <div class="tooltip">
+                                <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="info_box shadow_one">
+                            <h4>Web Development</h4>
+                        </div>
+                    </div>
+                    <div class="col p-1">
+                        <div class="wrapper img_box shadow_one">
+                            <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                            <div class="tooltip">
+                                <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+                            </div>
+                        </div>
+                        <div class="info_box shadow_one">
+                            <h4>BPO<br>Services</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-10 shadow_one_alt py-3 float-end" style="border-radius: 45px;">
+                    <h3 class="text-uppercase text-center">Our Best Services</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<section class="section_part" style="height: 50vh;background:#e7e9ef;">
+    <div id="text2" class="container">
+        <h3 class="text-light text-uppercase text-center"
+            style="font-size: 120px;text-shadow: -3px 3px 10px rgb(113 113 113);">Our Best Services</h3>
+    </div>
+</section>
+
+<section class="section_part" id="three">
+    <div id="text3">
+        <section class="container" id="service_col_main">
+            <div class="row justify-content-center">
+                {{-- <div class="col-sm-12 col-md-12 my-3">
+                    <h3 class="text-uppercase">Our Best Services</h3>
+                </div> --}}
+                <div class="col-sm-12 col-md-3 p-2" id="service_col_one">
+                    <div class="service_col_one_1">
+                        <input type="text" name="" class="form-control" placeholder="Search Your Services">
+                    </div>
+                    <div class="service_col_one_2">
+                        <ul class="service_all_list">
+                            <li class="grp_one">Lead Generation</li>
+                            <li class="grp_one">Content Writing</li>
+                            <li class="grp_one">Social Media Marketing</li>
+                            <li class="grp_one">SEO | DM</li>
+                            <li class="grp_one">Email Marketing</li>
+                            <li class="grp_two">WordPress</li>
+                            <li class="grp_two">Laravel Website</li>
+                            <li class="grp_two">React Website</li>
+                            <li class="grp_two">Web Application</li>
+                            <li class="grp_two">LMS Website</li>
+                            <li class="grp_two">eCommerce Website</li>
+                            <li class="grp_three">Image & Video Content</li>
+                            <li class="grp_three">Photo Editing </li>
+                            <li class="grp_three">eCommerce Photo Editing</li>
+                            <li class="grp_three">Photo Manipulation</li>
+                            <li class="grp_three">Effects and Filter's</li>
+                            <li class="grp_three">Print Design</li>
+                            <li class="grp_three">Digital Design</li>
+                            <li class="grp_three">Motion Graphic Design</li>
+                            <li class="grp_three">Whiteboard Animation</li>
+                            <li class="grp_four">Products Catalogs</li>
+                            <li class="grp_four">Database Data Entry</li>
+                            <li class="grp_four">Data Input</li>
+                            <li class="grp_four">Document Management </li>
+                            <li class="grp_four">Forms Processing</li>
+                            <li class="grp_four">Customers orders</li>
+                            <li class="grp_four">Document Data Entry</li>
+                            <li class="grp_four">Civil records</li>
+                            <li class="grp_four">eBay Product Data Entry</li>
+                            <li class="grp_four">Product Data Entry</li>
+                            <li class="grp_four">Product Listing</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-7" id="service_col_two">
+                    <div class="list_item_info">
+                        <div class="sct_heading">
+                            <h4>Why is Small Business Lead Generation Important?</h4>
+                            <h6>Digital Marketing Expert</h6>
+                        </div>
+                        <div class="sct_content">
+                            <h4>What is B2B lead generation ?</h4>
+                            <p>
+                                In Business, B2B lead generation is the act of identifying and initiating an interest of
+                                prospective
+                                customers. Identifying prospective customers means finding businesses or clients who may
+                                have an
+                                interest in your offering business product or services (Shortly your target
+                                audience).Initiating
+                                interest is about capturing information from these potential customers and feeding them into
+                                your
+                                sales funnel. Capturing information of potential Consumers Is called lead and these leads
+                                can be
+                                converted into your Main customer.
+                            </p>
+
+                            <h4>How does B2B lead generation work?</h4>
+                            <p>Generating leads can be difficult and time-consuming but the idea itself is pretty simple.
+                                The first
+                                step of B2B lead generation is finding the potential leads (contact information). This
+                                information
+                                is either sourced in house or by a third party lead generation company. Lead generation
+                                companies
+                                collect potential buyers' or consumers' Leads & their information.</p>
+
+                            <p>Now you have a database of potential high quality leads to contact with them. This can either
+                                be an
+                                email or a social media post. The main point here is to put your business or product in
+                                front of the
+                                eyes of the people who will be more likely to enjoy your product or service</p>
+
+                            <p>“Searching and Qualifying Leads” This stage is about research,is your customer aware about
+                                your
+                                brand? Do they trust your brand and strategy? Are they already considering making a
+                                purchase? These
+                                are the main factors many B2B customers will be asking themselves before they make a
+                                purchase.
+                                "Close The Lead" is the last part of your lead generation successful journey. After closing
+                                the
+                                leads you should nurture your leads</p>
+
+                            <h4>Why Is B2B Lead Generation Important To My Business?</h4>
+                            <p>
+                                Implementing a B2B lead generation strategy is Important today because many prospects want
+                                to
+                                control their buying journey. Ads and traditional marketing Will not work anymore. Today’s
+                                Customers
+                                are conducting their own research to find solutions to their problems. Lead generation
+                                strategy will
+                                help you to find this target Consumers. Here’s a look at some of the benefits of B2B lead
+                                generation.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="list_item_info">
+                        <div class="sct_heading">
+                            <h4>Why is Small Business Lead Generation Important?</h4>
+                            <h6>Digital Marketing Expert</h6>
+                        </div>
+                        <div class="sct_content">
+                            <h4>What is B2B lead generation ?</h4>
+                            <p>
+                                In Business, B2B lead generation is the act of identifying and initiating an interest of
+                                prospective
+                                customers. Identifying prospective customers means finding businesses or clients who may
+                                have an
+                                interest in your offering business product or services (Shortly your target
+                                audience).Initiating
+                                interest is about capturing information from these potential customers and feeding them into
+                                your
+                                sales funnel. Capturing information of potential Consumers Is called lead and these leads
+                                can be
+                                converted into your Main customer.
+                            </p>
+
+                            <h4>How does B2B lead generation work?</h4>
+                            <p>Generating leads can be difficult and time-consuming but the idea itself is pretty simple.
+                                The first
+                                step of B2B lead generation is finding the potential leads (contact information). This
+                                information
+                                is either sourced in house or by a third party lead generation company. Lead generation
+                                companies
+                                collect potential buyers' or consumers' Leads & their information.</p>
+
+                            <p>Now you have a database of potential high quality leads to contact with them. This can either
+                                be an
+                                email or a social media post. The main point here is to put your business or product in
+                                front of the
+                                eyes of the people who will be more likely to enjoy your product or service</p>
+
+                            <p>“Searching and Qualifying Leads” This stage is about research,is your customer aware about
+                                your
+                                brand? Do they trust your brand and strategy? Are they already considering making a
+                                purchase? These
+                                are the main factors many B2B customers will be asking themselves before they make a
+                                purchase.
+                                "Close The Lead" is the last part of your lead generation successful journey. After closing
+                                the
+                                leads you should nurture your leads</p>
+
+                            <h4>Why Is B2B Lead Generation Important To My Business?</h4>
+                            <p>
+                                Implementing a B2B lead generation strategy is Important today because many prospects want
+                                to
+                                control their buying journey. Ads and traditional marketing Will not work anymore. Today’s
+                                Customers
+                                are conducting their own research to find solutions to their problems. Lead generation
+                                strategy will
+                                help you to find this target Consumers. Here’s a look at some of the benefits of B2B lead
+                                generation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-2" id="service_col_three">
+                    <div class="service_col_three_main">
+                        <div class="up_arrow">
+                            <i class="fas fa-arrow-up"></i>
+                        </div>
+
+                        <div class="down_arrow">
+                            <i class="fas fa-arrow-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>
+
+
+<section class="section_part" id="four">
+    <div id="text4">some more</div>
+</section>
+
+
+
+
 {{-- Preloader || Start
 <div id="preloader">
     <div id="ctn-preloader" class="ctn-preloader">
@@ -84,10 +399,10 @@ or product.',
 </div>
 {{-- Preloader || End --}}
 
-<!-- ======= Hero Section ======= -->
+<!-- ======= Hero Section =======
 <section id="hero" class="hero">
     <div class="container">
-        <div class="row">
+         <div class="row">
             <div class="col-sm-12 col-md-7 col-xl-7 mt-5">
                 {{-- <img src="{{asset('uploads/img/123.png')}}" alt="" class="img-fluid"> --}}
                 <div class="hero_heading">
@@ -97,8 +412,6 @@ or product.',
                     <span class="h_text_3">Outsourcing</span>
                     <span class="h_text_4">Services</span>
                 </div>
-
-
                 {{-- <h2 class="text-uppercase">Business Process Outsourcing Services.</h2> --}}
                 <blockquote>
                     <p><span class="shadow_one py-2" style="padding: 0.75rem;">Bangladesh Outsourcing Company</span> is
@@ -198,13 +511,95 @@ or product.',
 
         </div>
     </div>
-</section><!-- End Hero Section -->
+</section>
+ End Hero Section -->
+
+{{-- <section id="section_part_02" class="" style="height: 50vh;background:#000;">
+    <div class="container">
+        <h3 class="text-light text-uppercase text-center" style="font-size: 120px">Our Best Services</h3>
+    </div>
+</section> --}}
+
+{{-- <section class="container" id="service_col_main">
+    <div class="row justify-content-center">
+        <div class="col-sm-12 col-md-12 my-3">
+            <h3 class="text-uppercase">Our Best Services</h3>
+        </div>
+        <div class="col-sm-12 col-md-3 p-2" id="service_col_one">
+            <div>
+                <ul class="">
+                    <li>Search engine Optimization</li>
+                    <li>Search engine Optimization</li>
+                    <li>Search engine Optimization</li>
+                    <li>Search engine Optimization</li>
+                    <li>Search engine Optimization</li>
+                    <li>Search engine Optimization</li>
+                    <li>Search engine Optimization</li>
+                    <li>Search engine Optimization</li>
+                    <li>Search engine Optimization</li>
+                    <li>Search engine Optimization</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-7" id="service_col_two">
+            <div class="sct_heading">
+                <h4>Why is Small Business Lead Generation Important?</h4>
+                <h6>Digital Marketing Expert</h6>
+            </div>
+            <div class="sct_content">
+                <h4>What is B2B lead generation ?</h4>
+                <p>
+                    In Business, B2B lead generation is the act of identifying and initiating an interest of prospective
+                    customers. Identifying prospective customers means finding businesses or clients who may have an
+                    interest in your offering business product or services (Shortly your target audience).Initiating
+                    interest is about capturing information from these potential customers and feeding them into your
+                    sales funnel. Capturing information of potential Consumers Is called lead and these leads can be
+                    converted into your Main customer.
+                </p>
+
+                <h4>How does B2B lead generation work?</h4>
+                <p>Generating leads can be difficult and time-consuming but the idea itself is pretty simple. The first
+                    step of B2B lead generation is finding the potential leads (contact information). This information
+                    is either sourced in house or by a third party lead generation company. Lead generation companies
+                    collect potential buyers' or consumers' Leads & their information.</p>
+
+                <p>Now you have a database of potential high quality leads to contact with them. This can either be an
+                    email or a social media post. The main point here is to put your business or product in front of the
+                    eyes of the people who will be more likely to enjoy your product or service</p>
+
+                <p>“Searching and Qualifying Leads” This stage is about research,is your customer aware about your
+                    brand? Do they trust your brand and strategy? Are they already considering making a purchase? These
+                    are the main factors many B2B customers will be asking themselves before they make a purchase.
+                    "Close The Lead" is the last part of your lead generation successful journey. After closing the
+                    leads you should nurture your leads</p>
+
+                <h4>Why Is B2B Lead Generation Important To My Business?</h4>
+                <p>
+                    Implementing a B2B lead generation strategy is Important today because many prospects want to
+                    control their buying journey. Ads and traditional marketing Will not work anymore. Today’s Customers
+                    are conducting their own research to find solutions to their problems. Lead generation strategy will
+                    help you to find this target Consumers. Here’s a look at some of the benefits of B2B lead
+                    generation.
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-2" id="service_col_three">
+            <div class="service_col_three_main">
+                <div class="up_arrow">
+                    <i class="fas fa-arrow-up"></i>
+                </div>
+
+                <div class="down_arrow">
+                    <i class="fas fa-arrow-down"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> --}}
+
 
 <main id="main">
-
-
     <!-- ======= Our Services Section ======= -->
-
     <section class="container">
         <div class="row service_One">
             <div class="col-sm-12 col-md-3">
@@ -1391,7 +1786,7 @@ or product.',
                 $('#user_photo').attr("src", `./uploads/people/${users_data[un].img_id}`);
                 $('#user_information').html(
                     `<span><strong>${users_data[un].name}</strong></span><br><span>${users_data[un].title}</span>`
-                    );
+                );
                 var i = 0;
                 var txt = users_data[un].info;
                 var speed = 30;
@@ -1420,11 +1815,11 @@ or product.',
     user_circle();
 
 
-    document.addEventListener('visibilitychange', function() {
-        if(document.hidden){
+    document.addEventListener('visibilitychange', function () {
+        if (document.hidden) {
             // console.log('Page is hidden from user view');
 
-        }else{
+        } else {
             console.log('Page is in user view');
             // return user_circle();
         }
@@ -1439,7 +1834,6 @@ or product.',
     //         $('#user_speech').html('');
     //     }
     // });
-
 
 </script>
 
@@ -1467,4 +1861,76 @@ or product.',
 
 </script>
 
+
+<script>
+    // When the user scrolls the page, execute scroll
+    window.onscroll = function () {
+        scroll()
+    };
+
+    // Get the ids for the divs
+    var text1 = document.getElementById("text1");
+    var text2 = document.getElementById("text2");
+    var text3 = document.getElementById("text3");
+    var text4 = document.getElementById("text4");
+
+    function scroll() {
+        /*
+        I was having problems with the measurement of position (I set the offset to the div instead of the section so it didn't work properly) so I wanted to get the actual values. You can just ignore this
+        text1.innerHTML = one.offsetTop;
+        text2.innerHTML = two.offsetTop;
+        text3.innerHTML = three.offsetTop;
+        text4.innerHTML = four.offsetTop;*/
+
+        //I'm sure there's a neater and more accurate approach to this but, hey, if it works it works.
+        if (window.pageYOffset > two.offsetTop) {
+            text2.style.position = "fixed";
+        } else if (window.pageYOffset < two.offsetTop) {
+            text2.style.position = "absolute";
+        }
+        if (window.pageYOffset > three.offsetTop) {
+            text3.style.position = "fixed";
+        } else if (window.pageYOffset < three.offsetTop) {
+            text3.style.position = "absolute";
+        }
+    }
+    // Section ID || End
+
+</script>
+
+
+<script>
+    $('#service_col_two').scroll(function () {
+
+        // var windscroll = $(window).scrollTop();
+        var windscroll = 1200;
+
+        // alert($(window).scrollTop());
+
+        if (windscroll >= 1200) {
+            // alert('Hi');
+        }
+
+        // // var windscroll = $(window).scrollTop();
+        // if (windscroll >= 100) {
+        //     $('#service_col_two').scroll(function (i) {
+        //         // The number at the end of the next line is how pany pixels you from the top you want it to activate.
+        //         if ($(this).position().top <= windscroll - 0) {
+        //             $('service_all_list li.active').removeClass('active');
+        //             $('.service_all_list li').eq(i).addClass('active');
+        //             alert($('.service_all_list li').eq(i).html());
+        //         }
+        //     });
+
+        // } else {
+
+        //     $('.service_all_list li.active').removeClass('active');
+        //     $('.service_all_list li:first').addClass('active');
+        // }
+    });
+
+</script>
+
 @endsection
+
+{{-- https://alvarotrigo.com/fullPage/#page1 --}}

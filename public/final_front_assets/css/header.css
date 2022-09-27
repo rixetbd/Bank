@@ -227,7 +227,8 @@ header h1 {
     line-height: 1;
     color: #fff;
     font-family: 'Roboto', sans-serif;
-    text-shadow: -3px 3px 2px rgb(113 113 113);
+    /* text-shadow: -3px 3px 2px rgb(113 113 113); */
+    text-shadow: -3px 3px 10px rgb(113 113 113);
 }
 
 .hero_heading h6 {
@@ -243,7 +244,8 @@ header h1 {
     line-height: 1.2;
     color: #fff;
     font-family: 'Roboto', sans-serif;
-    text-shadow: -3px 3px 2px rgb(113 113 113);
+    /* text-shadow: -3px 3px 2px rgb(113 113 113); */
+    text-shadow: -3px 3px 10px rgb(113 113 113);
 }
 
 .hero_heading .h_text_4 {
@@ -254,7 +256,8 @@ header h1 {
     line-height: 1.2;
     color: #fff;
     font-family: 'Roboto', sans-serif;
-    text-shadow: -3px 3px 2px rgb(113 113 113);
+    /* text-shadow: -3px 3px 2px rgb(113 113 113); */
+    text-shadow: -3px 3px 10px rgb(113 113 113);
 }
 
 #user_information {
