@@ -8,7 +8,7 @@
 
 #footer .footer-newsletter {
     padding: 50px 0;
-    background: #E0DBD5;
+    background: #e0e4ed;
     color: #000;
 }
 
@@ -21,17 +21,19 @@
 }
 
 #footer .footer-newsletter form {
-    margin-top: 30px;
-    background: #fff;
-    padding: 6px 10px;
+    background: #d6d9e0;
     position: relative;
     border-radius: 50px
 }
 
 #footer .footer-newsletter form input[type="email"] {
     border: 0;
-    padding: 8px;
-    width: calc(100% - 140px)
+    padding: 25px;
+    width: 100%;
+    border-radius: 60px;
+    padding-left: 30px;
+    box-shadow: inset 3px 3px 6px #a2a3ab, inset -3px -3px 6px #ffffff;
+    background: #d8dbe1;
 }
 
 #footer .footer-newsletter form input[type="email"]:focus-visible {
@@ -46,7 +48,7 @@
     border: 0;
     background: none;
     font-size: 16px;
-    padding: 0 30px;
+    padding: 0 60px;
     margin: 3px;
     background: #e96b56;
     color: #fff;
@@ -60,9 +62,9 @@
 
 #footer .footer-top {
     color: #000;
-    background: #D6CCC0;
-    border-top: 1px solid #d1c6b8;
-    border-bottom: 1px solid #d1c6b8;
+    background:#D8DBE1;
+    border-top: 1px solid #cbcfd6;
+    border-bottom: 1px solid #cbcfd6;
     padding: 60px 0 30px 0
 }
 

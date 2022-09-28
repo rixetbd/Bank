@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,38 +33,64 @@
     @yield('custom_css')
     {{-- Custom --}}
     <style>
-        body.dark_mode, body.dark_mode .services-cards{color: #fff;background-color: #202020;}
+        body.dark_mode,
+        body.dark_mode .services-cards {
+            color: #fff;
+            background-color: #202020;
+        }
+
         body.dark_mode .services-cards .card-item,
         body.dark_mode .team .team-member,
         body.dark_mode .testimonial-item,
-        body.dark_mode #footer .footer-newsletter{background-color: #3e3e3e;}
-        body.dark_mode #footer .footer-top{background: #2c2c2c;border: none}
-        body.dark_mode .hero .btn-get-started{color: #3e3e3e;}
+        body.dark_mode #footer .footer-newsletter {
+            background-color: #3e3e3e;
+        }
 
-        body.dark_mode h1, body.dark_mode h2, body.dark_mode h3, body.dark_mode h4, body.dark_mode h5, body.dark_mode h6, body.dark_mode p, body.dark_mode a
-        {
+        body.dark_mode #footer .footer-top {
+            background: #2c2c2c;
+            border: none
+        }
+
+        body.dark_mode .hero .btn-get-started {
+            color: #3e3e3e;
+        }
+
+        body.dark_mode h1,
+        body.dark_mode h2,
+        body.dark_mode h3,
+        body.dark_mode h4,
+        body.dark_mode h5,
+        body.dark_mode h6,
+        body.dark_mode p,
+        body.dark_mode a {
             color: #fff !important;
         }
+
         .BG_color_checkbox {
             opacity: 0;
             position: absolute;
             /* display: block !important;
             margin: 0 36px; */
         }
-        
+
         body,
-        body.light_mode{
+        body.light_mode {
             color: #292c35;
             background-color: #D8DBE1;
             /* background-color: #f9f9f9; */
         }
+        .light_mode_Sectoin {
+            position: relative;
+            background-color: #D8DBE1;
+        }
+
         .label {
             cursor: pointer;
             width: 35px;
             height: 17px;
-            background-color:#111;
+            background-color: #111;
             display: flex;
-            border-radius:50px;
+            border-radius: 50px;
             align-items: center;
             justify-content: space-between;
             padding: 5px;
@@ -74,8 +98,13 @@
             transform: scale(1.5);
         }
 
-        body.dark_mode .color_mode_icon .label{background: #fff}
-        body.dark_mode .color_mode_icon .ball{background-color: #000}
+        body.dark_mode .color_mode_icon .label {
+            background: #fff
+        }
+
+        body.dark_mode .color_mode_icon .ball {
+            background-color: #000
+        }
 
 
         .ball {
@@ -90,7 +119,7 @@
         }
 
         /*  target the elemenent after the label*/
-        .BG_color_checkbox:checked + .label .ball{
+        .BG_color_checkbox:checked+.label .ball {
             transform: translateX(17px);
         }
 
@@ -114,7 +143,8 @@
     <nav>
         <div class="container">
             <div class="logo">
-                <a href="{{route('frontend.home')}}"><img src="{{asset('uploads/img/logo3.png')}}" alt="Bangladesh Outsourcing Company" /></a>
+                <a href="{{route('frontend.home')}}"><img src="{{asset('uploads/img/logo3.png')}}"
+                        alt="Bangladesh Outsourcing Company" /></a>
             </div>
             <input type="radio" name="slider" id="menu-btn" />
             <input type="radio" name="slider" id="close-btn" />
@@ -179,11 +209,11 @@
                 <li class="nav_item"><a class="shadow_one" href="{{route('frontend.contact.index')}}">Contact</a></li>
                 <div class="d-flex align-items-center color_mode_icon" style="margin-left: 20px;">
                     <input type="checkbox" class="BG_color_checkbox" id="BG_color_checkbox">
-                  <label for="BG_color_checkbox" class="label">
-                    <i class="fas fa-moon"></i>
-                    <i class='fas fa-sun'></i>
-                    <div class='ball'>
-                  </label>
+                    <label for="BG_color_checkbox" class="label">
+                        <i class="fas fa-moon"></i>
+                        <i class='fas fa-sun'></i>
+                        <div class='ball'>
+                    </label>
                 </div>
             </ul>
             <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
@@ -261,7 +291,7 @@
     <!-- Footer || Start -->
 
     <!-- Footer || End -->
-    <footer id="footer">
+    <footer id="footer" class="light_mode_Sectoin">
         <div class="footer-newsletter">
             <div class="container">
                 <div class="row">
@@ -287,7 +317,8 @@
                         <div class="social-links mt-3">
                             <a class="facebook" target="_blank" href="#"><i class="bx bxl-facebook"></i></a>
                             <a class="instagram" target="_blank" href="#"><i class="bx bxl-instagram"></i></a>
-                            <a class="twitter" target="_blank" href="#"><i class="bx bxl-twitter"></i></a>
+                            <a class="twitter" target="_blank" href="https://twitter.com/bdosc22"><i
+                                    class="bx bxl-twitter"></i></a>
                             <a class="linkedin" target="_blank" href="https://www.linkedin.com/company/bdosc/"><i
                                     class="bx bxl-linkedin"></i></a>
                         </div>
@@ -315,7 +346,8 @@
                     <div class="col-lg-3 col-md-6 footer-contact">
                         <h4>Contact Us</h4>
                         <p> Block-E, Zoo Road <br> Mirpur 01, Dhaka-1216<br> Bangladesh <br><br><strong>Phone:</strong>
-                            +1 5589 55488 55<br> <strong>Email:</strong> <a href="mailto:contact@bdosc.com" class="text-dark">contact@bdosc.com</a><br> </p>
+                            +1 5589 55488 55<br> <strong>Email:</strong> <a href="mailto:contact@bdosc.com"
+                                class="text-dark">contact@bdosc.com</a><br> </p>
                     </div>
                 </div>
             </div>
@@ -350,12 +382,12 @@
         if (localStorage.getItem('color_mode') !== null) {
             // document.body.classList.toggle('light_mode');
             let color_mode = localStorage.getItem("color_mode");
-            if(color_mode == "dark_mode"){
+            if (color_mode == "dark_mode") {
                 // alert('dark_mode');
-                $('#BG_color_checkbox').attr('checked','checked');
+                $('#BG_color_checkbox').attr('checked', 'checked');
                 $('BG_color_checkbox').click();
                 document.body.classList.toggle('dark_mode');
-            }else{
+            } else {
                 // alert('light_mode');
                 $('#BG_color_checkbox').removeAttr('checked');
                 $('BG_color_checkbox').click();
@@ -364,14 +396,14 @@
         }
 
 
-        checkbox.addEventListener('change', ()=>{
+        checkbox.addEventListener('change', () => {
             localStorage.clear();
             isChecked = $('#BG_color_checkbox').is(':checked');
-            if(isChecked){
+            if (isChecked) {
                 document.body.classList.remove('light_mode');
                 document.body.classList.add('dark_mode');
                 localStorage.setItem("color_mode", "dark_mode");
-            }else{
+            } else {
                 document.body.classList.remove('dark_mode');
                 document.body.classList.add('light_mode');
                 localStorage.setItem("color_mode", "light_mode");
@@ -379,6 +411,8 @@
         })
 
     </script>
+
+
 </body>
 
 </html>

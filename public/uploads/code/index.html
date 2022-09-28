@@ -1,121 +1,316 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js" >
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input Ptoject</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="fp.js"></script>
-    <link rel="stylesheet" href="">
-</head>
-<body>
 
-    <div id="preloader">
-        <div id="ctn-preloader" class="ctn-preloader">
-            <div class="animation-preloader">
-                <div class="spinner"></div>
-                <div class="txt-loading">
-                    <span data-text-preloader="B" class="letters-loading">
-                        B
-                    </span>
-                    <span data-text-preloader="D" class="letters-loading">
-                        D
-                    </span>
-                    <span data-text-preloader="O" class="letters-loading">
-                        O
-                    </span>
-                    <span data-text-preloader="S" class="letters-loading">
-                        S
-                    </span>
-                    <span data-text-preloader="C" class="letters-loading">
-                        C
-                    </span>
-                </div>
-            </div>
-            <div class="loader">
-                <div class="row">
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-left">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                    <div class="col-3 loader-section section-right">
-                        <div class="bg"></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!--- basic page needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BDOSC</title>
 
-
-
-
-
-
-
-
-    <div class="wrapper">
-        <header>Send a massages</header>
-    <form action="#">
-        <div class="dbl_field">
-            <div class="field">
-                <input type="text" placeholder="Enter Your name">
-                <i class="fas fa-user"></i>
-            </div>
-            <div class="field">
-                <input type="text" placeholder="Enter Your email">
-                <i class="fas fa-envelope"></i>
-            </div>
-            <div class="field">
-                <input type="text" placeholder="Enter Your phone">
-                <i class="fas fa-alt"></i>
-            </div>
-            <div class="field">
-                <input type="text" placeholder="Enter Your website">
-                <i class="fas fa-globe"></i>
-            </div>
-        </div>
-        <div class="message">
-            <textarea placeholder="Write your message"></textarea>
-            <!-- <i class="material-icon">message</i> -->
-        </div>
-        <div class="button-area">
-            <button type="submit">Send messsage</button>
-            <snap>sending a message........</snap>
-        </div>
-    </form>
-    </div>
-    </div>
-
-
-    <script src="//code.jquery.com/jquery-3.6.1.min.js"></script>
     <script>
-        (function ($) {
-	        'use strict';
-
-	// preloader js
-	function loader() {
-		$(window).on('load', function () {
-			$('#ctn-preloader').addClass('loaded');
-			$("#loading").fadeOut(500);
-			// Una vez haya terminado el preloader aparezca el scroll
-
-			if ($('#ctn-preloader').hasClass('loaded')) {
-				// Es para que una vez que se haya ido el preloader se elimine toda la seccion preloader
-				$('#preloader').delay(500).queue(function () {
-					$(this).remove();
-				});
-			}
-		});
-	}
-	loader();
-    })(jQuery);
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
     </script>
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body id="top" class="theme-particles">
+
+
+    <!-- preloader
+    ================================================== -->
+    <div id="preloader">
+        <div id="loader"></div>
+    </div>
+
+
+    <!-- page wrap
+    ================================================== -->
+    <div class="s-pagewrap">
+
+        <!-- # intro
+        ================================================== -->
+        <section id="intro" class="s-intro">
+
+            <div id="particles-js" class="s-intro__particles"></div>
+
+            <div class="row s-intro__content">
+                <div class="column lg-12">
+                    <h1 class="text-white" style="font-size: 90px;line-height: 100px;text-transform: uppercase;">Bangladesh Outsourcing<br>Company</h1>
+                    <div class="counter">
+                        <div class="counter__time">
+                            <span class="ss-days">2</span>
+                            <span>days</span>
+                        </div>
+                        <div class="counter__time">
+                            <span class="ss-hours">01</span>
+                            <span>hours</span>
+                        </div>
+                        <div class="counter__time minutes">
+                            <span class="ss-minutes">01</span>
+                            <span>mins</span>
+                        </div>
+                        <div class="counter__time">
+                            <span class="ss-seconds">55</span>
+                            <span>secs</span>
+                        </div>
+                    </div>  <!-- end counter -->
+
+                    <div class="s-intro__content-bottom">
+                        <h1 class="s-intro__content-title">Our site is launching soon.</h1>
+                        <p>
+                            We are ready for Business Process Outsourcing Services. Bangladesh Outsourcing Company is a global business process outsourcing company. All of our services satisfy stringent international standards. We have projections all around the US and Western Europe.
+                        </p>
+                    </div>
+
+                </div>
+
+                <div class="s-intro__scroll">
+                    <p class="scroll-text">Scroll For More</p>
+                    <a href="#info" class="smoothscroll">
+                        <div class="mouse"></div>
+                    </a>
+                    <div class="end-top"></div>
+                </div> <!-- end s-intro__scroll -->
+
+            </div> <!-- intro__content -->
+
+        </section> <!-- end s-intro -->
+
+
+        <!-- # info
+        ================================================== -->
+        <section id="info" class="s-info">
+
+            <div class="s-info__bg"></div>
+
+            <div class="row">
+                <div class="column lg-12">
+
+                    <nav class="tab-nav">
+                        <ul class="tab-nav__list">
+                            <li class="active" data-id="tab-about">
+                                <a href="#tab-about">
+                                    About
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tab-services">
+                                    Services
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#tab-contact">
+                                    Subscribe
+                                </a>
+                            </li>
+                        </ul>
+                    </nav> <!-- end tab-nav -->
+
+                    <div class="tab-content">
+
+                        <!-- 01 - tab about -->
+                        <div id="tab-about" class='tab-content__item'>
+
+                            <div class="row tab-content__item-header">
+                                <div class="column">
+                                    <h2>Get To Know Us.</h2>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="column">
+                                    <p class="lead">
+                                        Bangladesh Outsourcing Company is a privately held data input outsourcing firm situated in Bangladesh. We have more than four years of data entry experience. Bangladesh Outsourcing Company is committed to providing our clients in the United States, United Kingdom, Canada, Australia, Brazil, Spain, France, Germany, Italy, Austria, New Zealand, United Arab Emirates, and other countries with cost-effective data entry and BPO services.
+                                    </p>
+
+                                    <p>
+                                        We have created and nurtured a highly competent, experienced, and devoted staff of data entry professionals throughout the course of our 4+ years in the data entry industry. We are a dependable and dedicated data entry company that offers our customers quick, simple, and economical data input services throughout the world.
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div> <!-- end 01 - tab about -->
+
+                        <!-- 02 - tab services -->
+                        <div id="tab-services" class='tab-content__item'>
+
+                            <div class="row tab-content__item-header">
+                                <div class="column">
+                                    <h2>What We Do.</h2>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="column">
+                                    <p class="lead">
+                                    Sit ut cum molestiae. Dolore ducimus qui quasi. Fugiat consequatur sit vel illum vel et
+                                    a delectus. Vel sequi vitae voluptatem perspiciatis eligendi. Voluptatibus optio natus
+                                    asperiores est commodi amet quia architecto. Dolores necessitatibus et. Voluptatibus
+                                    optio natus asperiores est commodi amet quia architecto. Dolores necessitatibus et.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="row services-list block-lg-one-half block-md-one-half block-tab-whole">
+
+                                <div class="column services-list__item">
+                                    <div class="services-list__item-content">
+                                        <h4 class="item-title">Data Entry</h4>
+                                        <p>Get high-quality data entry services from experienced professionals at affordable pricing.</p>
+                                    </div>
+                                </div>
+
+                                <div class="column services-list__item">
+                                    <div class="services-list__item-content">
+                                        <h4 class="item-title">Lead Generation</h4>
+                                        <p>Lead generation is the process of creating interest in a service or product with the goal of generating new sales leads.</p>
+                                    </div>
+                                </div>
+
+                                <div class="column services-list__item">
+                                    <div class="services-list__item-content">
+                                        <h4 class="item-title">Web Development</h4>
+                                        <p>In order to provide our clients with only the best websites, we use the latest technology and advanced web technology.</p>
+                                    </div>
+                                </div>
+
+                                <div class="column services-list__item">
+                                    <div class="services-list__item-content">
+                                        <h4 class="item-title">Editing Photos</h4>
+                                        <p>To provide our clients with only the best photographs, we employ cutting-edge technology and advanced photo enhancing technologies.</p>
+                                    </div>
+                                </div>
+
+                            </div> <!-- end services-list -->
+
+                        </div> <!-- end 02 - tab services -->
+
+                        <!-- 03 - tab contact -->
+                        <div id="tab-contact" class="tab-content__item">
+
+                            <div class="row tab-content__item-header">
+                                <div class="column">
+                                    <h2>Our Vision</h2>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="column">
+
+                                    <p>Bangladesh Outsourcing Company is a renowned BPO firm based in Mirpur-1, Dhaka, Bangladesh. We specialize in Lead Generation, Offshore Data Entry Outsourcing, Online Data Entry, Offline Data Entry, Typing Services, Data Collection, Web Research, and other similar services. Our main goal is to provide the finest possible service to our clients. Our employees are committed to providing high-quality results to our global clients. Our services include high accuracy results, quick turnaround times, low rates, stable and secure servers, and the application of best practices. We attempt to build long-term, fruitful relationships with our clients and to provide them with the outcomes they expect.
+                                    </p>
+
+                                    <p>
+                                        To make a business relationship with us please don’t be late to get a free trial.
+                                        For further information contact us to get our mentioning outsourcing services. Thank you.
+                                    </p>
+
+                                    <!-- <form id="mc-form" class="mc-form">
+                                        <input type="email" name="EMAIL" id="mce-EMAIL" class="u-fullwidth text-center" placeholder="Email Address" required>
+                                        <input type="submit" name="subscribe" value="Subscribe" class="btn--small btn--primary u-fullwidth">
+                                        <div class="mc-status"></div>
+                                    </form> -->
+
+                                </div>
+                            </div>
+
+                        </div> <!-- end 03 - tab contact -->
+
+                    </div> <!-- end tab content -->
+
+                </div> <!-- end column -->
+            </div> <!-- end row -->
+
+        </section> <!-- end s-info -->
+
+
+        <footer id="footer">
+            <div class="footer-newsletter">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <h4>Our Newsletter</h4>
+                            <p>Join with us to get updates.</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <form action="" method="post"> <input type="email" name="email"><input type="submit"
+                                    value="Subscribe"> </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6 footer-info">
+                            <h3>About BDOSC</h3>
+                            <p>Bangladesh Outsourcing Company is a global business process outsourcing company. All of our
+                                services satisfy stringent international standards. We have projections all around the US
+                                and Western Europe.</p>
+                            <div class="social-links mt-3">
+                                <a class="facebook" target="_blank" href="#"><i class="bx bxl-facebook"></i></a>
+                                <a class="instagram" target="_blank" href="#"><i class="bx bxl-instagram"></i></a>
+                                <a class="twitter" target="_blank" href="https://twitter.com/bdosc22"><i class="bx bxl-twitter"></i></a>
+                                <a class="linkedin" target="_blank" href="https://www.linkedin.com/company/bdosc/"><i
+                                        class="bx bxl-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Useful Links</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i><a href="#">Home</a></li>
+                                <li><i class="bx bx-chevron-right"></i><a href="#">About us</a></li>
+                                <li><i class="bx bx-chevron-right"></i><a href="#">Services</a></li>
+                                <li><i class="bx bx-chevron-right"></i><a href="#">Terms of service</a></li>
+                                <li><i class="bx bx-chevron-right"></i><a href="#">Privacy policy</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6 footer-links">
+                            <h4>Our Services</h4>
+                            <ul>
+                                <li><i class="bx bx-chevron-right"></i><a href="#">Web Design</a></li>
+                                <li><i class="bx bx-chevron-right"></i><a href="#">Web Development</a></li>
+                                <li><i class="bx bx-chevron-right"></i><a href="#">Product Management</a></li>
+                                <li><i class="bx bx-chevron-right"></i><a href="#">Marketing</a></li>
+                                <li><i class="bx bx-chevron-right"></i><a href="#">Graphic Design</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 col-md-6 footer-contact">
+                            <h4>Contact Us</h4>
+                            <p> Block-E, Zoo Road <br> Mirpur 01, Dhaka-1216<br> Bangladesh <br><br><strong>Phone:</strong>
+                                +1 5589 55488 55<br> <strong>Email:</strong> <a href="mailto:contact@bdosc.com" class="text-dark">contact@bdosc.com</a><br> </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">Copyright &copy; <script>let tdate = new Date(); document.write(tdate.getFullYear())</script> • <strong><a href="/"
+                            style="color: #e96b56;">BDOSC</a></strong>. All Rights
+                    Reserved </div>
+            </div>
+        </footer>
+
+    </div> <!-- end pagewrap -->
+
+
+    <!-- Java Script
+    ================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/particles.min.js"></script>
+    <script src="js/particle-settings.js"></script>
 
 </body>
 </html>
