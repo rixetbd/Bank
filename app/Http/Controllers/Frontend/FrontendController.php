@@ -7,6 +7,7 @@ use App\Models\Country;
 use App\Http\Controllers\Controller;
 use App\Models\City;
 use App\Models\Industry;
+use App\Models\Service;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -163,11 +164,24 @@ class FrontendController extends Controller
         $all_city = City::orderby('name', 'asc')->get();
         $all_industry = Industry::orderby('name', 'asc')->get();
         $lead_data = Lead::paginate(100);
+        $service_list = Service::where('status', 1)->get();
         return view('frontend.final.mainpage',[
             'all_countries'=>$all_countries,
             'lead_data'=>$lead_data,
             'all_city'=>$all_city,
             'all_industry'=>$all_industry,
+            'service_list'=>$service_list,
         ]);
+    }
+
+    public function getservicedata(Request $request){
+
+
+        $service = Service::find($request->ServiceID);
+
+        return response()->json([
+            'service'=>$service,
+        ]);
+
     }
 }

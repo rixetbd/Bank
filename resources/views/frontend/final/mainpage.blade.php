@@ -181,8 +181,12 @@ or product.',
                 </div>
                 <div class="service_col_one_2">
                     <ul class="service_all_list" id="menu">
-                        <li class="grp_one">Lead Generation</li>
-                        <li class="grp_one">Content Writing</li>
+                        @forelse ($service_list as $service)
+                            <li class="grp_one" onclick="ServiceList('{{$service->id}}')">{{$service->name}}</li>
+                        @empty
+
+                        @endforelse
+                        {{-- <li class="grp_one">Content Writing</li>
                         <li class="grp_one">Social Media Marketing</li>
                         <li class="grp_one">SEO | DM</li>
                         <li class="grp_one">Email Marketing</li>
@@ -211,138 +215,26 @@ or product.',
                         <li class="grp_four">Civil records</li>
                         <li class="grp_four">eBay Product Data Entry</li>
                         <li class="grp_four">Product Data Entry</li>
-                        <li class="grp_four">Product Listing</li>
+                        <li class="grp_four">Product Listing</li> --}}
                     </ul>
                 </div>
             </div>
             <div class="col-sm-12 col-md-6" id="service_col_two">
                 <div class="list_item_info">
                     <div class="sct_heading" id="sct_heading">
-                        <h4>Why is Small Business Lead Generation Important?</h4>
-                        <h6>Digital Marketing Expert</h6>
+                        {{-- @forelse ($service_list as $service) --}}
+                            <h4 id="service_list_title">{{$service_list[0]->title}}</h4>
+                            <h6 id="service_list_category">{{$service_list[0]->category}}</h6>
+                        {{-- @empty
+
+                        @endforelse --}}
                     </div>
                     <div class="sct_content">
                         <img src="http://127.0.0.1:8000/final_front_assets/img/portfolio/branding-2.jpg" alt="" class="img-fluid">
-                        <h4>What is B2B lead generation ?</h4>
-                        <p>
-                            In Business, B2B lead generation is the act of identifying and initiating an interest of
-                            prospective
-                            customers. Identifying prospective customers means finding businesses or clients who may
-                            have an
-                            interest in your offering business product or services (Shortly your target
-                            audience).Initiating
-                            interest is about capturing information from these potential customers and feeding them
-                            into
-                            your
-                            sales funnel. Capturing information of potential Consumers Is called lead and these
-                            leads
-                            can be
-                            converted into your Main customer.
-                        </p>
 
-                        <h4>How does B2B lead generation work?</h4>
-                        <p>Generating leads can be difficult and time-consuming but the idea itself is pretty
-                            simple.
-                            The first
-                            step of B2B lead generation is finding the potential leads (contact information). This
-                            information
-                            is either sourced in house or by a third party lead generation company. Lead generation
-                            companies
-                            collect potential buyers' or consumers' Leads & their information.</p>
-
-                        <p>Now you have a database of potential high quality leads to contact with them. This can
-                            either
-                            be an
-                            email or a social media post. The main point here is to put your business or product in
-                            front of the
-                            eyes of the people who will be more likely to enjoy your product or service</p>
-
-                        <p>“Searching and Qualifying Leads” This stage is about research,is your customer aware
-                            about
-                            your
-                            brand? Do they trust your brand and strategy? Are they already considering making a
-                            purchase? These
-                            are the main factors many B2B customers will be asking themselves before they make a
-                            purchase.
-                            "Close The Lead" is the last part of your lead generation successful journey. After
-                            closing
-                            the
-                            leads you should nurture your leads</p>
-
-                        <h4>Why Is B2B Lead Generation Important To My Business?</h4>
-                        <p>
-                            Implementing a B2B lead generation strategy is Important today because many prospects
-                            want
-                            to
-                            control their buying journey. Ads and traditional marketing Will not work anymore.
-                            Today’s
-                            Customers
-                            are conducting their own research to find solutions to their problems. Lead generation
-                            strategy will
-                            help you to find this target Consumers. Here’s a look at some of the benefits of B2B
-                            lead
-                            generation.
-                        </p>
-                        <h4>What is B2B lead generation ?</h4>
-                        <p>
-                            In Business, B2B lead generation is the act of identifying and initiating an interest of
-                            prospective
-                            customers. Identifying prospective customers means finding businesses or clients who may
-                            have an
-                            interest in your offering business product or services (Shortly your target
-                            audience).Initiating
-                            interest is about capturing information from these potential customers and feeding them
-                            into
-                            your
-                            sales funnel. Capturing information of potential Consumers Is called lead and these
-                            leads
-                            can be
-                            converted into your Main customer.
-                        </p>
-
-                        <h4>How does B2B lead generation work?</h4>
-                        <p>Generating leads can be difficult and time-consuming but the idea itself is pretty
-                            simple.
-                            The first
-                            step of B2B lead generation is finding the potential leads (contact information). This
-                            information
-                            is either sourced in house or by a third party lead generation company. Lead generation
-                            companies
-                            collect potential buyers' or consumers' Leads & their information.</p>
-
-                        <p>Now you have a database of potential high quality leads to contact with them. This can
-                            either
-                            be an
-                            email or a social media post. The main point here is to put your business or product in
-                            front of the
-                            eyes of the people who will be more likely to enjoy your product or service</p>
-
-                        <p>“Searching and Qualifying Leads” This stage is about research,is your customer aware
-                            about
-                            your
-                            brand? Do they trust your brand and strategy? Are they already considering making a
-                            purchase? These
-                            are the main factors many B2B customers will be asking themselves before they make a
-                            purchase.
-                            "Close The Lead" is the last part of your lead generation successful journey. After
-                            closing
-                            the
-                            leads you should nurture your leads</p>
-
-                        <h4>Why Is B2B Lead Generation Important To My Business?</h4>
-                        <p>
-                            Implementing a B2B lead generation strategy is Important today because many prospects
-                            want
-                            to
-                            control their buying journey. Ads and traditional marketing Will not work anymore.
-                            Today’s
-                            Customers
-                            are conducting their own research to find solutions to their problems. Lead generation
-                            strategy will
-                            help you to find this target Consumers. Here’s a look at some of the benefits of B2B
-                            lead
-                            generation.
-                        </p>
+                        <div id="service_list_description" class="mt-4">
+                            {!! $service_list[0]->description !!}
+                        </div>
                     </div>
                 </div>
                 {{-- <div class="list_item_info">
@@ -2045,6 +1937,50 @@ or product.',
     });
 
 </script>
+
+
+
+
+<script>
+
+    $('#menu li').click(function(){
+
+        $('#menu li').removeClass('active');
+        $(this).addClass('active');
+
+    });
+
+    function ServiceList(ServiceID)
+    {
+
+
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+            }
+        });
+
+        $.ajax({
+               type:'POST',
+               url:`/getservicedata`,
+               data:{'ServiceID':ServiceID},
+               success:function(data) {
+                //   $("#msg").html(data.msg);
+                // alert(data.service.name);
+                $('#service_list_title').html(data.service.title);
+                $('#service_list_category').html(data.service.category);
+                $('#service_list_description').html(data.service.description);
+               }
+        });
+
+
+
+    }
+</script>
+
+
+
+
 
 @endsection
 

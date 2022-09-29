@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\IndustryController;
 use App\Http\Controllers\Admin\LeadController;
 use App\Http\Controllers\Admin\MailboxController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CSV\CsvUploadController;
 use Illuminate\Support\Facades\Auth;
@@ -78,5 +79,15 @@ Route::middleware('auth')->group(function(){
         Route::get('/admin/settings', 'index')->name('admin.settings');
 
     });
+
+    Route::controller(ServiceController::class)->group(function(){
+
+        Route::get('/admin/service', 'index')->name('admin.service.index');
+        Route::post('/admin/service/create', 'create')->name('admin.service.create');
+        Route::get('/admin/service/price/index/{id}', 'price_index')->name('admin.service.price.index');
+        Route::post('/admin/service/price/create', 'price_create')->name('admin.service.price.create');
+
+    });
+
 
 });

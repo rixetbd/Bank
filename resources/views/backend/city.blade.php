@@ -195,6 +195,5 @@
             bsCustomFileInput.init();
         });
 
-
     </script>
 @endsection

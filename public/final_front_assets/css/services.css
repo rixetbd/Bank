@@ -239,8 +239,7 @@
     box-shadow: 3px 3px 6px #a8a9ad, -3px -3px 6px #cecaca;
     /* box-shadow: inset 3px 3px 6px #a2a3ab, inset -3px -3px 6px #ffffff; */
 }
-#service_col_one ul li.active {color: red;}
-
+#service_col_one ul li a{color: #000;}
 #service_col_one ul li.grp_one {
     border-right: 3px solid red;
 }

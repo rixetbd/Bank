@@ -42,6 +42,7 @@ Route::controller(FrontendController::class)->group(function(){
 
 Route::controller(FrontendController::class)->group(function(){
     Route::get('/000', 'index_0')->name('frontend.0');
+    Route::post('/getservicedata', 'getservicedata')->name('frontend.getservicedata');
 });
 
 

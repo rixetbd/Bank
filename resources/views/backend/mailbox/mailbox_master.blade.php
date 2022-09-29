@@ -169,7 +169,6 @@
         //Add text editor
         $('#compose-textarea').summernote()
     })
-
 </script>
 
 @endsection
