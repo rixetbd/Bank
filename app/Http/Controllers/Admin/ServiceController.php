@@ -8,6 +8,7 @@ use App\Models\ServiceImage;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Intervention\Image\Facades\Image;
 
 class ServiceController extends Controller
 {
@@ -52,17 +53,23 @@ class ServiceController extends Controller
         if($request->hasFile('image'))
         {
             foreach ($files as $key=>$file) {
+
+
+                $img = $id.'_service_'.uniqid().'.'.$file->getClientOriginalExtension();
+                Image::make($file)->fit(800, 600)->save(public_path('uploads/service_banner/'.$img));
+
                 ServiceImage::insert([
                     'service_id'=>$id,
                     'banner_index'=>$key+1,
-                    'banner'=>$file->getClientOriginalName(),
+                    'banner'=>$img,
                     'created_at'=>Carbon::now(),
                 ]);
             }
         }
 
         if($request->input('action') == 'save'){
-            return 'save';
+            // return 'save';
+            return back();
         }elseif($request->input('action') == 'next'){
 
             return redirect()->route('admin.service.price.index', $id);

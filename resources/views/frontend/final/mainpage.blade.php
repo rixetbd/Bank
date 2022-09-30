@@ -1,3 +1,20 @@
+{{--
+
+    CSS Idea
+
+        https://codepen.io/chiraggoyal777/pen/PowXBZo
+        https://codepen.io/andreasantonsson/pen/pobMNoy
+
+
+
+
+
+
+
+
+
+--}}
+
 @extends('frontend.final.master')
 
 @section('meta_tag')
@@ -184,7 +201,7 @@ or product.',
                         @forelse ($service_list as $service)
                             <li class="grp_one" onclick="ServiceList('{{$service->id}}')">{{$service->name}}</li>
                         @empty
-
+                            <li class="grp_one">No Service</li>
                         @endforelse
                         {{-- <li class="grp_one">Content Writing</li>
                         <li class="grp_one">Social Media Marketing</li>
@@ -222,89 +239,81 @@ or product.',
             <div class="col-sm-12 col-md-6" id="service_col_two">
                 <div class="list_item_info">
                     <div class="sct_heading" id="sct_heading">
-                        {{-- @forelse ($service_list as $service) --}}
+
+                        @if (count($service_list) != 0)
                             <h4 id="service_list_title">{{$service_list[0]->title}}</h4>
                             <h6 id="service_list_category">{{$service_list[0]->category}}</h6>
-                        {{-- @empty
-
-                        @endforelse --}}
+                        @else
+                            <h4 id="service_list_title">Service Title</h4>
+                            <h6 id="service_list_category">Service Category</h6>
+                        @endif
                     </div>
                     <div class="sct_content">
-                        <img src="http://127.0.0.1:8000/final_front_assets/img/portfolio/branding-2.jpg" alt="" class="img-fluid">
+                        <div class="slider" id="slider_add">
+                            <div class="slide_viewer">
+                                <div class="slide_group" id="service_banner_slider">
+                                    <div class="slide">
+                                        <img src="http://127.0.0.1:8000/final_front_assets/img/portfolio/branding-1.jpg"
+                                            alt="slider1" class="img-fluid">
+                                    </div>
+
+                                    <div class="slide">
+                                        <img src="http://127.0.0.1:8000/final_front_assets/img/portfolio/branding-2.jpg"
+                                            alt="slider1" class="img-fluid">
+                                    </div>
+
+                                    <div class="slide">
+                                        <img src="http://127.0.0.1:8000/final_front_assets/img/portfolio/branding-3.jpg"
+                                            alt="slider1" class="img-fluid">
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slide_buttons"> </div>
+
+                        <div class="directional_nav">
+                            <div class="previous_btn" title="Previous">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px"
+                                    height="40px" viewBox="-11 -11.5 65 66">
+                                    <g>
+                                        <g>
+                                            <path fill="#474544"
+                                                d="M-10.5,22.118C-10.5,4.132,4.133-10.5,22.118-10.5S54.736,4.132,54.736,22.118
+              c0,17.985-14.633,32.618-32.618,32.618S-10.5,40.103-10.5,22.118z M-8.288,22.118c0,16.766,13.639,30.406,30.406,30.406 c16.765,0,30.405-13.641,30.405-30.406c0-16.766-13.641-30.406-30.405-30.406C5.35-8.288-8.288,5.352-8.288,22.118z" />
+                                            <path fill="#474544"
+                                                d="M25.43,33.243L14.628,22.429c-0.433-0.432-0.433-1.132,0-1.564L25.43,10.051c0.432-0.432,1.132-0.432,1.563,0	c0.431,0.431,0.431,1.132,0,1.564L16.972,21.647l10.021,10.035c0.432,0.433,0.432,1.134,0,1.564	c-0.215,0.218-0.498,0.323-0.78,0.323C25.929,33.569,25.646,33.464,25.43,33.243z" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="next_btn" title="Next">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px"
+                                    height="40px" viewBox="-11 -11.5 65 66">
+                                    <g>
+                                        <g>
+                                            <path fill="#474544"
+                                                d="M22.118,54.736C4.132,54.736-10.5,40.103-10.5,22.118C-10.5,4.132,4.132-10.5,22.118-10.5	c17.985,0,32.618,14.632,32.618,32.618C54.736,40.103,40.103,54.736,22.118,54.736z M22.118-8.288	c-16.765,0-30.406,13.64-30.406,30.406c0,16.766,13.641,30.406,30.406,30.406c16.768,0,30.406-13.641,30.406-30.406 C52.524,5.352,38.885-8.288,22.118-8.288z" />
+                                            <path fill="#474544"
+                                                d="M18.022,33.569c 0.282,0-0.566-0.105-0.781-0.323c-0.432-0.431-0.432-1.132,0-1.564l10.022-10.035 			L17.241,11.615c 0.431-0.432-0.431-1.133,0-1.564c0.432-0.432,1.132-0.432,1.564,0l10.803,10.814c0.433,0.432,0.433,1.132,0,1.564 L18.805,33.243C18.59,33.464,18.306,33.569,18.022,33.569z" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </div>
+                        </div><!-- End // .directional_nav -->
 
                         <div id="service_list_description" class="mt-4">
-                            {!! $service_list[0]->description !!}
+                            @if (count($service_list) != 0)
+                                {!! $service_list[0]->description !!}
+                            @else
+                                Description Will be add here.
+                            @endif
                         </div>
                     </div>
                 </div>
-                {{-- <div class="list_item_info">
-                    <div class="sct_heading">
-                        <h4>Why is Small Business Lead Generation Important?</h4>
-                        <h6>Digital Marketing Expert</h6>
-                    </div>
-                    <div class="sct_content">
-                        <h4>What is B2B lead generation ?</h4>
-                        <p>
-                            In Business, B2B lead generation is the act of identifying and initiating an interest of
-                            prospective
-                            customers. Identifying prospective customers means finding businesses or clients who may
-                            have an
-                            interest in your offering business product or services (Shortly your target
-                            audience).Initiating
-                            interest is about capturing information from these potential customers and feeding them
-                            into
-                            your
-                            sales funnel. Capturing information of potential Consumers Is called lead and these
-                            leads
-                            can be
-                            converted into your Main customer.
-                        </p>
-
-                        <h4>How does B2B lead generation work?</h4>
-                        <p>Generating leads can be difficult and time-consuming but the idea itself is pretty
-                            simple.
-                            The first
-                            step of B2B lead generation is finding the potential leads (contact information). This
-                            information
-                            is either sourced in house or by a third party lead generation company. Lead generation
-                            companies
-                            collect potential buyers' or consumers' Leads & their information.</p>
-
-                        <p>Now you have a database of potential high quality leads to contact with them. This can
-                            either
-                            be an
-                            email or a social media post. The main point here is to put your business or product in
-                            front of the
-                            eyes of the people who will be more likely to enjoy your product or service</p>
-
-                        <p>“Searching and Qualifying Leads” This stage is about research,is your customer aware
-                            about
-                            your
-                            brand? Do they trust your brand and strategy? Are they already considering making a
-                            purchase? These
-                            are the main factors many B2B customers will be asking themselves before they make a
-                            purchase.
-                            "Close The Lead" is the last part of your lead generation successful journey. After
-                            closing
-                            the
-                            leads you should nurture your leads</p>
-
-                        <h4>Why Is B2B Lead Generation Important To My Business?</h4>
-                        <p>
-                            Implementing a B2B lead generation strategy is Important today because many prospects
-                            want
-                            to
-                            control their buying journey. Ads and traditional marketing Will not work anymore.
-                            Today’s
-                            Customers
-                            are conducting their own research to find solutions to their problems. Lead generation
-                            strategy will
-                            help you to find this target Consumers. Here’s a look at some of the benefits of B2B
-                            lead
-                            generation.
-                        </p>
-                    </div>
-                </div> --}}
             </div>
             <div class="col-sm-12 col-md-3" id="service_col_three">
                 <div class="service_col_three_main">
@@ -1847,7 +1856,6 @@ or product.',
 <script>
     (function ($) {
         'use strict';
-
         // preloader js
         function loader() {
             $(window).on('load', function () {
@@ -1906,52 +1914,18 @@ or product.',
 </script>
 
 
-<script>
-    $('#service_col_two').scroll(function () {
-
-        // var windscroll = $(window).scrollTop();
-        var windscroll = 1200;
-
-        // alert($(window).scrollTop());
-
-        if (windscroll >= 1200) {
-            // alert('Hi');
-        }
-
-        // // var windscroll = $(window).scrollTop();
-        // if (windscroll >= 100) {
-        //     $('#service_col_two').scroll(function (i) {
-        //         // The number at the end of the next line is how pany pixels you from the top you want it to activate.
-        //         if ($(this).position().top <= windscroll - 0) {
-        //             $('service_all_list li.active').removeClass('active');
-        //             $('.service_all_list li').eq(i).addClass('active');
-        //             alert($('.service_all_list li').eq(i).html());
-        //         }
-        //     });
-
-        // } else {
-
-        //     $('.service_all_list li.active').removeClass('active');
-        //     $('.service_all_list li:first').addClass('active');
-        // }
-    });
-
-</script>
-
 
 
 
 <script>
-
-    $('#menu li').click(function(){
+    $('#menu li').click(function () {
 
         $('#menu li').removeClass('active');
         $(this).addClass('active');
 
     });
 
-    function ServiceList(ServiceID)
-    {
+    function ServiceList(ServiceID) {
 
 
         $.ajaxSetup({
@@ -1961,23 +1935,225 @@ or product.',
         });
 
         $.ajax({
-               type:'POST',
-               url:`/getservicedata`,
-               data:{'ServiceID':ServiceID},
-               success:function(data) {
+            type: 'POST',
+            url: `/getservicedata`,
+            data: {
+                'ServiceID': ServiceID
+            },
+            success: function (data) {
                 //   $("#msg").html(data.msg);
                 // alert(data.service.name);
                 $('#service_list_title').html(data.service.title);
                 $('#service_list_category').html(data.service.category);
                 $('#service_list_description').html(data.service.description);
-               }
+                $('.slide_buttons').html(" ");
+                $('#slider_add').removeClass('slider');
+                $('#service_banner_slider').removeClass('slide_group');
+                $('#service_banner_slider').addClass('slide_group2');
+                $('#slider_add').addClass('slider2');
+                $('#service_banner_slider').html(data.service_img);
+                banner_slider2();
+                console.log(data.service_img);
+            }
         });
 
 
 
     }
+
 </script>
 
+
+
+<script>
+    function banner_slider() {
+        $('.slider').each(function () {
+            var $this = $(this);
+            var $group = $this.find('.slide_group');
+            var $slides = $this.find('.slide');
+            var bulletArray = [];
+            var currentIndex = 0;
+            var timeout;
+
+            function move(newIndex) {
+                var animateLeft, slideLeft;
+
+                advance();
+
+                if ($group.is(':animated') || currentIndex === newIndex) {
+                    return;
+                }
+
+                bulletArray[currentIndex].removeClass('active');
+                bulletArray[newIndex].addClass('active');
+
+                if (newIndex > currentIndex) {
+                    slideLeft = '100%';
+                    animateLeft = '-100%';
+                } else {
+                    slideLeft = '-100%';
+                    animateLeft = '100%';
+                }
+
+                $slides.eq(newIndex).css({
+                    display: 'block',
+                    left: slideLeft
+                });
+                $group.animate({
+                    left: animateLeft
+                }, function () {
+                    $slides.eq(currentIndex).css({
+                        display: 'none'
+                    });
+                    $slides.eq(newIndex).css({
+                        left: 0
+                    });
+                    $group.css({
+                        left: 0
+                    });
+                    currentIndex = newIndex;
+                });
+            }
+
+            function advance() {
+                clearTimeout(timeout);
+                timeout = setTimeout(function () {
+                    if (currentIndex < ($slides.length - 1)) {
+                        move(currentIndex + 1);
+                    } else {
+                        move(0);
+                    }
+                }, 4000);
+            }
+
+            $('.next_btn').on('click', function () {
+                if (currentIndex < ($slides.length - 1)) {
+                    move(currentIndex + 1);
+                } else {
+                    move(0);
+                }
+            });
+
+            $('.previous_btn').on('click', function () {
+                if (currentIndex !== 0) {
+                    move(currentIndex - 1);
+                } else {
+                    move(3);
+                }
+            });
+
+            $.each($slides, function (index) {
+                var $button = $('<a class="slide_btn">&bull;</a>');
+
+                if (index === currentIndex) {
+                    $button.addClass('active');
+                }
+                $button.on('click', function () {
+                    move(index);
+                }).appendTo('.slide_buttons');
+                bulletArray.push($button);
+            });
+
+            advance();
+        });
+    }
+    banner_slider();
+
+</script>
+
+<script>
+    function banner_slider2(){
+        $('.slider2').each(function () {
+            var $this = $(this);
+            var $group = $this.find('.slide_group2');
+            var $slides = $this.find('.slide2');
+            var bulletArray = [];
+            var currentIndex = 0;
+            var timeout;
+
+            function move(newIndex) {
+                var animateLeft, slideLeft;
+
+                advance();
+
+                if ($group.is(':animated') || currentIndex === newIndex) {
+                    return;
+                }
+
+                bulletArray[currentIndex].removeClass('active');
+                bulletArray[newIndex].addClass('active');
+
+                if (newIndex > currentIndex) {
+                    slideLeft = '100%';
+                    animateLeft = '-100%';
+                } else {
+                    slideLeft = '-100%';
+                    animateLeft = '100%';
+                }
+
+                $slides.eq(newIndex).css({
+                    display: 'block',
+                    left: slideLeft
+                });
+                $group.animate({
+                    left: animateLeft
+                }, function () {
+                    $slides.eq(currentIndex).css({
+                        display: 'none'
+                    });
+                    $slides.eq(newIndex).css({
+                        left: 0
+                    });
+                    $group.css({
+                        left: 0
+                    });
+                    currentIndex = newIndex;
+                });
+            }
+
+            function advance() {
+                clearTimeout(timeout);
+                timeout = setTimeout(function () {
+                    if (currentIndex < ($slides.length - 1)) {
+                        move(currentIndex + 1);
+                    } else {
+                        move(0);
+                    }
+                }, 4000);
+            }
+
+            $('.next_btn').on('click', function () {
+                if (currentIndex < ($slides.length - 1)) {
+                    move(currentIndex + 1);
+                } else {
+                    move(0);
+                }
+            });
+
+            $('.previous_btn').on('click', function () {
+                if (currentIndex !== 0) {
+                    move(currentIndex - 1);
+                } else {
+                    move(3);
+                }
+            });
+
+            $.each($slides, function (index) {
+                var $button = $('<a class="slide_btn">&bull;</a>');
+
+                if (index === currentIndex) {
+                    $button.addClass('active');
+                }
+                $button.on('click', function () {
+                    move(index);
+                }).appendTo('.slide_buttons');
+                bulletArray.push($button);
+            });
+
+            advance();
+        });
+    }
+</script>
 
 
 

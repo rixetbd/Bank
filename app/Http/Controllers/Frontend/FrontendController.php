@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Models\City;
 use App\Models\Industry;
 use App\Models\Service;
+use App\Models\ServiceImage;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -178,9 +179,16 @@ class FrontendController extends Controller
 
 
         $service = Service::find($request->ServiceID);
+        $service_img = ServiceImage::where('service_id', $request->ServiceID)->get();
+
+        $imgData = "";
+        foreach ($service_img as  $img) {
+            $imgData .= '<div class="slide2"><img src="'.asset('uploads/service_banner/'.$img->banner).'" alt="'.$img->banner.'" class="img-fluid"></div>';
+        }
 
         return response()->json([
             'service'=>$service,
+            'service_img'=>$imgData,
         ]);
 
     }
