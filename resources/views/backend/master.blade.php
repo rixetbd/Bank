@@ -263,7 +263,7 @@ $currentRouteName = Route::currentRouteName();
                             </ul>
                         </li>
 
-                        <li class="nav-item {{($currentRouteName == "admin.service.index"?"menu-open":" ")}}">
+                        <li class="nav-item {{($currentRouteName == "admin.service.index"?"menu-open":" ")}}{{($currentRouteName == "admin.service.create"?"menu-open":" ")}}">
                             <a href="#" class="nav-link">
                                 <i class="nav-icon fas fa-umbrella"></i>
                                 <p>
@@ -276,6 +276,12 @@ $currentRouteName = Route::currentRouteName();
                                     <a href="{{route('admin.service.index')}}" class="nav-link {{($currentRouteName == "admin.service.index"?"active":" ")}}">
                                         <i class="far fa-circle nav-icon"></i>
                                         <p>List</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="{{route('admin.service.create')}}" class="nav-link {{($currentRouteName == "admin.service.create"?"active":" ")}}">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Create</p>
                                     </a>
                                 </li>
                             </ul>

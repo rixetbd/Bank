@@ -256,17 +256,6 @@ or product.',
                                         <img src="http://127.0.0.1:8000/final_front_assets/img/portfolio/branding-1.jpg"
                                             alt="slider1" class="img-fluid">
                                     </div>
-
-                                    <div class="slide">
-                                        <img src="http://127.0.0.1:8000/final_front_assets/img/portfolio/branding-2.jpg"
-                                            alt="slider1" class="img-fluid">
-                                    </div>
-
-                                    <div class="slide">
-                                        <img src="http://127.0.0.1:8000/final_front_assets/img/portfolio/branding-3.jpg"
-                                            alt="slider1" class="img-fluid">
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
@@ -318,29 +307,25 @@ or product.',
             <div class="col-sm-12 col-md-3" id="service_col_three">
                 <div class="service_col_three_main">
                     <div class="row m-0" id="card_badge">
-                        <div class="col-4 active">
+                        <div class="col">
                             Silver
                         </div>
-                        <div class="col-4">
+                        <div class="col">
                             Gold
                         </div>
-                        <div class="col-4">
+                        <div class="col">
                             Diamond
                         </div>
                     </div>
                     <div class="row p-4" id="card_info">
-                        <div class="col-10 card_info_heading">50 contacts email, phone</div>
-                        <div class="col-2">$50</div>
-                        <div class="col-12 my-4">
-                            LinkedIn, Facebook, Google Web Scraping, Email Collection, Formatting Included
-                        </div>
+                        <div class="col-10 card_info_heading" id="ser_pack_title">Packege Title Here</div>
+                        <div class="col-2" id="ser_pack_price">$50</div>
+                        <div class="col-12 my-4" id="ser_pack_description"> LinkedIn, Facebook, Google Web Scraping, Email Collection, Formatting Included</div>
                         <div class="col-12 mb-1">
-                            <i class="fas fa-clock"></i> 3 Days Delivery
+                            <i class="fas fa-clock"></i> <span id="ser_pack_duration">3</span> Days Delivery
                         </div>
                         <div class="col-12 my-2">
-                            <ul style="list-style: none;margin:0;padding:0;">
-                                <li><i class="fas fa-check text-success"></i> 50 leads included</li>
-                                <li><i class="fas fa-check text-success"></i> Formatting & clean up</li>
+                            <ul style="list-style: none;margin:0;padding:0;" id="ser_pack_active">
                                 <li><i class="fas fa-check"></i> 50 email sends</li>
                             </ul>
                         </div>
@@ -360,6 +345,13 @@ or product.',
     <div id="text4">some more</div>
 </section>
 
+
+<section class="section_part" style="height: 50vh;background:#e7e9ef;padding:0;">
+    <div id="text2" class="container">
+        <h3 class="text-light text-uppercase text-center"
+            style="font-size: 120px;text-shadow: -3px 3px 10px rgb(113 113 113);">Part Second</h3>
+    </div>
+</section>
 
 <section class="section_part" style="height: 50vh;background:#e7e9ef;padding:0;">
     <div id="text2" class="container">
@@ -1918,22 +1910,19 @@ or product.',
 
 
 <script>
-    $('#menu li').click(function () {
 
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $('#menu li').click(function () {
         $('#menu li').removeClass('active');
         $(this).addClass('active');
-
     });
 
     function ServiceList(ServiceID) {
-
-
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
-            }
-        });
-
         $.ajax({
             type: 'POST',
             url: `/getservicedata`,
@@ -1952,14 +1941,59 @@ or product.',
                 $('#service_banner_slider').addClass('slide_group2');
                 $('#slider_add').addClass('slider2');
                 $('#service_banner_slider').html(data.service_img);
+
                 banner_slider2();
-                console.log(data.service_img);
+
+                $('#card_badge').html(data.packageData);
+                $('#card_badge .col:first').addClass('active');
+                $('#ser_pack_title').html(data.package[0]['title']);
+                $('#ser_pack_price').html( "$" + data.package[0]['price']);
+                $('#ser_pack_description').html(data.package[0]['description']);
+                $('#ser_pack_duration').html(data.package[0]['duration']);
+                $('#ser_pack_active').html(data.packageListData);
             }
         });
-
-
-
     }
+
+    function firstService(ServiceID){
+        $.ajax({
+            type: 'POST',
+            url: `/getservicedata/first`,
+            data: {'ServiceID': ServiceID},
+            success: function (data) {
+                $('#service_banner_slider').html(data.service_img);
+                $('#card_badge').html(data.packageData);
+                $('#card_badge .col:first').addClass('active');
+                $('#ser_pack_title').html(data.package[0]['title']);
+                $('#ser_pack_price').html( "$" + data.package[0]['price']);
+                $('#ser_pack_description').html(data.package[0]['description']);
+                $('#ser_pack_duration').html(data.package[0]['duration']);
+                $('#ser_pack_active').html(data.packageListData);
+            }
+        });
+    }
+    firstService();
+
+    function selectedPackage(ServiceID, classIndex){
+
+        $.ajax({
+            type: 'POST',
+            url: `/getservicedata/selected`,
+            data: {'ServiceID': ServiceID},
+            success: function (data) {
+                $('#card_badge').html(data.packageData);
+                $('#ser_pack_title').html(data.package['title']);
+                $('#ser_pack_price').html( "$" + data.package['price']);
+                $('#ser_pack_description').html(data.package['description']);
+                $('#ser_pack_duration').html(data.package['duration']);
+                $('#ser_pack_active').html(data.packageListData);
+                $(`#card_badge .col`).removeClass('active');
+                $(`#card_badge .${classIndex}`).addClass('active');
+            }
+        });
+    }
+
+
 
 </script>
 

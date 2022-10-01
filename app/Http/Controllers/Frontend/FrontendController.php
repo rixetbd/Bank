@@ -7,6 +7,8 @@ use App\Models\Country;
 use App\Http\Controllers\Controller;
 use App\Models\City;
 use App\Models\Industry;
+use App\Models\Package;
+use App\Models\PackageList;
 use App\Models\Service;
 use App\Models\ServiceImage;
 use Illuminate\Http\Request;
@@ -175,21 +177,74 @@ class FrontendController extends Controller
         ]);
     }
 
+    public function getservicedata_first(Request $request){
+        $service = Service::where('status', '1')->first();
+        $service_img = ServiceImage::where('service_id', $service->id)->get();
+        $package = Package::where('service_id', $service->id)->orderBy('packages_index', 'asc')->get();
+        $packageList = PackageList::where('package_id', $package[0]->id)->orderBy('status', 'desc')->get();
+        $imgData = "";
+        foreach ($service_img as  $img) {
+            $imgData .= '<div class="slide2"><img src="'.asset('uploads/service_banner/'.$img->banner).'" alt="'.$img->banner.'" class="img-fluid"></div>';
+        }
+        $packageData = "";
+        foreach ($package as  $item) {
+            $packageData .= '<div class="col" onclick="selectedPackage('.$item->id.')">'.$item->name.'</div>';
+        }
+        $packageListData = "";
+        foreach ($packageList as  $item) {
+            $packageListData .= '<li><i class="fas fa-check '.($item->status == "1"?"text-success":"").'"></i> '.$item->info.'</li>';
+        }
+        return response()->json([
+            'service'=>$service,
+            'service_img'=>$imgData,
+            'package'=>$package,
+            'packageData'=>$packageData,
+            'packageListData'=>$packageListData,
+        ]);
+    }
+
     public function getservicedata(Request $request){
-
-
         $service = Service::find($request->ServiceID);
         $service_img = ServiceImage::where('service_id', $request->ServiceID)->get();
-
+        $package = Package::where('service_id', $service->id)->orderBy('packages_index', 'asc')->get();
+        $packageList = PackageList::where('package_id', $package[0]->id)->orderBy('status', 'desc')->get();
         $imgData = "";
         foreach ($service_img as  $img) {
             $imgData .= '<div class="slide2"><img src="'.asset('uploads/service_banner/'.$img->banner).'" alt="'.$img->banner.'" class="img-fluid"></div>';
         }
 
+        $packageData = "";
+        foreach ($package as  $key=> $item) {
+            $packageData .= '<div class="col col'.$key.'" onclick="selectedPackage('.$item->id.', '.$key.')">'.$item->name.'</div>';
+        }
+
+        $packageListData = "";
+        foreach ($packageList as  $item) {
+            $packageListData .= '<li><i class="fas fa-check '.($item->status == "1"?"text-success":"").'"></i> '.$item->info.'</li>';
+        }
+
         return response()->json([
             'service'=>$service,
             'service_img'=>$imgData,
+            'package'=>$package,
+            'packageData'=>$packageData,
+            'packageListData'=>$packageListData,
         ]);
-
     }
+
+
+    public function getservicedata_selected(Request $request){
+        $package = Package::find($request->ServiceID);
+        $packageList = PackageList::where('package_id', $package->id)->orderBy('status', 'desc')->get();
+
+        $packageListData = "";
+        foreach ($packageList as  $item) {
+            $packageListData .= '<li><i class="fas fa-check '.($item->status == "1"?"text-success":"").'"></i> '.$item->info.'</li>';
+        }
+        return response()->json([
+            'package'=>$package,
+            'packageListData'=>$packageListData,
+        ]);
+    }
+
 }

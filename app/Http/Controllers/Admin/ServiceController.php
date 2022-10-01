@@ -8,29 +8,29 @@ use App\Models\ServiceImage;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 
 class ServiceController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function index()
     {
-
-        return view('backend.services.index');
+        $all_service = Service::all();
+        return view('backend.services.index',[
+            'all_service'=>$all_service,
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create(Request $request)
-    {
 
+    public function create()
+    {
+        return view('backend.services.create');
+    }
+
+
+    public function store(Request $request)
+    {
         $request->validate([
             'name'=>'required',
             'title'=>'required',
@@ -53,8 +53,6 @@ class ServiceController extends Controller
         if($request->hasFile('image'))
         {
             foreach ($files as $key=>$file) {
-
-
                 $img = $id.'_service_'.uniqid().'.'.$file->getClientOriginalExtension();
                 Image::make($file)->fit(800, 600)->save(public_path('uploads/service_banner/'.$img));
 
@@ -68,83 +66,72 @@ class ServiceController extends Controller
         }
 
         if($request->input('action') == 'save'){
-            // return 'save';
-            return back();
+            Service::find($id)->update([
+                'status'=>0,
+            ]);
+            return redirect()->route('admin.service.index');
         }elseif($request->input('action') == 'next'){
-
             return redirect()->route('admin.service.price.index', $id);
-            // return view('backend.services.price');
         }else{
             return back();
         }
-
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+
     public function destroy($id)
     {
-        //
+        Service::find($id)->delete();
+        $service_img = ServiceImage::where('service_id', $id)->get();
+
+        foreach ($service_img as $service) {
+
+            $img_path = public_path('uploads/service_banner/'.$service->banner);
+            if(File::exists($img_path)) {
+                File::delete($img_path);
+            }
+
+            ServiceImage::find($service->id)->delete();
+        }
+
+
+        return back();
     }
 
-
-
-
-    public function price_create (Request $request)
+    public function status($id)
     {
-        echo "<pre>";
-        print_r($request->all());
-    }
 
+        $service = Service::find($id);
+
+        if ($service->status == 1) {
+            Service::find($id)->update([
+                'status'=>0,
+            ]);
+        } else {
+            Service::find($id)->update([
+                'status'=>1,
+            ]);
+        }
+
+        return back();
+
+
+    }
 
 
     public function price_index ($id)

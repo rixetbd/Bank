@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\IndustryController;
 use App\Http\Controllers\Admin\LeadController;
 use App\Http\Controllers\Admin\MailboxController;
 use App\Http\Controllers\Admin\MenuController;
+use App\Http\Controllers\Admin\PackageController;
 use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\CSV\CsvUploadController;
@@ -83,11 +84,16 @@ Route::middleware('auth')->group(function(){
     Route::controller(ServiceController::class)->group(function(){
 
         Route::get('/admin/service', 'index')->name('admin.service.index');
-        Route::post('/admin/service/create', 'create')->name('admin.service.create');
+        Route::get('/admin/service/create', 'create')->name('admin.service.create');
+        Route::get('/admin/service/status/{id}', 'status')->name('admin.service.status');
+        Route::get('/admin/service/destroy/{id}', 'destroy')->name('admin.service.destroy');
+        Route::post('/admin/service/store', 'store')->name('admin.service.store');
         Route::get('/admin/service/price/index/{id}', 'price_index')->name('admin.service.price.index');
-        Route::post('/admin/service/price/create', 'price_create')->name('admin.service.price.create');
 
     });
 
+    Route::controller(PackageController::class)->group(function(){
+        Route::post('/admin/package/store', 'store')->name('admin.package.store');
+    });
 
 });

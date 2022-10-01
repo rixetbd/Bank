@@ -34,7 +34,7 @@
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{route('admin.index')}}">Home</a></li>
                     <li class="breadcrumb-item active">Inbox</li>
                 </ol>
             </div>
@@ -44,7 +44,7 @@
 
 <!-- Main content -->
 <section class="content">
-    <form action="{{route('admin.service.price.create')}}" method="post" enctype="multipart/form-data">
+    <form action="{{route('admin.package.store')}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
 
@@ -56,19 +56,20 @@
                     <div class="card-body">
                         <div class="input-group mb-2">
                             <label for="name" class="w-100">Name</label>
-                            <input type="text" class="form-control" name="name[]" placeholder="First Package Name ( Ex - Silver )" value="{{$id}}">
+                            <input type="hidden" name="service_id" value="{{$id}}">
+                            <input type="text" class="form-control" name="name[]" placeholder="First Package Name ( Ex - Silver )" required>
                         </div>
                         <div class="input-group my-2">
                             <label for="title" class="w-100">Title</label>
-                            <input type="text" class="form-control" name="title[]" placeholder="Package Title">
+                            <input type="text" class="form-control" name="title[]" placeholder="Package Title" required>
                         </div>
                         <div class="input-group my-2">
                             <label for="price" class="w-100">Price</label>
-                            <input type="number" class="form-control" name="price[]" placeholder="$">
+                            <input type="number" class="form-control" name="price[]" placeholder="$" required>
                         </div>
                         <div class="input-group my-2">
                             <label for="duration" class="w-100">Duration</label>
-                            <input type="number" class="form-control" name="duration[]" placeholder="Days">
+                            <input type="number" class="form-control" name="duration[]" placeholder="Days" required>
                         </div>
                         <div class="input-group my-2">
                             <label for="description" class="w-100">Description</label>
@@ -77,7 +78,7 @@
                         <label for="active_list" class="w-100">Active List</label>
                         <div class="row file_input_1 file_input_del">
                             <div class="col-9 input-group">
-                                <input type="text" class="form-control form-control-sm" name="active_list_1[]" multiple>
+                                <input type="text" class="form-control form-control-sm" name="active_list_1[]">
                             </div>
                             <div class="col-3">
                                 <div class="btn btn-sm btn-info w-100"  onclick="addElement('.file_input_1','active_list_1[]')"><i class="fas fa-plus"></i>
@@ -86,12 +87,12 @@
                         </div>
 
                         <label for="active_list" class="w-100 mt-2">Deactive List</label>
-                        <div class="row file_input2 file_input_del">
+                        <div class="row file_input_1_de file_input_del">
                             <div class="col-9 input-group">
-                                <input type="text" class="form-control form-control-sm" name="deactive_list[]" multiple>
+                                <input type="text" class="form-control form-control-sm" name="deactive_list_1[]">
                             </div>
                             <div class="col-3">
-                                <div class="btn btn-sm btn-info w-100" onclick="addElement('.file_input2','deactive_list[]')"><i class="fas fa-plus"></i>
+                                <div class="btn btn-sm btn-info w-100" onclick="addElement('.file_input_1_de','deactive_list_1[]')"><i class="fas fa-plus"></i>
                                 </div>
                             </div>
                         </div>
@@ -108,7 +109,7 @@
                     <div class="card-body">
                         <div class="input-group mb-2">
                             <label for="name" class="w-100">Name</label>
-                            <input type="text" class="form-control" name="name[]" placeholder="First Package Name ( Ex - Silver )" value="{{$id}}">
+                            <input type="text" class="form-control" name="name[]" placeholder="First Package Name ( Ex - Silver )" >
                         </div>
                         <div class="input-group my-2">
                             <label for="title" class="w-100">Title</label>
@@ -138,12 +139,12 @@
                         </div>
 
                         <label for="active_list" class="w-100 mt-2">Deactive List</label>
-                        <div class="row file_input2 file_input_del">
+                        <div class="row file_input_2_de file_input_del">
                             <div class="col-9 input-group">
-                                <input type="text" class="form-control form-control-sm" name="deactive_list[]" multiple>
+                                <input type="text" class="form-control form-control-sm" name="deactive_list_2[]" multiple>
                             </div>
                             <div class="col-3">
-                                <div class="btn btn-sm btn-info w-100" onclick="addElement('.file_input2','deactive_list[]')"><i class="fas fa-plus"></i>
+                                <div class="btn btn-sm btn-info w-100" onclick="addElement('.file_input_2_de','deactive_list_2[]')"><i class="fas fa-plus"></i>
                                 </div>
                             </div>
                         </div>
@@ -159,7 +160,7 @@
                     <div class="card-body">
                         <div class="input-group mb-2">
                             <label for="name" class="w-100">Name</label>
-                            <input type="text" class="form-control" name="name[]" placeholder="First Package Name ( Ex - Silver )" value="{{$id}}">
+                            <input type="text" class="form-control" name="name[]" placeholder="First Package Name ( Ex - Silver )" >
                         </div>
                         <div class="input-group my-2">
                             <label for="title" class="w-100">Title</label>
@@ -180,21 +181,21 @@
                         <label for="active_list" class="w-100">Active List</label>
                         <div class="row file_input_3 file_input_del">
                             <div class="col-9 input-group">
-                                <input type="text" class="form-control form-control-sm" name="active_list[]_3" multiple>
+                                <input type="text" class="form-control form-control-sm" name="active_list_3[]" multiple>
                             </div>
                             <div class="col-3">
-                                <div class="btn btn-sm btn-info w-100"  onclick="addElement('.file_input_3','active_list[]_3')"><i class="fas fa-plus"></i>
+                                <div class="btn btn-sm btn-info w-100"  onclick="addElement('.file_input_3','active_list_3[]')"><i class="fas fa-plus"></i>
                                 </div>
                             </div>
                         </div>
 
                         <label for="active_list" class="w-100 mt-2">Deactive List</label>
-                        <div class="row file_input2 file_input_del">
+                        <div class="row file_input_3_de file_input_del">
                             <div class="col-9 input-group">
-                                <input type="text" class="form-control form-control-sm" name="deactive_list[]" multiple>
+                                <input type="text" class="form-control form-control-sm" name="deactive_list_3[]" multiple>
                             </div>
                             <div class="col-3">
-                                <div class="btn btn-sm btn-info w-100" onclick="addElement('.file_input2','deactive_list[]')"><i class="fas fa-plus"></i>
+                                <div class="btn btn-sm btn-info w-100" onclick="addElement('.file_input_3_de','deactive_list_3[]')"><i class="fas fa-plus"></i>
                                 </div>
                             </div>
                         </div>
