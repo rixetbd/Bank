@@ -112,7 +112,7 @@
                                 </td>
                                 <td>{{$service->created_at->diffForHumans()}}</td>
                                 <td>
-                                    <a href="{{route('admin.service.destroy', $service->id)}}" class="m-1"><i class="fas fa-edit text-info"></i></a>
+                                    <a href="{{route('admin.service.edit', $service->id)}}" class="m-1"><i class="fas fa-edit text-info"></i></a>
                                     <a href="{{route('admin.service.destroy', $service->id)}}" class="m-1"><i class="fas fa-trash text-danger"></i></a>
                                 </td>
                             </tr>

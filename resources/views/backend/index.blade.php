@@ -214,8 +214,8 @@
                         <span class="info-box-icon"><i class="fas fa-tag"></i></span>
 
                         <div class="info-box-content">
-                            <span class="info-box-text">Inventory</span>
-                            <span class="info-box-number">5,200</span>
+                            <span class="info-box-text">Service</span>
+                            <span class="info-box-number">{{$service_count}}</span>
                         </div>
                         <!-- /.info-box-content -->
                     </div>

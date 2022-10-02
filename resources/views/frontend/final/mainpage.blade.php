@@ -239,12 +239,11 @@ or product.',
             <div class="col-sm-12 col-md-6" id="service_col_two">
                 <div class="list_item_info">
                     <div class="sct_heading" id="sct_heading">
-
                         @if (count($service_list) != 0)
-                            <h4 id="service_list_title">{{$service_list[0]->title}}</h4>
+                            <h3 id="service_list_title">{{$service_list[0]->title}}</h3>
                             <h6 id="service_list_category">{{$service_list[0]->category}}</h6>
                         @else
-                            <h4 id="service_list_title">Service Title</h4>
+                            <h3 id="service_list_title">Service Title</h3>
                             <h6 id="service_list_category">Service Category</h6>
                         @endif
                     </div>
@@ -305,7 +304,7 @@ or product.',
                 </div>
             </div>
             <div class="col-sm-12 col-md-3" id="service_col_three">
-                <div class="service_col_three_main">
+                <div class="service_col_three_main ps-3">
                     <div class="row m-0" id="card_badge">
                         <div class="col">
                             Silver
@@ -317,21 +316,48 @@ or product.',
                             Diamond
                         </div>
                     </div>
-                    <div class="row p-4" id="card_info">
-                        <div class="col-10 card_info_heading" id="ser_pack_title">Packege Title Here</div>
-                        <div class="col-2" id="ser_pack_price">$50</div>
-                        <div class="col-12 my-4" id="ser_pack_description"> LinkedIn, Facebook, Google Web Scraping, Email Collection, Formatting Included</div>
-                        <div class="col-12 mb-1">
-                            <i class="fas fa-clock"></i> <span id="ser_pack_duration">3</span> Days Delivery
+                    {{-- <div class="row m-0" id="card_badge_price">
+                        <div class="col col0">
+                            <span>$15</span>
                         </div>
-                        <div class="col-12 my-2">
+                        <div class="col col1">
+                            <span>$15</span>
+                        </div>
+                        <div class="col col2">
+                            <span>$15</span>
+                        </div>
+                    </div> --}}
+                    <div class="row pt-5 m-0" id="card_info">
+                        <div class="col-4" id="ser_pack_price">US $ 50</div>
+                        <div class="col-8 card_info_heading" id="ser_pack_title">Packege Title Here</div>
+
+                        <div class="col-12 mt-4" id="ser_pack_description" style="box-shadow: none;padding:10px;"> LinkedIn, Facebook, Google Web Scraping, Email Collection, Formatting Included</div>
+
+
+                        <div class="col-12" style="padding: 25px 10px;margin: 2px 0 15px 0;box-shadow:  3px 3px 6px #a2a3ab, -3px -3px 6px #ffffff;padding:10px;">
+                            <div class="col-12 text-center"><i class="fas fa-clock img_box shadow_one" style="font-size:45px;padding:2px;border-radius:50%;color:#B6FAC5;background:#9b9b9b;margin-bottom:15px;"></i></div>
+                            {{-- <div class="col-12"> --}}
+                                {{-- <div class="row"> --}}
+                                    {{-- <div class="col-1"><i class="fas fa-clock"></i></div> --}}
+                                    <div class="col-12 pb-3" style="text-align: justify;">
+                                        <span id="ser_pack_duration">3</span> Days Delivery Lorem ipsum dolor. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                                    {{-- </div>
+                                </div>
+                            </div> --}}
+                        </div>
+                        <div class="col-12 mb-2" style="box-shadow: inset 3px 3px 6px #a2a3ab, inset -3px -3px 6px #ffffff;padding:10px;" >
                             <ul style="list-style: none;margin:0;padding:0;" id="ser_pack_active">
                                 <li><i class="fas fa-check"></i> 50 email sends</li>
                             </ul>
                         </div>
-                        <div class="col-12 my-2">
-                            <button class="btn btn-success w-100">Contact US</button>
-                            <button class="btn border-success w-100 mt-2">Compare Packages</button>
+                        <div class="row m-0 p-0 contact_group">
+                            <div class="col">
+                                <button class="btn w-100">Contact US</button>
+                            </div>
+                            <div class="col">
+                                <button class="btn w-100">Contact US</button>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -1947,7 +1973,7 @@ or product.',
                 $('#card_badge').html(data.packageData);
                 $('#card_badge .col:first').addClass('active');
                 $('#ser_pack_title').html(data.package[0]['title']);
-                $('#ser_pack_price').html( "$" + data.package[0]['price']);
+                $('#ser_pack_price').html( "US $ " + data.package[0]['price']);
                 $('#ser_pack_description').html(data.package[0]['description']);
                 $('#ser_pack_duration').html(data.package[0]['duration']);
                 $('#ser_pack_active').html(data.packageListData);
@@ -1965,7 +1991,7 @@ or product.',
                 $('#card_badge').html(data.packageData);
                 $('#card_badge .col:first').addClass('active');
                 $('#ser_pack_title').html(data.package[0]['title']);
-                $('#ser_pack_price').html( "$" + data.package[0]['price']);
+                $('#ser_pack_price').html( "US $ " + data.package[0]['price']);
                 $('#ser_pack_description').html(data.package[0]['description']);
                 $('#ser_pack_duration').html(data.package[0]['duration']);
                 $('#ser_pack_active').html(data.packageListData);
@@ -1983,12 +2009,14 @@ or product.',
             success: function (data) {
                 $('#card_badge').html(data.packageData);
                 $('#ser_pack_title').html(data.package['title']);
-                $('#ser_pack_price').html( "$" + data.package['price']);
+                $('#ser_pack_price').html( "US $ " + data.package['price']);
                 $('#ser_pack_description').html(data.package['description']);
                 $('#ser_pack_duration').html(data.package['duration']);
                 $('#ser_pack_active').html(data.packageListData);
                 $(`#card_badge .col`).removeClass('active');
-                $(`#card_badge .${classIndex}`).addClass('active');
+                $(`#card_badge ${classIndex}`).addClass('active');
+                $(`#card_badge_price .col span`).addClass('active');
+                $(`#card_badge_price ${classIndex} span`).removeClass('active');
             }
         });
     }

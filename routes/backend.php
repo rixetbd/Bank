@@ -86,9 +86,12 @@ Route::middleware('auth')->group(function(){
         Route::get('/admin/service', 'index')->name('admin.service.index');
         Route::get('/admin/service/create', 'create')->name('admin.service.create');
         Route::get('/admin/service/status/{id}', 'status')->name('admin.service.status');
+        Route::get('/admin/service/edit/{id}', 'edit')->name('admin.service.edit');
         Route::get('/admin/service/destroy/{id}', 'destroy')->name('admin.service.destroy');
         Route::post('/admin/service/store', 'store')->name('admin.service.store');
+        Route::post('/admin/service/update', 'update')->name('admin.service.update');
         Route::get('/admin/service/price/index/{id}', 'price_index')->name('admin.service.price.index');
+        Route::post('serviceimgdatadelete', 'serviceimgdatadelete');
 
     });
 

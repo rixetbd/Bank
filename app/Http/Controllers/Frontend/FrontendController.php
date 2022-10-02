@@ -187,8 +187,8 @@ class FrontendController extends Controller
             $imgData .= '<div class="slide2"><img src="'.asset('uploads/service_banner/'.$img->banner).'" alt="'.$img->banner.'" class="img-fluid"></div>';
         }
         $packageData = "";
-        foreach ($package as  $item) {
-            $packageData .= '<div class="col" onclick="selectedPackage('.$item->id.')">'.$item->name.'</div>';
+        foreach ($package as  $key=>$item) {
+            $packageData .= '<div class="col col'.$key.'" onclick="selectedPackage('.$item->id.', \'.col'.$key.'\''.')">'.$item->name.'</div>';
         }
         $packageListData = "";
         foreach ($packageList as  $item) {
@@ -215,7 +215,7 @@ class FrontendController extends Controller
 
         $packageData = "";
         foreach ($package as  $key=> $item) {
-            $packageData .= '<div class="col col'.$key.'" onclick="selectedPackage('.$item->id.', '.$key.')">'.$item->name.'</div>';
+            $packageData .= '<div class="col col'.$key.'" onclick="selectedPackage('.$item->id.', \'.col'.$key.'\''.')">'.$item->name.'</div>';
         }
 
         $packageListData = "";
