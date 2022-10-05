@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+.company_name{
+    font-family: 'Kaushan Script', cursive !important;
+    margin-bottom: 20px !important;
+}
+
 header {
     padding-top: 145px;
     background: url('http://127.0.0.1:8000/uploads/img/vector/bg04.png');
@@ -242,7 +249,8 @@ header h1 {
     font-size: 50px;
     font-weight: 700;
     line-height: 1.2;
-    color: #fff;
+    color: #B6FAC5;
+
     font-family: 'Roboto', sans-serif;
     /* text-shadow: -3px 3px 2px rgb(113 113 113); */
     text-shadow: -3px 3px 10px rgb(113 113 113);
@@ -254,7 +262,7 @@ header h1 {
     font-size: 50px;
     font-weight: 700;
     line-height: 1.2;
-    color: #fff;
+    color: #B6FAC5;
     font-family: 'Roboto', sans-serif;
     /* text-shadow: -3px 3px 2px rgb(113 113 113); */
     text-shadow: -3px 3px 10px rgb(113 113 113);

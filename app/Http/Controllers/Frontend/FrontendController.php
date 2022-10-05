@@ -208,27 +208,28 @@ class FrontendController extends Controller
         $service_img = ServiceImage::where('service_id', $request->ServiceID)->get();
         $package = Package::where('service_id', $service->id)->orderBy('packages_index', 'asc')->get();
         $packageList = PackageList::where('package_id', $package[0]->id)->orderBy('status', 'desc')->get();
-        $imgData = "";
-        foreach ($service_img as  $img) {
-            $imgData .= '<div class="slide2"><img src="'.asset('uploads/service_banner/'.$img->banner).'" alt="'.$img->banner.'" class="img-fluid"></div>';
-        }
 
-        $packageData = "";
-        foreach ($package as  $key=> $item) {
-            $packageData .= '<div class="col col'.$key.'" onclick="selectedPackage('.$item->id.', \'.col'.$key.'\''.')">'.$item->name.'</div>';
-        }
+        // $imgData = "";
+        // foreach ($service_img as  $img) {
+        //     $imgData .= '<div class="slide2"><img src="'.asset('uploads/service_banner/'.$img->banner).'" alt="'.$img->banner.'" class="img-fluid"></div>';
+        // }
 
-        $packageListData = "";
-        foreach ($packageList as  $item) {
-            $packageListData .= '<li><i class="fas fa-check '.($item->status == "1"?"text-success":"").'"></i> '.$item->info.'</li>';
-        }
+        // $packageData = "";
+        // foreach ($package as  $key=> $item) {
+        //     $packageData .= '<div class="col col'.$key.'" onclick="selectedPackage('.$item->id.', \'.col'.$key.'\''.')">'.$item->name.'</div>';
+        // }
+
+        // $packageListData = "";
+        // foreach ($packageList as  $item) {
+        //     $packageListData .= '<li><i class="fas fa-check '.($item->status == "1"?"text-success":"").'"></i> '.$item->info.'</li>';
+        // }
 
         return response()->json([
             'service'=>$service,
-            'service_img'=>$imgData,
-            'package'=>$package,
-            'packageData'=>$packageData,
-            'packageListData'=>$packageListData,
+            // 'service_img'=>$imgData,
+            // 'package'=>$package,
+            // 'packageData'=>$packageData,
+            // 'packageListData'=>$packageListData,
         ]);
     }
 

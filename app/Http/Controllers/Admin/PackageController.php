@@ -105,7 +105,7 @@ class PackageController extends Controller
             }
         }
 
-        return back();
+        return route('admin.service.index');
     }
 
 

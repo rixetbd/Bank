@@ -65,25 +65,26 @@ or product.',
 <!-- End Hero Section -->
 
 <section class="section_part hero">
-    <section id="text1" class="container">
+    <section id="text1" class="container d-flex align-items-center">
         <div class="row">
             <div class="col-sm-12 col-md-7 col-xl-7 mt-5">
                 {{-- <img src="{{asset('uploads/img/123.png')}}" alt="" class="img-fluid"> --}}
                 <div class="hero_heading">
-                    <h6>We provide best</h6>
+                    <span class="h_text_1 company_name">DIMARZ</span>
+                    <h6>provides best</h6>
                     <span class="h_text_1">Business</span>
                     <span class="h_text_2"> Process</span>
                     <span class="h_text_3">Outsourcing</span>
                     <span class="h_text_4">Services</span>
                 </div>
                 {{-- <h2 class="text-uppercase">Business Process Outsourcing Services.</h2> --}}
-                <blockquote>
-                    <p><span class="shadow_one py-2" style="padding: 0.75rem;">Bangladesh Outsourcing Company</span> is
+                {{-- <blockquote>
+                    <p><span class="shadow_one py-2" style="padding: 0.75rem;">DIMARZ</span> is
                         a global business process outsourcing company. All of our
                         services satisfy stringent international standards. We have projections all around the US and
-                        Western Europe. Bangladesh Outsourcing Company is a privately held data input outsourcing firm
+                        Western Europe. DIMARZ is a privately held data input outsourcing firm
                         situated in Bangladesh. </p>
-                </blockquote>
+                </blockquote> --}}
                 {{-- <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
                         <a href="#about" class="btn-get-started">Get Started</a>
                         <a href="https://www.youtube.com/watch?v=YrrSV5eJW4c"
@@ -93,7 +94,7 @@ or product.',
                     </div> --}}
             </div>
             <div class="col-sm-12 col-md-5 col-xl-5 mt-5 pt-5 header_right_side">
-                <div class="row align-items-center justify-content-end" style="height: 310px;">
+                <div class="row align-items-center justify-content-end mt-5 pt-5" style="height: 350px;">
                     <div class="col-6 d-flex align-items-end">
                         <div class="user_card p-3 shadow_one_alt" id="user_speech" style="">
                             <p class="d-none">I’m a Full Stack Developer who is passionate about making error-free
@@ -111,7 +112,7 @@ or product.',
                 </div>
                 <div class="col-12" style="height: 140px;">
                 </div>
-                <div class="col-10 d-flex pb-4 float-end">
+                {{-- <div class="col-10 d-flex pb-4 float-end">
                     <div class="col p-1 text-center">
                         <div class="wrapper img_box shadow_one">
                             <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
@@ -170,16 +171,78 @@ or product.',
                 </div>
                 <div class="col-10 shadow_one_alt py-3 float-end" style="border-radius: 45px;">
                     <h3 class="text-uppercase text-center">Our Best Services</h3>
-                </div>
+
+                </div> --}}
             </div>
         </div>
     </section>
 </section>
 
-<section class="section_part" style="height: 50vh;background:#e7e9ef;">
-    <div id="text2" class="container">
-        <h3 class="text-light text-uppercase text-center"
-            style="font-size: 120px;text-shadow: -3px 3px 10px rgb(113 113 113);">Our Best Services</h3>
+<section class="section_part py-0" style="display:block;background-color: transparent;">
+    <img class="img-fluid" src="{{asset('final_front_assets/wave.png')}}" alt="">
+    <div id="text2" class="container second_part pt-5" style="background:#D8DBE1">
+        {{-- <h3 class="text-light text-uppercase text-center"
+            style="font-size: 120px;text-shadow: -3px 3px 10px rgb(113 113 113);">Our Best Services</h3> --}}
+
+
+
+            <div class="row">
+                <div class="col p-1">
+                    <div class="wrapper img_box border_one">
+                        <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                        <div class="tooltip">
+                            <img class="" src="{{asset('uploads/img/services/DIGITAL_MARKETING.jpg')}}" alt="">
+                        </div>
+                    </div>
+                    <div class="info_box border_one mt-3">
+                        <h4>Digital Marketing</h4>
+                    </div>
+                </div>
+                <div class="col p-1">
+                    <div class="wrapper img_box border_one">
+                        <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                        <div class="tooltip">
+                            <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+                        </div>
+                    </div>
+                    <div class="info_box border_one mt-3">
+                        <h4>Web Development</h4>
+                    </div>
+                </div>
+                <div class="col p-1">
+                    <div class="wrapper img_box border_one">
+                        <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                        <div class="tooltip">
+                            <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+                        </div>
+                    </div>
+                    <div class="info_box border_one mt-3">
+                        <h4>Graphics Design</h4>
+                    </div>
+                </div>
+                <div class="col p-1 text-center">
+                    <div class="wrapper img_box border_one">
+                        <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                        <div class="tooltip">
+                            <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+                        </div>
+                    </div>
+                    <div class="info_box border_one mt-3">
+                        <h4>Data Entry</h4>
+                    </div>
+                </div>
+                <div class="col p-1">
+                    <div class="wrapper img_box border_one">
+                        <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                        <div class="tooltip">
+                            <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+                        </div>
+                    </div>
+                    <div class="info_box border_one mt-3">
+                        <h4>BPO Services</h4>
+                    </div>
+                </div>
+            </div>
     </div>
 </section>
 
@@ -189,9 +252,15 @@ or product.',
 <section class="section_part" id="three">
     <section class="container" id="service_col_main">
         <div class="row justify-content-center">
-            {{-- <div class="col-sm-12 col-md-12 my-3">
-                <h3 class="text-uppercase">Our Best Services</h3>
-            </div> --}}
+            <div class="" id="service_col_full">
+                <div class="p-0 m-0">
+                    <h3 class="h_text_1">Our Services</h3>
+
+                </div>
+                {{-- <h3 class="text-uppercase text-center">Our Services</h3> --}}
+                {{-- <hr style="color: #b6fac5;height: 5px;"> --}}
+                <hr style="color: #000;height: 1px;">
+            </div>
             <div class="col-sm-12 col-md-3 p-2" id="service_col_one">
                 <div class="service_col_one_1">
                     <input type="text" name="" class="form-control" placeholder="Search Your Services">
@@ -199,9 +268,9 @@ or product.',
                 <div class="service_col_one_2">
                     <ul class="service_all_list" id="menu">
                         @forelse ($service_list as $service)
-                            <li class="grp_one" onclick="ServiceList('{{$service->id}}')">{{$service->name}}</li>
+                        <li class="grp_one" onclick="ServiceList('{{$service->id}}')">{{$service->name}}</li>
                         @empty
-                            <li class="grp_one">No Service</li>
+                        <li class="grp_one">No Service</li>
                         @endforelse
                         {{-- <li class="grp_one">Content Writing</li>
                         <li class="grp_one">Social Media Marketing</li>
@@ -240,11 +309,11 @@ or product.',
                 <div class="list_item_info">
                     <div class="sct_heading" id="sct_heading">
                         @if (count($service_list) != 0)
-                            <h3 id="service_list_title">{{$service_list[0]->title}}</h3>
-                            <h6 id="service_list_category">{{$service_list[0]->category}}</h6>
+                        <h3 id="service_list_title">{{$service_list[0]->title}}</h3>
+                        <h6 id="service_list_category">{{$service_list[0]->category}}</h6>
                         @else
-                            <h3 id="service_list_title">Service Title</h3>
-                            <h6 id="service_list_category">Service Category</h6>
+                        <h3 id="service_list_title">Service Title</h3>
+                        <h6 id="service_list_category">Service Category</h6>
                         @endif
                     </div>
                     <div class="sct_content">
@@ -295,9 +364,9 @@ or product.',
 
                         <div id="service_list_description" class="mt-4">
                             @if (count($service_list) != 0)
-                                {!! $service_list[0]->description !!}
+                            {!! $service_list[0]->description !!}
                             @else
-                                Description Will be add here.
+                            Description Will be add here.
                             @endif
                         </div>
                     </div>
@@ -305,64 +374,65 @@ or product.',
             </div>
             <div class="col-sm-12 col-md-3" id="service_col_three">
                 <div class="service_col_three_main ps-3">
-                    <div class="row m-0" id="card_badge">
-                        <div class="col">
-                            Silver
-                        </div>
-                        <div class="col">
-                            Gold
-                        </div>
-                        <div class="col">
-                            Diamond
-                        </div>
-                    </div>
-                    {{-- <div class="row m-0" id="card_badge_price">
-                        <div class="col col0">
-                            <span>$15</span>
-                        </div>
-                        <div class="col col1">
-                            <span>$15</span>
-                        </div>
-                        <div class="col col2">
-                            <span>$15</span>
-                        </div>
-                    </div> --}}
-                    <div class="row pt-5 m-0" id="card_info">
-                        <div class="col-4" id="ser_pack_price">US $ 50</div>
-                        <div class="col-8 card_info_heading" id="ser_pack_title">Packege Title Here</div>
 
-                        <div class="col-12 mt-4" id="ser_pack_description" style="box-shadow: none;padding:10px;"> LinkedIn, Facebook, Google Web Scraping, Email Collection, Formatting Included</div>
+                    <div class="row m-0" id="card_info">
+                        <div class="my-3" style="box-shadow: 3px 3px 6px #a2a3ab, -3px -3px 6px #ffffff;">
+                            <div class="text-center mt-3 py-2" style="border: 1px solid #B6FAC5;border-radius: 10px;">
+                                <h4 class="text-uppercase">Packages</h4>
+                            </div>
+                            <div class="row m-0 my-3" id="card_badge">
+                                <div class="col">
+                                    Silver
+                                </div>
+                                <div class="col">
+                                    Gold
+                                </div>
+                                <div class="col">
+                                    Diamond
+                                </div>
+                            </div>
+                            <div class="row m-0 mt-5 p-0 justify-content-between" style="box-shadow: inset 3px 3px 6px #a2a3ab, inset -3px -3px 6px #ffffff;">
+                                <div class="col-4 btn_right_shadow" id="ser_pack_price">US $ 50</div>
+                                <div class="col-7 card_info_heading" id="ser_pack_title">Packege Title Here</div>
+                            </div>
 
+                            <div class="col-12 mt-4" id="ser_pack_description" style="box-shadow: none;padding:10px;border: 1px solid #fff;margin-bottom: 15px;">LinkedIn, Facebook, Google Web Scraping, Email Collection, Formatting Included</div>
 
-                        <div class="col-12" style="padding: 25px 10px;margin: 2px 0 15px 0;box-shadow:  3px 3px 6px #a2a3ab, -3px -3px 6px #ffffff;padding:10px;">
-                            <div class="col-12 text-center"><i class="fas fa-clock img_box shadow_one" style="font-size:45px;padding:2px;border-radius:50%;color:#B6FAC5;background:#9b9b9b;margin-bottom:15px;"></i></div>
+                            </div>
+
+                        <div class="col-12"
+                            style="padding: 25px 10px;margin: 2px 0 0 0;box-shadow:  3px 3px 6px #a2a3ab, -3px -3px 6px #ffffff;padding:10px;">
+                            {{-- <div class="col-12 text-center">
+                                <i class="fas fa-clock img_box shadow_one" style="font-size:45px;padding:2px;border-radius:50%;color:#B6FAC5;background:#9b9b9b;"></i>
+                            </div> --}}
                             {{-- <div class="col-12"> --}}
-                                {{-- <div class="row"> --}}
-                                    {{-- <div class="col-1"><i class="fas fa-clock"></i></div> --}}
-                                    <div class="col-12 pb-3" style="text-align: justify;">
-                                        <span id="ser_pack_duration">3</span> Days Delivery Lorem ipsum dolor. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                                    {{-- </div>
+                            {{-- <div class="row"> --}}
+                            {{-- <div class="col-1"><i class="fas fa-clock"></i></div> --}}
+                            <div class="col-12 mb-3 py-2" style="text-align: center;border: 1px solid #fff;">
+                                <span id="ser_pack_duration">3</span> Days Delivery
+                                {{-- </div>
                                 </div>
                             </div> --}}
-                        </div>
-                        <div class="col-12 mb-2" style="box-shadow: inset 3px 3px 6px #a2a3ab, inset -3px -3px 6px #ffffff;padding:10px;" >
-                            <ul style="list-style: none;margin:0;padding:0;" id="ser_pack_active">
-                                <li><i class="fas fa-check"></i> 50 email sends</li>
-                            </ul>
-                        </div>
-                        <div class="row m-0 p-0 contact_group">
-                            <div class="col">
-                                <button class="btn w-100">Contact US</button>
                             </div>
-                            <div class="col">
-                                <button class="btn w-100">Contact US</button>
+                            <div class="col-12 mb-2"
+                                style="box-shadow: inset 3px 3px 6px #a2a3ab, inset -3px -3px 6px #ffffff;padding:10px;">
+                                <ul style="list-style: none;margin:0;padding:0;" id="ser_pack_active">
+                                    <li><i class="fas fa-check"></i> 50 email sends</li>
+                                </ul>
                             </div>
+                            <div class="row m-0 p-0 contact_group">
+                                <div class="col-6 ps-0">
+                                    <button class="btn w-100">Contact US</button>
+                                </div>
+                                <div class="col-6 pe-0">
+                                    <button class="btn w-100">Custom</button>
+                                </div>
 
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 </section>
 
@@ -1936,7 +2006,6 @@ or product.',
 
 
 <script>
-
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': jQuery('meta[name="csrf-token"]').attr('content')
@@ -1949,12 +2018,11 @@ or product.',
     });
 
     function ServiceList(ServiceID) {
+
         $.ajax({
             type: 'POST',
             url: `/getservicedata`,
-            data: {
-                'ServiceID': ServiceID
-            },
+            data: {'ServiceID': `${ServiceID}`},
             success: function (data) {
                 //   $("#msg").html(data.msg);
                 // alert(data.service.name);
@@ -1973,7 +2041,7 @@ or product.',
                 $('#card_badge').html(data.packageData);
                 $('#card_badge .col:first').addClass('active');
                 $('#ser_pack_title').html(data.package[0]['title']);
-                $('#ser_pack_price').html( "US $ " + data.package[0]['price']);
+                $('#ser_pack_price').html("US $ " + data.package[0]['price']);
                 $('#ser_pack_description').html(data.package[0]['description']);
                 $('#ser_pack_duration').html(data.package[0]['duration']);
                 $('#ser_pack_active').html(data.packageListData);
@@ -1981,17 +2049,18 @@ or product.',
         });
     }
 
-    function firstService(ServiceID){
+    function firstService() {
         $.ajax({
             type: 'POST',
             url: `/getservicedata/first`,
-            data: {'ServiceID': ServiceID},
+            data: {
+                'ServiceID': 'ServiceID'},
             success: function (data) {
                 $('#service_banner_slider').html(data.service_img);
                 $('#card_badge').html(data.packageData);
                 $('#card_badge .col:first').addClass('active');
                 $('#ser_pack_title').html(data.package[0]['title']);
-                $('#ser_pack_price').html( "US $ " + data.package[0]['price']);
+                $('#ser_pack_price').html("US $ " + data.package[0]['price']);
                 $('#ser_pack_description').html(data.package[0]['description']);
                 $('#ser_pack_duration').html(data.package[0]['duration']);
                 $('#ser_pack_active').html(data.packageListData);
@@ -2000,16 +2069,18 @@ or product.',
     }
     firstService();
 
-    function selectedPackage(ServiceID, classIndex){
+    function selectedPackage(ServiceID, classIndex) {
 
         $.ajax({
             type: 'POST',
             url: `/getservicedata/selected`,
-            data: {'ServiceID': ServiceID},
+            data: {
+                'ServiceID': ServiceID
+            },
             success: function (data) {
                 $('#card_badge').html(data.packageData);
                 $('#ser_pack_title').html(data.package['title']);
-                $('#ser_pack_price').html( "US $ " + data.package['price']);
+                $('#ser_pack_price').html("US $ " + data.package['price']);
                 $('#ser_pack_description').html(data.package['description']);
                 $('#ser_pack_duration').html(data.package['duration']);
                 $('#ser_pack_active').html(data.packageListData);
@@ -2020,8 +2091,6 @@ or product.',
             }
         });
     }
-
-
 
 </script>
 
@@ -2119,12 +2188,13 @@ or product.',
             advance();
         });
     }
+
     banner_slider();
 
 </script>
 
 <script>
-    function banner_slider2(){
+    function banner_slider2() {
         $('.slider2').each(function () {
             var $this = $(this);
             var $group = $this.find('.slide_group2');
@@ -2215,6 +2285,7 @@ or product.',
             advance();
         });
     }
+
 </script>
 
 

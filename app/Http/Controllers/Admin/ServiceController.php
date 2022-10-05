@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Package;
+use App\Models\PackageList;
 use App\Models\Service;
 use App\Models\ServiceImage;
 use App\Models\User;
@@ -183,8 +185,16 @@ class ServiceController extends Controller
     public function price_index ($id)
     {
         // $service = Servi
+
+        $package_info = Package::where('service_id', $id)->orderBy('packages_index', 'asc')->get();
+
+
+
+        // $package_lists = PackageList::where('package_id', $id)->orderBy('packages_index', 'asc')->get();
+
         return view('backend.services.price',[
             'id'=>$id,
+            'package_info'=>$package_info,
         ]);
     }
 
