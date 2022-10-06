@@ -292,7 +292,7 @@
 
     <!-- Footer || End -->
     <footer id="footer" class="light_mode_Sectoin">
-        <div class="footer-newsletter">
+        {{-- <div class="footer-newsletter">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-6">
@@ -351,10 +351,10 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="container">
             <div class="copyright">Copyright &copy; {{date('Y')}} • <strong><a href="{{url('/')}}"
-                        style="color: #e96b56;">BDOSC</a></strong>. All Rights
+                        style="color: #e96b56;">DiMarz</a></strong>. All Rights
                 Reserved </div>
         </div>
     </footer>

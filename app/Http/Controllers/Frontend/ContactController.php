@@ -40,6 +40,7 @@ class ContactController extends Controller
         //
     }
 
+
     public function edit($id)
     {
         //
@@ -53,5 +54,11 @@ class ContactController extends Controller
     public function destroy($id)
     {
 
+    }
+
+
+    public function showpage()
+    {
+        return view('frontend.final.contact');
     }
 }

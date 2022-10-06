@@ -189,7 +189,7 @@ or product.',
             <div class="row">
                 <div class="col p-1">
                     <div class="wrapper img_box border_one">
-                        <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                        <img class="" src="{{asset('uploads/img/services/s1.png')}}" alt="">
                         <div class="tooltip">
                             <img class="" src="{{asset('uploads/img/services/DIGITAL_MARKETING.jpg')}}" alt="">
                         </div>
@@ -200,7 +200,7 @@ or product.',
                 </div>
                 <div class="col p-1">
                     <div class="wrapper img_box border_one">
-                        <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                        <img class="" src="{{asset('uploads/img/services/s2.png')}}" alt="">
                         <div class="tooltip">
                             <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
                         </div>
@@ -211,7 +211,7 @@ or product.',
                 </div>
                 <div class="col p-1">
                     <div class="wrapper img_box border_one">
-                        <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                        <img class="" src="{{asset('uploads/img/services/s3.png')}}" alt="">
                         <div class="tooltip">
                             <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
                         </div>
@@ -233,7 +233,7 @@ or product.',
                 </div>
                 <div class="col p-1">
                     <div class="wrapper img_box border_one">
-                        <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                        <img class="" src="{{asset('uploads/img/services/s5.png')}}" alt="">
                         <div class="tooltip">
                             <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
                         </div>
@@ -442,14 +442,7 @@ or product.',
 </section>
 
 
-<section class="section_part" style="height: 50vh;background:#e7e9ef;padding:0;">
-    <div id="text2" class="container">
-        <h3 class="text-light text-uppercase text-center"
-            style="font-size: 120px;text-shadow: -3px 3px 10px rgb(113 113 113);">Part Second</h3>
-    </div>
-</section>
-
-<section class="section_part" style="height: 50vh;background:#e7e9ef;padding:0;">
+<section class="section_part" style="height: 50vh;background:#e7e9ef;padding:0;z-index: 1;">
     <div id="text2" class="container">
         <h3 class="text-light text-uppercase text-center"
             style="font-size: 120px;text-shadow: -3px 3px 10px rgb(113 113 113);">Part Second</h3>
@@ -2064,6 +2057,7 @@ or product.',
                 $('#ser_pack_description').html(data.package[0]['description']);
                 $('#ser_pack_duration').html(data.package[0]['duration']);
                 $('#ser_pack_active').html(data.packageListData);
+                banner_slider();
             }
         });
     }
@@ -2188,8 +2182,6 @@ or product.',
             advance();
         });
     }
-
-    banner_slider();
 
 </script>
 

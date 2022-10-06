@@ -67,7 +67,8 @@ Route::controller(SearchController::class)->group(function(){
 });
 
 Route::controller(ContactController::class)->group(function(){
-    Route::get('/contact', 'index')->name('frontend.contact.index');
+    Route::get('/contact', 'showpage')->name('frontend.contact');
+    Route::get('/contact/index', 'index')->name('frontend.contact.index');
     Route::post('/contact/create', 'create')->name('frontend.contact.post');
 
 });

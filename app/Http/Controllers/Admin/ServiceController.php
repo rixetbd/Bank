@@ -73,6 +73,7 @@ class ServiceController extends Controller
                 'status'=>0,
             ]);
             return redirect()->route('admin.service.index');
+
         }elseif($request->input('action') == 'next'){
             return redirect()->route('admin.service.price.index', $id);
         }else{
@@ -184,18 +185,20 @@ class ServiceController extends Controller
 
     public function price_index ($id)
     {
-        // $service = Servi
-
         $package_info = Package::where('service_id', $id)->orderBy('packages_index', 'asc')->get();
 
-
-
-        // $package_lists = PackageList::where('package_id', $id)->orderBy('packages_index', 'asc')->get();
-
-        return view('backend.services.price',[
-            'id'=>$id,
-            'package_info'=>$package_info,
-        ]);
+        if(!empty($package_info))
+        {
+            return view('backend.services.price_edit',[
+                'id'=>$id,
+                'package_info'=>$package_info,
+            ]);
+        }else{
+            return view('backend.services.price',[
+                'id'=>$id,
+                'package_info'=>$package_info,
+            ]);
+        }
     }
 
     public function serviceimgdatadelete(Request $request)

@@ -97,6 +97,8 @@ Route::middleware('auth')->group(function(){
 
     Route::controller(PackageController::class)->group(function(){
         Route::post('/admin/package/store', 'store')->name('admin.package.store');
+        
+        Route::post('/packageList/delListElement', 'packageList_del');
     });
 
 });

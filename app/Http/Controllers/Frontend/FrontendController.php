@@ -184,7 +184,7 @@ class FrontendController extends Controller
         $packageList = PackageList::where('package_id', $package[0]->id)->orderBy('status', 'desc')->get();
         $imgData = "";
         foreach ($service_img as  $img) {
-            $imgData .= '<div class="slide2"><img src="'.asset('uploads/service_banner/'.$img->banner).'" alt="'.$img->banner.'" class="img-fluid"></div>';
+            $imgData .= '<div class="slide"><img src="'.asset('uploads/service_banner/'.$img->banner).'" alt="'.$img->banner.'" class="img-fluid"></div>';
         }
         $packageData = "";
         foreach ($package as  $key=>$item) {
