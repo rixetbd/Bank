@@ -76,3 +76,8 @@ Route::controller(ContactController::class)->group(function(){
 Route::controller(IPController::class)->group(function(){
     Route::get('/ip', 'create');
 });
+
+
+Route::get('/work', function(){
+    return view('frontend.final.work');
+});

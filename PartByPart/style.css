@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
+
+.spinx-connect {
+    color: #000;
+    display: block;
+    float: right;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 26px;
+    margin: 80px 0 0;
+    max-width: 471px;
+    position: relative;
+    width: 100%
+}
+
+.spinx-connect:before {
+    background: #b3d045;
+    content: "";
+    position: absolute;
+    top: 32px;
+    bottom: -8px;
+    left: 34px;
+    width: 1px;
+    z-index: 0
+}
+
+.spinx-connect:after {
+    background: url(connect-arrow.png) no-repeat 0 0;
+    content: "";
+    position: absolute;
+    bottom: -48px;
+    left: 15px;
+    height: 27px;
+    width: 40px;
+    z-index: 0
+}
+
+.spinx-connect .spinx-acco-content {
+    display: none;
+    overflow: hidden;
+    padding: 15px 0 10px 100px;
+    width: 100%
+}
+
+.spinx-connect h3.spinx-acco-title {
+    cursor: pointer;
+    color: #e1e1e1;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    line-height: 55px;
+    text-transform: uppercase;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out
+}
+
+.spinx-connect h3.spinx-acco-title.current {
+    font-size: 50px;
+    line-height: 69px;
+    color: #b3d045
+}
+
+.spinx-connect h3.spinx-acco-title i {
+    border-radius: 100%;
+    display: block;
+    float: left;
+    margin-right: 30px;
+    position: relative;
+    -webkit-transition: all .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+    height: 55px;
+    width: 69px;
+    z-index: 99
+}
+
+.spinx-connect h3.spinx-acco-title i:after,
+.spinx-connect h3.spinx-acco-title i:before {
+    content: "";
+    display: block;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0
+}
+
+.spinx-connect h3.spinx-acco-title i:after {
+    background: #e1e1e1;
+    border-radius: 100%;
+    height: 11px;
+    width: 11px
+}
+
+.spinx-connect h3.spinx-acco-title.current i {
+    background: #b3d045;
+    height: 69px
+}
+
+.spinx-connect h3.spinx-acco-title.current i:before {
+    background: url(connect_icn.png) no-repeat;
+    z-index: 9
+}
+
+.spinx-connect h3.spinx-acco-title.current i:before {
+    background-position: 0 0;
+    height: 27px;
+    width: 27px
+}
+
+.spinx-connect h3.spinx-acco-title.current i:before {
+    background-position: -29px 0;
+    height: 29px;
+    width: 31px
+}
+
+.spinx-connect h3.spinx-acco-title.current i:before {
+    background-position: -62px 0;
+    height: 28px;
+    width: 32px
+}
+
+.spinx-connect h4 {
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: normal;
+    text-transform: uppercase;
+    margin: 0 0 15px
+}
+
+.spinx-connect p {
+    margin-bottom: 20px
+}
+
+.spinx-connect {
+    margin: 40px 0 0
+}
+
+.spinx-connect h3.spinx-acco-title.current {
+    font-size: 36px
+}

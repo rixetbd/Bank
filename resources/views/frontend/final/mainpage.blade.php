@@ -186,6 +186,14 @@ or product.',
 
 
 
+
+
+
+
+
+
+
+
             <div class="row">
                 <div class="col p-1">
                     <div class="wrapper img_box border_one">
