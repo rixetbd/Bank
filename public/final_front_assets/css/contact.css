@@ -1,0 +1,120 @@
+.sec_color {
+    color: #000;
+}
+
+.form_title {
+    font-size: 35px;
+    height: 50px;
+}
+
+form {
+    box-shadow: 3px 3px 6px #a2a3ab, -3px -3px 6px #ffffff;
+    padding: 20px;
+}
+
+form label {
+    color: #000;
+    font-weight: 300;
+}
+
+form input.form-control,
+form select.form-select,
+form textarea.form-control {
+    background-color: #ffffff2e;
+    border: none;
+    border-radius: 0;
+    letter-spacing: 1px;
+    padding: 10px 15px;
+    box-shadow: inset 3px 3px 6px #a2a3ab, inset -3px -3px 6px #ffffff;
+}
+
+form input:focus,
+form input.form-control:focus,
+form select.form-select:focus,
+form textarea.form-control:focus {
+    background-color: #ffffff2e;
+    border: none;
+    border-radius: 0;
+    outline: 0;
+    box-shadow: none;
+    box-shadow: inset 3px 3px 6px #a2a3ab, inset -3px -3px 6px #ffffff;
+}
+
+form select.form-select option {
+    color: #000;
+}
+
+form button[type="submit"] {
+    color: #000;
+    cursor: pointer;
+    padding: 5px 5px;
+    width: 100%;
+    background: #B6FAC5;
+    border: 2px solid #fff;
+}
+
+form button[type="submit"]:hover {
+    color: #000;
+    background: none;
+    border: 2px solid #fff;
+}
+
+.contact_right h3 {
+    padding-top: 40px;
+    font-size: 70px;
+    font-weight: 700;
+    font-family: 'Roboto', serif;
+}
+
+.company_details .row {
+    font-size: 16px;
+    margin: 25px 0;
+}
+
+.company_details .row div {
+    line-height: 30px;
+}
+
+.company_details .row .col-1 {
+    color: #5f5f5f !important;
+}
+
+.company_details a {
+    color: #000
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.social-links a {
+    font-size: 14px;
+    /* width: 19%; */
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    /* background: #575757; */
+    border: 2px solid #fff;
+    color: #000;
+}
+
+.social-links a:hover {
+    background: #B6FAC5;
+    border: 2px solid #fff;
+    color: #000;
+}
+
+.social-links a:hover i {
+    border-right: 1px solid #fff;
+}
+
+.social-links a i {
+    padding-right: 5px;
+    margin-right: 5px;
+    border-right: 1px solid #B6FAC5;
+}
+
+.form-text {
+    min-height: 20px;
+}

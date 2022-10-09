@@ -1,16 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap');
 
 body{font-family: 'Poppins', sans-serif;}
-
-.accordion-button{
-    color:#34a589;
-}
-.accordion-item{
-    border: none;
-    border-bottom: 1px solid #ddd;
-    border-radius: 0;
-}
+.accordion-button{color:#000;}
+.accordion-item{border: none;border-top: 1px solid #ddd !important;border-radius: 0;}
 .accordion-button:focus{color:#000;box-shadow: none;}
-.accordion-button:not(.collapsed){color: tomato;background-color:transparent}
-
+.accordion-button:not(.collapsed){color: #34a589;background-color:transparent}
 .accordion-item:last-of-type, .accordion-item:last-of-type .accordion-collapse{border-radius: 0;}
+.accordion-header button.accordion-button {font-size: 18px;}
+.accordion-header button.accordion-button span{width: 80px;}
+.accordion-body{font-size: 14px;letter-spacing: 1px;padding-left: 100px;}

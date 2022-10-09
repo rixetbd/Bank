@@ -81,3 +81,8 @@ Route::controller(IPController::class)->group(function(){
 Route::get('/work', function(){
     return view('frontend.final.work');
 });
+
+
+Route::get('/hhhh', function(){
+    return view('frontend.final.home01');
+});

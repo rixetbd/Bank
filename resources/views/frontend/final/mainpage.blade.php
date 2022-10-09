@@ -52,6 +52,18 @@ or product.',
     opacity: 1;
 } */
 
+    .style_text_2 {
+        text-transform: uppercase;
+        margin: 0 0 0 10px;
+        font-size: 50px;
+        font-weight: 700;
+        line-height: 1.2;
+        color: #B6FAC5;
+        font-family: 'Roboto', sans-serif;
+        /* text-shadow: -3px 3px 2px rgb(113 113 113); */
+        text-shadow: -3px 3px 10px rgb(113 113 113);
+    }
+
 </style>
 
 @endsection
@@ -64,13 +76,13 @@ or product.',
 
 <!-- End Hero Section -->
 
-<section class="section_part hero">
+<section class="section_part hero" style="background:#151515">
     <section id="text1" class="container d-flex align-items-center">
         <div class="row">
             <div class="col-sm-12 col-md-7 col-xl-7 mt-5">
                 {{-- <img src="{{asset('uploads/img/123.png')}}" alt="" class="img-fluid"> --}}
                 <div class="hero_heading">
-                    <span class="h_text_1 company_name">DIMARZ</span>
+                    <span class="h_text_1 company_name">DiMARZ</span>
                     <h6>provides best</h6>
                     <span class="h_text_1">Business</span>
                     <span class="h_text_2"> Process</span>
@@ -94,7 +106,7 @@ or product.',
                     </div> --}}
             </div>
             <div class="col-sm-12 col-md-5 col-xl-5 mt-5 pt-5 header_right_side">
-                <div class="row align-items-center justify-content-end mt-5 pt-5" style="height: 350px;">
+                {{-- <div class="row align-items-center justify-content-end mt-5 pt-5" style="height: 350px;">
                     <div class="col-6 d-flex align-items-end">
                         <div class="user_card p-3 shadow_one_alt" id="user_speech" style="">
                             <p class="d-none">I’m a Full Stack Developer who is passionate about making error-free
@@ -111,150 +123,312 @@ or product.',
                     <div class="col-4"></div>
                 </div>
                 <div class="col-12" style="height: 140px;">
-                </div>
+                </div> --}}
                 {{-- <div class="col-10 d-flex pb-4 float-end">
                     <div class="col p-1 text-center">
                         <div class="wrapper img_box shadow_one">
                             <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
-                            <div class="tooltip">
-                                <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
-                            </div>
-                        </div>
-                        <div class="info_box shadow_one">
-                            <h4>Lead Generation</h4>
-                        </div>
-                    </div>
-                    <div class="col p-1">
-                        <div class="wrapper img_box shadow_one">
-                            <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
-                            <div class="tooltip">
-                                <img class="" src="{{asset('uploads/img/services/DIGITAL_MARKETING.jpg')}}" alt="">
-                            </div>
-                        </div>
-                        <div class="info_box shadow_one">
-                            <h4>Digital Marketing</h4>
-                        </div>
-                    </div>
-                    <div class="col p-1">
-                        <div class="wrapper img_box shadow_one">
-                            <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
-                            <div class="tooltip">
-                                <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
-                            </div>
-                        </div>
-                        <div class="info_box shadow_one">
-                            <h4>Graphics Design</h4>
-                        </div>
-                    </div>
-                    <div class="col p-1">
-                        <div class="wrapper img_box shadow_one">
-                            <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
-                            <div class="tooltip">
-                                <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
-                            </div>
-                        </div>
-                        <div class="info_box shadow_one">
-                            <h4>Web Development</h4>
-                        </div>
-                    </div>
-                    <div class="col p-1">
-                        <div class="wrapper img_box shadow_one">
-                            <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
-                            <div class="tooltip">
-                                <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
-                            </div>
-                        </div>
-                        <div class="info_box shadow_one">
-                            <h4>BPO<br>Services</h4>
-                        </div>
-                    </div>
+                <div class="tooltip">
+                    <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
                 </div>
-                <div class="col-10 shadow_one_alt py-3 float-end" style="border-radius: 45px;">
-                    <h3 class="text-uppercase text-center">Our Best Services</h3>
-
-                </div> --}}
             </div>
+            <div class="info_box shadow_one">
+                <h4>Lead Generation</h4>
+            </div>
+        </div>
+        <div class="col p-1">
+            <div class="wrapper img_box shadow_one">
+                <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                <div class="tooltip">
+                    <img class="" src="{{asset('uploads/img/services/DIGITAL_MARKETING.jpg')}}" alt="">
+                </div>
+            </div>
+            <div class="info_box shadow_one">
+                <h4>Digital Marketing</h4>
+            </div>
+        </div>
+        <div class="col p-1">
+            <div class="wrapper img_box shadow_one">
+                <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                <div class="tooltip">
+                    <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+                </div>
+            </div>
+            <div class="info_box shadow_one">
+                <h4>Graphics Design</h4>
+            </div>
+        </div>
+        <div class="col p-1">
+            <div class="wrapper img_box shadow_one">
+                <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                <div class="tooltip">
+                    <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+                </div>
+            </div>
+            <div class="info_box shadow_one">
+                <h4>Web Development</h4>
+            </div>
+        </div>
+        <div class="col p-1">
+            <div class="wrapper img_box shadow_one">
+                <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+                <div class="tooltip">
+                    <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+                </div>
+            </div>
+            <div class="info_box shadow_one">
+                <h4>BPO<br>Services</h4>
+            </div>
+        </div>
+        </div>
+        <div class="col-10 shadow_one_alt py-3 float-end" style="border-radius: 45px;">
+            <h3 class="text-uppercase text-center">Our Best Services</h3>
+
+        </div> --}}
+        </div>
         </div>
     </section>
 </section>
 
 <section class="section_part py-0" style="display:block;background-color: transparent;">
-    <img class="img-fluid" src="{{asset('final_front_assets/wave.png')}}" alt="">
-    <div id="text2" class="container second_part pt-5" style="background:#D8DBE1">
+
+    {{-- <img class="img-fluid" src="{{asset('final_front_assets/wave.png')}}" alt=""> --}}
+
+    <div class="container">
+        <div class="row align-items-end justify-content-between">
+            <div class="col-6" style="position: relative;">
+                <div class="IMG_01">
+                    <div class="mid_div">
+                        <div>
+                            <h6 class="style_text_2">Labor Shortage?</h6>
+                            <p>Think Outside the <br>Corporate Box.</p>
+                        </div>
+                        <div style="margin-top: 250px;">
+                            <a class="button link_scroll" href="#footer">Contact Us</a>
+                        </div>
+                        {{-- <div style="width: 300px;height:1px;background:#fff; margin:0;"></div> --}}
+                    </div>
+                </div>
+                <div class="IMG_01_1">
+                    <img class="img-fluid" src="{{asset('final_front_assets/service_05.png')}}" alt="">
+                </div>
+            </div>
+
+            {{-- Think Outside the
+            Corporate Box. --}}
+            <div class="col-6 d-flex justify-content-end">
+                <div class="IMG_02" style="position: relative">
+                    <div>
+                        <p class="IMG_02_line01">Our front office</p>
+                        <p class="IMG_02_line02">functions as your back office.</p>
+                        <p class="IMG_02_line03">The collective experience of our 5 year-old BPO company.</p>
+                        <a class="button" href="#">Know Your Needs</a>
+                        {{-- <p>Our front office functions as your back office. The collective experience of our 5 year-old BPO company</p> --}}
+                    </div>
+                </div>
+                <div class="IMG_02_1">
+                    <img class="img-fluid" src="{{asset('final_front_assets/service_03.png')}}" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="text2" class="container second_part pt-5" style="background:#D8DBE1;margin-top: -400px;">
         {{-- <h3 class="text-light text-uppercase text-center"
             style="font-size: 120px;text-shadow: -3px 3px 10px rgb(113 113 113);">Our Best Services</h3> --}}
 
 
+        <div class="col-sm-12 col-md-12 mb-5" style="margin-top: 420px;">
+            <h3 class="text-uppercase text-center style_text_2" style="font-size: 50px;">Industries We Serve</h3>
+        </div>
 
 
-
-
-
-
-
-
-
-            <div class="row">
+        {{-- <div class="row">
                 <div class="col p-1">
                     <div class="wrapper img_box border_one">
                         <img class="" src="{{asset('uploads/img/services/s1.png')}}" alt="">
-                        <div class="tooltip">
-                            <img class="" src="{{asset('uploads/img/services/DIGITAL_MARKETING.jpg')}}" alt="">
-                        </div>
-                    </div>
-                    <div class="info_box border_one mt-3">
-                        <h4>Digital Marketing</h4>
-                    </div>
+        <div class="tooltip">
+            <img class="" src="{{asset('uploads/img/services/DIGITAL_MARKETING.jpg')}}" alt="">
+        </div>
+    </div>
+    <div class="info_box border_one mt-3">
+        <h4>Digital Marketing</h4>
+    </div>
+    </div>
+    <div class="col p-1">
+        <div class="wrapper img_box border_one">
+            <img class="" src="{{asset('uploads/img/services/s2.png')}}" alt="">
+            <div class="tooltip">
+                <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+            </div>
+        </div>
+        <div class="info_box border_one mt-3">
+            <h4>Web Development</h4>
+        </div>
+    </div>
+    <div class="col p-1">
+        <div class="wrapper img_box border_one">
+            <img class="" src="{{asset('uploads/img/services/s3.png')}}" alt="">
+            <div class="tooltip">
+                <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+            </div>
+        </div>
+        <div class="info_box border_one mt-3">
+            <h4>Graphics Design</h4>
+        </div>
+    </div>
+    <div class="col p-1 text-center">
+        <div class="wrapper img_box border_one">
+            <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
+            <div class="tooltip">
+                <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+            </div>
+        </div>
+        <div class="info_box border_one mt-3">
+            <h4>Data Entry</h4>
+        </div>
+    </div>
+    <div class="col p-1">
+        <div class="wrapper img_box border_one">
+            <img class="" src="{{asset('uploads/img/services/s5.png')}}" alt="">
+            <div class="tooltip">
+                <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
+            </div>
+        </div>
+        <div class="info_box border_one mt-3">
+            <h4>BPO Services</h4>
+        </div>
+    </div>
+    </div> --}}
+
+    <div class="row">
+        <div class="col-sm-12 col-md-3">
+            <div class="home_service_box">
+                <div class="img_box">
+                    <h4>Software Industry</h4>
                 </div>
-                <div class="col p-1">
-                    <div class="wrapper img_box border_one">
-                        <img class="" src="{{asset('uploads/img/services/s2.png')}}" alt="">
-                        <div class="tooltip">
-                            <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
-                        </div>
-                    </div>
-                    <div class="info_box border_one mt-3">
-                        <h4>Web Development</h4>
-                    </div>
-                </div>
-                <div class="col p-1">
-                    <div class="wrapper img_box border_one">
-                        <img class="" src="{{asset('uploads/img/services/s3.png')}}" alt="">
-                        <div class="tooltip">
-                            <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
-                        </div>
-                    </div>
-                    <div class="info_box border_one mt-3">
-                        <h4>Graphics Design</h4>
-                    </div>
-                </div>
-                <div class="col p-1 text-center">
-                    <div class="wrapper img_box border_one">
-                        <img class="" src="{{asset('uploads/img/services/5.png')}}" alt="">
-                        <div class="tooltip">
-                            <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
-                        </div>
-                    </div>
-                    <div class="info_box border_one mt-3">
-                        <h4>Data Entry</h4>
-                    </div>
-                </div>
-                <div class="col p-1">
-                    <div class="wrapper img_box border_one">
-                        <img class="" src="{{asset('uploads/img/services/s5.png')}}" alt="">
-                        <div class="tooltip">
-                            <img class="" src="{{asset('uploads/img/Make-a-customer-not-a-sale1.gif')}}" alt="">
-                        </div>
-                    </div>
-                    <div class="info_box border_one mt-3">
-                        <h4>BPO Services</h4>
-                    </div>
+                <div class="content_box">
+                    <h4>Software Industry</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. adipisicing elit.</p>
                 </div>
             </div>
+        </div>
+        <div class="col-sm-12 col-md-3">
+            <div class="home_service_box">
+                <div class="img_box">
+                    <h4>Healthcare Industry</h4>
+                </div>
+                <div class="content_box">
+                    {{-- <h4>Healthcare Industry</h4> --}}
+                    <p>We support the core elements of your healthcare IT infrastructure to keep you up and running when and where it matters most. We are proud to be a leading provider of outsourced healthcare IT services</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-3">
+            <div class="home_service_box">
+                <div class="img_box">
+                    <h4>Legal Industry</h4>
+                </div>
+                <div class="content_box">
+                    {{-- <h4>Legal Industry</h4> --}}
+                    <p>We offer a multitude of services that can grow your law firm into a thriving practice! Our team can customize a multi-channel digital marketing strategy to achieve your specific firm goals.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-3">
+            <div class="home_service_box">
+                <div class="img_box">
+                    <h4>Real Estate Industry</h4>
+                </div>
+                <div class="content_box">
+                    {{-- <h4>Real Estate Industry</h4> --}}
+                    <p>Our experience and understanding of real estate help us leverage technology to provide Services like leads list Building, Graphics Design, Digital marketing, responsive website, and SEO, which will significantly enhance your ROI.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-3">
+            <div class="home_service_box">
+                <div class="img_box">
+                    <h4>Insurance Industry</h4>
+                </div>
+                <div class="content_box">
+                    <h4>Insurance Industry</h4>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. adipisicing elit.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-3">
+            <div class="home_service_box">
+                <div class="img_box">
+                    <h4>Retail Industry</h4>
+                </div>
+                <div class="content_box">
+                    {{-- <h4>Retail Industry</h4> --}}
+                    <p>Meet your customer needs and maintain online activities with our digital marketing and web-related Services. Find the right maintenance programs to keep you steady as you grow your customer base.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-3">
+            <div class="home_service_box">
+                <div class="img_box">
+                    <h4>E-commerce Industry</h4>
+                </div>
+                <div class="content_box">
+                    {{-- <h4>E-commerce Industry</h4> --}}
+                    <p>For more than 5 years, we have been helping So many clients improve their business-to-consumer marketing efforts and exceed their online goals.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-3">
+            <div class="home_service_box">
+                <div class="img_box">
+                    <h4>Finance Industry</h4>
+                </div>
+                <div class="content_box">
+                    {{-- <h4>Finance Industry</h4> --}}
+                    <p>Since differentiation in financial services is driven by technologies, we create incredibly compelling Websites for various banking and finance groups worldwide to help them create loyal engagements with consumers through mobile devices.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 </section>
 
 
+{{-- <section class="container section_part section_part_3">
+    <div class="row w-100 m-0 align-items-end">
+        <div class="col-sm-12 col-md-3 graph_box_main">
+            <div class="graph_box_1">
+                <img src="{{asset('final_front_assets/img/slide/1.png')}}" alt="" class="img-fluid">
+</div>
+</div>
+<div class="col-sm-12 col-md-3 graph_box_main">
+    <div class="graph_box_2">
+        <img src="{{asset('final_front_assets/img/slide/2.png')}}" alt="" class="img-fluid">
+    </div>
+</div>
+<div class="col-sm-12 col-md-3 graph_box_main">
+    <div class="graph_box_3">
+        <img src="{{asset('final_front_assets/img/slide/3.png')}}" alt="" class="img-fluid">
+    </div>
+</div>
+<div class="col-sm-12 col-md-3 graph_box_main">
+    <div class="graph_box_4">
+        <img src="{{asset('final_front_assets/img/slide/4.png')}}" alt="" class="img-fluid">
+    </div>
+</div>
+</div>
+</section> --}}
+
+{{-- <section class="section_part after_indus">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="after_indus_heading">Services</h3>
+            </div>
+        </div>
+    </div>
+</section> --}}
 
 
 <section class="section_part" id="three">
@@ -399,14 +573,17 @@ or product.',
                                     Diamond
                                 </div>
                             </div>
-                            <div class="row m-0 mt-5 p-0 justify-content-between" style="box-shadow: inset 3px 3px 6px #a2a3ab, inset -3px -3px 6px #ffffff;">
+                            <div class="row m-0 mt-5 p-0 justify-content-between"
+                                style="box-shadow: inset 3px 3px 6px #a2a3ab, inset -3px -3px 6px #ffffff;">
                                 <div class="col-4 btn_right_shadow" id="ser_pack_price">US $ 50</div>
                                 <div class="col-7 card_info_heading" id="ser_pack_title">Packege Title Here</div>
                             </div>
 
-                            <div class="col-12 mt-4" id="ser_pack_description" style="box-shadow: none;padding:10px;border: 1px solid #fff;margin-bottom: 15px;">LinkedIn, Facebook, Google Web Scraping, Email Collection, Formatting Included</div>
+                            <div class="col-12 mt-4" id="ser_pack_description"
+                                style="box-shadow: none;padding:10px;border: 1px solid #fff;margin-bottom: 15px;">
+                                LinkedIn, Facebook, Google Web Scraping, Email Collection, Formatting Included</div>
 
-                            </div>
+                        </div>
 
                         <div class="col-12"
                             style="padding: 25px 10px;margin: 2px 0 0 0;box-shadow:  3px 3px 6px #a2a3ab, -3px -3px 6px #ffffff;padding:10px;">
@@ -450,12 +627,263 @@ or product.',
 </section>
 
 
-<section class="section_part" style="height: 50vh;background:#e7e9ef;padding:0;z-index: 1;">
+{{-- <section class="section_part" style="height: 50vh;background:#e7e9ef;padding:0;z-index: 1;">
     <div id="text2" class="container">
         <h3 class="text-light text-uppercase text-center"
-            style="font-size: 120px;text-shadow: -3px 3px 10px rgb(113 113 113);">Part Second</h3>
+        style="font-size: 120px;text-shadow: -3px 3px 10px rgb(113 113 113);">Part Second</h3>
+    </div>
+</section> --}}
+
+{{-- <section class="container section_part section_part_3" style="z-index: 1;">
+    <div class="row w-100 m-0 align-items-end">
+        <div class="col-sm-12 col-md-3 graph_box_main">
+            <div class="graph_box_1">
+                <img src="{{asset('final_front_assets/img/slide/1.png')}}" alt="" class="img-fluid">
+</div>
+</div>
+<div class="col-sm-12 col-md-3 graph_box_main">
+    <div class="graph_box_2">
+        <img src="{{asset('final_front_assets/img/slide/2.png')}}" alt="" class="img-fluid">
+    </div>
+</div>
+<div class="col-sm-12 col-md-3 graph_box_main">
+    <div class="graph_box_3">
+        <img src="{{asset('final_front_assets/img/slide/3.png')}}" alt="" class="img-fluid">
+    </div>
+</div>
+<div class="col-sm-12 col-md-3 graph_box_main">
+    <div class="graph_box_4">
+        <img src="{{asset('final_front_assets/img/slide/4.png')}}" alt="" class="img-fluid">
+    </div>
+</div>
+</div>
+
+</section> --}}
+
+<div class="container" style="background: #d8dbe1;position: relative;z-index: 20;">
+    <div class="row align-items-end justify-content-between">
+        <div class="col-6 second_service" style="position: relative;z-index: 20;">
+            <div class="IMG_01_1" style="left: 10px;">
+                <img class="img-fluid" src="{{asset('final_front_assets/img/icons/1.png')}}" alt="">
+            </div>
+            <div class="IMG_01_1" style="left: 235px;">
+                <img class="img-fluid" src="{{asset('final_front_assets/img/icons/2.png')}}" alt="">
+            </div>
+            <div class="IMG_01_1" style="left: 460px;">
+                <img class="img-fluid" src="{{asset('final_front_assets/img/icons/3.png')}}" alt="">
+            </div>
+            <div class="IMG_01_1" style="left: 680px;bottom: 0;height: 280px;">
+                <img class="img-fluid" src="{{asset('final_front_assets/img/icons/4.png')}}" alt="">
+            </div>
+            <div class="IMG_01_1" style="left: 905px;bottom: 0;height: 280px;">
+                <img class="img-fluid" src="{{asset('final_front_assets/img/icons/5.png')}}" alt="">
+            </div>
+            <div class="IMG_01_1" style="left: 1115px;bottom: 0;height: 280px;">
+                <img class="img-fluid" src="{{asset('final_front_assets/img/icons/6.png')}}" alt="">
+            </div>
+            <div class="IMG_01">
+                <div class="mid_div">
+                    <div>
+                        {{-- <h6 class="style_text_2 px-3">Know your standard working procedure</h6> --}}
+                    </div>
+                    {{-- <div style="margin-top: 250px;">
+                         <a class="button link_scroll" href="#footer">Contact Us</a>
+                     </div> --}}
+                    {{-- <div style="width: 300px;height:1px;background:#fff; margin:0;"></div> --}}
+                </div>
+            </div>
+        </div>
+
+        {{-- Think Outside the
+        Corporate Box. --}}
+        {{-- <div class="col-6 d-flex justify-content-end" style="z-index: 5">
+            <div class="IMG_02" style="position: relative">
+                <div>
+
+                </div>
+            </div>
+            <div class="IMG_02_1">
+
+            </div>
+        </div> --}}
+        <div class="col-12" style="z-index: 25;margin-top: -100px;">
+            <h6 class="" style="margin-top: -50px;margin-bottom: 0;width:50%;
+            color: #fff;
+            font-size: 30px;
+            background: #b6fac5;text-shadow: -3px 3px 10px rgb(113 113 113);
+    padding: 5px 15px;text-transform:uppercase;">Know your <br>standard working procedure.</h6>
+        </div>
+    </div>
+</div>
+
+
+{{-- <section class="container section_part section_part_3" style="z-index: 1;">
+    <img class="img-fluid" src="{{asset('final_front_assets/service-process.png')}}" alt="service-process.png">
+</section> --}}
+
+
+
+{{-- FAQ Section --------------------------||-------------------------- Start --}}
+
+<section class="section_part" style="background:#D8DBE1;padding:0;z-index: 1;margin-top: -200px;">
+    <div class="container" style="margin-top: 200px;">
+        <div class="row align-items-center" style="border-bottom: 60px solid #b6fac5;
+        padding-bottom: 80px;">
+            {{-- <div class="col-sm-12 col-md-12 text-center">
+                <h3>Our Working Process</h3>
+                <h5><i class="fas fa-angle-down"></i></h5>
+                <h5><i class="fas fa-arrow-down"></i></h5>
+            </div>
+            <div class="col-sm-12 col-md-5">
+                <img src="{{asset('final_front_assets/work-process.gif')}}" alt="" style="width: 100%;margin-top:
+            100px;">
+        </div> --}}
+        <div class="col-sm-12 col-md-12" style="padding-left:70px;">
+            <div class="spinx-connect">
+                <h3 data-index="0" class="spinx-acco-title current"><i class='bx bx-user'></i>Connect</h3>
+                <div class="spinx-acco-content" style="display: block;">
+                    <h4>INCREASE THE AUDIENCE</h4>
+                    <p>Looking to enhance your digital platform? Contact with us today for a first free consultation to
+                        determine the objectives of the transistion and decide the next steps of your digital journey.
+                    </p>
+
+                </div>
+                <h3 data-index="1" class="spinx-acco-title"><i class='bx bx-user'></i>Agreement</h3>
+                <div class="spinx-acco-content" style="display: none;">
+                    {{-- <h4>INTELLIGENCE &amp; EXPERIENCE</h4> --}}
+                    <p>We love to discuss about the project in details before making up an agreement. After a successful
+                        discussion we go for an agreement with you.</p>
+
+                </div>
+                <h3 data-index="2" class="spinx-acco-title"><i class='bx bx-user'></i>Final Strategy</h3>
+                <div class="spinx-acco-content" style="display: none;">
+                    {{-- <h4>THE PAST &amp; THE FUTURE</h4> --}}
+                    <p>The initial step after getting the project is research & planning to make a final strategy. Our
+                        experts analyze your project to find the most appropriate method for the project.</p>
+
+                </div>
+                <h3 data-index="3" class="spinx-acco-title"><i class='bx bx-user'></i>Implementation</h3>
+                <div class="spinx-acco-content" style="display: none;">
+                    {{-- <h4>THE PAST &amp; THE FUTURE</h4> --}}
+                    <p>An essential part of the Work process is implementation. While technology is a main factor, we
+                        are also focusing on the people and your enterprise culture to make sure the project is
+                        successful.</p>
+                </div>
+                <h3 data-index="4" class="spinx-acco-title"><i class='bx bx-user'></i>Quality check & HANDOVER</h3>
+                <div class="spinx-acco-content" style="display: none;">
+                    {{-- <h4>THE PAST &amp; THE FUTURE</h4> --}}
+                    <p>We always try to maintain the best quality for submitting error-free tasks. In this case, we
+                        maintain a strict quality check for your Desire services. Then,<br>The final step is here ;
+                        After final checking we deliver your project. We always assure the best quality service for you.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row faq_section mt-5">
+        <div class="col-sm-12 col-md-12">
+            <h3 class="text-center faq_section_heading">FAQ</h3>
+        </div>
+        <div class="col-sm-12 col-md-12 my-5">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            <span>FAQ</span> What do i need to provide you to get started?
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            You need to provide us images in any common format (JPG, JPEG, PNG, RAW, TIF, PSD etc.).
+                            If
+                            you give us a good resolution image we will receive a great result. Provide us the
+                            instructions for the image to edit so that we can provide you the expected result.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <span>FAQ</span> Do you offer super fast delivery?
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Yes, we have a team, if you need urgent our all members will work for you.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <span>FAQ</span> I have complex images like jewelry, do you rate same
+                            price?
+                        </button>
+                    </h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            For complex image like jewelry, plants, needs lots of time. We charge a little bit more
+                            for
+                            this type of complex images. Please let us know before placing your order & give us
+                            sample
+                            so that we can give you a reasonable price.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                            <span>FAQ</span> I have complex images like jewelry, do you rate same
+                            price?
+                        </button>
+                    </h2>
+                    <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            For complex image like jewelry, plants, needs lots of time. We charge a little bit more
+                            for
+                            this type of complex images. Please let us know before placing your order & give us
+                            sample
+                            so that we can give you a reasonable price.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading5">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                            <span>FAQ</span> I have complex images like jewelry, do you rate same
+                            price?
+                        </button>
+                    </h2>
+                    <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            For complex image like jewelry, plants, needs lots of time. We charge a little bit more
+                            for
+                            this type of complex images. Please let us know before placing your order & give us
+                            sample
+                            so that we can give you a reasonable price.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
 </section>
+
+{{-- FAQ Section --------------------------||-------------------------- End --}}
+
+
 
 
 
@@ -701,8 +1129,9 @@ or product.',
 </section> --}}
 
 
-<main id="main" class="light_mode_Sectoin">
+<main id="main" class="light_mode_Sectoin" style="z-index: 1;">
     <!-- ======= Our Services Section ======= -->
+    <!--
     <section class="container">
         <div class="row service_One">
             <div class="col-sm-12 col-md-3">
@@ -785,7 +1214,8 @@ or product.',
                         <div class="read_area text-center"><a href="#">Read More</a></div>
                     </div>
                     <div class="text-center w-100 d-none arrow_down animate__animated animate__fadeInDown"><i
-                            class="fas fa-caret-down" style="font-size: 50px;margin: -20px;color: #008000;"></i></div>
+                            class="fas fa-caret-down" style="
+                                nt-size: 50px;margin: -20px;color: #008000;"></i></div>
                 </div>
                 <div class="col-sm-12 col-md-3 ui special cards my-3" id="card_02">
                     <div class="card w-100 m-0 shadow_one">
@@ -1224,7 +1654,7 @@ or product.',
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 
     <section id="services-list" class="services-list">
@@ -1536,102 +1966,6 @@ or product.',
 
 
 
-
-    <!-- ======= Services Cards Section ======= -->
-    <section id="services-cards" class="services-cards">
-        <div class="container" data-aos="fade-up">
-
-            <div class="row gy-4">
-
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="card-item">
-                        <div class="row">
-                            <div class="col-xl-5">
-                                <div class="card-bg"
-                                    style="background-image: url({{asset('final_front_assets/img/cards-1.jpg')}}"></div>
-                            </div>
-                            <div class="col-xl-7 d-flex align-items-center">
-                                <div class="card-body">
-                                    <h4 class="card-title">Eligendi omnis sunt veritatis.</h4>
-                                    <p>Fuga in dolorum et iste et culpa. Commodi possimus nesciunt modi voluptatem
-                                        placeat deleniti
-                                        adipisci. Cum delectus doloribus non veritatis. Officia temporibus illo magnam.
-                                        Dolor eos et.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- End Card Item -->
-
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="card-item">
-                        <div class="row">
-                            <div class="col-xl-5">
-                                <div class="card-bg"
-                                    style="background-image: url({{asset('final_front_assets/img/cards-2.jpg')}}"></div>
-                            </div>
-                            <div class="col-xl-7 d-flex align-items-center">
-                                <div class="card-body">
-                                    <h4 class="card-title">Possimus ut sed velit assumenda</h4>
-                                    <p>Sunt deserunt maiores voluptatem autem est rerum perferendis rerum blanditiis.
-                                        Est laboriosam qui
-                                        iste numquam laboriosam voluptatem architecto. Est laudantium sunt at quas aut
-                                        hic. Eum
-                                        dignissimos.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- End Card Item -->
-
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="card-item">
-                        <div class="row">
-                            <div class="col-xl-5">
-                                <div class="card-bg"
-                                    style="background-image: url({{asset('final_front_assets/img/cards-3.jpg')}}"></div>
-                            </div>
-                            <div class="col-xl-7 d-flex align-items-center">
-                                <div class="card-body">
-                                    <h4 class="card-title">Error beatae dolor inventore aut</h4>
-                                    <p>Dicta porro nobis. Velit cum in. Nesciunt dignissimos enim molestiae facilis
-                                        numquam quae quaerat
-                                        ipsam omnis. Neque debitis ipsum at architecto officia laboriosam odit. Ut sunt
-                                        temporibus nulla
-                                        culpa.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- End Card Item -->
-
-                <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="card-item">
-                        <div class="row">
-                            <div class="col-xl-5">
-                                <div class="card-bg"
-                                    style="background-image: url({{asset('final_front_assets/img/cards-4.jpg')}}"></div>
-                            </div>
-                            <div class="col-xl-7 d-flex align-items-center">
-                                <div class="card-body">
-                                    <h4 class="card-title">Expedita voluptas ut ut nesciunt</h4>
-                                    <p>Aut est quidem doloremque voluptatem magnam quis excepturi vero quia. Eum eos
-                                        doloremque
-                                        architecto illo at beatae dolore. Fugiat suscipit et sint ratione dolores. Aut
-                                        aliquid ea dolores
-                                        libero nobis.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div><!-- End Card Item -->
-
-            </div>
-
-        </div>
-    </section><!-- End Services Cards Section -->
-
-
     <!-- ======= Team Section ======= -->
     <section id="team" class="team">
         <div class="container" data-aos="fade-up">
@@ -1646,7 +1980,7 @@ or product.',
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
                     <div class="team-member">
                         <div class="member-img">
-                            <img src="{{asset('final_front_assets/img/team/team-1.jpg')}}" class="img-fluid" alt="">
+                            <img src="{{asset('uploads/people/rabiul.png')}}" class="img-fluid" alt="">
                             <div class="social">
                                 <a href=""><i class="bi bi-twitter"></i></a>
                                 <a href=""><i class="bi bi-facebook"></i></a>
@@ -1655,8 +1989,8 @@ or product.',
                             </div>
                         </div>
                         <div class="member-info">
-                            <h4>Walter White</h4>
-                            <span>Chief Executive Officer</span>
+                            <h4>Muhammad Rabiul</h4>
+                            <span>Web Developer</span>
                         </div>
                     </div>
                 </div><!-- End Team Member -->
@@ -1664,7 +1998,7 @@ or product.',
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
                     <div class="team-member">
                         <div class="member-img">
-                            <img src="{{asset('final_front_assets/img/team/team-2.jpg')}}" class="img-fluid" alt="">
+                            <img src="{{asset('uploads/people/2.png')}}" class="img-fluid" alt="">
                             <div class="social">
                                 <a href=""><i class="bi bi-twitter"></i></a>
                                 <a href=""><i class="bi bi-facebook"></i></a>
@@ -1673,8 +2007,8 @@ or product.',
                             </div>
                         </div>
                         <div class="member-info">
-                            <h4>Sarah Jhonson</h4>
-                            <span>Product Manager</span>
+                            <h4>Joyanta Debnath</h4>
+                            <span>Marketing Specialist</span>
                         </div>
                     </div>
                 </div><!-- End Team Member -->
@@ -1682,7 +2016,7 @@ or product.',
                 <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
                     <div class="team-member">
                         <div class="member-img">
-                            <img src="{{asset('final_front_assets/img/team/team-3.jpg')}}" class="img-fluid" alt="">
+                            <img src="{{asset('uploads/people/3.png')}}" class="img-fluid" alt="">
                             <div class="social">
                                 <a href=""><i class="bi bi-twitter"></i></a>
                                 <a href=""><i class="bi bi-facebook"></i></a>
@@ -1691,8 +2025,8 @@ or product.',
                             </div>
                         </div>
                         <div class="member-info">
-                            <h4>William Anderson</h4>
-                            <span>CTO</span>
+                            <h4>Sagor Mojumdar</h4>
+                            <span>Graphic Designer</span>
                         </div>
                     </div>
                 </div><!-- End Team Member -->
@@ -2023,7 +2357,9 @@ or product.',
         $.ajax({
             type: 'POST',
             url: `/getservicedata`,
-            data: {'ServiceID': `${ServiceID}`},
+            data: {
+                'ServiceID': `${ServiceID}`
+            },
             success: function (data) {
                 //   $("#msg").html(data.msg);
                 // alert(data.service.name);
@@ -2055,7 +2391,8 @@ or product.',
             type: 'POST',
             url: `/getservicedata/first`,
             data: {
-                'ServiceID': 'ServiceID'},
+                'ServiceID': 'ServiceID'
+            },
             success: function (data) {
                 $('#service_banner_slider').html(data.service_img);
                 $('#card_badge').html(data.packageData);

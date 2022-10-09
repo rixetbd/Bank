@@ -23,7 +23,7 @@
     {{-- CDN --}}
     {{-- Custom --}}
 
-    <link rel="stylesheet" href="{{asset('final_front_assets/css/nav.css')}}">
+    <link rel="stylesheet" href="{{asset('final_front_assets/css/nav2.css')}}">
     <link rel="stylesheet" href="{{asset('final_front_assets/css/header.css')}}">
     <link rel="stylesheet" href="{{asset('final_front_assets/css/table.css')}}">
     <link rel="stylesheet" href="{{asset('final_front_assets/css/services.css')}}">

@@ -151,6 +151,28 @@
     font-size: 36px
 }
 
+/* FAQ Section || Stat */
+.accordion-button{color:#1b1b1b;background-color: transparent;font-family: 'Nunito', sans-serif;}
+.accordion-item{border: none;border-top: 1px solid #919191 !important;border-radius: 0;background-color: transparent;}
+.accordion-button:focus{color:#1b1b1b;box-shadow: none;}
+.accordion-button:not(.collapsed){color: #34a589;background-color:transparent;box-shadow: none;}
+.accordion-item:last-of-type, .accordion-item:last-of-type .accordion-collapse{border-radius: 0;}
+.accordion-header button.accordion-button {font-size: 30px;padding: 25px 0;}
+.accordion-header button.accordion-button span{width: 100px;font-size: 20px}
+.accordion-body{font-size: 15px;letter-spacing: 1px;padding-left: 100px;padding-bottom: 40px;}
+.accordion-item:first-of-type{border-radius: 0;}
+.faq_section .faq_section_heading{font-size: 2.5rem;position: relative;}
+.faq_section .faq_section_heading::after{content: '';
+    width: 10%;
+    height: 1px;
+    background: #888888;
+    bottom: -5px;
+    position: absolute;
+    left: 45%;
+}
+
+/* FAQ Section || End */
+
 </style>
 @endsection
 
@@ -165,40 +187,115 @@
                 <div class="spinx-connect">
                     <h3 data-index="0" class="spinx-acco-title current"><i class='bx bx-user'></i>Connect</h3>
                     <div class="spinx-acco-content" style="display: block;">
-                        <h4>YOU &amp; SPINX &amp; THE AUDIENCE</h4>
-                        <p>We believe the most effective connections are emotional. People know it when they feel it.
-                        </p>
+                        <h4>INCREASE THE AUDIENCE</h4>
+                        <p>Looking to enhance your digital platform? Contact with us today for a first free consultation to determine the objectives of the transistion and decide the next steps of your digital journey.</p>
 
                     </div>
-                    <h3 data-index="1" class="spinx-acco-title"><i class='bx bx-user'></i>Discussion</h3>
+                    <h3 data-index="1" class="spinx-acco-title"><i class='bx bx-user'></i>Agreement</h3>
                     <div class="spinx-acco-content" style="display: none;">
-                        <h4>INTELLIGENCE &amp; EXPERIENCE</h4>
-                        <p>Our professional Los Angeles web design team collaborates to develop the best strategies and
-                            inspired
-                            solutions for your brand.</p>
+                        {{-- <h4>INTELLIGENCE &amp; EXPERIENCE</h4> --}}
+                        <p>We love to discuss about the project in details before making up an agreement. After a successful discussion we go for an agreement with you.</p>
 
                     </div>
-                    <h3 data-index="2" class="spinx-acco-title"><i class='bx bx-user'></i>Research</h3>
+                    <h3 data-index="2" class="spinx-acco-title"><i class='bx bx-user'></i>Final Strategy</h3>
                     <div class="spinx-acco-content" style="display: none;">
-                        <h4>THE PAST &amp; THE FUTURE</h4>
-                        <p>What matters to us is not just what we’ve done in the past, but what we’ll be doing next. We
-                            believe
-                            in looking towards the future with our clients.</p>
+                        {{-- <h4>THE PAST &amp; THE FUTURE</h4> --}}
+                        <p>The initial step after getting the project is research & planning to make a final strategy. Our experts analyze your project to find the most appropriate method for the project.</p>
 
                     </div>
-                    <h3 data-index="3" class="spinx-acco-title"><i class='bx bx-user'></i>Working</h3>
+                    <h3 data-index="3" class="spinx-acco-title"><i class='bx bx-user'></i>Implementation</h3>
                     <div class="spinx-acco-content" style="display: none;">
-                        <h4>THE PAST &amp; THE FUTURE</h4>
-                        <p>What matters to us is not just what we’ve done in the past, but what we’ll be doing next. We
-                            believe
-                            in looking towards the future with our clients.</p>
+                        {{-- <h4>THE PAST &amp; THE FUTURE</h4> --}}
+                        <p>An essential part of the Work process  is implementation. While technology is a main factor, we are also focusing on the people and your enterprise culture to make sure the project is successful.</p>
                     </div>
-                    <h3 data-index="4" class="spinx-acco-title"><i class='bx bx-user'></i>Delivery</h3>
+                    <h3 data-index="4" class="spinx-acco-title"><i class='bx bx-user'></i>Quality check</h3>
                     <div class="spinx-acco-content" style="display: none;">
-                        <h4>THE PAST &amp; THE FUTURE</h4>
-                        <p>What matters to us is not just what we’ve done in the past, but what we’ll be doing next. We
-                            believe
-                            in looking towards the future with our clients.</p>
+                        {{-- <h4>THE PAST &amp; THE FUTURE</h4> --}}
+                        <p>We always try to maintain the best quality for submitting error-free tasks. In this case, we maintain a strict quality check for your Desire services.</p>
+                    </div>
+                    <h3 data-index="5" class="spinx-acco-title"><i class='bx bx-user'></i>Delivery</h3>
+                    <div class="spinx-acco-content" style="display: none;">
+                        {{-- <h4>THE PAST &amp; THE FUTURE</h4> --}}
+                        <p>The final step is here ; After final checking we deliver your project. We always assure the best quality service for you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row faq_section">
+            <div class="col-sm-12 col-md-12">
+                <h3 class="text-center faq_section_heading">FAQ</h3>
+            </div>
+            <div class="col-sm-12 col-md-12 my-5">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <span>FAQ</span> What do i need to provide you to get started?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                You need to provide us images in any common format (JPG, JPEG, PNG, RAW, TIF, PSD etc.).
+                                If
+                                you give us a good resolution image we will receive a great result. Provide us the
+                                instructions for the image to edit so that we can provide you the expected result.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <span>FAQ</span> Do you offer super fast delivery?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                Yes, we have a team, if you need urgent our all members will work for you.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <span>FAQ</span> I have complex images like jewelry, do you rate same
+                                price?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                For complex image like jewelry, plants, needs lots of time. We charge a little bit more
+                                for
+                                this type of complex images. Please let us know before placing your order & give us
+                                sample
+                                so that we can give you a reasonable price.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                <span>FAQ</span> I have complex images like jewelry, do you rate same
+                                price?
+                            </button>
+                        </h2>
+                        <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                For complex image like jewelry, plants, needs lots of time. We charge a little bit more
+                                for
+                                this type of complex images. Please let us know before placing your order & give us
+                                sample
+                                so that we can give you a reasonable price.
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

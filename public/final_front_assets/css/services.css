@@ -362,15 +362,6 @@ section.section_part {
   }
 
 
-  /* section.section_part:nth-of-type(2) {
-    background-color: #c587ae;
-  } */
-  /* section.section_part:nth-of-type(3) {
-    background-color: #f5b8c7;
-  } */
-  section.section_part:nth-of-type(4) {
-    background-color: #fdcdbe;
-  }
   /* set the of the first div to fixed */
   #text1 {
     position: fixed;
@@ -581,10 +572,10 @@ section.section_part {
     margin: 0;
     font-weight: 700;
     line-height: 1;
-    color: #fff;
+    color: #000;
     font-family: 'Roboto', sans-serif;
     /* text-shadow: -3px 3px 2px rgb(113 113 113); */
-    text-shadow: -3px 3px 10px rgb(113 113 113);
+    /* text-shadow: -3px 3px 10px rgb(113 113 113); */
 }
 
 .service_col_full_fixed h3.h_text_1{
@@ -595,3 +586,227 @@ section.section_part {
 .border_one{
     border: 1px solid #fff;
 }
+
+
+
+
+/* home_service_box || Service Box || Start */
+.home_service_box{
+    /* border: 1px solid #fff; */
+    margin-bottom: 25px;
+    box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
+    border-bottom: 10px solid #b6fac5;
+}
+.home_service_box .img_box{
+    height: 100px;
+    /* background: #292929; */
+    background-color: rgba(0,0,0,.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home_service_box .img_box h4{
+    font-size: 22px;
+    text-transform: uppercase;
+}
+.home_service_box .content_box{
+    padding: 15px;
+    height: 220px;
+}
+.home_service_box .content_box h4{
+    margin: 5px 0;
+}
+.home_service_box .content_box p{
+    font-size: 14px;
+}
+/* home_service_box || Service Box || End */
+
+/*
+
+    Healthcare Industry
+    Legal Industry
+    Real Estate Industry
+    Insurance Industry
+    Retail Industry
+    E-commerce Industry
+    Finance Industry
+    Travel & Tourism Industry
+    Telecom Industry
+    Mobile App Industry
+    HR Industry
+    Education Industry
+
+
+
+*/
+.IMG_02{
+    width:500px;
+    height:500px;
+    background: #B6FAC5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: inset 3px 3px 6px #a2a3ab, inset -3px -3px 6px #ffffff; */
+    border: 1px solid #fff;
+}
+.IMG_02 div{
+    padding: 55px;
+}
+.IMG_02 p.IMG_02_line01{
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 110px;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #FFF;
+    text-shadow: -3px 3px 10px rgb(113 113 113);
+
+}
+.IMG_02 p.IMG_02_line02{
+    text-transform:capitalize;
+    margin: 0;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    text-shadow: -3px 3px 10px rgb(113 113 113);
+}
+
+.IMG_01{
+    width: 450px;
+    height: 600px;
+    background: #B6FAC5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+    /* box-shadow: inset 3px 3px 6px #a2a3ab, inset -3px -3px 6px #ffffff; */
+}
+.IMG_01 div.mid_div{
+    height: 420px;
+    margin-top: 100px;
+}
+.IMG_01 div.mid_div div{
+    width: 100%;
+}
+
+.IMG_01 h6{
+    font-size: 38px;
+    line-height: 50px;
+    margin: 0;
+    color: #fff;
+}
+
+.IMG_01 p{
+    font-size: 30px;
+    line-height: 35px;
+}
+.IMG_01 a.button,
+.IMG_02 a.button{
+    color: #000;
+    font-size: 20px;
+    font-weight: 400;
+    width: 350px;
+    border: none;
+    background: transparent;
+    text-align: left;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+.IMG_01 a.button::after,
+.IMG_02 a.button::after{
+    content: "";
+    background: #fff;
+    height: 2px;
+    width: 380px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+}
+
+.IMG_01_1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    width:200px;
+    height:250px;
+    background:#b6fac5;
+    position: absolute;
+    bottom:45px;
+    right:15%;
+    /* box-shadow: inset 3px 3px 6px #a2a3ab, inset -3px -3px 6px #ffffff; */
+    border: 4px solid #fff;
+}
+
+
+.IMG_02_1{
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    width:200px;
+    height:250px;
+    background:#b6fac5;
+    position: absolute;
+    top:0;
+    right:450px;
+    /* box-shadow: inset 3px 3px 6px #a2a3ab, inset -3px -3px 6px #ffffff; */
+    border: 4px solid #fff;
+}
+
+.IMG_02_line03{
+    font-size: 30px;
+    line-height: 35px;
+}
+
+
+/* Graph_box || CSS || Start */
+.graph_box_1,.graph_box_2,.graph_box_3,.graph_box_4{
+    /* border: 1px solid #fff; */
+    /* margin-bottom: 25px; */
+    box-shadow: 3px 3px 6px #b8b9be, -3px -3px 6px #ffffff;
+    background-color: rgba(0,0,0,.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    overflow: hidden;
+}
+.graph_box_1{
+    height: 50vh;
+}
+.graph_box_2{
+    height: 50vh;
+}
+.graph_box_3{
+    height: 50vh;
+}
+.graph_box_4{
+    height: 50vh;
+}
+/* Graph_box || CSS || End */
+
+
+
+
+/* After Industry || Start */
+.section_part_3{
+    padding-top: 0;
+}
+
+.second_service .IMG_01{
+    border: none;
+    background-color: transparent;
+    height: 350px;
+}
+.second_service .IMG_01_1{
+    bottom: 100px;
+    height: 180px;
+    overflow: hidden;
+}
+/* After Industry || End */
